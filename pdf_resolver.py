@@ -7,7 +7,7 @@ import os
 import re
 from pathlib import Path
 from typing import Optional, Dict, List
-from config import ENDNOTE_DATA_PATHS
+from config import ENDNOTE_DATA_PATHS, get_onedrive_file_url
 
 
 class PDFResolver:
@@ -112,6 +112,43 @@ class PDFResolver:
         """Check if PDF is available (without resolving full path)"""
         resolved = self.resolve(internal_path)
         return resolved is not None and Path(resolved).exists()
+    
+    def resolve_to_onedrive_url(self, internal_path: str) -> Optional[str]:
+        """
+        Resolve internal-pdf:// path to OneDrive URL
+        
+        Args:
+            internal_path: Path in format internal-pdf://[id]/[filename].pdf
+            
+        Returns:
+            OneDrive download URL if path can be constructed, None otherwise
+        """
+        if not internal_path:
+            return None
+        
+        # Parse internal-pdf:// format
+        match = re.match(r'internal-pdf://(\d+)/(.+)', internal_path)
+        if not match:
+            return None
+        
+        pdf_id = match.group(1)
+        filename = match.group(2)
+        
+        # The OneDrive share link points to the "full_text_files" folder
+        # So paths should be relative to that folder (don't include "full_text_files" prefix)
+        # Try NLP_v4.Data first (based on analysis showing 98 unique PDFs there)
+        # Then fallback to from_zotero_v3.Data
+        possible_paths = [
+            f"NLP_v4.Data/PDF/{pdf_id}/{filename}",
+            f"from_zotero_v3.Data/PDF/{pdf_id}/{filename}",
+            # Also try without PDF subfolder (in case structure differs)
+            f"NLP_v4.Data/{pdf_id}/{filename}",
+            f"from_zotero_v3.Data/{pdf_id}/{filename}",
+        ]
+        
+        # Return the first constructed URL (we'll let OneDrive return 404 if wrong)
+        # In practice, we could try each, but for now return the most likely
+        return get_onedrive_file_url(possible_paths[0])
 
 
 

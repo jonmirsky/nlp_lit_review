@@ -231,3 +231,36 @@ def get_queries_with_ris_files():
 ENDNOTE_DATA_PATH = get_endnote_data_path()
 # All Endnote data folder paths for PDF search (portable)
 ENDNOTE_DATA_PATHS = get_all_endnote_data_paths()
+
+# OneDrive configuration
+ONEDRIVE_BASE_URL = "https://somumaryland-my.sharepoint.com/:f:/g/personal/jonathan_mirsky_som_umaryland_edu/IgCwkAVnmvluQpWftpTullncAexB3IxNsGS4gMZFr7jbAB8?e=PtZ3AW"
+
+def get_onedrive_file_url(relative_path: str) -> str:
+    """
+    Construct OneDrive download URL for a file.
+    
+    Args:
+        relative_path: Relative path from OneDrive base folder (e.g., "full_text_files/NLP_v4.Data/PDF/0352406214/filename.pdf")
+        
+    Returns:
+        Direct download URL for the file
+    """
+    from urllib.parse import quote
+    
+    # For SharePoint/OneDrive for Business share links, the format is:
+    # https://[tenant]-my.sharepoint.com/:f:/g/personal/[user]/[folder_id]?e=[token]
+    # To access a file within the folder:
+    # https://[tenant]-my.sharepoint.com/:f:/g/personal/[user]/[folder_id]/[file_path]?download=1
+    
+    # Extract base URL and folder ID
+    base_url = ONEDRIVE_BASE_URL.split('?')[0]
+    
+    # URL encode each path component separately (preserve slashes)
+    # SharePoint expects path segments to be URL-encoded
+    encoded_path = '/'.join(quote(part, safe='') for part in relative_path.split('/'))
+    
+    # Construct the download URL by appending the file path to the folder ID
+    # Format: base_url/file_path?download=1
+    file_url = f"{base_url}/{encoded_path}?download=1"
+    
+    return file_url

@@ -4,12 +4,13 @@ Provides API endpoints for frontend
 """
 
 import os
-from flask import Flask, jsonify, send_file, request
+import requests
+from flask import Flask, jsonify, send_file, request, Response
 from flask_cors import CORS
 from ris_parser import RISParser
 from pdf_resolver import PDFResolver
 from overlap_calculator import OverlapCalculator
-from config import COMMON_SEARCH_TERMS, get_queries_with_ris_files
+from config import COMMON_SEARCH_TERMS, get_queries_with_ris_files, ONEDRIVE_BASE_URL
 from pathlib import Path
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -128,7 +129,34 @@ def get_pdf(paper_id):
     if not paper or not paper.pdf_path:
         return jsonify({"error": "PDF not found"}), 404
     
-    # Resolve PDF path
+    # Try OneDrive first if configured
+    if ONEDRIVE_BASE_URL:
+        onedrive_url = _pdf_resolver.resolve_to_onedrive_url(paper.pdf_path)
+        if onedrive_url:
+            try:
+                # Fetch PDF from OneDrive with timeout
+                response = requests.get(onedrive_url, timeout=30, stream=True)
+                if response.status_code == 200:
+                    # Stream PDF data to client
+                    def generate():
+                        for chunk in response.iter_content(chunk_size=8192):
+                            yield chunk
+                    
+                    flask_response = Response(
+                        generate(),
+                        mimetype='application/pdf',
+                        headers={
+                            'Content-Disposition': 'inline; filename="paper.pdf"',
+                            'X-Content-Type-Options': 'nosniff'
+                        }
+                    )
+                    return flask_response
+                # If OneDrive returns error, fall through to local filesystem
+            except (requests.RequestException, requests.Timeout) as e:
+                # Network error or timeout, fall through to local filesystem
+                print(f"OneDrive fetch failed: {e}, falling back to local filesystem")
+    
+    # Fallback to local filesystem
     resolved_path = _pdf_resolver.resolve(paper.pdf_path)
     
     if not resolved_path or not Path(resolved_path).exists():
