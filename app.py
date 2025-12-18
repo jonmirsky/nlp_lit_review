@@ -10,7 +10,7 @@ from flask_cors import CORS
 from ris_parser import RISParser
 from pdf_resolver import PDFResolver
 from overlap_calculator import OverlapCalculator
-from config import COMMON_SEARCH_TERMS, get_queries_with_ris_files, ONEDRIVE_BASE_URL
+from config import COMMON_SEARCH_TERMS, get_queries_with_ris_files, ONEDRIVE_BASE_URL, RIS_SOURCE_FOLDER, MANUAL_GROUPINGS_FOLDER
 from pathlib import Path
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -21,41 +21,69 @@ _papers_cache = None
 _hierarchy_cache = None
 _visualization_cache = None
 _pdf_resolver = None
+_load_error = None  # Store error message if loading fails
 
 
 def load_data():
     """Load and parse RIS files from all queries, build hierarchy"""
-    global _papers_cache, _hierarchy_cache, _visualization_cache, _pdf_resolver
+    global _papers_cache, _hierarchy_cache, _visualization_cache, _pdf_resolver, _load_error
     
     if _papers_cache is not None:
         return  # Already loaded
     
-    # Resolve RIS files from prefixes
-    resolved_queries = get_queries_with_ris_files()
-    print(f"Loading papers from {len(resolved_queries)} query/queries")
+    if _load_error is not None:
+        return  # Already tried and failed
     
-    # Initialize PDF resolver
-    _pdf_resolver = PDFResolver()
-    
-    # Build hierarchy using OverlapCalculator (it will load papers from all RIS files)
-    calculator = OverlapCalculator(resolved_queries)
-    query_databases = calculator.load_papers_from_queries()
-    
-    # Get all papers from calculator
-    _papers_cache = calculator.all_papers
-    print(f"Parsed {len(_papers_cache)} total papers from all queries")
-    
-    # Load most-cited papers
-    calculator.load_most_cited_papers()
-    
-    # Load most-relevant papers
-    calculator.load_most_relevant_papers()
-    
-    # Build hierarchy
-    _hierarchy_cache = calculator.build_hierarchy()
-    _visualization_cache = calculator.get_visualization_data(_hierarchy_cache)
-    
-    print("Data loaded successfully")
+    try:
+        # Resolve RIS files from prefixes
+        resolved_queries = get_queries_with_ris_files()
+        print(f"Loading papers from {len(resolved_queries)} query/queries")
+        
+        if not resolved_queries:
+            error_msg = "No queries found. Check RIS_SOURCE_FOLDER path and COMMON_SEARCH_TERMS configuration."
+            print(f"ERROR: {error_msg}")
+            _load_error = error_msg
+            return
+        
+        # Initialize PDF resolver
+        _pdf_resolver = PDFResolver()
+        
+        # Build hierarchy using OverlapCalculator (it will load papers from all RIS files)
+        calculator = OverlapCalculator(resolved_queries)
+        query_databases = calculator.load_papers_from_queries()
+        
+        # Get all papers from calculator
+        _papers_cache = calculator.all_papers
+        print(f"Parsed {len(_papers_cache)} total papers from all queries")
+        
+        if len(_papers_cache) == 0:
+            error_msg = "No papers found in RIS files. Check RIS file paths and content."
+            print(f"ERROR: {error_msg}")
+            _load_error = error_msg
+            return
+        
+        # Load most-cited papers
+        calculator.load_most_cited_papers()
+        
+        # Load most-relevant papers
+        calculator.load_most_relevant_papers()
+        
+        # Build hierarchy
+        _hierarchy_cache = calculator.build_hierarchy()
+        _visualization_cache = calculator.get_visualization_data(_hierarchy_cache)
+        
+        print("Data loaded successfully")
+        
+    except FileNotFoundError as e:
+        error_msg = f"RIS file not found: {str(e)}. Check RIS_SOURCE_FOLDER path."
+        print(f"ERROR: {error_msg}")
+        _load_error = error_msg
+    except Exception as e:
+        error_msg = f"Error loading data: {str(e)}"
+        print(f"ERROR: {error_msg}")
+        import traceback
+        traceback.print_exc()
+        _load_error = error_msg
 
 
 @app.route('/')
@@ -68,6 +96,12 @@ def index():
 def get_papers():
     """Get all papers with metadata"""
     load_data()
+    
+    if _load_error:
+        return jsonify({"error": _load_error}), 500
+    
+    if _papers_cache is None:
+        return jsonify({"error": "Data not loaded"}), 500
     
     # Optional filtering
     search_query = request.args.get('search', '').lower()
@@ -95,6 +129,13 @@ def get_papers():
 def get_visualization():
     """Get visualization data for React Flow"""
     load_data()
+    
+    if _load_error:
+        return jsonify({"error": _load_error}), 500
+    
+    if _visualization_cache is None:
+        return jsonify({"error": "Data not loaded"}), 500
+    
     return jsonify(_visualization_cache)
 
 
@@ -102,6 +143,13 @@ def get_visualization():
 def get_hierarchy():
     """Get raw hierarchy data"""
     load_data()
+    
+    if _load_error:
+        return jsonify({"error": _load_error}), 500
+    
+    if _hierarchy_cache is None:
+        return jsonify({"error": "Data not loaded"}), 500
+    
     return jsonify(_hierarchy_cache)
 
 
@@ -198,12 +246,71 @@ def check_pdf(paper_id):
 @app.route('/api/reload')
 def reload_data():
     """Reload data from RIS file (for development)"""
-    global _papers_cache, _hierarchy_cache, _visualization_cache
+    global _papers_cache, _hierarchy_cache, _visualization_cache, _load_error
     _papers_cache = None
     _hierarchy_cache = None
     _visualization_cache = None
+    _load_error = None
     load_data()
+    if _load_error:
+        return jsonify({"status": "reload failed", "error": _load_error}), 500
     return jsonify({"status": "reloaded"})
+
+
+@app.route('/api/health')
+def health_check():
+    """Health check endpoint for diagnostics"""
+    from config import get_ris_source_folder, get_manual_groupings_folder
+    
+    health_status = {
+        "status": "unknown",
+        "data_loaded": _papers_cache is not None,
+        "error": _load_error,
+        "paper_count": len(_papers_cache) if _papers_cache else 0,
+        "paths": {
+            "ris_source_folder": RIS_SOURCE_FOLDER,
+            "ris_source_exists": Path(RIS_SOURCE_FOLDER).exists(),
+            "manual_groupings_folder": MANUAL_GROUPINGS_FOLDER,
+            "manual_groupings_exists": Path(MANUAL_GROUPINGS_FOLDER).exists(),
+        },
+        "queries": {}
+    }
+    
+    # Check RIS files
+    ris_folder = Path(RIS_SOURCE_FOLDER)
+    if ris_folder.exists():
+        ris_files = list(ris_folder.glob("*.txt"))
+        health_status["paths"]["ris_files_found"] = len(ris_files)
+        health_status["paths"]["ris_file_names"] = [f.name for f in ris_files[:5]]  # First 5
+    else:
+        health_status["paths"]["ris_files_found"] = 0
+        health_status["paths"]["ris_file_names"] = []
+    
+    # Check queries
+    try:
+        resolved_queries = get_queries_with_ris_files()
+        for query_name, query_info in resolved_queries.items():
+            ris_file = query_info.get("ris_file", "Not found")
+            health_status["queries"][query_name] = {
+                "ris_file": ris_file,
+                "ris_file_exists": Path(ris_file).exists() if ris_file else False
+            }
+    except Exception as e:
+        health_status["queries"]["error"] = str(e)
+    
+    # Determine overall status
+    if _load_error:
+        health_status["status"] = "error"
+    elif _papers_cache is not None and len(_papers_cache) > 0:
+        health_status["status"] = "healthy"
+    elif not Path(RIS_SOURCE_FOLDER).exists():
+        health_status["status"] = "error"
+        health_status["error"] = f"RIS source folder not found: {RIS_SOURCE_FOLDER}"
+    else:
+        health_status["status"] = "warning"
+    
+    status_code = 200 if health_status["status"] == "healthy" else 500
+    return jsonify(health_status), status_code
 
 
 if __name__ == '__main__':

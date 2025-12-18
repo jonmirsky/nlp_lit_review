@@ -28,31 +28,59 @@ def get_base_path():
 def get_ris_source_folder():
     """Get RIS source files folder path (portable)"""
     base_path = get_base_path()
-    # Try relative path first (for bundled app)
+    
+    # Try paths in order of likelihood:
+    # 1. Current working directory (for Render/web deployment)
+    cwd_path = Path.cwd() / "RIS_source_files"
+    if cwd_path.exists():
+        return str(cwd_path)
+    
+    # 2. Same directory as script/app (for Render/web deployment)
+    script_path = base_path / "RIS_source_files"
+    if script_path.exists():
+        return str(script_path)
+    
+    # 3. Relative path for bundled app
     relative_path = base_path / "data" / "RIS_source_files"
     if relative_path.exists():
         return str(relative_path)
-    # Fallback to absolute path (for development)
+    
+    # 4. Fallback to absolute path (for development)
     absolute_path = Path("/Users/jon/Documents/badjatia_hu/visualizer_nlp_lit_review/RIS_source_files")
     if absolute_path.exists():
         return str(absolute_path)
-    # Return relative path anyway (will be created if needed)
-    return str(relative_path)
+    
+    # Return script path as default (will help with error messages)
+    return str(script_path)
 
 
 def get_manual_groupings_folder():
     """Get manual groupings folder path (portable)"""
     base_path = get_base_path()
-    # Try relative path first (for bundled app)
+    
+    # Try paths in order of likelihood:
+    # 1. Current working directory (for Render/web deployment)
+    cwd_path = Path.cwd() / "RIS_source_files" / "manual_groupings"
+    if cwd_path.exists():
+        return str(cwd_path)
+    
+    # 2. Same directory as script/app (for Render/web deployment)
+    script_path = base_path / "RIS_source_files" / "manual_groupings"
+    if script_path.exists():
+        return str(script_path)
+    
+    # 3. Relative path for bundled app
     relative_path = base_path / "data" / "RIS_source_files" / "manual_groupings"
     if relative_path.exists():
         return str(relative_path)
-    # Fallback to absolute path (for development)
+    
+    # 4. Fallback to absolute path (for development)
     absolute_path = Path("/Users/jon/Documents/badjatia_hu/visualizer_nlp_lit_review/RIS_source_files/manual_groupings")
     if absolute_path.exists():
         return str(absolute_path)
-    # Return relative path anyway (will be created if needed)
-    return str(relative_path)
+    
+    # Return script path as default
+    return str(script_path)
 
 
 def get_endnote_data_path():
