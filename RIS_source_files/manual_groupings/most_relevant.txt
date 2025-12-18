@@ -1,0 +1,229 @@
+﻿TY  - JOUR
+AB  - Background The latest large language models (LLMs) solve unseen problems via user-defined text prompts without the need for retraining, offering potentially more efficient information extraction from free-text medical records than manual annotation. Purpose To compare the performance of the LLMs ChatGPT and GPT-4 in data mining and labeling oncologic phenotypes from free-text CT reports on lung cancer by using user-defined prompts. Materials and Methods This retrospective study included patients who underwent lung cancer follow-up CT between September 2021 and March 2023. A subset of 25 reports was reserved for prompt engineering to instruct the LLMs in extracting lesion diameters, labeling metastatic disease, and assessing oncologic progression. This output was fed into a rule-based natural language processing pipeline to match ground truth annotations from four radiologists and derive performance metrics. The oncologic reasoning of LLMs was rated on a five-point Likert scale for factual correctness and accuracy. The occurrence of confabulations was recorded. Statistical analyses included Wilcoxon signed rank and McNemar tests. Results On 424 CT reports from 424 patients (mean age, 65 years ± 11 [SD]; 265 male), GPT-4 outperformed ChatGPT in extracting lesion parameters (98.6% vs 84.0%, P < .001), resulting in 96% correctly mined reports (vs 67% for ChatGPT, P < .001). GPT-4 achieved higher accuracy in identification of metastatic disease (98.1% [95% CI: 97.7, 98.5] vs 90.3% [95% CI: 89.4, 91.0]) and higher performance in generating correct labels for oncologic progression (F1 score, 0.96 [95% CI: 0.94, 0.98] vs 0.91 [95% CI: 0.89, 0.94]) (both P < .001). In oncologic reasoning, GPT-4 had higher Likert scale scores for factual correctness (4.3 vs 3.9) and accuracy (4.4 vs 3.3), with a lower rate of confabulation (1.7% vs 13.7%) than ChatGPT (all P < .001). Conclusion When using user-defined prompts, GPT-4 outperformed ChatGPT in extracting oncologic phenotypes from free-text CT reports on lung cancer and demonstrated better oncologic reasoning with fewer confabulations. © RSNA, 2023 Supplemental material is available for this article. See also the editorial by Hafezi-Nejad and Trivedi in this issue.
+AU  - Fink, Matthias A.
+AU  - Bischoff, Arved
+AU  - Fink, Christoph A.
+AU  - Moll, Martin
+AU  - Kroschke, Jonas
+AU  - Dulz, Luca
+AU  - Heußel, Claus Peter
+AU  - Kauczor, Hans-Ulrich
+AU  - Weber, Tim F.
+DA  - 2023/09//undefined
+DO  - 10.1148/radiol.231362
+IS  - 3
+J2  - Radiology
+KW  - Humans
+Retrospective Studies
+Male
+Aged
+*Lung Neoplasms/diagnostic imaging
+Data Mining
+Medical Oncology
+Benchmarking
+*Neoplasms, Second Primary
+Memory Disorders
+L1  - internal-pdf://0481928577/Potential of ChatGPT and GPT-4 for D-Fink-2023.pdf
+LA  - eng
+LB  - 2590
+PY  - 2023
+RN  - CT, CT_extraction
+SN  - 1527-1315 0033-8419
+SP  - e231362
+ST  - Potential of ChatGPT and GPT-4 for Data Mining of Free-Text CT Reports on Lung Cancer
+T2  - Radiology
+TI  - Potential of ChatGPT and GPT-4 for Data Mining of Free-Text CT Reports on Lung Cancer
+VL  - 308
+ID  - 20
+ER  - 
+
+TY  - JOUR
+AB  - INTRODUCTION: Electronic health records contain an enormous amount of valuable information recorded in free text. Information extraction is the strategy to transform free text into structured data, but some of its components require annotated data to tune, which has become a bottleneck. Large language models achieve good performances on various downstream NLP tasks without parameter tuning, becoming a possible way to extract information in a zero-shot manner. METHODS: In this study, we aim to explore whether the most popular large language model, ChatGPT, can extract information from the radiological reports. We first design the prompt template for the interested information in the CT reports. Then, we generate the prompts by combining the prompt template with the CT reports as the inputs of ChatGPT to obtain the responses. A post-processing module is developed to transform the responses into structured extraction results. Besides, we add prior medical knowledge to the prompt template to reduce wrong extraction results. We also explore the consistency of the extraction results. RESULTS: We conducted the experiments with 847 real CT reports. The experimental results indicate that ChatGPT can achieve competitive performances for some extraction tasks like tumor location, tumor long and short diameters compared with the baseline information extraction system. By adding some prior medical knowledge to the prompt template, extraction tasks about tumor spiculations and lobulations obtain significant improvements but tasks about tumor density and lymph node status do not achieve better performances. CONCLUSION: ChatGPT can achieve competitive information extraction for radiological reports in a zero-shot manner. Adding prior medical knowledge as instructions can further improve performances for some extraction tasks but may lead to worse performances for some complex extraction tasks.
+AU  - Hu, Danqing
+AU  - Liu, Bing
+AU  - Zhu, Xiaofeng
+AU  - Lu, Xudong
+AU  - Wu, Nan
+DA  - 2024/03//undefined
+DO  - 10.1016/j.ijmedinf.2023.105321
+J2  - Int J Med Inform
+KW  - Humans
+Large language model
+Information extraction
+Language
+Radiological report
+*Electronic Health Records
+Information Storage and Retrieval
+Question answering
+*Neoplasms
+Lung cancer
+Knowledge
+L1  - internal-pdf://1088590930/Zero-shot information extraction from-Hu-2024.pdf
+LA  - eng
+LB  - 2759
+PY  - 2024
+RN  - CT, CT_extraction
+SN  - 1872-8243 1386-5056
+SP  - 105321
+ST  - Zero-shot information extraction from radiological reports using ChatGPT
+T2  - International journal of medical informatics
+TI  - Zero-shot information extraction from radiological reports using ChatGPT
+VL  - 183
+ID  - 21
+ER  - 
+
+TY  - JOUR
+AB  - Purpose To assess the performance of a local open-source large language model (LLM) in various information extraction tasks from real-life emergency brain MRI reports. Materials and Methods All consecutive emergency brain MRI reports written in 2022 from a French quaternary center were retrospectively reviewed. Two radiologists identified MRI scans that were performed in the emergency department for headaches. Four radiologists scored the reports' conclusions as either normal or abnormal. Abnormalities were labeled as either headache-causing or incidental. Vicuna (LMSYS Org), an open-source LLM, performed the same tasks. Vicuna's performance metrics were evaluated using the radiologists' consensus as the reference standard. Results Among the 2398 reports during the study period, radiologists identified 595 that included headaches in the indication (median age of patients, 35 years [IQR, 26-51 years]; 68% [403 of 595] women). A positive finding was reported in 227 of 595 (38%) cases, 136 of which could explain the headache. The LLM had a sensitivity of 98.0% (95% CI: 96.5, 99.0) and specificity of 99.3% (95% CI: 98.8, 99.7) for detecting the presence of headache in the clinical context, a sensitivity of 99.4% (95% CI: 98.3, 99.9) and specificity of 98.6% (95% CI: 92.2, 100.0) for the use of contrast medium injection, a sensitivity of 96.0% (95% CI: 92.5, 98.2) and specificity of 98.9% (95% CI: 97.2, 99.7) for study categorization as either normal or abnormal, and a sensitivity of 88.2% (95% CI: 81.6, 93.1) and specificity of 73% (95% CI: 62, 81) for causal inference between MRI findings and headache. Conclusion An open-source LLM was able to extract information from free-text radiology reports with excellent accuracy without requiring further training. Keywords: Large Language Model (LLM), Generative Pretrained Transformers (GPT), Open Source, Information Extraction, Report, Brain, MRI Supplemental material is available for this article. Published under a CC BY 4.0 license. See also the commentary by Akinci D'Antonoli and Bluethgen in this issue.
+AU  - Le Guellec, Bastien
+AU  - Lefèvre, Alexandre
+AU  - Geay, Charlotte
+AU  - Shorten, Lucas
+AU  - Bruge, Cyril
+AU  - Hacein-Bey, Lotfi
+AU  - Amouyel, Philippe
+AU  - Pruvo, Jean-Pierre
+AU  - Kuchcinski, Gregory
+AU  - Hamroun, Aghiles
+DA  - 2024 Jul
+DO  - 10.1148/ryai.230364
+IS  - 4
+KW  - Humans
+Retrospective Studies
+*Natural Language Processing
+Female
+Male
+Middle Aged
+MRI
+Sensitivity and Specificity
+*Magnetic Resonance Imaging/methods
+Adult
+Brain
+Report
+Information Extraction
+*Headache/diagnostic imaging/diagnosis
+Brain/diagnostic imaging/pathology
+Emergency Service, Hospital
+Generative Pretrained Transformers (GPT)
+Large Language Model (LLM)
+Open Source
+L1  - internal-pdf://13268/Le Guellec et al. - 2024 - Performance of an Open-Source Large Language Model in Extracting Information from Free-Text Radiolog.pdf
+LA  - eng
+LB  - 2180
+PY  - 2024
+RN  - brain, clinical, radiology
+SN  - 2638-6100
+SP  - e230364
+ST  - Performance of an Open-Source Large Language Model in Extracting Information from Free-Text Radiology Reports.
+T2  - Radiology. Artificial intelligence
+TI  - Performance of an Open-Source Large Language Model in Extracting Information from Free-Text Radiology Reports
+VL  - 6
+ID  - 2
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: To develop a domain-specific large language model (LLM) for LI-RADS v2018 categorization of hepatic observations based on free-text descriptions extracted from MRI reports. MATERIAL AND METHODS: This retrospective study included 291 small liver observations, divided into training (n = 141), validation (n = 30), and test (n = 120) datasets. Of these, 120 were fictitious, and 171 were extracted from 175 MRI reports from a single institution. The algorithm's performance was compared to two independent radiologists and one hepatologist in a human replacement scenario, and considering two combined strategies (double reading with arbitration and triage). Agreement on LI-RADS category and dichotomic malignancy (LR-4, LR-5, and LR-M) were estimated using linear-weighted κ statistics and Cohen's κ, respectively. Sensitivity and specificity for LR-5 were calculated. The consensus agreement of three other radiologists served as the ground truth. RESULTS: The model showed moderate agreement against the ground truth for both LI-RADS categorization (κ = 0.54 [95% CI: 0.42-0.65]) and the dichotomized approach (κ = 0.58 [95% CI: 0.42-0.73]). Sensitivity and specificity for LR-5 were 0.76 (95% CI: 0.69-0.86) and 0.96 (95% CI: 0.91-1.00), respectively. When the chatbot was used as a triage tool, performance improved for LI-RADS categorization (κ = 0.86/0.87 for the two independent radiologists and κ = 0.76 for the hepatologist), dichotomized malignancy (κ = 0.94/0.91 and κ = 0.87) and LR-5 identification (1.00/0.98 and 0.85 sensitivity, 0.96/0.92 and 0.92 specificity), with no statistical significance compared to the human readers' individual performance. Through this strategy, the workload decreased by 45%. CONCLUSION: LI-RADS v2018 categorization from unlabelled MRI reports is feasible using our LLM, and it enhances the efficiency of data curation. CRITICAL RELEVANCE STATEMENT: Our proof-of-concept study provides novel insights into the potential applications of LLMs, offering a real-world example of how these tools could be integrated into a local workflow to optimize data curation for research purposes. KEY POINTS: Automatic LI-RADS categorization from free-text reports would be beneficial to workflow and data mining. LiverAI, a GPT-4-based model, supported various strategies improving data curation efficiency by up to 60%. LLMs can integrate into workflows, significantly reducing radiologists' workload.
+AU  - Matute-González, Mario
+AU  - Darnell, Anna
+AU  - Comas-Cufí, Marc
+AU  - Pazó, Javier
+AU  - Soler, Alexandre
+AU  - Saborido, Belén
+AU  - Mauro, Ezequiel
+AU  - Turnes, Juan
+AU  - Forner, Alejandro
+AU  - Reig, María
+AU  - Rimola, Jordi
+DA  - 2024 Nov 22
+DO  - 10.1186/s13244-024-01850-1
+IS  - 1
+KW  - Radiology
+Natural language processing
+Hepatocellular carcinoma
+Report
+Standardization
+L1  - internal-pdf://13401/Matute-González et al. - 2024 - Utilizing a domain-specific large language model for LI-RADS v2018 categorization of free-text MRI r.pdf
+LA  - eng
+LB  - 2313
+PY  - 2024
+RN  - radiology, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1869-4101
+SP  - 280
+ST  - Utilizing a domain-specific large language model for LI-RADS v2018 categorization of free-text MRI reports: a feasibility study.
+T2  - Insights into imaging
+TI  - Utilizing a domain-specific large language model for LI-RADS v2018 categorization of free-text MRI reports: a feasibility study
+VL  - 15
+ID  - 25
+ER  - 
+
+TY  - JOUR
+AB  - The purposes were to assess the efficacy of AI-generated radiology reports in terms of report summary, patient-friendliness, and recommendations and to evaluate the consistent performance of report quality and accuracy, contributing to the advancement of radiology workflow. Total 685 spine MRI reports were retrieved from our hospital database. AI-generated radiology reports were generated in three formats: (1) summary reports, (2) patient-friendly reports, and (3) recommendations. The occurrence of artificial hallucinations was evaluated in the AI-generated reports. Two radiologists conducted qualitative and quantitative assessments considering the original report as a standard reference. Two non-physician raters assessed their understanding of the content of original and patient-friendly reports using a 5-point Likert scale. The scoring of the AI-generated radiology reports were overall high average scores across all three formats. The average comprehension score for the original report was 2.71 ± 0.73, while the score for the patient-friendly reports significantly increased to 4.69 ± 0.48 (p < 0.001). There were 1.12% artificial hallucinations and 7.40% potentially harmful translations. In conclusion, the potential benefits of using generative AI assistants to generate these reports include improved report quality, greater efficiency in radiology workflow for producing summaries, patient-centered reports, and recommendations, and a move toward patient-centered radiology.
+AU  - Park, Jiwoo
+AU  - Oh, Kangrok
+AU  - Han, Kyunghwa
+AU  - Lee, Young Han
+DA  - 2024 Jun 8
+DO  - 10.1038/s41598-024-63824-z
+IS  - 1
+KW  - *Artificial Intelligence
+Artificial intelligence
+Humans
+Large language model
+Female
+Male
+Middle Aged
+Workflow
+Adult
+Aged
+Radiology/methods
+*Patient-Centered Care
+Artificial hallucination
+Magnetic Resonance Imaging/methods
+Patient-centered radiology
+Radiologic report
+L1  - internal-pdf://13331/Park et al. - 2024 - Patient-centered radiology reports with generative artificial intelligence adding value to radiolog.pdf
+LA  - eng
+LB  - 2243
+PY  - 2024
+RN  - radiology
+SN  - 2045-2322
+SP  - 13218
+ST  - Patient-centered radiology reports with generative artificial intelligence: adding value to radiology reporting.
+T2  - Scientific reports
+TI  - Patient-centered radiology reports with generative artificial intelligence: adding value to radiology reporting
+VL  - 14
+ID  - 24
+ER  - 
+
+TY  - JOUR
+AB  - Large language models (LLMs) hold transformative potential for medical image labeling in radiology, addressing challenges posed by linguistic variability in reports. We developed a two-stage natural language processing pipeline that combines Bidirectional Encoder Representations from Transformers (BERT) and an LLM to analyze radiology reports. In the first stage (Entity Key Classification), BERT model identifies and classifies clinically relevant entities mentioned in the text. In the second stage (Relationship Mapping), the extracted entities are incorporated into the LLM to infer relationships between entity pairs, considering actual presence of entity. The pipeline targets lesion-location mapping in chest CT and diagnosis-episode mapping in brain MRI, both of which are clinically important for structuring radiologic findings and capturing temporal patterns of disease progression. Using over 400,000 reports from Seoul Asan Medical Center, our pipeline achieved a macro F1-score of 77.39 for chest CT and 70.58 for brain MRI. These results highlight the effectiveness of integrating BERT with an LLM to enhance diagnostic accuracy in radiology report analysis.
+AU  - Shin, Chaiho
+AU  - Eom, Dareen
+AU  - Lee, Sang Min
+AU  - Park, Ji Eun
+AU  - Kim, Kwangsoo
+AU  - Lee, Kye Hwa
+DA  - 2025/08/27/
+DO  - 10.1038/s41598-025-16213-z
+IS  - 1
+J2  - Sci Rep
+KW  - Humans
+Large Language Models
+*Natural Language Processing
+Brain/diagnostic imaging
+Language
+Magnetic Resonance Imaging
+Tomography, X-Ray Computed
+L1  - internal-pdf://0446340713/Two stage large language model appro-Shin-2025.pdf
+LA  - eng
+LB  - 2584
+PY  - 2025
+RN  - CT, brain, radiology
+SN  - 2045-2322
+SP  - 31550
+ST  - Two stage large language model approach enhancing entity classification and relationship mapping in radiology reports
+T2  - Scientific reports
+TI  - Two stage large language model approach enhancing entity classification and relationship mapping in radiology reports
+VL  - 15
+ID  - 19
+ER  - 
+

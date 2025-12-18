@@ -1,0 +1,534 @@
+﻿TY  - JOUR
+AB  - OBJECTIVE: To develop a domain-specific large language model (LLM) for LI-RADS v2018 categorization of hepatic observations based on free-text descriptions extracted from MRI reports. MATERIAL AND METHODS: This retrospective study included 291 small liver observations, divided into training (n = 141), validation (n = 30), and test (n = 120) datasets. Of these, 120 were fictitious, and 171 were extracted from 175 MRI reports from a single institution. The algorithm's performance was compared to two independent radiologists and one hepatologist in a human replacement scenario, and considering two combined strategies (double reading with arbitration and triage). Agreement on LI-RADS category and dichotomic malignancy (LR-4, LR-5, and LR-M) were estimated using linear-weighted κ statistics and Cohen's κ, respectively. Sensitivity and specificity for LR-5 were calculated. The consensus agreement of three other radiologists served as the ground truth. RESULTS: The model showed moderate agreement against the ground truth for both LI-RADS categorization (κ = 0.54 [95% CI: 0.42-0.65]) and the dichotomized approach (κ = 0.58 [95% CI: 0.42-0.73]). Sensitivity and specificity for LR-5 were 0.76 (95% CI: 0.69-0.86) and 0.96 (95% CI: 0.91-1.00), respectively. When the chatbot was used as a triage tool, performance improved for LI-RADS categorization (κ = 0.86/0.87 for the two independent radiologists and κ = 0.76 for the hepatologist), dichotomized malignancy (κ = 0.94/0.91 and κ = 0.87) and LR-5 identification (1.00/0.98 and 0.85 sensitivity, 0.96/0.92 and 0.92 specificity), with no statistical significance compared to the human readers' individual performance. Through this strategy, the workload decreased by 45%. CONCLUSION: LI-RADS v2018 categorization from unlabelled MRI reports is feasible using our LLM, and it enhances the efficiency of data curation. CRITICAL RELEVANCE STATEMENT: Our proof-of-concept study provides novel insights into the potential applications of LLMs, offering a real-world example of how these tools could be integrated into a local workflow to optimize data curation for research purposes. KEY POINTS: Automatic LI-RADS categorization from free-text reports would be beneficial to workflow and data mining. LiverAI, a GPT-4-based model, supported various strategies improving data curation efficiency by up to 60%. LLMs can integrate into workflows, significantly reducing radiologists' workload.
+AU  - Matute-González, Mario
+AU  - Darnell, Anna
+AU  - Comas-Cufí, Marc
+AU  - Pazó, Javier
+AU  - Soler, Alexandre
+AU  - Saborido, Belén
+AU  - Mauro, Ezequiel
+AU  - Turnes, Juan
+AU  - Forner, Alejandro
+AU  - Reig, María
+AU  - Rimola, Jordi
+DA  - 2024 Nov 22
+DO  - 10.1186/s13244-024-01850-1
+IS  - 1
+KW  - Radiology
+Natural language processing
+Hepatocellular carcinoma
+Report
+Standardization
+L1  - internal-pdf://13401/Matute-González et al. - 2024 - Utilizing a domain-specific large language model for LI-RADS v2018 categorization of free-text MRI r.pdf
+LA  - eng
+LB  - 2313
+PY  - 2024
+RN  - radiology, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1869-4101
+SP  - 280
+ST  - Utilizing a domain-specific large language model for LI-RADS v2018 categorization of free-text MRI reports: a feasibility study.
+T2  - Insights into imaging
+TI  - Utilizing a domain-specific large language model for LI-RADS v2018 categorization of free-text MRI reports: a feasibility study
+VL  - 15
+ID  - 1352
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Injuries pose a significant global health challenge due to their high incidence and mortality rates. Although injury surveillance is essential for prevention, it is resource-intensive. This study aimed to develop and validate locally deployable large language models (LLMs) to extract core injury-related information from Emergency Department (ED) clinical notes. METHODS: We conducted a diagnostic study using retrospectively collected data from January 2014 to December 2020 from two urban academic tertiary hospitals. One served as the derivation cohort and the other as the external test cohort. Adult patients presenting to the ED with injury-related complaints were included. Primary outcomes included classification accuracies for information extraction tasks related to injury mechanism, place of occurrence, activity, intent, and severity. We fine-tuned a single generalizable Llama-2 model and five distinct Bidirectional Encoder Representations from Transformers (BERT) models for each task to extract information from initial ED physician notes. The Llama-2 model was able to perform different tasks by modifying the instruction prompt. Data recorded in injury registries provided the gold standard labels. Model performance was assessed using accuracy and macro-average F1 scores. RESULTS: The derivation and external test cohorts comprised 36,346 and 32,232 patients, respectively. In the derivation cohort's test set, the Llama-2 model achieved accuracies (95% confidence intervals) of 0.899 (0.889-0.909) for injury mechanism, 0.774 (0.760-0.789) for place of occurrence, 0.679 (0.665-0.694) for activity, 0.972 (0.967-0.977) for intent, and 0.935 (0.926-0.943) for severity. The Llama-2 model outperformed the BERT models in accuracy and macro-average F1 scores across all tasks in both cohorts. Imposing constraints on the Llama-2 model to avoid uncertain predictions further improved its accuracy. CONCLUSION: Locally deployable LLMs, trained to extract core injury-related information from free-text ED clinical notes, demonstrated good performance. Generative LLMs can serve as versatile solutions for various injury-related information extraction tasks.
+AU  - Choi, Dong Hyun
+AU  - Kim, Yoonjic
+AU  - Choi, Sae Won
+AU  - Kim, Ki Hong
+AU  - Choi, Yeongho
+AU  - Shin, Sang Do
+DA  - 2024 Dec 2
+DO  - 10.3346/jkms.2024.39.e291
+IS  - 46
+KW  - Humans
+Retrospective Studies
+Female
+Male
+Middle Aged
+Adult
+Aged
+Electronic Health Records
+*Emergency Service, Hospital
+Tertiary Care Centers
+Information Extraction
+Large Language Model
+*Wounds and Injuries
+Clinical Note
+Emergency Department
+Injuries
+L1  - internal-pdf://11734/Choi et al. - 2024 - Using Large Language Models to Extract Core Injury Information From Emergency Department Notes..pdf
+LA  - eng
+LB  - 831
+PY  - 2024
+RN  - clinical, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1598-6357 1011-8934
+SP  - e291
+ST  - Using Large Language Models to Extract Core Injury Information From Emergency Department Notes.
+T2  - Journal of Korean medical science
+TI  - Using Large Language Models to Extract Core Injury Information From Emergency Department Notes
+VL  - 39
+ID  - 1578
+ER  - 
+
+TY  - JOUR
+AB  - IMPORTANCE: Large language models (LLMs) have potential to increase the efficiency of information extraction from unstructured clinical notes in electronic medical records. OBJECTIVE: To assess the utility and reliability of an LLM, ChatGPT-4 (OpenAI), to analyze clinical narratives and identify helmet use status of patients injured in micromobility-related accidents. DESIGN, SETTING, AND PARTICIPANTS: This cross-sectional study used publicly available, deidentified 2019 to 2022 data from the US Consumer Product Safety Commission's National Electronic Injury Surveillance System, a nationally representative stratified probability sample of 96 hospitals in the US. Unweighted estimates of e-bike, bicycle, hoverboard, and powered scooter-related injuries that resulted in an emergency department visit were used. Statistical analysis was performed from November 2023 to April 2024. MAIN OUTCOMES AND MEASURES: Patient helmet status (wearing vs not wearing vs unknown) was extracted from clinical narratives using (1) a text string search using researcher-generated text strings and (2) the LLM by prompting the system with low-, intermediate-, and high-detail prompts. The level of agreement between the 2 approaches across all 3 prompts was analyzed using Cohen κ test statistics. Fleiss κ was calculated to measure the test-retest reliability of the high-detail prompt across 5 new chat sessions and days. Performance statistics were calculated by comparing results from the high-detail prompt to classifications of helmet status generated by researchers reading the clinical notes (ie, a criterion standard review). RESULTS: Among 54 569 clinical notes, moderate (Cohen κ = 0.74 [95% CI, 0.73-0.75) and weak (Cohen κ = 0.53 [95% CI, 0.52-0.54]) agreement were found between the text string-search approach and the LLM for the low- and intermediate-detail prompts, respectively. The high-detail prompt had almost perfect agreement (κ = 1.00 [95% CI, 1.00-1.00]) but required the greatest amount of time to complete. The LLM did not perfectly replicate its analyses across new sessions and days (Fleiss κ = 0.91 across 5 trials; P < .001). The LLM often hallucinated and was consistent in replicating its hallucinations. It also showed high validity compared with the criterion standard (n = 400; κ = 0.98 [95% CI, 0.96-1.00]). CONCLUSIONS AND RELEVANCE: This study's findings suggest that although there are efficiency gains for using the LLM to extract information from clinical notes, the inadequate reliability compared with a text string-search approach, hallucinations, and inconsistent performance significantly hinder the potential of the currently available LLM.
+AU  - Burford, Kathryn G.
+AU  - Itzkowitz, Nicole G.
+AU  - Ortega, Ashley G.
+AU  - Teitler, Julien O.
+AU  - Rundle, Andrew G.
+DA  - 2024 Aug 1
+DO  - 10.1001/jamanetworkopen.2024.25981
+IS  - 8
+KW  - Humans
+Reproducibility of Results
+Female
+Male
+Middle Aged
+Adult
+Young Adult
+Cross-Sectional Studies
+Adolescent
+United States/epidemiology
+Electronic Health Records/statistics & numerical data
+*Head Protective Devices/statistics & numerical data
+Accidents, Traffic/statistics & numerical data
+L1  - internal-pdf://11700/Burford et al. - 2024 - Use of Generative AI to Identify Helmet Status Among Patients With Micromobility-Related Injuries Fr.pdf
+LA  - eng
+LB  - 801
+PY  - 2024
+RN  - clinical, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2574-3805
+SP  - e2425981
+ST  - Use of Generative AI to Identify Helmet Status Among Patients With Micromobility-Related Injuries From Unstructured Clinical Notes.
+T2  - JAMA network open
+TI  - Use of Generative AI to Identify Helmet Status Among Patients With Micromobility-Related Injuries From Unstructured Clinical Notes
+VL  - 7
+ID  - 1611
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: The use of generative large language models (LLMs) with electronic health record (EHR) data is rapidly expanding to support clinical and research tasks. This systematic review synthesizes current strategies, challenges, and future directions for adapting and evaluating generative LLMs in EHR analyses and applications. METHODS: We followed the PRISMA guidelines to conduct a systematic review of articles from PubMed and Web of Science published between January 1, 2023, and November 9, 2024. Studies were included if they used generative LLMs to analyze real-world EHR data and reported quantitative performance evaluations. Through data extraction, we identified clinical specialties and tasks for each included article, and summarized evaluation methods. RESULTS: Of the 18,735 articles retrieved, 196 met our criteria. Most studies focused on Radiology (26.0%), Oncology (10.7%), and Emergency Medicine (6.6%). Regarding clinical tasks clinical decision support has the most studies of 62.2%, while summarizations and patient communications have the least studies of 5.6% and 5.1% separately. In addition, GPT-4 and ChatGPT were mostly used generative LLMs, which were used in 60.2% and 57.7% of studies, respectively. We identified 22 unique non-NLP metrics and 35 unique NLP metrics. Although NLP metrics have better scalability, none of the metrics were identified as having a strong correlation with gold-standard human evaluations. CONCLUSION: Our findings highlight the need to evaluate generative LLMs on EHR data across a broader range of clinical specialties and tasks, as well as the urgent need for standardized, scalable, and clinically meaningful evaluation frameworks.
+AU  - Du, Xinsong
+AU  - Zhou, Zhengyang
+AU  - Wang, Yifei
+AU  - Chuang, Ya-Wen
+AU  - Li, Yiming
+AU  - Yang, Richard
+AU  - Zhang, Wenyu
+AU  - Wang, Xinyi
+AU  - Chen, Xinyu
+AU  - Guan, Hao
+AU  - Lian, John
+AU  - Hong, Pengyu
+AU  - Bates, David W.
+AU  - Zhou, Li
+DA  - 2025 Jun 22
+DO  - 10.1101/2024.08.11.24311828
+KW  - Large Language Models
+Natural Language Processing
+Electronic Health records
+Evaluation
+Review
+L1  - internal-pdf://13288/Du et al. - 2025 - Testing and Evaluation of Generative Large Language Models in Electronic Health Record Applications.pdf
+LA  - eng
+LB  - 2200
+PY  - 2025
+RN  - clinical, radiology, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+ST  - Testing and Evaluation of Generative Large Language Models in Electronic Health Record Applications: A Systematic Review.
+TI  - Testing and Evaluation of Generative Large Language Models in Electronic Health Record Applications: A Systematic Review
+ID  - 865
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Overcrowding in emergency departments (EDs) leads to delayed treatments, poor patient outcomes, and increased staff workloads. Artificial intelligence (AI) and machine learning (ML) have emerged as promising tools to optimize triage. OBJECTIVE: This systematic review evaluates AI/ML-driven triage and risk stratification models in EDs, focusing on predictive performance, key predictors, clinical and operational outcomes, and implementation challenges. METHODS: Following PRISMA 2020 guidelines, we systematically searched PubMed, CINAHL, Scopus, Web of Science, and IEEE Xplore for studies on AI/ML-driven ED triage published through January 2025. Two independent reviewers screened studies, extracted data, and assessed quality using PROBAST, with findings synthesized thematically. RESULTS: Twenty-six studies met inclusion criteria. ML-based triage models consistently outperformed traditional tools, often achieving AUCs > 0.80 for high acuity outcomes (e.g., hospital admission, ICU transfer). Key predictors included vital signs, age, arrival mode, and disease-specific markers. Incorporating free-text data via natural language processing enhances accuracy and sensitivity. Advanced ML techniques, such as gradient boosting and random forests, generally surpassed simpler models across diverse populations. Reported benefits included reduced ED overcrowding, improved resource allocation, fewer mis-triaged patients, and potential patient outcome improvements. CONCLUSION: AI/ML-based triage models hold substantial promise in improving ED efficiency and patient outcomes. Prospective, multi-center trials with transparent reporting and seamless electronic health record integration are essential to confirm these benefits. IMPLICATIONS FOR CLINICAL PRACTICE: Integrating AI and ML into ED triage can enhance assessment accuracy and resource allocation. Early identification of high-risk patients supports better clinical decision-making, including critical care and ICU nurses, by streamlining patient transitions and reducing overcrowding. Explainable AI models foster trust and enable informed decisions under pressure. To realize these benefits, healthcare organizations must invest in robust infrastructure, provide comprehensive training for all clinical staff, and implement ethical, standardized practices that support interdisciplinary collaboration between ED and ICU teams.
+AU  - El Arab, Rabie Adel
+AU  - Al Moosa, Omayma Abdulaziz
+DA  - 2025 Aug
+DO  - 10.1016/j.iccn.2025.104058
+KW  - Artificial intelligence Humans Machine learning Natural language processing Clinical decision support Machine Learning Risk stratification Predictive modeling *Artificial Intelligence/trends/standards *Triage/methods/standards/trends Emergency departmen
+L1  - internal-pdf://2229656756/The role of AI in emergency depar-El Arab-2025.pdf
+LA  - eng
+LB  - 3217
+N1  - clinical
+PY  - 2025
+RN  - clinical, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1532-4036 0964-3397
+SP  - 104058
+ST  - The role of AI in emergency department triage: An integrative systematic review. T2 - Intensive & critical care nursing
+TI  - The role of AI in emergency department triage: An integrative systematic review
+UR  - https://www.sciencedirect.com/science/article/abs/pii/S0964339725001193?via%3Dihub
+VL  - 89
+ID  - 858
+ER  - 
+
+TY  - JOUR
+AB  - Purpose To assess the performance of a local open-source large language model (LLM) in various information extraction tasks from real-life emergency brain MRI reports. Materials and Methods All consecutive emergency brain MRI reports written in 2022 from a French quaternary center were retrospectively reviewed. Two radiologists identified MRI scans that were performed in the emergency department for headaches. Four radiologists scored the reports' conclusions as either normal or abnormal. Abnormalities were labeled as either headache-causing or incidental. Vicuna (LMSYS Org), an open-source LLM, performed the same tasks. Vicuna's performance metrics were evaluated using the radiologists' consensus as the reference standard. Results Among the 2398 reports during the study period, radiologists identified 595 that included headaches in the indication (median age of patients, 35 years [IQR, 26-51 years]; 68% [403 of 595] women). A positive finding was reported in 227 of 595 (38%) cases, 136 of which could explain the headache. The LLM had a sensitivity of 98.0% (95% CI: 96.5, 99.0) and specificity of 99.3% (95% CI: 98.8, 99.7) for detecting the presence of headache in the clinical context, a sensitivity of 99.4% (95% CI: 98.3, 99.9) and specificity of 98.6% (95% CI: 92.2, 100.0) for the use of contrast medium injection, a sensitivity of 96.0% (95% CI: 92.5, 98.2) and specificity of 98.9% (95% CI: 97.2, 99.7) for study categorization as either normal or abnormal, and a sensitivity of 88.2% (95% CI: 81.6, 93.1) and specificity of 73% (95% CI: 62, 81) for causal inference between MRI findings and headache. Conclusion An open-source LLM was able to extract information from free-text radiology reports with excellent accuracy without requiring further training. Keywords: Large Language Model (LLM), Generative Pretrained Transformers (GPT), Open Source, Information Extraction, Report, Brain, MRI Supplemental material is available for this article. Published under a CC BY 4.0 license. See also the commentary by Akinci D'Antonoli and Bluethgen in this issue.
+AU  - Le Guellec, Bastien
+AU  - Lefèvre, Alexandre
+AU  - Geay, Charlotte
+AU  - Shorten, Lucas
+AU  - Bruge, Cyril
+AU  - Hacein-Bey, Lotfi
+AU  - Amouyel, Philippe
+AU  - Pruvo, Jean-Pierre
+AU  - Kuchcinski, Gregory
+AU  - Hamroun, Aghiles
+DA  - 2024 Jul
+DO  - 10.1148/ryai.230364
+IS  - 4
+KW  - Humans
+Retrospective Studies
+*Natural Language Processing
+Female
+Male
+Middle Aged
+MRI
+Sensitivity and Specificity
+*Magnetic Resonance Imaging/methods
+Adult
+Brain
+Report
+Information Extraction
+*Headache/diagnostic imaging/diagnosis
+Brain/diagnostic imaging/pathology
+Emergency Service, Hospital
+Generative Pretrained Transformers (GPT)
+Large Language Model (LLM)
+Open Source
+L1  - internal-pdf://13268/Le Guellec et al. - 2024 - Performance of an Open-Source Large Language Model in Extracting Information from Free-Text Radiolog.pdf
+LA  - eng
+LB  - 2180
+PY  - 2024
+RN  - brain, clinical, radiology, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2638-6100
+SP  - e230364
+ST  - Performance of an Open-Source Large Language Model in Extracting Information from Free-Text Radiology Reports.
+T2  - Radiology. Artificial intelligence
+TI  - Performance of an Open-Source Large Language Model in Extracting Information from Free-Text Radiology Reports
+VL  - 6
+ID  - 1416
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: To develop a natural language processing (NLP) algorithm that identifies social determinants of health (SDoH), including housing, transportation, food, and medication insecurities, social isolation, abuse, neglect, or exploitation, and financial difficulties for patients with Alzheimer's disease and related dementias (ADRD) from unstructured electronic health records (EHRs). DATA SOURCES AND STUDY SETTING: We leveraged 1000 medical notes randomly selected from 7401 emergency department and inpatient social worker notes generated between 2015 and 2019 for 231 unique patients diagnosed with ADRD at Michigan Medicine. STUDY DESIGN: We developed a rule-based NLP algorithm for the identification of seven domains of SDoH noted above. We also compared the rule-based algorithm with deep learning and regularized logistic regression approaches. These models were compared using accuracy, sensitivity, specificity, F1 score, and the area under the receiver operating characteristic curve (AUC). All notes were split into 700 notes for training NLP algorithms, and 300 notes for validation. DATA COLLECTION/EXTRACTION METHODS: Social worker notes used in this study were extracted from the Michigan Medicine EHR database. PRINCIPAL FINDINGS: Of the 700 notes for training, F1 and AUC for the rule-based algorithm were at least 0.94 and 0.95, respectively, for all SDoH categories. Of the 300 notes for validation, F1 and AUC were at least 0.80 and 0.97, respectively, for all SDoH except housing and medication insecurities. The deep learning and regularized logistic regression algorithms had unsatisfactory performance. CONCLUSIONS: The rule-based algorithm can accurately extract SDoH information in all seven domains of SDoH except housing and medication insecurities. Findings from the algorithm can be used by clinicians and social workers to proactively address social needs of patients with ADRD and other vulnerable patient populations.
+AU  - Wu, Wenbo
+AU  - Holkeboer, Kaes J.
+AU  - Kolawole, Temidun O.
+AU  - Carbone, Lorrie
+AU  - Mahmoudi, Elham
+DA  - 2023/12//undefined
+DO  - 10.1111/1475-6773.14210
+IS  - 6
+KW  - natural language processing
+electronic health records
+machine learning
+social determinants of health
+Alzheimer's disease and related dementia
+L1  - internal-pdf://0631704560/Natural language processing to identif-Wu-2023.pdf
+LA  - eng
+LB  - 4079
+N1  - <p>neurocritical_OR_"critical_care"_OR_triage_OR_emergency</p>
+PY  - 2023
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0017-9124
+SP  - 1292–1302
+ST  - Natural language processing to identify social determinants of health in Alzheimer's disease and related dementia from electronic health records
+T2  - Health Serv Res
+TI  - Natural language processing to identify social determinants of health in Alzheimer's disease and related dementia from electronic health records
+UR  - https://doi.org/10.1111/1475-6773.14210
+VL  - 58
+ID  - 1702
+ER  - 
+
+TY  - JOUR
+AB  - Chest radiography is an extremely powerful imaging modality, allowing for a detailed inspection of a patient's chest, but requires specialized training for proper interpretation. With the advent of high performance general purpose computer vision algorithms, the accurate automated analysis of chest radiographs is becoming increasingly of interest to researchers. Here we describe MIMIC-CXR, a large dataset of 227,835 imaging studies for 65,379 patients presenting to the Beth Israel Deaconess Medical Center Emergency Department between 2011-2016. Each imaging study can contain one or more images, usually a frontal view and a lateral view. A total of 377,110 images are available in the dataset. Studies are made available with a semi-structured free-text radiology report that describes the radiological findings of the images, written by a practicing radiologist contemporaneously during routine clinical care. All images and reports have been de-identified to protect patient privacy. The dataset is made freely available to facilitate and encourage a wide range of research in computer vision, natural language processing, and clinical data mining.
+AU  - Johnson, Alistair E. W.
+AU  - Pollard, Tom J.
+AU  - Berkowitz, Seth J.
+AU  - Greenbaum, Nathaniel R.
+AU  - Lungren, Matthew P.
+AU  - Deng, Chih-Ying
+AU  - Mark, Roger G.
+AU  - Horng, Steven
+DA  - 2019 Dec 12
+DO  - 10.1038/s41597-019-0322-0
+IS  - 1
+KW  - Humans
+Natural Language Processing
+*Radiography, Thoracic
+Algorithms
+Data Mining
+*Databases, Factual
+Image Interpretation, Computer-Assisted
+L1  - internal-pdf://13348/Johnson et al. - 2019 - MIMIC-CXR, a de-identified publicly available database of chest radiographs with free-text reports..pdf
+LA  - eng
+LB  - 2260
+PY  - 2019
+RN  - clinical, radiology, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2052-4463
+SP  - 317
+ST  - MIMIC-CXR, a de-identified publicly available database of chest radiographs with free-text reports.
+T2  - Scientific data
+TI  - MIMIC-CXR, a de-identified publicly available database of chest radiographs with free-text reports
+VL  - 6
+ID  - 2924
+ER  - 
+
+TY  - JOUR
+AB  - IMPORTANCE: Large language model (LLM) artificial intelligence (AI) systems have shown promise in diagnostic reasoning, but their utility in management reasoning with no clear right answers is unknown. OBJECTIVE: To determine whether LLM assistance improves physician performance on open-ended management reasoning tasks compared to conventional resources. DESIGN: Prospective, randomized controlled trial conducted from 30 November 2023 to 21 April 2024. SETTING: Multi-institutional study from Stanford University, Beth Israel Deaconess Medical Center, and the University of Virginia involving physicians from across the United States. PARTICIPANTS: 92 practicing attending physicians and residents with training in internal medicine, family medicine, or emergency medicine. INTERVENTION: Five expert-developed clinical case vignettes were presented with multiple open-ended management questions and scoring rubrics created through a Delphi process. Physicians were randomized to use either GPT-4 via ChatGPT Plus in addition to conventional resources (e.g., UpToDate, Google), or conventional resources alone. MAIN OUTCOMES AND MEASURES: The primary outcome was difference in total score between groups on expert-developed scoring rubrics. Secondary outcomes included domain-specific scores and time spent per case. RESULTS: Physicians using the LLM scored higher compared to those using conventional resources (mean difference 6.5 %, 95% CI 2.7-10.2, p<0.001). Significant improvements were seen in management decisions (6.1%, 95% CI 2.5-9.7, p=0.001), diagnostic decisions (12.1%, 95% CI 3.1-21.0, p=0.009), and case-specific (6.2%, 95% CI 2.4-9.9, p=0.002) domains. GPT-4 users spent more time per case (mean difference 119.3 seconds, 95% CI 17.4-221.2, p=0.02). There was no significant difference between GPT-4-augmented physicians and GPT-4 alone (-0.9%, 95% CI -9.0 to 7.2, p=0.8). CONCLUSIONS AND RELEVANCE: LLM assistance improved physician management reasoning compared to conventional resources, with particular gains in contextual and patient-specific decision-making. These findings indicate that LLMs can augment management decision-making in complex cases. TRIAL REGISTRATION: ClinicalTrials.gov Identifier: NCT06208423; https://classic.clinicaltrials.gov/ct2/show/NCT06208423.
+AU  - Goh, Ethan
+AU  - Gallo, Robert
+AU  - Strong, Eric
+AU  - Weng, Yingjie
+AU  - Kerman, Hannah
+AU  - Freed, Jason
+AU  - Cool, Joséphine A.
+AU  - Kanjee, Zahir
+AU  - Lane, Kathleen P.
+AU  - Parsons, Andrew S.
+AU  - Ahuja, Neera
+AU  - Horvitz, Eric
+AU  - Yang, Daniel
+AU  - Milstein, Arnold
+AU  - Olson, Andrew P. J.
+AU  - Hom, Jason
+AU  - Chen, Jonathan H.
+AU  - Rodman, Adam
+DA  - 2024 Aug 7
+DO  - 10.1101/2024.08.05.24311485
+L1  - internal-pdf://11829/Goh et al. - 2024 - Large Language Model Influence on Management Reasoning A Randomized Controlled Trial..pdf
+LA  - eng
+LB  - 910
+PY  - 2024
+RN  - clinical, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+ST  - Large Language Model Influence on Management Reasoning: A Randomized Controlled Trial.
+TI  - Large Language Model Influence on Management Reasoning: A Randomized Controlled Trial
+ID  - 1517
+ER  - 
+
+TY  - JOUR
+AB  - Reservoir dispatching regulations are a crucial basis for reservoir operation, and using information extraction technology to extract entities and relationships from heterogeneous texts to form triples can provide structured knowledge support for professionals in making dispatch decisions and intelligent recommendations. Current information extraction technologies require manual data labeling, consuming a significant amount of time. As the number of dispatch rules increases, this method cannot meet the need for timely generation of dispatch plans during emergency flood control periods. Furthermore, utilizing natural language prompts to guide large language models in completing reservoir dispatch extraction tasks also presents challenges of cognitive load and instability in model output. Therefore, this paper proposes an entity and relationship extraction method for reservoir dispatch based on structured prompt language. Initially, a variety of labels are refined according to the extraction tasks, then organized and defined using the Backus-Naur Form (BNF) to create a structured format, thus better guiding large language models in the extraction work. Moreover, an AI agent based on this method has been developed to facilitate operation by dispatch professionals, allowing for the quick acquisition of structured data. Experimental verification has shown that, in the task of extracting entities and relationships for reservoir dispatch, this AI agent not only effectively reduces cognitive burden and the impact of instability in model output but also demonstrates high extraction performance (with F1 scores for extracting entities and relationships both above 80%), offering a new solution approach for knowledge extraction tasks in other water resource fields.
+AU  - Yang, Yangrui
+AU  - Chen, Sisi
+AU  - Zhu, Yaping
+AU  - Liu, Xuemei
+AU  - Ma, Wei
+AU  - Feng, Ling
+DA  - 2024/06/19/
+DO  - 10.1038/s41598-024-64954-0
+IS  - 1
+KW  - Large language model
+L1  - internal-pdf://0943947732/Intelligent extraction of reservoir-Yang-2024.pdf
+LA  - eng
+LB  - 4057
+N1  - <p>neurocritical_OR_"critical_care"_OR_triage_OR_emergency</p>
+PY  - 2024
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2045-2322
+SP  - 14140
+ST  - Intelligent extraction of reservoir dispatching information integrating large language model and structured prompts
+T2  - Sci Rep
+TI  - Intelligent extraction of reservoir dispatching information integrating large language model and structured prompts
+UR  - https://doi.org/10.1038/s41598-024-64954-0
+VL  - 14
+ID  - 1147
+ER  - 
+
+TY  - JOUR
+AB  - Artificial intelligence (AI) in healthcare is the ability of a computer to perform tasks typically associated with clinical care (e.g. medical decision-making and documentation). AI will soon be integrated into an increasing number of healthcare applications, including elements of emergency department (ED) care. Here, we describe the basics of AI, various categories of its functions (including machine learning and natural language processing) and review emerging and potential future use-cases for emergency care. For example, AI-assisted symptom checkers could help direct patients to the appropriate setting, models could assist in assigning triage levels, and ambient AI systems could document clinical encounters. AI could also help provide focused summaries of charts, summarize encounters for hand-offs, and create discharge instructions with an appropriate language and reading level. Additional use cases include medical decision making for decision rules, real-time models that predict clinical deterioration or sepsis, and efficient extraction of unstructured data for coding, billing, research, and quality initiatives. We discuss the potential transformative benefits of AI, as well as the concerns regarding its use (e.g. privacy, data accuracy, and the potential for changing the doctor-patient relationship).
+AU  - Kachman, Marika M.
+AU  - Brennan, Irina
+AU  - Oskvarek, Jonathan J.
+AU  - Waseem, Tayab
+AU  - Pines, Jesse M.
+DA  - 2024 Jul
+DO  - 10.1016/j.ajem.2024.04.024
+KW  - *Artificial Intelligence Artificial intelligence Humans Machine learning Natural Language Processing Machine Learning Technology Triage/methods Emergency department Clinical Decision-Making/methods Emergency Medical Services/methods Emergency medicine E
+L1  - internal-pdf://2273885593/How artificial intelligence could-Kachman-2024.pdf
+LA  - eng
+LB  - 3238
+N1  - clinical
+PY  - 2024
+RN  - clinical, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1532-8171 0735-6757
+SP  - 40–46
+ST  - How artificial intelligence could transform emergency care. T2 - The American journal of emergency medicine
+TI  - How artificial intelligence could transform emergency care
+VL  - 81
+ID  - 1452
+ER  - 
+
+TY  - JOUR
+AB  - Background This study aimed to evaluate the efficacy of ChatGPT, an advanced natural language processing model, in adapting and synthesizing clinical guidelines for diabetic ketoacidosis (DKA) by comparing and contrasting different guideline sources. Methodology We employed a comprehensive comparison approach and examined three reputable guideline sources: Diabetes Canada Clinical Practice Guidelines Expert Committee (2018), Emergency Management of Hyperglycaemia in Primary Care, and Joint British Diabetes Societies (JBDS) 02 The Management of Diabetic Ketoacidosis in Adults. Data extraction focused on diagnostic criteria, risk factors, signs and symptoms, investigations, and treatment recommendations. We compared the synthesized guidelines generated by ChatGPT and identified any misreporting or non-reporting errors. Results ChatGPT was capable of generating a comprehensive table comparing the guidelines. However, multiple recurrent errors, including misreporting and non-reporting errors, were identified, rendering the results unreliable. Additionally, inconsistencies were observed in the repeated reporting of data. The study highlights the limitations of using ChatGPT for the adaptation of clinical guidelines without expert human intervention. Conclusions Although ChatGPT demonstrates the potential for the synthesis of clinical guidelines, the presence of multiple recurrent errors and inconsistencies underscores the need for expert human intervention and validation. Future research should focus on improving the accuracy and reliability of ChatGPT, as well as exploring its potential applications in other areas of clinical practice and guideline development.
+AU  - Hamed, Ehab
+AU  - Eid, Ahmad
+AU  - Alberry, Medhat
+DA  - 2023 May
+DO  - 10.7759/cureus.38784
+IS  - 5
+KW  - artificial intelligence
+chatgpt
+medical informatics
+evidence-based medicine
+healthcare management
+clinical guidelines
+ai chatbot
+evidence-based recommendations
+healthcare technology
+prompt design
+L1  - internal-pdf://12571/Hamed et al. - 2023 - Exploring ChatGPT's Potential in Facilitating Adaptation of Clinical Guidelines A Case Study of Dia.pdf
+LA  - eng
+LB  - 1567
+PY  - 2023
+RN  - clinical, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2168-8184
+SP  - e38784
+ST  - Exploring ChatGPT's Potential in Facilitating Adaptation of Clinical Guidelines: A Case Study of Diabetic Ketoacidosis Guidelines.
+T2  - Cureus
+TI  - Exploring ChatGPT's Potential in Facilitating Adaptation of Clinical Guidelines: A Case Study of Diabetic Ketoacidosis Guidelines
+VL  - 15
+ID  - 1917
+ER  - 
+
+TY  - JOUR
+AB  - Artificial intelligence (AI) technologies (natural language processing (NLP), speech recognition (SR), and machine learning (ML)) can transform clinical documentation in healthcare. This scoping review evaluates the impact of AI on the accuracy and efficiency of clinical documentation across various clinical settings (hospital wards, emergency departments, and outpatient clinics). We found 176 articles by applying a specific search string on Ovid. To ensure a more comprehensive search process, we also performed manual searches on PubMed and BMJ, examining any relevant references we encountered. In this way, we were able to add 46 more articles, resulting in 222 articles in total. After removing duplicates, 208 articles were screened. This led to the inclusion of 36 studies. We were mostly interested in articles discussing the impact of AI technologies, such as NLP, ML, and SR, and their accuracy and efficiency in clinical documentation. To ensure that our research reflected recent work, we focused our efforts on studies published in 2019 and beyond. This criterion was pilot-tested beforehand and necessary adjustments were made. After comparing screened articles independently, we ensured inter-rater reliability (Cohen's kappa=1.0), and data extraction was completed on these 36 articles. We conducted this study according to the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines. This scoping review shows improvements in clinical documentation using AI technologies, with an emphasis on accuracy and efficiency. There was a reduction in clinician workload, with the streamlining of the documentation processes. Subsequently, doctors also had more time for patient care. However, these articles also raised various challenges surrounding the use of AI in clinical settings. These challenges included the management of errors, legal liability, and integration of AI with electronic health records (EHRs). There were also some ethical concerns regarding the use of AI with patient data. AI shows massive potential for improving the day-to-day work life of doctors across various clinical settings. However, more research is needed to address the many challenges associated with its use. Studies demonstrate improved accuracy and efficiency in clinical documentation with the use of AI. With better regulatory frameworks, implementation, and research, AI can significantly reduce the burden placed on doctors by documentation.
+AU  - Lee, Craig
+AU  - Britto, Shawn
+AU  - Diwan, Khaled
+DA  - 2024 Nov
+DO  - 10.7759/cureus.73994
+IS  - 11
+KW  - scoping review
+ai and machine learning
+artificial intelligence in medicine
+electronic health record (ehr)
+machine learning (ml)
+natural language programing (nlp)
+speech recognition
+ward round
+L1  - internal-pdf://12694/Lee et al. - 2024 - Evaluating the Impact of Artificial Intelligence (AI) on Clinical Documentation Efficiency and Accur.pdf
+LA  - eng
+LB  - 1670
+PY  - 2024
+RN  - clinical, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2168-8184
+SP  - e73994
+ST  - Evaluating the Impact of Artificial Intelligence (AI) on Clinical Documentation Efficiency and Accuracy Across Clinical Settings: A Scoping Review.
+T2  - Cureus
+TI  - Evaluating the Impact of Artificial Intelligence (AI) on Clinical Documentation Efficiency and Accuracy Across Clinical Settings: A Scoping Review
+VL  - 16
+ID  - 1415
+ER  - 
+
+TY  - JOUR
+AB  - Large language models (LLMs) possess a range of capabilities which may be applied to the clinical domain, including text summarization. As ambient artificial intelligence scribes and other LLM-based tools begin to be deployed within healthcare settings, rigorous evaluations of the accuracy of these technologies are urgently needed. In this cross-sectional study of 100 randomly sampled adult Emergency Department (ED) visits from 2012 to 2023 at the University of California, San Francisco ED, we sought to investigate the performance of GPT-4 and GPT-3.5-turbo in generating ED encounter summaries and evaluate the prevalence and type of errors for each section of the encounter summary across three evaluation criteria: 1) Inaccuracy of LLM-summarized information; 2) Hallucination of information; 3) Omission of relevant clinical information. In total, 33% of summaries generated by GPT-4 and 10% of those generated by GPT-3.5-turbo were entirely error-free across all evaluated domains. Summaries generated by GPT-4 were mostly accurate, with inaccuracies found in only 10% of cases, however, 42% of the summaries exhibited hallucinations and 47% omitted clinically relevant information. Inaccuracies and hallucinations were most commonly found in the Plan sections of LLM-generated summaries, while clinical omissions were concentrated in text describing patients' Physical Examination findings or History of Presenting Complaint. The potential harmfulness score across errors was low, with a mean score of 0.57 (SD 1.11) out of 7 and only three errors scoring 4 ('Potential for permanent harm') or greater. In summary, we found that LLMs could generate accurate encounter summaries but were liable to hallucination and omission of clinically relevant information. Individual errors on average had a low potential for harm. A comprehensive understanding of the location and type of errors found in LLM-generated clinical text is important to facilitate clinician review of such content and prevent patient harm.
+AU  - Williams, Christopher Y. K.
+AU  - Bains, Jaskaran
+AU  - Tang, Tianyu
+AU  - Patel, Kishan
+AU  - Lucas, Alexa N.
+AU  - Chen, Fiona
+AU  - Miao, Brenda Y.
+AU  - Butte, Atul J.
+AU  - Kornblith, Aaron E.
+DA  - 2025 Jun
+DO  - 10.1371/journal.pdig.0000899
+IS  - 6
+L1  - internal-pdf://13048/Williams et al. - 2025 - Evaluating large language models for drafting emergency department encounter summaries..pdf
+LA  - eng
+LB  - 1985
+PY  - 2025
+RN  - clinical, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2767-3170
+SP  - e0000899
+ST  - Evaluating large language models for drafting emergency department encounter summaries.
+T2  - PLOS digital health
+TI  - Evaluating large language models for drafting emergency department encounter summaries
+VL  - 4
+ID  - 142
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Large language models (LLMs) show increasing potential for their use in healthcare for administrative support and clinical decision making. However, reports on their performance in critical care medicine is lacking. METHODS: This study evaluated five LLMs (GPT-4o, GPT-4o-mini, GPT-3.5-turbo, Mistral Large 2407 and Llama 3.1 70B) on 1181 multiple choice questions (MCQs) from the gotheextramile.com database, a comprehensive database of critical care questions at European Diploma in Intensive Care examination level. Their performance was compared to random guessing and 350 human physicians on a 77-MCQ practice test. Metrics included accuracy, consistency, and domain-specific performance. Costs, as a proxy for energy consumption, were also analyzed. RESULTS: GPT-4o achieved the highest accuracy at 93.3%, followed by Llama 3.1 70B (87.5%), Mistral Large 2407 (87.9%), GPT-4o-mini (83.0%), and GPT-3.5-turbo (72.7%). Random guessing yielded 41.5% (p < 0.001). On the practice test, all models surpassed human physicians, scoring 89.0%, 80.9%, 84.4%, 80.3%, and 66.5%, respectively, compared to 42.7% for random guessing (p < 0.001) and 61.9% for the human physicians. However, in contrast to the other evaluated LLMs (p < 0.001), GPT-3.5-turbo's performance did not significantly outperform physicians (p = 0.196). Despite high overall consistency, all models gave consistently incorrect answers. The most expensive model was GPT-4o, costing over 25 times more than the least expensive model, GPT-4o-mini. CONCLUSIONS: LLMs exhibit exceptional accuracy and consistency, with four outperforming human physicians on a European-level practice exam. GPT-4o led in performance but raised concerns about energy consumption. Despite their potential in critical care, all models produced consistently incorrect answers, highlighting the need for more thorough and ongoing evaluations to guide responsible implementation in clinical settings.
+AU  - Workum, Jessica D.
+AU  - Volkers, Bas W. S.
+AU  - van de Sande, Davy
+AU  - Arora, Sumesh
+AU  - Goeijenbier, Marco
+AU  - Gommers, Diederik
+AU  - van Genderen, Michel E.
+DA  - 2025 Feb 10
+DO  - 10.1186/s13054-025-05302-0
+IS  - 1
+KW  - Humans
+Large Language Models
+Large language models
+Generative artificial intelligence
+Critical care
+Surveys and Questionnaires
+*Benchmarking/methods/standards
+*Critical Care/methods/standards
+Benchmarking
+L1  - internal-pdf://13053/Workum et al. - 2025 - Comparative evaluation and performance of large language models on expert level critical care questi.pdf
+LA  - eng
+LB  - 1990
+PY  - 2025
+RN  - clinical, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1466-609X 1364-8535
+SP  - 72
+ST  - Comparative evaluation and performance of large language models on expert level critical care questions: a benchmark study.
+T2  - Critical care (London, England)
+TI  - Comparative evaluation and performance of large language models on expert level critical care questions: a benchmark study
+VL  - 29
+ID  - 135
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: For medical diagnosis, clinicians typically begin with a patient's chief concerns, followed by questions about symptoms and medical history, physical examinations, and requests for necessary auxiliary examinations to gather comprehensive medical information. This complex medical investigation process has yet to be modeled by existing artificial intelligence (AI) methodologies. OBJECTIVE: The aim of this study was to develop an AI-driven medical inquiry assistant for clinical diagnosis that provides inquiry recommendations by simulating clinicians' medical investigating logic via reinforcement learning. METHODS: We compiled multicenter, deidentified outpatient electronic health records from 76 hospitals in Shenzhen, China, spanning the period from July to November 2021. These records consisted of both unstructured textual information and structured laboratory test results. We first performed feature extraction and standardization using natural language processing techniques and then used a reinforcement learning actor-critic framework to explore the rational and effective inquiry logic. To align the inquiry process with actual clinical practice, we segmented the inquiry into 4 stages: inquiring about symptoms and medical history, conducting physical examinations, requesting auxiliary examinations, and terminating the inquiry with a diagnosis. External validation was conducted to validate the inquiry logic of the AI model. RESULTS: This study focused on 2 retrospective inquiry-and-diagnosis tasks in the emergency and pediatrics departments. The emergency departments provided records of 339,020 consultations including mainly children (median age 5.2, IQR 2.6-26.1 years) with various types of upper respiratory tract infections (250,638/339,020, 73.93%). The pediatrics department provided records of 561,659 consultations, mainly of children (median age 3.8, IQR 2.0-5.7 years) with various types of upper respiratory tract infections (498,408/561,659, 88.73%). When conducting its own inquiries in both scenarios, the AI model demonstrated high diagnostic performance, with areas under the receiver operating characteristic curve of 0.955 (95% CI 0.953-0.956) and 0.943 (95% CI 0.941-0.944), respectively. When the AI model was used in a simulated collaboration with physicians, it notably reduced the average number of physicians' inquiries to 46% (6.037/13.26; 95% CI 6.009-6.064) and 43% (6.245/14.364; 95% CI 6.225-6.269) while achieving areas under the receiver operating characteristic curve of 0.972 (95% CI 0.970-0.973) and 0.968 (95% CI 0.967-0.969) in the scenarios. External validation revealed a normalized Kendall τ distance of 0.323 (95% CI 0.301-0.346), indicating the inquiry consistency of the AI model with physicians. CONCLUSIONS: This retrospective analysis of predominantly respiratory pediatric presentations in emergency and pediatrics departments demonstrated that an AI-driven diagnostic assistant had high diagnostic performance both in stand-alone use and in simulated collaboration with clinicians. Its investigation process was found to be consistent with the clinicians' medical investigation logic. These findings highlight the diagnostic assistant's promise in assisting the decision-making processes of health care professionals.
+AU  - Zou, Xuan
+AU  - He, Weijie
+AU  - Huang, Yu
+AU  - Ouyang, Yi
+AU  - Zhang, Zhen
+AU  - Wu, Yu
+AU  - Wu, Yongsheng
+AU  - Feng, Lili
+AU  - Wu, Sheng
+AU  - Yang, Mengqi
+AU  - Chen, Xuyan
+AU  - Zheng, Yefeng
+AU  - Jiang, Rui
+AU  - Chen, Ting
+DA  - 2024 Aug 23
+DO  - 10.2196/54616
+KW  - artificial intelligence
+natural language processing
+*Artificial Intelligence
+Humans
+Retrospective Studies
+*Electronic Health Records/statistics & numerical data
+electronic health record
+China
+Algorithms
+reinforcement learning
+Emergency Service, Hospital/statistics & numerical data
+inquiry and diagnosis
+L1  - internal-pdf://0719885380/AI-Driven Diagnostic Assistance in Me-Zou-2024.pdf internal-pdf://2044897756/AI-Driven Diagnostic Assistance in Me-Zou-2021.pdf
+LA  - eng
+LB  - 2674
+PY  - 2024
+RN  - clinical, neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1438-8871 1439-4456
+SP  - e54616
+ST  - AI-Driven Diagnostic Assistance in Medical Inquiry: Reinforcement Learning Algorithm Development and Validation.
+T2  - Journal of medical Internet research
+TI  - AI-Driven Diagnostic Assistance in Medical Inquiry: Reinforcement Learning Algorithm Development and Validation
+VL  - 26
+ID  - 1115
+ER  - 
+

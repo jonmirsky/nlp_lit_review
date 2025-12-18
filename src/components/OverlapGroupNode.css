@@ -1,0 +1,42 @@
+.overlap-group-node .papers-container,
+.branch-term-node .papers-container,
+.uncategorized-node .papers-container,
+.most-cited-aggregate-node .papers-container,
+.most-relevant-aggregate-node .papers-container {
+  margin-top: 10px;
+  max-height: 400px;
+  overflow: hidden;  /* Let PaperList handle scrolling */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.overlap-group-node .clickable,
+.branch-term-node .clickable,
+.most-cited-aggregate-node .clickable,
+.most-relevant-aggregate-node .clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.overlap-group-node .clickable:hover,
+.branch-term-node .clickable:hover,
+.most-cited-aggregate-node .clickable:hover,
+.most-relevant-aggregate-node .clickable:hover {
+  text-decoration: underline;
+}
+
+.overlap-group-node .paper-count,
+.branch-term-node .paper-count,
+.uncategorized-node .paper-count,
+.most-cited-aggregate-node .paper-count,
+.most-relevant-aggregate-node .paper-count {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: normal;
+}
+
+
+
+
