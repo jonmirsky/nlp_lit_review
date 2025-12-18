@@ -5,12 +5,12 @@ Provides API endpoints for frontend
 
 import os
 import requests
-from flask import Flask, jsonify, send_file, request, Response
+from flask import Flask, jsonify, send_file, request, Response, redirect
 from flask_cors import CORS
 from ris_parser import RISParser
 from pdf_resolver import PDFResolver
 from overlap_calculator import OverlapCalculator
-from config import COMMON_SEARCH_TERMS, get_queries_with_ris_files, ONEDRIVE_BASE_URL, RIS_SOURCE_FOLDER, MANUAL_GROUPINGS_FOLDER
+from config import COMMON_SEARCH_TERMS, get_queries_with_ris_files, GITHUB_RELEASE_TAG, RIS_SOURCE_FOLDER, MANUAL_GROUPINGS_FOLDER
 from pathlib import Path
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -177,38 +177,33 @@ def get_pdf(paper_id):
     if not paper or not paper.pdf_path:
         return jsonify({"error": "PDF not found"}), 404
     
-    # Try OneDrive first if configured
-    if ONEDRIVE_BASE_URL:
-        onedrive_url = _pdf_resolver.resolve_to_onedrive_url(paper.pdf_path)
-        if onedrive_url:
+    # Try GitHub Release first if configured
+    if GITHUB_RELEASE_TAG:
+        # Get all possible GitHub URLs (tries both NLP_v4 and zotero_v3 prefixes)
+        github_urls = _pdf_resolver.get_all_github_urls(paper.pdf_path)
+        
+        for github_url in github_urls:
             try:
-                # Fetch PDF from OneDrive with timeout
-                response = requests.get(onedrive_url, timeout=30, stream=True)
+                # Quick HEAD request to check if file exists
+                response = requests.head(github_url, timeout=5, allow_redirects=True)
                 if response.status_code == 200:
-                    # Stream PDF data to client
-                    def generate():
-                        for chunk in response.iter_content(chunk_size=8192):
-                            yield chunk
-                    
-                    flask_response = Response(
-                        generate(),
-                        mimetype='application/pdf',
-                        headers={
-                            'Content-Disposition': 'inline; filename="paper.pdf"',
-                            'X-Content-Type-Options': 'nosniff'
-                        }
-                    )
-                    return flask_response
-                # If OneDrive returns error, fall through to local filesystem
+                    # Redirect to GitHub - faster than proxying through our server
+                    print(f"Redirecting to GitHub: {github_url}")
+                    return redirect(github_url)
+                else:
+                    print(f"GitHub URL returned {response.status_code}: {github_url}")
             except (requests.RequestException, requests.Timeout) as e:
-                # Network error or timeout, fall through to local filesystem
-                print(f"OneDrive fetch failed: {e}, falling back to local filesystem")
+                print(f"GitHub check failed for {github_url}: {e}")
+                continue
+        
+        # If all GitHub URLs failed, fall through to local filesystem
+        print(f"All GitHub URLs failed for paper {paper_id}, trying local filesystem")
     
-    # Fallback to local filesystem
+    # Fallback to local filesystem (for development)
     resolved_path = _pdf_resolver.resolve(paper.pdf_path)
     
     if not resolved_path or not Path(resolved_path).exists():
-        return jsonify({"error": "PDF file not found on disk"}), 404
+        return jsonify({"error": "PDF file not found. Please check that PDFs have been uploaded to GitHub Release."}), 404
     
     # Send file with headers to ensure it opens in new tab/window
     response = send_file(resolved_path, mimetype='application/pdf')
@@ -322,6 +317,7 @@ if __name__ == '__main__':
     # Disable debug mode in production (set FLASK_DEBUG=false in production)
     debug_mode = os.getenv('FLASK_DEBUG', 'False').lower() == 'true'
     app.run(debug=debug_mode, host='0.0.0.0', port=port)
+
 
 
 

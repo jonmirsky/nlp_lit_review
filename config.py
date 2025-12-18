@@ -260,35 +260,51 @@ ENDNOTE_DATA_PATH = get_endnote_data_path()
 # All Endnote data folder paths for PDF search (portable)
 ENDNOTE_DATA_PATHS = get_all_endnote_data_paths()
 
-# OneDrive configuration
-ONEDRIVE_BASE_URL = "https://somumaryland-my.sharepoint.com/:f:/g/personal/jonathan_mirsky_som_umaryland_edu/IgCwkAVnmvluQpWftpTullncAexB3IxNsGS4gMZFr7jbAB8?e=PtZ3AW"
+# GitHub Release configuration for PDFs
+# PDFs are stored as release assets with predictable URLs
+GITHUB_REPO = "jonmirsky/nlp_lit_review"
+GITHUB_RELEASE_TAG = "pdfs-v1"
 
-def get_onedrive_file_url(relative_path: str) -> str:
+def sanitize_filename_for_github(filename: str) -> str:
     """
-    Construct OneDrive download URL for a file.
+    Make filename URL-safe (must match the upload script logic).
     
     Args:
-        relative_path: Relative path from OneDrive base folder (e.g., "full_text_files/NLP_v4.Data/PDF/0352406214/filename.pdf")
+        filename: Original filename (e.g., "Deep Learning for NLP.pdf")
         
     Returns:
-        Direct download URL for the file
+        URL-safe filename (e.g., "Deep_Learning_for_NLP.pdf")
     """
-    from urllib.parse import quote
+    import re
+    from pathlib import Path
     
-    # For SharePoint/OneDrive for Business share links, the format is:
-    # https://[tenant]-my.sharepoint.com/:f:/g/personal/[user]/[folder_id]?e=[token]
-    # To access a file within the folder:
-    # https://[tenant]-my.sharepoint.com/:f:/g/personal/[user]/[folder_id]/[file_path]?download=1
+    # Remove extension, sanitize, re-add extension
+    name = Path(filename).stem
+    ext = Path(filename).suffix
+    # Replace special chars with underscore
+    safe = re.sub(r'[^\w\-]', '_', name)
+    # Collapse multiple underscores
+    safe = re.sub(r'_+', '_', safe)
+    # Trim underscores from ends
+    safe = safe.strip('_')
+    # Limit length to avoid issues
+    if len(safe) > 100:
+        safe = safe[:100]
+    return f"{safe}{ext}"
+
+
+def get_github_pdf_url(source_prefix: str, folder_id: str, filename: str) -> str:
+    """
+    Construct GitHub Release direct download URL for a PDF.
     
-    # Extract base URL and folder ID
-    base_url = ONEDRIVE_BASE_URL.split('?')[0]
-    
-    # URL encode each path component separately (preserve slashes)
-    # SharePoint expects path segments to be URL-encoded
-    encoded_path = '/'.join(quote(part, safe='') for part in relative_path.split('/'))
-    
-    # Construct the download URL by appending the file path to the folder ID
-    # Format: base_url/file_path?download=1
-    file_url = f"{base_url}/{encoded_path}?download=1"
-    
-    return file_url
+    Args:
+        source_prefix: Source folder prefix (e.g., "NLP_v4" or "zotero_v3")
+        folder_id: The numeric folder ID from internal-pdf:// path
+        filename: Original PDF filename
+        
+    Returns:
+        GitHub Release download URL
+    """
+    safe_filename = sanitize_filename_for_github(filename)
+    full_filename = f"{source_prefix}_{folder_id}_{safe_filename}"
+    return f"https://github.com/{GITHUB_REPO}/releases/download/{GITHUB_RELEASE_TAG}/{full_filename}"
