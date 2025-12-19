@@ -51,7 +51,11 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>Literature Review Visualizer</h1>
+        <h1>
+          1 - Scroll to navigate the flowchart (w/ mouse or arrow keys).<br />
+          2 - Click node title to view papers. (click again to close)<br />
+          3 - DOUBLE-click node title to open full text in new tab.
+        </h1>
         <button onClick={fetchVisualizationData} className="refresh-btn">
           Refresh Data
         </button>

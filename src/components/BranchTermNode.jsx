@@ -9,31 +9,38 @@ function BranchTermNode({ data }) {
   const papers = data.papers || [];
   const paperCount = data.paper_count || papers.length;
 
-  const handleLabelClick = (e) => {
-    e.stopPropagation(); // Prevent React Flow from handling the click
+  const handleNodeClick = (e) => {
+    e.stopPropagation();
     setShowPapers(!showPapers);
   };
 
   return (
-    <div className="node branch-term-node">
-      <Handle type="target" position={Position.Top} />
+    <div 
+      className={`node branch-term-node clickable ${showPapers ? 'expanded' : ''}`}
+      onMouseDown={(e) => e.stopPropagation()}
+      title="Click header to toggle paper list"
+    >
+      <Handle type="target" position={Position.Left} />
       <div className="node-content">
         <div 
-          className="node-label clickable"
-          onClick={handleLabelClick}
-          onMouseDown={(e) => e.stopPropagation()} // Prevent node dragging when clicking label
-          title="Click to toggle paper list"
+          className="node-label"
+          onClick={handleNodeClick}
+          style={{ cursor: 'pointer' }}
         >
           {data.label || data.branch_term}
           <span className="paper-count"> ({paperCount} papers)</span>
         </div>
         {showPapers && (
-          <div className="papers-container" onMouseDown={(e) => e.stopPropagation()}>
+          <div 
+            className="papers-container" 
+            onMouseDown={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
+          >
             <PaperList papers={papers} />
           </div>
         )}
       </div>
-      <Handle type="source" position={Position.Bottom} />
+      <Handle type="source" position={Position.Right} />
     </div>
   );
 }

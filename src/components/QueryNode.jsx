@@ -3,27 +3,22 @@ import { Handle, Position } from 'reactflow';
 import './NodeStyles.css';
 
 function QueryNode({ data }) {
-  const [showFullQuery, setShowFullQuery] = useState(false);
   const queryString = data.query || data.query_string || '';
-  // Create a preview by truncating the query to first 100 characters
-  const displayQuery = data.display_query || (queryString ? queryString.substring(0, 100) + '...' : data.label || 'Query');
+  // Check if this is the NLP_Extraction node (show full query)
+  const isNlpExtraction = data.label && data.label.toUpperCase().includes('NLP');
 
   return (
-    <div className="node query-node">
-      <Handle type="target" position={Position.Top} />
+    <div className={`node query-node ${isNlpExtraction ? 'nlp-query-node' : ''}`}>
+      <Handle type="target" position={Position.Left} />
       <div className="node-content">
         <div className="node-label">{data.label}</div>
         {queryString && (
-          <div 
-            className="query-preview clickable"
-            onClick={() => setShowFullQuery(!showFullQuery)}
-            title="Click to toggle full query"
-          >
-            {showFullQuery ? queryString : displayQuery}
+          <div className="query-preview">
+            {queryString}
           </div>
         )}
       </div>
-      <Handle type="source" position={Position.Bottom} />
+      <Handle type="source" position={Position.Right} />
     </div>
   );
 }

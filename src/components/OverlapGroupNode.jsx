@@ -11,9 +11,9 @@ function OverlapGroupNode({ data }) {
   const isMostCitedAggregate = data.is_most_cited_aggregate || false;
   const isMostRelevantAggregate = data.is_most_relevant_aggregate || false;
 
-  const handleLabelClick = (e) => {
-    e.stopPropagation(); // Prevent React Flow from handling the click
-    e.preventDefault(); // Prevent any default behavior
+  const handleNodeClick = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     setShowPapers(!showPapers);
   };
 
@@ -26,32 +26,34 @@ function OverlapGroupNode({ data }) {
   }
 
   return (
-    <div className={`node overlap-group-node ${aggregateClass}`}>
-      <Handle type="target" position={Position.Top} />
+    <div 
+      className={`node overlap-group-node ${aggregateClass} clickable ${showPapers ? 'expanded' : ''}`}
+      onMouseDown={(e) => e.stopPropagation()}
+      title="Click header to toggle paper list"
+    >
+      <Handle type="target" position={Position.Left} />
       <div className="node-content">
         <div 
-          className="node-label clickable"
-          onClick={handleLabelClick}
-          onMouseDown={(e) => e.stopPropagation()} // Prevent node dragging when clicking label
-          title="Click to toggle paper list"
+          className="node-label"
+          onClick={handleNodeClick}
+          style={{ cursor: 'pointer' }}
         >
           {data.label}
           <span className="paper-count"> ({paperCount} papers)</span>
         </div>
         {showPapers && (
-          <div className="papers-container" onMouseDown={(e) => e.stopPropagation()}>
+          <div 
+            className="papers-container" 
+            onMouseDown={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
+          >
             <PaperList papers={papers} />
           </div>
         )}
       </div>
-      <Handle type="source" position={Position.Bottom} />
+      <Handle type="source" position={Position.Right} />
     </div>
   );
 }
 
 export default OverlapGroupNode;
-
-
-
-
-

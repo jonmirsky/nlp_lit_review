@@ -1,17 +1,60 @@
-.flowchart-container {
+.flowchart-wrapper {
   width: 100%;
   height: 100%;
+  overflow: auto;
+  background: #fafafa;
+  cursor: grab;
+}
+
+.flowchart-wrapper:active {
+  cursor: grabbing;
+}
+
+.flowchart-container {
+  position: relative;
 }
 
 .react-flow__node {
   font-size: 12px;
 }
 
+/* Bring expanded nodes to front - target the React Flow wrapper */
+.react-flow__node:has(.node.expanded) {
+  z-index: 1000 !important;
+}
+
+/* NLP Extraction database node height - target React Flow wrapper */
+.react-flow__node:has(.nlp-extraction-node) {
+  height: auto !important;
+  min-height: 500px !important;
+}
+
+.react-flow__node:has(.nlp-extraction-node) .nlp-extraction-node {
+  height: 500px !important;
+  min-height: 500px !important;
+}
+
+/* NLP Extraction query node - target React Flow wrapper */
+.react-flow__node:has(.nlp-query-node) {
+  height: auto !important;
+  min-height: 200px !important;
+  width: 350px !important;
+  max-width: 350px !important;
+}
+
+.react-flow__node:has(.nlp-query-node) .nlp-query-node {
+  height: auto !important;
+  min-height: 200px !important;
+  width: 350px !important;
+  max-width: 350px !important;
+}
+
+/* Ensure edges don't show pointer cursor */
+.react-flow__edge,
+.react-flow__edge-path {
+  cursor: default;
+}
+
 .react-flow__edge-path {
   stroke-width: 2;
 }
-
-
-
-
-

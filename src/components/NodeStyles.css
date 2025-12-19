@@ -8,10 +8,16 @@
   text-align: center;
 }
 
+.node.clickable {
+  cursor: pointer;
+}
+
 .node-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .node-label {
@@ -29,7 +35,35 @@
 
 .database-node .node-label {
   color: white;
-  font-size: 16px;
+  font-size: 21px;
+}
+
+/* NLP_Extraction node - 60% taller */
+.nlp-extraction-node {
+  height: 500px !important; /* Increased height for full text visibility */
+  min-height: 200px !important;
+  min-width: 300px !important; /* Wider to show more text */
+  width: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nlp-extraction-node .node-content {
+  height: 300px;
+  min-height: 180px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Allow NLP extraction node label to show full text */
+.nlp-extraction-node .node-label {
+  max-width: none !important;
+  width: 100%;
+  padding: 10px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: visible;
 }
 
 .uncategorized-node {
@@ -39,7 +73,7 @@
 
 .uncategorized-node .node-label {
   color: white;
-  font-size: 16px;
+  font-size: 21px;
 }
 
 .uncategorized-node .clickable {
@@ -66,7 +100,7 @@
 
 .query-node .node-label {
   color: white;
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 600;
   margin-bottom: 5px;
 }
@@ -76,9 +110,31 @@
   color: rgba(255, 255, 255, 0.9);
   margin-top: 5px;
   word-wrap: break-word;
-  max-width: 250px;
-  max-height: 60px;
-  overflow-y: auto;
+  max-width: 400px;
+  max-height: none;
+  overflow: visible;
+  white-space: normal;
+}
+
+/* NLP Extraction query node - show full text with vertical expansion */
+.nlp-query-node {
+  width: 350px !important;
+  max-width: 350px !important;
+  min-height: 200px !important;
+  height: auto !important;
+}
+
+.nlp-query-node .query-preview {
+  width: 100% !important;
+  max-width: 320px !important;
+  max-height: none !important;
+  overflow: visible !important;
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 10px;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
 }
 
 .query-node .query-preview.clickable {
@@ -94,7 +150,7 @@
 
 .branch-term-node .node-label {
   color: white;
-  font-size: 13px;
+  font-size: 18px;
 }
 
 .overlap-group-node {
@@ -105,7 +161,7 @@
 
 .overlap-group-node .node-label {
   color: white;
-  font-size: 12px;
+  font-size: 17px;
 }
 
 .most-cited-aggregate-node {
@@ -116,7 +172,7 @@
 
 .most-cited-aggregate-node .node-label {
   color: white;
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 600;
 }
 
@@ -134,7 +190,7 @@
 
 .most-relevant-aggregate-node .node-label {
   color: white;
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 600;
 }
 
