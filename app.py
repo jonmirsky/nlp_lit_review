@@ -235,10 +235,27 @@ def check_pdf(paper_id):
     if not paper.pdf_path:
         return jsonify({"available": False, "error": "No PDF path in record"})
     
+    # Check R2 first if configured
+    if R2_BUCKET_NAME:
+        r2_urls = _pdf_resolver.get_all_r2_urls(paper.pdf_path)
+        for r2_url in r2_urls:
+            try:
+                response = requests.head(r2_url, timeout=3, allow_redirects=True)
+                if response.status_code == 200:
+                    return jsonify({
+                        "available": True,
+                        "path": paper.pdf_path,
+                        "source": "R2"
+                    })
+            except (requests.RequestException, requests.Timeout):
+                continue
+    
+    # Fallback to local filesystem check
     available = _pdf_resolver.is_pdf_available(paper.pdf_path)
     return jsonify({
         "available": available,
-        "path": paper.pdf_path
+        "path": paper.pdf_path,
+        "source": "local" if available else "none"
     })
 
 
