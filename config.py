@@ -312,7 +312,7 @@ def get_r2_pdf_url(source_prefix: str, folder_id: str, filename: str) -> str:
     # #endregion
     safe_filename = sanitize_filename_for_r2(filename)
     full_filename = f"{source_prefix}_{folder_id}_{safe_filename}"
-    url = f"{R2_PUBLIC_URL_BASE}/{full_filename}"
+    url = f"{R2_PUBLIC_URL_BASE}/{R2_BUCKET_NAME}/{full_filename}"
     # #region agent log
     with open('/Users/jon/Documents/badjatia_hu/.cursor/debug.log', 'a') as f:
         f.write(json.dumps({"sessionId":"debug-session","runId":"run1","hypothesisId":"A","location":"config.py:get_r2_pdf_url","message":"URL constructed","data":{"safe_filename":safe_filename,"full_filename":full_filename,"url":url,"bucket_name":R2_BUCKET_NAME},"timestamp":__import__('time').time()*1000})+"\n")
