@@ -179,13 +179,25 @@ def get_pdf(paper_id):
     
     # Try Cloudflare R2 first if configured
     if R2_BUCKET_NAME:
+        import json
+        # #region agent log
+        with open('/Users/jon/Documents/badjatia_hu/.cursor/debug.log', 'a') as f:
+            f.write(json.dumps({"sessionId":"debug-session","runId":"run1","hypothesisId":"B","location":"app.py:get_pdf","message":"R2 check start","data":{"paper_id":paper_id,"pdf_path":paper.pdf_path,"bucket_name":R2_BUCKET_NAME},"timestamp":__import__('time').time()*1000})+"\n")
+        # #endregion
         # Get all possible R2 URLs (tries both NLP_v4 and zotero_v3 prefixes)
         r2_urls = _pdf_resolver.get_all_r2_urls(paper.pdf_path)
-        
+        # #region agent log
+        with open('/Users/jon/Documents/badjatia_hu/.cursor/debug.log', 'a') as f:
+            f.write(json.dumps({"sessionId":"debug-session","runId":"run1","hypothesisId":"B","location":"app.py:get_pdf","message":"R2 URLs generated","data":{"url_count":len(r2_urls),"urls":r2_urls},"timestamp":__import__('time').time()*1000})+"\n")
+        # #endregion
         for r2_url in r2_urls:
             try:
                 # Quick HEAD request to check if file exists
                 response = requests.head(r2_url, timeout=5, allow_redirects=True)
+                # #region agent log
+                with open('/Users/jon/Documents/badjatia_hu/.cursor/debug.log', 'a') as f:
+                    f.write(json.dumps({"sessionId":"debug-session","runId":"run1","hypothesisId":"C","location":"app.py:get_pdf","message":"R2 HEAD response","data":{"url":r2_url,"status_code":response.status_code,"headers":dict(response.headers)},"timestamp":__import__('time').time()*1000})+"\n")
+                # #endregion
                 if response.status_code == 200:
                     # Redirect to R2 - faster than proxying through our server
                     print(f"Redirecting to R2: {r2_url}")
@@ -193,6 +205,10 @@ def get_pdf(paper_id):
                 else:
                     print(f"R2 URL returned {response.status_code}: {r2_url}")
             except (requests.RequestException, requests.Timeout) as e:
+                # #region agent log
+                with open('/Users/jon/Documents/badjatia_hu/.cursor/debug.log', 'a') as f:
+                    f.write(json.dumps({"sessionId":"debug-session","runId":"run1","hypothesisId":"D","location":"app.py:get_pdf","message":"R2 request exception","data":{"url":r2_url,"error":str(e)},"timestamp":__import__('time').time()*1000})+"\n")
+                # #endregion
                 print(f"R2 check failed for {r2_url}: {e}")
                 continue
         
