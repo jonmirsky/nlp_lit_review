@@ -87,8 +87,9 @@ function PaperList({ papers }) {
         const pdfUrl = `/api/pdf/${paper.id}`;
         const newWindow = window.open(pdfUrl, '_blank', 'noopener,noreferrer');
         
-        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-          // Popup was blocked - inform user
+        // Only show alert if window.open() returned null (definitive popup block)
+        // Don't check newWindow.closed immediately as it can be unreliable
+        if (!newWindow) {
           alert('Popup blocked. Please allow popups for this site to view PDFs, or right-click the paper and select "Open in new tab".');
         }
       } else {
@@ -99,7 +100,7 @@ function PaperList({ papers }) {
       // Try to open in new tab anyway
       const pdfUrl = `/api/pdf/${paper.id}`;
       const newWindow = window.open(pdfUrl, '_blank', 'noopener,noreferrer');
-      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+      if (!newWindow) {
         alert('Could not open PDF. Please check your popup blocker settings.');
       }
     }
