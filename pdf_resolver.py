@@ -153,20 +153,26 @@ class PDFResolver:
         Returns:
             List of possible R2 URLs to try
         """
+        print(f"[PDF RESOLVER] get_all_r2_urls called with: internal_path={internal_path}, R2_BUCKET_NAME={R2_BUCKET_NAME}")
         if not internal_path or not R2_BUCKET_NAME:
+            print(f"[PDF RESOLVER] Early return: internal_path={internal_path}, R2_BUCKET_NAME={R2_BUCKET_NAME}")
             return []
         
         # Parse internal-pdf:// format
         match = re.match(r'internal-pdf://(\d+)/(.+)', internal_path)
         if not match:
+            print(f"[PDF RESOLVER] Failed to parse internal_path: {internal_path}")
             return []
         
         folder_id = match.group(1)
         filename = match.group(2)
+        print(f"[PDF RESOLVER] Parsed: folder_id={folder_id}, filename={filename}")
         
         # Return URLs for both possible prefixes
         prefixes = ['NLP_v4', 'zotero_v3']
-        return [get_r2_pdf_url(prefix, folder_id, filename) for prefix in prefixes]
+        urls = [get_r2_pdf_url(prefix, folder_id, filename) for prefix in prefixes]
+        print(f"[PDF RESOLVER] Generated URLs: {urls}")
+        return urls
 
 
 

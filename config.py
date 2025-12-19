@@ -309,4 +309,5 @@ def get_r2_pdf_url(source_prefix: str, folder_id: str, filename: str) -> str:
     full_filename = f"{source_prefix}_{folder_id}_{safe_filename}"
     # R2 public dev URL is already bucket-specific, don't include bucket name
     url = f"{R2_PUBLIC_URL_BASE}/{full_filename}"
+    print(f"[URL CONSTRUCTION] prefix={source_prefix}, folder_id={folder_id}, filename={filename}, safe_filename={safe_filename}, full_filename={full_filename}, url={url}")
     return url

@@ -179,25 +179,29 @@ def get_pdf(paper_id):
     
     # Try Cloudflare R2 first if configured
     if R2_BUCKET_NAME:
+        print(f"[PDF DEBUG] Paper ID: {paper_id}, pdf_path: {paper.pdf_path}")
         # Get all possible R2 URLs (tries both NLP_v4 and zotero_v3 prefixes)
         r2_urls = _pdf_resolver.get_all_r2_urls(paper.pdf_path)
+        print(f"[PDF DEBUG] Generated {len(r2_urls)} R2 URLs: {r2_urls}")
         
         for r2_url in r2_urls:
             try:
+                print(f"[PDF DEBUG] Checking R2 URL: {r2_url}")
                 # Quick HEAD request to check if file exists
                 response = requests.head(r2_url, timeout=5, allow_redirects=True)
+                print(f"[PDF DEBUG] R2 HEAD response: status={response.status_code}, headers={dict(response.headers)}")
                 if response.status_code == 200:
                     # Redirect to R2 - faster than proxying through our server
-                    print(f"Redirecting to R2: {r2_url}")
+                    print(f"[PDF DEBUG] SUCCESS - Redirecting to R2: {r2_url}")
                     return redirect(r2_url)
                 else:
-                    print(f"R2 URL returned {response.status_code}: {r2_url}")
+                    print(f"[PDF DEBUG] R2 URL returned {response.status_code}: {r2_url}")
             except (requests.RequestException, requests.Timeout) as e:
-                print(f"R2 check failed for {r2_url}: {e}")
+                print(f"[PDF DEBUG] R2 check failed for {r2_url}: {type(e).__name__}: {e}")
                 continue
         
         # If all R2 URLs failed, fall through to local filesystem
-        print(f"All R2 URLs failed for paper {paper_id}, trying local filesystem")
+        print(f"[PDF DEBUG] All R2 URLs failed for paper {paper_id}, trying local filesystem")
     
     # Fallback to local filesystem (for development)
     resolved_path = _pdf_resolver.resolve(paper.pdf_path)
