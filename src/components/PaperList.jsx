@@ -83,15 +83,11 @@ function PaperList({ papers }) {
       const data = await response.json();
 
       if (data.available) {
-        // Open PDF in new tab - ensure it stays in new tab
+        // Open PDF in new tab
         const pdfUrl = `/api/pdf/${paper.id}`;
-        const newWindow = window.open(pdfUrl, '_blank', 'noopener,noreferrer');
-        
-        // Only show alert if window.open() returned null (definitive popup block)
-        // Don't check newWindow.closed immediately as it can be unreliable
-        if (!newWindow) {
-          alert('Popup blocked. Please allow popups for this site to view PDFs, or right-click the paper and select "Open in new tab".');
-        }
+        window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+        // Note: If popup is blocked, browser will show its own indicator
+        // User can right-click paper and select "Open in new tab" as workaround
       } else {
         alert('PDF not available: ' + (data.error || 'File not found'));
       }
@@ -99,10 +95,7 @@ function PaperList({ papers }) {
       console.error('Error checking PDF:', error);
       // Try to open in new tab anyway
       const pdfUrl = `/api/pdf/${paper.id}`;
-      const newWindow = window.open(pdfUrl, '_blank', 'noopener,noreferrer');
-      if (!newWindow) {
-        alert('Could not open PDF. Please check your popup blocker settings.');
-      }
+      window.open(pdfUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
