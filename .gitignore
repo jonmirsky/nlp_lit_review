@@ -36,3 +36,6 @@ npm-debug.log*
 
 # PyInstaller
 *.spec.bak
+
+# PDFs (stored in Cloudflare R2, not in Git)
+pdfs_for_github/
