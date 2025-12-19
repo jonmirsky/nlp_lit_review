@@ -325,7 +325,7 @@ def main():
         "--output-dir",
         type=str,
         default=None,
-        help="Output directory for folder structure (defaults to project root)"
+        help="Output directory for folder structure (defaults to OneDrive location)"
     )
     parser.add_argument(
         "--clean",
@@ -339,9 +339,8 @@ def main():
     if args.output_dir:
         output_dir = Path(args.output_dir).absolute()
     else:
-        # Default to project root
-        project_root = Path(__file__).parent.parent
-        output_dir = project_root / "organized_papers"
+        # Default to OneDrive location
+        output_dir = Path("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/organized_papers")
     
     # Create folder structure
     try:

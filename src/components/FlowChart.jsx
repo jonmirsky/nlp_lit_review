@@ -179,28 +179,31 @@ function FlowChartInner({ data }) {
     return height;
   };
 
-  // Calculate content bounds from nodes with padding
+  // Calculate content bounds from nodes with padding (optimized - only recalculate when nodes change)
   const contentBounds = useMemo(() => {
     if (!nodes || nodes.length === 0) {
-      return { width: 1500, height: 2000 };
+      return { width: 1500, height: 2000, offsetX: 0, offsetY: 0 };
     }
     
     let minX = Infinity, maxX = -Infinity;
     let minY = Infinity, maxY = -Infinity;
     
-    nodes.forEach(node => {
+    // Optimize: only iterate once, cache height calculations
+    for (let i = 0; i < nodes.length; i++) {
+      const node = nodes[i];
       const x = node.position?.x || 0;
       const y = node.position?.y || 0;
       const label = node.data?.label || '';
       const isNlpExtraction = node.data?.is_nlp_extraction || false;
-      const nodeHeight = estimateNodeHeight(label, isNlpExtraction);
-      const nodeWidth = 250; // Approximate node width
+      const isNlpQuery = label && label.toUpperCase().includes('NLP') && label.toUpperCase().includes('EXTRACTION');
+      const nodeHeight = estimateNodeHeight(label, isNlpExtraction || isNlpQuery);
+      const nodeWidth = isNlpQuery ? 350 : 250; // NLP query nodes are wider
       
-      minX = Math.min(minX, x);
-      maxX = Math.max(maxX, x + nodeWidth);
-      minY = Math.min(minY, y);
-      maxY = Math.max(maxY, y + nodeHeight);
-    });
+      if (x < minX) minX = x;
+      if (x + nodeWidth > maxX) maxX = x + nodeWidth;
+      if (y < minY) minY = y;
+      if (y + nodeHeight > maxY) maxY = y + nodeHeight;
+    }
     
     // Add padding (2% on each side for top/left)
     const baseWidth = (maxX - minX) * 1.04;
