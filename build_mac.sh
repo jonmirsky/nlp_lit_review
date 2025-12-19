@@ -142,3 +142,4 @@ echo "  2. Users download and extract the zip file"
 echo "  3. Users double-click LiteratureReviewVisualizer.app to run"
 echo ""
 
+

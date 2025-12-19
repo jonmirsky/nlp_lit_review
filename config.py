@@ -260,12 +260,12 @@ ENDNOTE_DATA_PATH = get_endnote_data_path()
 # All Endnote data folder paths for PDF search (portable)
 ENDNOTE_DATA_PATHS = get_all_endnote_data_paths()
 
-# GitHub Release configuration for PDFs
-# PDFs are stored as release assets with predictable URLs
-GITHUB_REPO = "jonmirsky/nlp_lit_review"
-GITHUB_RELEASE_TAG = "pdfs-v1"
+# Cloudflare R2 configuration for PDFs
+# PDFs are stored in R2 bucket with public access
+R2_BUCKET_NAME = "nlp-lit-review-pdfs"
+R2_PUBLIC_URL_BASE = "https://pub-d9c17dcc87a846d9ba3abbbbc811018d.r2.dev"
 
-def sanitize_filename_for_github(filename: str) -> str:
+def sanitize_filename_for_r2(filename: str) -> str:
     """
     Make filename URL-safe (must match the upload script logic).
     
@@ -293,9 +293,9 @@ def sanitize_filename_for_github(filename: str) -> str:
     return f"{safe}{ext}"
 
 
-def get_github_pdf_url(source_prefix: str, folder_id: str, filename: str) -> str:
+def get_r2_pdf_url(source_prefix: str, folder_id: str, filename: str) -> str:
     """
-    Construct GitHub Release direct download URL for a PDF.
+    Construct Cloudflare R2 public URL for a PDF.
     
     Args:
         source_prefix: Source folder prefix (e.g., "NLP_v4" or "zotero_v3")
@@ -303,8 +303,8 @@ def get_github_pdf_url(source_prefix: str, folder_id: str, filename: str) -> str
         filename: Original PDF filename
         
     Returns:
-        GitHub Release download URL
+        Cloudflare R2 public URL
     """
-    safe_filename = sanitize_filename_for_github(filename)
+    safe_filename = sanitize_filename_for_r2(filename)
     full_filename = f"{source_prefix}_{folder_id}_{safe_filename}"
-    return f"https://github.com/{GITHUB_REPO}/releases/download/{GITHUB_RELEASE_TAG}/{full_filename}"
+    return f"{R2_PUBLIC_URL_BASE}/{full_filename}"

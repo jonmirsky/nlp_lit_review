@@ -7,7 +7,7 @@ import os
 import re
 from pathlib import Path
 from typing import Optional, Dict, List
-from config import ENDNOTE_DATA_PATHS, get_github_pdf_url, GITHUB_RELEASE_TAG
+from config import ENDNOTE_DATA_PATHS, get_r2_pdf_url, R2_BUCKET_NAME
 
 
 class PDFResolver:
@@ -113,17 +113,17 @@ class PDFResolver:
         resolved = self.resolve(internal_path)
         return resolved is not None and Path(resolved).exists()
     
-    def resolve_to_github_url(self, internal_path: str) -> Optional[str]:
+    def resolve_to_r2_url(self, internal_path: str) -> Optional[str]:
         """
-        Resolve internal-pdf:// path to GitHub Release URL.
+        Resolve internal-pdf:// path to Cloudflare R2 URL.
         
         Args:
             internal_path: Path in format internal-pdf://[id]/[filename].pdf
             
         Returns:
-            GitHub Release download URL if path can be constructed, None otherwise
+            Cloudflare R2 public URL if path can be constructed, None otherwise
         """
-        if not internal_path or not GITHUB_RELEASE_TAG:
+        if not internal_path or not R2_BUCKET_NAME:
             return None
         
         # Parse internal-pdf:// format
@@ -141,19 +141,19 @@ class PDFResolver:
         # Return the first URL - the caller will check if it works
         # If NLP_v4 returns 404, we could try zotero_v3, but for now
         # we return the most likely one to minimize requests
-        return get_github_pdf_url(prefixes[0], folder_id, filename)
+        return get_r2_pdf_url(prefixes[0], folder_id, filename)
     
-    def get_all_github_urls(self, internal_path: str) -> List[str]:
+    def get_all_r2_urls(self, internal_path: str) -> List[str]:
         """
-        Get all possible GitHub Release URLs for a PDF.
+        Get all possible Cloudflare R2 URLs for a PDF.
         
         Args:
             internal_path: Path in format internal-pdf://[id]/[filename].pdf
             
         Returns:
-            List of possible GitHub Release URLs to try
+            List of possible R2 URLs to try
         """
-        if not internal_path or not GITHUB_RELEASE_TAG:
+        if not internal_path or not R2_BUCKET_NAME:
             return []
         
         # Parse internal-pdf:// format
@@ -166,7 +166,7 @@ class PDFResolver:
         
         # Return URLs for both possible prefixes
         prefixes = ['NLP_v4', 'zotero_v3']
-        return [get_github_pdf_url(prefix, folder_id, filename) for prefix in prefixes]
+        return [get_r2_pdf_url(prefix, folder_id, filename) for prefix in prefixes]
 
 
 

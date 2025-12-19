@@ -125,3 +125,4 @@ LiteratureReviewVisualizer/
 - The app runs a local server - no internet connection required after initial setup
 - All data stays local - nothing is sent to the internet
 
+

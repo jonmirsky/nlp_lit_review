@@ -10,7 +10,7 @@ from flask_cors import CORS
 from ris_parser import RISParser
 from pdf_resolver import PDFResolver
 from overlap_calculator import OverlapCalculator
-from config import COMMON_SEARCH_TERMS, get_queries_with_ris_files, GITHUB_RELEASE_TAG, RIS_SOURCE_FOLDER, MANUAL_GROUPINGS_FOLDER
+from config import COMMON_SEARCH_TERMS, get_queries_with_ris_files, R2_BUCKET_NAME, RIS_SOURCE_FOLDER, MANUAL_GROUPINGS_FOLDER
 from pathlib import Path
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -177,33 +177,33 @@ def get_pdf(paper_id):
     if not paper or not paper.pdf_path:
         return jsonify({"error": "PDF not found"}), 404
     
-    # Try GitHub Release first if configured
-    if GITHUB_RELEASE_TAG:
-        # Get all possible GitHub URLs (tries both NLP_v4 and zotero_v3 prefixes)
-        github_urls = _pdf_resolver.get_all_github_urls(paper.pdf_path)
+    # Try Cloudflare R2 first if configured
+    if R2_BUCKET_NAME:
+        # Get all possible R2 URLs (tries both NLP_v4 and zotero_v3 prefixes)
+        r2_urls = _pdf_resolver.get_all_r2_urls(paper.pdf_path)
         
-        for github_url in github_urls:
+        for r2_url in r2_urls:
             try:
                 # Quick HEAD request to check if file exists
-                response = requests.head(github_url, timeout=5, allow_redirects=True)
+                response = requests.head(r2_url, timeout=5, allow_redirects=True)
                 if response.status_code == 200:
-                    # Redirect to GitHub - faster than proxying through our server
-                    print(f"Redirecting to GitHub: {github_url}")
-                    return redirect(github_url)
+                    # Redirect to R2 - faster than proxying through our server
+                    print(f"Redirecting to R2: {r2_url}")
+                    return redirect(r2_url)
                 else:
-                    print(f"GitHub URL returned {response.status_code}: {github_url}")
+                    print(f"R2 URL returned {response.status_code}: {r2_url}")
             except (requests.RequestException, requests.Timeout) as e:
-                print(f"GitHub check failed for {github_url}: {e}")
+                print(f"R2 check failed for {r2_url}: {e}")
                 continue
         
-        # If all GitHub URLs failed, fall through to local filesystem
-        print(f"All GitHub URLs failed for paper {paper_id}, trying local filesystem")
+        # If all R2 URLs failed, fall through to local filesystem
+        print(f"All R2 URLs failed for paper {paper_id}, trying local filesystem")
     
     # Fallback to local filesystem (for development)
     resolved_path = _pdf_resolver.resolve(paper.pdf_path)
     
     if not resolved_path or not Path(resolved_path).exists():
-        return jsonify({"error": "PDF file not found. Please check that PDFs have been uploaded to GitHub Release."}), 404
+        return jsonify({"error": "PDF file not found. Please check that PDFs have been uploaded to Cloudflare R2."}), 404
     
     # Send file with headers to ensure it opens in new tab/window
     response = send_file(resolved_path, mimetype='application/pdf')
