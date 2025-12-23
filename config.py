@@ -108,17 +108,19 @@ def get_all_endnote_data_paths():
     
     # Development paths (absolute)
     # After consolidation: all PDFs now in NLP_v4.Data (aligns with R2 prefix naming)
+    # Performance: Check parent directory before PDF subdirectory (fewer folders to scan)
     dev_paths = [
-        Path("/Users/jon/Documents/badjatia_hu/Endnote/NLP_v4.Data/PDF"),
         Path("/Users/jon/Documents/badjatia_hu/Endnote/NLP_v4.Data"),
+        Path("/Users/jon/Documents/badjatia_hu/Endnote/NLP_v4.Data/PDF"),
         Path("/Users/jon/Documents/badjatia_hu/Endnote/search_term_results"),
     ]
     
     # Bundled app paths (relative)
     # After consolidation: all PDFs now in NLP_v4.Data (aligns with R2 prefix naming)
+    # Performance: Check parent directory before PDF subdirectory (fewer folders to scan)
     bundled_paths = [
-        base_path / "data" / "Endnote" / "NLP_v4.Data" / "PDF",
         base_path / "data" / "Endnote" / "NLP_v4.Data",
+        base_path / "data" / "Endnote" / "NLP_v4.Data" / "PDF",
         base_path / "data" / "Endnote" / "search_term_results",
     ]
     

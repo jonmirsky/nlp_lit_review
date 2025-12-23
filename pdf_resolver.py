@@ -54,10 +54,10 @@ class PDFResolver:
             # Strategy 1: Look by ID and filename
             # Note: We check the ID folder directly (primary location matching internal-pdf:// format)
             # Removed expensive iterdir() loop that was iterating through 3,545+ folders
+            # Removed endnote_path / filename check - unlikely to find files in root PDF dir (3,544 folders)
             possible_paths = [
                 endnote_path / pdf_id / filename,
                 endnote_path / f"{pdf_id}.pdf",
-                endnote_path / filename,
             ]
             
             # Try each possible path
