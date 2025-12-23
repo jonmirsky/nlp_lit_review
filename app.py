@@ -4,6 +4,7 @@ Provides API endpoints for frontend
 """
 
 import os
+import time
 import requests
 from flask import Flask, jsonify, send_file, request, Response, redirect
 from flask_cors import CORS
@@ -35,8 +36,12 @@ def load_data():
         return  # Already tried and failed
     
     try:
+        start_total = time.time()
+        
         # Resolve RIS files from prefixes
+        start = time.time()
         resolved_queries = get_queries_with_ris_files()
+        print(f"[TIMING] Resolve queries: {time.time() - start:.2f}s")
         print(f"Loading papers from {len(resolved_queries)} query/queries")
         
         if not resolved_queries:
@@ -46,11 +51,15 @@ def load_data():
             return
         
         # Initialize PDF resolver
+        start = time.time()
         _pdf_resolver = PDFResolver()
+        print(f"[TIMING] Initialize PDF resolver: {time.time() - start:.2f}s")
         
         # Build hierarchy using OverlapCalculator (it will load papers from all RIS files)
+        start = time.time()
         calculator = OverlapCalculator(resolved_queries)
         query_databases = calculator.load_papers_from_queries()
+        print(f"[TIMING] Load papers from queries: {time.time() - start:.2f}s")
         
         # Get all papers from calculator
         _papers_cache = calculator.all_papers
@@ -63,15 +72,25 @@ def load_data():
             return
         
         # Load most-cited papers
+        start = time.time()
         calculator.load_most_cited_papers()
+        print(f"[TIMING] Load most-cited papers: {time.time() - start:.2f}s")
         
         # Load most-relevant papers
+        start = time.time()
         calculator.load_most_relevant_papers()
+        print(f"[TIMING] Load most-relevant papers: {time.time() - start:.2f}s")
         
         # Build hierarchy
+        start = time.time()
         _hierarchy_cache = calculator.build_hierarchy()
-        _visualization_cache = calculator.get_visualization_data(_hierarchy_cache)
+        print(f"[TIMING] Build hierarchy: {time.time() - start:.2f}s")
         
+        start = time.time()
+        _visualization_cache = calculator.get_visualization_data(_hierarchy_cache)
+        print(f"[TIMING] Build visualization: {time.time() - start:.2f}s")
+        
+        print(f"[TIMING] TOTAL LOAD TIME: {time.time() - start_total:.2f}s")
         print("Data loaded successfully")
         
     except FileNotFoundError as e:
@@ -338,6 +357,9 @@ if __name__ == '__main__':
     # Disable debug mode in production (set FLASK_DEBUG=false in production)
     debug_mode = os.getenv('FLASK_DEBUG', 'False').lower() == 'true'
     app.run(debug=debug_mode, host='0.0.0.0', port=port)
+
+
+
 
 
 
