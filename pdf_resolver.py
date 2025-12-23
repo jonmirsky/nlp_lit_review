@@ -52,13 +52,19 @@ class PDFResolver:
                 continue
                 
             # Strategy 1: Look by ID and filename
-            # Note: We check the ID folder directly (primary location matching internal-pdf:// format)
-            # Removed expensive iterdir() loop that was iterating through 3,545+ folders
-            # Removed endnote_path / filename check - unlikely to find files in root PDF dir (3,544 folders)
             possible_paths = [
                 endnote_path / pdf_id / filename,
                 endnote_path / f"{pdf_id}.pdf",
+                endnote_path / filename,
             ]
+            
+            # Also check subdirectories
+            for item in endnote_path.iterdir():
+                if item.is_dir():
+                    possible_paths.extend([
+                        item / filename,
+                        item / f"{pdf_id}.pdf",
+                    ])
             
             # Try each possible path
             for path in possible_paths:
@@ -128,13 +134,13 @@ class PDFResolver:
         folder_id = match.group(1)
         filename = match.group(2)
         
-        # Try NLP_v4 first (all R2 files use NLP_v4 prefix), then zotero_v3 as fallback
+        # Try NLP_v4 first (98 unique PDFs there), then zotero_v3
         # The prefixes must match what the upload script uses
-        # Note: After consolidation, local PDFs are in from_zotero_v3.Data, but R2 files still use NLP_v4 prefix
         prefixes = ['NLP_v4', 'zotero_v3']
         
         # Return the first URL - the caller will check if it works
-        # NLP_v4 is tried first since all files in R2 use that prefix
+        # If NLP_v4 returns 404, we could try zotero_v3, but for now
+        # we return the most likely one to minimize requests
         return get_r2_pdf_url(prefixes[0], folder_id, filename)
     
     def get_all_r2_urls(self, internal_path: str) -> List[str]:
@@ -163,7 +169,6 @@ class PDFResolver:
         print(f"[PDF RESOLVER] Parsed: folder_id={folder_id}, filename={filename}")
         
         # Return URLs for both possible prefixes
-        # NLP_v4 tried first (all R2 files use NLP_v4 prefix), zotero_v3 as fallback
         prefixes = ['NLP_v4', 'zotero_v3']
         urls = [get_r2_pdf_url(prefix, folder_id, filename) for prefix in prefixes]
         print(f"[PDF RESOLVER] Generated URLs: {urls}")
