@@ -52,19 +52,13 @@ class PDFResolver:
                 continue
                 
             # Strategy 1: Look by ID and filename
+            # Note: We check the ID folder directly (primary location matching internal-pdf:// format)
+            # Removed expensive iterdir() loop that was iterating through 3,545+ folders
             possible_paths = [
                 endnote_path / pdf_id / filename,
                 endnote_path / f"{pdf_id}.pdf",
                 endnote_path / filename,
             ]
-            
-            # Also check subdirectories
-            for item in endnote_path.iterdir():
-                if item.is_dir():
-                    possible_paths.extend([
-                        item / filename,
-                        item / f"{pdf_id}.pdf",
-                    ])
             
             # Try each possible path
             for path in possible_paths:

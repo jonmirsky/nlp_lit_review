@@ -24,6 +24,8 @@ class OverlapCalculator:
         self.all_papers: List[Paper] = []
         self.papers_by_query_and_branch: Dict[str, Dict[str, List[Paper]]] = defaultdict(lambda: defaultdict(list))
         self.databases: Set[str] = set()
+        # Store query to database mapping (to avoid re-parsing in build_hierarchy)
+        self.query_databases: Dict[str, str] = {}
         # Store most-cited papers grouped by query and branch term
         self.most_cited_by_query_and_branch: Dict[str, Dict[str, List[Paper]]] = defaultdict(lambda: defaultdict(list))
         # Store most-relevant papers grouped by query and branch term
@@ -73,6 +75,7 @@ class OverlapCalculator:
             
             self.databases.add(database)
             query_databases[query_name] = database
+            self.query_databases[query_name] = database  # Store as instance variable
             papers_by_query[query_name] = papers
             
             # Collect all branch term variants (case-insensitively)
@@ -312,14 +315,8 @@ class OverlapCalculator:
         hierarchy = {}
         
         for query_name, query_info in self.queries.items():
-            database = None
-            for q_name, q_info in self.queries.items():
-                if q_name == query_name:
-                    ris_file = q_info.get('ris_file')
-                    if ris_file:
-                        parser = RISParser(ris_file)
-                        database = parser.database
-                        break
+            # Use cached database mapping instead of re-parsing RIS files
+            database = self.query_databases.get(query_name)
             
             if not database:
                 continue
