@@ -87,11 +87,11 @@ def get_endnote_data_path():
     """Get Endnote data folder path (portable)"""
     base_path = get_base_path()
     # Try relative path first (for bundled app)
-    relative_path = base_path / "data" / "Endnote" / "from_zotero_v3.Data"
+    relative_path = base_path / "data" / "Endnote" / "NLP_v4.Data"
     if relative_path.exists():
         return str(relative_path)
     # Fallback to absolute path (for development)
-    absolute_path = Path("/Users/jon/Documents/badjatia_hu/Endnote/from_zotero_v3.Data")
+    absolute_path = Path("/Users/jon/Documents/badjatia_hu/Endnote/NLP_v4.Data")
     if absolute_path.exists():
         return str(absolute_path)
     # Return relative path anyway (will be created if needed)
@@ -107,17 +107,17 @@ def get_all_endnote_data_paths():
     paths = []
     
     # Development paths (absolute)
+    # After consolidation: all PDFs now in NLP_v4.Data (aligns with R2 prefix naming)
     dev_paths = [
-        Path("/Users/jon/Documents/badjatia_hu/Endnote/from_zotero_v3.Data/PDF"),
-        Path("/Users/jon/Documents/badjatia_hu/Endnote/from_zotero_v3.Data"),
+        Path("/Users/jon/Documents/badjatia_hu/Endnote/NLP_v4.Data/PDF"),
         Path("/Users/jon/Documents/badjatia_hu/Endnote/NLP_v4.Data"),
         Path("/Users/jon/Documents/badjatia_hu/Endnote/search_term_results"),
     ]
     
     # Bundled app paths (relative)
+    # After consolidation: all PDFs now in NLP_v4.Data (aligns with R2 prefix naming)
     bundled_paths = [
-        base_path / "data" / "Endnote" / "from_zotero_v3.Data" / "PDF",
-        base_path / "data" / "Endnote" / "from_zotero_v3.Data",
+        base_path / "data" / "Endnote" / "NLP_v4.Data" / "PDF",
         base_path / "data" / "Endnote" / "NLP_v4.Data",
         base_path / "data" / "Endnote" / "search_term_results",
     ]

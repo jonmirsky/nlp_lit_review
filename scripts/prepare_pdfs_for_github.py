@@ -131,10 +131,9 @@ def flatten_pdfs(source_folders: list, output_dir: str):
 def main():
     """Main entry point."""
     # Configure source folders
-    # These are the two Endnote library locations containing PDFs
+    # After consolidation, all PDFs are in NLP_v4.Data (aligns with R2 prefix naming)
     sources = [
         ("/Users/jon/Documents/badjatia_hu/Endnote/NLP_v4.Data", "NLP_v4"),
-        ("/Users/jon/Documents/badjatia_hu/Endnote/from_zotero_v3.Data", "zotero_v3"),
     ]
     
     # Output directory (in the project folder)
@@ -154,4 +153,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
 

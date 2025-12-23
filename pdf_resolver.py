@@ -134,13 +134,13 @@ class PDFResolver:
         folder_id = match.group(1)
         filename = match.group(2)
         
-        # Try NLP_v4 first (98 unique PDFs there), then zotero_v3
+        # Try NLP_v4 first (all R2 files use NLP_v4 prefix), then zotero_v3 as fallback
         # The prefixes must match what the upload script uses
+        # Note: After consolidation, local PDFs are in from_zotero_v3.Data, but R2 files still use NLP_v4 prefix
         prefixes = ['NLP_v4', 'zotero_v3']
         
         # Return the first URL - the caller will check if it works
-        # If NLP_v4 returns 404, we could try zotero_v3, but for now
-        # we return the most likely one to minimize requests
+        # NLP_v4 is tried first since all files in R2 use that prefix
         return get_r2_pdf_url(prefixes[0], folder_id, filename)
     
     def get_all_r2_urls(self, internal_path: str) -> List[str]:
@@ -169,10 +169,17 @@ class PDFResolver:
         print(f"[PDF RESOLVER] Parsed: folder_id={folder_id}, filename={filename}")
         
         # Return URLs for both possible prefixes
+        # NLP_v4 tried first (all R2 files use NLP_v4 prefix), zotero_v3 as fallback
         prefixes = ['NLP_v4', 'zotero_v3']
         urls = [get_r2_pdf_url(prefix, folder_id, filename) for prefix in prefixes]
         print(f"[PDF RESOLVER] Generated URLs: {urls}")
         return urls
+
+
+
+
+
+
 
 
 
