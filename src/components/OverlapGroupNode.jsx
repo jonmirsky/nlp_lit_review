@@ -10,6 +10,7 @@ function OverlapGroupNode({ data }) {
   const paperCount = data.paper_count !== undefined ? data.paper_count : papers.length;
   const isMostCitedAggregate = data.is_most_cited_aggregate || false;
   const isMostRelevantAggregate = data.is_most_relevant_aggregate || false;
+  const isJonsList = data.is_jons_list || false;
 
   const handleNodeClick = (e) => {
     e.stopPropagation();
@@ -19,7 +20,9 @@ function OverlapGroupNode({ data }) {
 
   // Determine which CSS class to apply
   let aggregateClass = '';
-  if (isMostCitedAggregate) {
+  if (isJonsList) {
+    aggregateClass = 'jons-list-node';
+  } else if (isMostCitedAggregate) {
     aggregateClass = 'most-cited-aggregate-node';
   } else if (isMostRelevantAggregate) {
     aggregateClass = 'most-relevant-aggregate-node';
@@ -31,7 +34,7 @@ function OverlapGroupNode({ data }) {
       onMouseDown={(e) => e.stopPropagation()}
       title="Click header to toggle paper list"
     >
-      <Handle type="target" position={Position.Left} />
+      {!isJonsList && <Handle type="target" position={Position.Left} />}
       <div className="node-content">
         <div 
           className="node-label"
@@ -51,9 +54,18 @@ function OverlapGroupNode({ data }) {
           </div>
         )}
       </div>
-      <Handle type="source" position={Position.Right} />
+      {!isJonsList && <Handle type="source" position={Position.Right} />}
     </div>
   );
 }
 
 export default OverlapGroupNode;
+
+
+
+
+
+
+
+
+

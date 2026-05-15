@@ -1,6 +1,14 @@
 """
 Configuration file for Literature Review Visualizer
 Edit COMMON_SEARCH_TERMS to set the query strings and their associated RIS file prefixes
+
+Inputs:
+- RIS source files in visualizer_nlp_lit_review/RIS_source_files.
+- Manual grouping files in visualizer_nlp_lit_review/RIS_source_files/manual_groupings.
+- EndNote PDF/data folders in the external OneDrive NLP_lit_review/Endnote directory.
+
+Outputs:
+- Path constants and query configuration consumed by the visualizer and helper scripts.
 """
 
 import os
@@ -21,8 +29,8 @@ def get_base_path():
     else:
         # Running as normal script - use environment variable if set, otherwise script location
         if 'VISUALIZER_BASE_PATH' in os.environ:
-            return Path(os.environ['VISUALIZER_BASE_PATH'])
-        return Path(__file__).parent
+            return Path(os.environ['VISUALIZER_BASE_PATH']).expanduser().resolve()
+        return Path(__file__).resolve().parent
 
 
 def get_ris_source_folder():
@@ -44,11 +52,6 @@ def get_ris_source_folder():
     relative_path = base_path / "data" / "RIS_source_files"
     if relative_path.exists():
         return str(relative_path)
-    
-    # 4. Fallback to absolute path (for development)
-    absolute_path = Path("/Users/jon/Documents/badjatia_hu/visualizer_nlp_lit_review/RIS_source_files")
-    if absolute_path.exists():
-        return str(absolute_path)
     
     # Return script path as default (will help with error messages)
     return str(script_path)
@@ -74,11 +77,6 @@ def get_manual_groupings_folder():
     if relative_path.exists():
         return str(relative_path)
     
-    # 4. Fallback to absolute path (for development)
-    absolute_path = Path("/Users/jon/Documents/badjatia_hu/visualizer_nlp_lit_review/RIS_source_files/manual_groupings")
-    if absolute_path.exists():
-        return str(absolute_path)
-    
     # Return script path as default
     return str(script_path)
 
@@ -90,8 +88,8 @@ def get_endnote_data_path():
     relative_path = base_path / "data" / "Endnote" / "from_zotero_v3.Data"
     if relative_path.exists():
         return str(relative_path)
-    # Fallback to absolute path (for development)
-    absolute_path = Path("/Users/jon/Documents/badjatia_hu/Endnote/from_zotero_v3.Data")
+    # Fallback to absolute path (for development) - now in OneDrive
+    absolute_path = Path("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/Endnote/from_zotero_v3.Data")
     if absolute_path.exists():
         return str(absolute_path)
     # Return relative path anyway (will be created if needed)
@@ -106,12 +104,12 @@ def get_all_endnote_data_paths():
     base_path = get_base_path()
     paths = []
     
-    # Development paths (absolute)
+    # Development paths (absolute) - now in OneDrive
     dev_paths = [
-        Path("/Users/jon/Documents/badjatia_hu/Endnote/from_zotero_v3.Data/PDF"),
-        Path("/Users/jon/Documents/badjatia_hu/Endnote/from_zotero_v3.Data"),
-        Path("/Users/jon/Documents/badjatia_hu/Endnote/NLP_v4.Data"),
-        Path("/Users/jon/Documents/badjatia_hu/Endnote/search_term_results"),
+        Path("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/Endnote/from_zotero_v3.Data/PDF"),
+        Path("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/Endnote/from_zotero_v3.Data"),
+        Path("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/Endnote/NLP_v4.Data"),
+        Path("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/Endnote/search_term_results"),
     ]
     
     # Bundled app paths (relative)
@@ -184,6 +182,34 @@ def find_newest_most_relevant_file() -> Optional[str]:
         return None
     
     # Return the most recently modified file
+    newest_file = max(matching_files, key=lambda f: f.stat().st_mtime)
+    return str(newest_file.absolute())
+
+
+def find_newest_jons_list_file() -> Optional[str]:
+    """
+    Find the most recently modified jons_list file in manual_groupings folder.
+
+    Jon's List is a curated, standalone collection of papers (no edges in the
+    visualizer); each entry only needs TI and/or DO to match against the
+    master RIS, where the matched paper supplies the full metadata (including
+    branch_terms / "search terms").
+
+    Returns:
+        Full path to the newest jons_list*.txt file, or None if not found.
+    """
+    manual_folder = Path(MANUAL_GROUPINGS_FOLDER)
+    if not manual_folder.exists():
+        return None
+
+    matching_files = []
+    for file in manual_folder.glob("jons_list*.txt"):
+        if file.is_file():
+            matching_files.append(file)
+
+    if not matching_files:
+        return None
+
     newest_file = max(matching_files, key=lambda f: f.stat().st_mtime)
     return str(newest_file.absolute())
 

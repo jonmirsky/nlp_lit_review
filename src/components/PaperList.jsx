@@ -8,6 +8,32 @@ function PaperList({ papers }) {
   const [sortOrder, setSortOrder] = useState('desc'); // 'asc' or 'desc'
   const listContainerRef = useRef(null);
 
+  // Right-click context menu state. `menu` is null when closed; otherwise
+  // {x, y, paper, view} where view ∈ {'root', 'searchTerms'}.
+  const [menu, setMenu] = useState(null);
+
+  const closeMenu = () => setMenu(null);
+  const handlePaperContextMenu = (e, paper) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setMenu({ x: e.clientX, y: e.clientY, paper, view: 'root' });
+  };
+
+  // Close menu on outside click or Escape.
+  useEffect(() => {
+    if (!menu) return undefined;
+    const onDocClick = () => closeMenu();
+    const onKey = (e) => {
+      if (e.key === 'Escape') closeMenu();
+    };
+    document.addEventListener('click', onDocClick);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('click', onDocClick);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [menu]);
+
   // Filter and sort papers
   const filteredAndSortedPapers = useMemo(() => {
     let filtered = papers;
@@ -108,13 +134,82 @@ function PaperList({ papers }) {
         style={style}
         className={`paper-row ${hasPdf ? 'has-pdf' : 'no-pdf'}`}
         onDoubleClick={() => handleDoubleClick(paper)}
-        title={hasPdf ? 'Double-click to open PDF' : 'PDF not available'}
+        onContextMenu={(e) => handlePaperContextMenu(e, paper)}
+        title={hasPdf ? 'Double-click to open PDF · right-click for metadata' : 'Right-click for metadata'}
       >
         <div className="paper-title">{paper.title || 'Untitled'}</div>
         <div className="paper-year">{paper.year || 'No year'}</div>
         {!hasPdf && <span className="no-pdf-indicator">⚠️</span>}
       </div>
     );
+  };
+
+  const renderContextMenu = () => {
+    if (!menu) return null;
+    const paper = menu.paper || {};
+    const branchTerms = Array.isArray(paper.branch_terms) ? paper.branch_terms : [];
+
+    const baseStyle = {
+      position: 'fixed',
+      top: menu.y,
+      left: menu.x,
+      zIndex: 10000,
+      background: 'white',
+      border: '1px solid #999',
+      borderRadius: 4,
+      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+      minWidth: 200,
+      maxWidth: 360,
+      fontSize: 13,
+      color: '#222',
+    };
+    const itemStyle = {
+      padding: '8px 12px',
+      cursor: 'pointer',
+      borderBottom: '1px solid #eee',
+      userSelect: 'none',
+    };
+    const headerStyle = {
+      padding: '6px 12px',
+      fontWeight: 600,
+      borderBottom: '1px solid #ddd',
+      background: '#f5f5f5',
+    };
+    const bodyStyle = { padding: '8px 12px', whiteSpace: 'pre-wrap' };
+
+    const stop = (e) => e.stopPropagation();
+
+    if (menu.view === 'root') {
+      return (
+        <div style={baseStyle} onClick={stop} onMouseDown={stop} onContextMenu={(e) => e.preventDefault()}>
+          <div
+            style={itemStyle}
+            onClick={() => setMenu({ ...menu, view: 'searchTerms' })}
+          >
+            Search Terms
+          </div>
+        </div>
+      );
+    }
+
+    if (menu.view === 'searchTerms') {
+      return (
+        <div style={baseStyle} onClick={stop} onMouseDown={stop} onContextMenu={(e) => e.preventDefault()}>
+          <div style={headerStyle}>Search Terms</div>
+          <div style={bodyStyle}>
+            {branchTerms.length > 0 ? branchTerms.join(', ') : 'None'}
+          </div>
+          <div
+            style={{ ...itemStyle, borderBottom: 'none', textAlign: 'right', color: '#666' }}
+            onClick={closeMenu}
+          >
+            Close
+          </div>
+        </div>
+      );
+    }
+
+    return null;
   };
 
   return (
@@ -170,11 +265,21 @@ function PaperList({ papers }) {
               <div className="no-papers">No papers found</div>
             )}
       </div>
+      {renderContextMenu()}
     </div>
   );
 }
 
 export default PaperList;
+
+
+
+
+
+
+
+
+
 
 
 

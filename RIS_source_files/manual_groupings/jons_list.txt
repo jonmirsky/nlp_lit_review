@@ -1,0 +1,20 @@
+; jons_list.txt — manually curated list of papers, rendered as the
+; standalone "Jon's List" node in the visualizer.
+;
+; Loaded by:    visualizer_nlp_lit_review/overlap_calculator.py
+;               (OverlapCalculator.load_jons_list_papers via
+;                config.find_newest_jons_list_file)
+;
+; How to add a paper:
+;   - Append a new RIS entry with at minimum TI (title) and/or DO (DOI).
+;   - The entry is matched against the master RIS by normalized title or DOI;
+;     the matched paper's full metadata (authors, abstract, branch_terms,
+;     pdf_path, etc.) is what gets rendered in the node.
+;   - Unmatched entries are skipped silently.
+;
+; Example (uncomment and edit to add a real paper):
+;
+; TY  - JOUR
+; TI  - Some paper title that appears in the master RIS
+; DO  - 10.xxxx/example
+; ER  -

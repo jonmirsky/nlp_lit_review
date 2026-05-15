@@ -7,7 +7,11 @@ Builds hierarchy: Database → Query → Branch Term → Papers
 from typing import List, Dict, Set, Optional
 from collections import defaultdict
 from ris_parser import RISParser, Paper
-from config import find_newest_manual_grouping_file, find_newest_most_relevant_file
+from config import (
+    find_newest_manual_grouping_file,
+    find_newest_most_relevant_file,
+    find_newest_jons_list_file,
+)
 
 
 class OverlapCalculator:
@@ -30,6 +34,9 @@ class OverlapCalculator:
         self.most_cited_by_query_and_branch: Dict[str, Dict[str, List[Paper]]] = defaultdict(lambda: defaultdict(list))
         # Store most-relevant papers grouped by query and branch term
         self.most_relevant_by_query_and_branch: Dict[str, Dict[str, List[Paper]]] = defaultdict(lambda: defaultdict(list))
+        # Store Jon's List: curated papers matched against all_papers; rendered
+        # as a single standalone node with no incoming/outgoing edges.
+        self.jons_list_papers: List[Paper] = []
         
     def _get_canonical_term(self, term_variants: List[str]) -> str:
         """
@@ -304,7 +311,45 @@ class OverlapCalculator:
                 self.most_relevant_by_query_and_branch[target_query][selected_branch_term].append(matched_paper)
         
         print(f"Matched {matched_count} most-relevant papers to existing papers")
-    
+
+    def load_jons_list_papers(self):
+        """
+        Load Jon's curated list from manual_groupings/jons_list*.txt.
+
+        Each entry in the file is matched against self.all_papers via title or
+        DOI (see _match_paper). Matched papers are stored on
+        self.jons_list_papers and surfaced as a single standalone node by
+        get_visualization_data(); unmatched entries are skipped silently.
+
+        Jon's list entries only need TI and/or DO. The matched paper from the
+        master RIS supplies the full metadata (including branch_terms /
+        search-terms used by the right-click "Search Terms" menu).
+        """
+        jons_list_file = find_newest_jons_list_file()
+        if not jons_list_file:
+            print("No jons_list file found in manual_groupings folder")
+            return
+
+        parser = RISParser(jons_list_file)
+        curated_papers = parser.parse()
+        print(f"Found {len(curated_papers)} papers in jons_list file")
+
+        matched_count = 0
+        seen_paper_ids = set()
+        for curated_paper in curated_papers:
+            matched_paper = self._match_paper(curated_paper)
+            if not matched_paper:
+                continue
+            paper_id = getattr(matched_paper, "id", None)
+            if paper_id and paper_id in seen_paper_ids:
+                continue
+            if paper_id:
+                seen_paper_ids.add(paper_id)
+            self.jons_list_papers.append(matched_paper)
+            matched_count += 1
+
+        print(f"Matched {matched_count} jons_list papers to existing papers")
+
     def build_hierarchy(self) -> Dict:
         """
         Build hierarchical data structure: Database → Query → Branch Term → Papers
@@ -736,7 +781,27 @@ class OverlapCalculator:
                 
                 # Move to next database position
                 current_database_y += database_y_spacing
-            
+
+            # Standalone "Jon's List" node (no incoming/outgoing edges).
+            # Rendered as an overlapGroup with the is_jons_list flag so the
+            # frontend can apply the amber styling.
+            if self.jons_list_papers:
+                jons_list_node_id = "jons_list_1"
+                jons_list_node_x = 1800
+                jons_list_node_y = 100
+                jons_list_papers_dicts = [p.to_dict() for p in self.jons_list_papers]
+                nodes.append({
+                    "id": jons_list_node_id,
+                    "type": "overlapGroup",
+                    "position": {"x": jons_list_node_x, "y": jons_list_node_y},
+                    "data": {
+                        "label": "Jon's List",
+                        "papers": jons_list_papers_dicts,
+                        "paper_count": len(jons_list_papers_dicts),
+                        "is_jons_list": True
+                    }
+                })
+
             return {
                 "nodes": nodes,
                 "edges": edges

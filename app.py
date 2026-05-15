@@ -80,7 +80,12 @@ def load_data():
         start = time.time()
         calculator.load_most_relevant_papers()
         print(f"[TIMING] Load most-relevant papers: {time.time() - start:.2f}s")
-        
+
+        # Load Jon's curated list (standalone node)
+        start = time.time()
+        calculator.load_jons_list_papers()
+        print(f"[TIMING] Load Jon's List papers: {time.time() - start:.2f}s")
+
         # Build hierarchy
         start = time.time()
         _hierarchy_cache = calculator.build_hierarchy()
@@ -195,7 +200,15 @@ def get_pdf(paper_id):
     
     if not paper or not paper.pdf_path:
         return jsonify({"error": "PDF not found"}), 404
-    
+
+    # Direct URL fast path: L1 fields written by the new pipeline are full
+    # https:// URLs (e.g. R2 CAS keys like pmid_12345678.pdf). Redirect
+    # straight to them; the legacy internal-pdf:// resolver below cannot
+    # handle this form.
+    if paper.pdf_path.startswith(("http://", "https://")):
+        print(f"[PDF DEBUG] Direct URL pdf_path, redirecting: {paper.pdf_path}")
+        return redirect(paper.pdf_path)
+
     # Try Cloudflare R2 first if configured
     if R2_BUCKET_NAME:
         print(f"[PDF DEBUG] Paper ID: {paper_id}, pdf_path: {paper.pdf_path}")
@@ -253,7 +266,15 @@ def check_pdf(paper_id):
     
     if not paper.pdf_path:
         return jsonify({"available": False, "error": "No PDF path in record"})
-    
+
+    # Direct URL fast path (new pipeline writes full https:// L1 fields).
+    if paper.pdf_path.startswith(("http://", "https://")):
+        return jsonify({
+            "available": True,
+            "path": paper.pdf_path,
+            "source": "direct_url"
+        })
+
     # Check R2 first if configured
     if R2_BUCKET_NAME:
         r2_urls = _pdf_resolver.get_all_r2_urls(paper.pdf_path)
