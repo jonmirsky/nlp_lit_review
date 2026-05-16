@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { FixedSizeList as List } from 'react-window';
 import './PaperList.css';
 
@@ -19,16 +20,20 @@ function PaperList({ papers }) {
     setMenu({ x: e.clientX, y: e.clientY, paper, view: 'root' });
   };
 
-  // Close menu on outside click or Escape.
+  // Close menu on outside click or Escape. Defer click listener so the same
+  // contextmenu gesture does not immediately close the menu.
   useEffect(() => {
     if (!menu) return undefined;
     const onDocClick = () => closeMenu();
     const onKey = (e) => {
       if (e.key === 'Escape') closeMenu();
     };
-    document.addEventListener('click', onDocClick);
     document.addEventListener('keydown', onKey);
+    const t = window.setTimeout(() => {
+      document.addEventListener('click', onDocClick);
+    }, 0);
     return () => {
+      window.clearTimeout(t);
       document.removeEventListener('click', onDocClick);
       document.removeEventListener('keydown', onKey);
     };
@@ -153,7 +158,8 @@ function PaperList({ papers }) {
       position: 'fixed',
       top: menu.y,
       left: menu.x,
-      zIndex: 10000,
+      /* Above React Flow panels / transformed nodes */
+      zIndex: 99999,
       background: 'white',
       border: '1px solid #999',
       borderRadius: 4,
@@ -180,7 +186,7 @@ function PaperList({ papers }) {
     const stop = (e) => e.stopPropagation();
 
     if (menu.view === 'root') {
-      return (
+      return createPortal(
         <div style={baseStyle} onClick={stop} onMouseDown={stop} onContextMenu={(e) => e.preventDefault()}>
           <div
             style={itemStyle}
@@ -188,12 +194,13 @@ function PaperList({ papers }) {
           >
             Search Terms
           </div>
-        </div>
+        </div>,
+        document.body
       );
     }
 
     if (menu.view === 'searchTerms') {
-      return (
+      return createPortal(
         <div style={baseStyle} onClick={stop} onMouseDown={stop} onContextMenu={(e) => e.preventDefault()}>
           <div style={headerStyle}>Search Terms</div>
           <div style={bodyStyle}>
@@ -205,7 +212,8 @@ function PaperList({ papers }) {
           >
             Close
           </div>
-        </div>
+        </div>,
+        document.body
       );
     }
 
@@ -265,6 +273,7 @@ function PaperList({ papers }) {
               <div className="no-papers">No papers found</div>
             )}
       </div>
+      {/* Menu rendered via createPortal(document.body) — not clipped by papers-container overflow:hidden */}
       {renderContextMenu()}
     </div>
   );
