@@ -6,10 +6,12 @@ Inputs:
 - visualizer_nlp_lit_review/config.py (reads COMMON_SEARCH_TERMS for catalog dropdown)
 - automated_search/scripts/auto_search_wrapper.py (spawned by Search and Pull)
 - automated_search/scripts/refresh_catalog.py (spawned by Refresh Catalog)
+- visualizer_nlp_lit_review/RIS_source_files/pubmed_*.txt (paper search for Jon's List)
 
 Outputs:
-- No files written by this script directly. All outputs come from the spawned pipeline
-  scripts (see their own docstrings for what they write).
+- Appends selected paper stubs to
+  visualizer_nlp_lit_review/RIS_source_files/manual_groupings/jons_list.txt.
+- Pipeline outputs come from spawned scripts (see their own docstrings).
 
 Usage:
     python3 admin_gui.py
@@ -20,6 +22,7 @@ from __future__ import annotations
 import importlib.util
 import os
 import queue
+import re
 import signal
 import subprocess
 import sys
@@ -34,6 +37,10 @@ from typing import Any
 # ── Repo layout ─────────────────────────────────────────────────────────────
 REPO_ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = REPO_ROOT / "visualizer_nlp_lit_review" / "config.py"
+RIS_PARSER_PATH = REPO_ROOT / "visualizer_nlp_lit_review" / "ris_parser.py"
+RIS_SOURCE_DIR = REPO_ROOT / "visualizer_nlp_lit_review" / "RIS_source_files"
+MANUAL_GROUPINGS_DIR = RIS_SOURCE_DIR / "manual_groupings"
+JONS_LIST_PATH = MANUAL_GROUPINGS_DIR / "jons_list.txt"
 WRAPPER_PATH = REPO_ROOT / "automated_search" / "scripts" / "auto_search_wrapper.py"
 REFRESH_PATH = REPO_ROOT / "automated_search" / "scripts" / "refresh_catalog.py"
 REQUIREMENTS_PATH = REPO_ROOT / "automated_search" / "requirements.txt"
@@ -73,15 +80,61 @@ def _load_catalog() -> list[dict[str, str]]:
     return entries
 
 
+def _load_ris_parser_class() -> Any | None:
+    if not RIS_PARSER_PATH.is_file():
+        return None
+    spec = importlib.util.spec_from_file_location("viz_ris_parser", RIS_PARSER_PATH)
+    if spec is None or spec.loader is None:
+        return None
+    mod = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(mod)
+    except Exception:
+        return None
+    return getattr(mod, "RISParser", None)
+
+
+def _find_newest_master_ris() -> Path | None:
+    if not RIS_SOURCE_DIR.is_dir():
+        return None
+    candidates = [
+        p for p in RIS_SOURCE_DIR.glob("pubmed*.txt")
+        if p.is_file()
+        and ".bak" not in p.name
+        and not p.name.endswith(".backup")
+    ]
+    if not candidates:
+        return None
+    return max(candidates, key=lambda p: p.stat().st_mtime)
+
+
+def _normalize_lookup_text(value: str | None) -> str:
+    return re.sub(r"\s+", " ", (value or "").strip().lower())
+
+
+def _paper_lookup_key(paper: Any) -> str:
+    doi = _normalize_lookup_text(getattr(paper, "doi", ""))
+    if doi:
+        return f"doi:{doi}"
+    return f"title:{_normalize_lookup_text(getattr(paper, 'title', ''))}"
+
+
+def _ris_value(value: Any) -> str:
+    return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
 # ── GUI ──────────────────────────────────────────────────────────────────────
 class AdminGUI:
     def __init__(self, root: tk.Tk) -> None:
         self.root = root
         self.root.title("Lit Review Pipeline")
         self.root.resizable(True, True)
-        self.root.minsize(720, 580)
+        self.root.minsize(920, 760)
 
         self._catalog: list[dict[str, str]] = _load_catalog()
+        self._papers: list[Any] = []
+        self._filtered_papers: list[Any] = []
+        self._selected_paper: Any | None = None
         self._label_manually_edited = False
         self._proc: subprocess.Popen | None = None
         self._job_active = False
@@ -89,6 +142,7 @@ class AdminGUI:
 
         self._build_ui()
         self._populate_catalog()
+        self._load_paper_index()
         self._ensure_buttons_ready()
         self._poll_log()
         # Defer dep check until after window is shown so the dialog is modal
@@ -239,6 +293,59 @@ class AdminGUI:
 
         env_frame.columnconfigure(1, weight=1)
 
+        # ── Jon's List curation ─────────────────────────────────────────────
+        jons_frame = ttk.LabelFrame(self.root, text="Jon's List", padding=10)
+        jons_frame.pack(fill="both", expand=False, padx=PADX, pady=PADY)
+
+        jons_top = ttk.Frame(jons_frame)
+        jons_top.pack(fill="x")
+
+        ttk.Label(jons_top, text="Find paper:").pack(side="left", padx=(0, 6))
+        self._jons_search_var = tk.StringVar()
+        self._jons_search_entry = ttk.Entry(jons_top, textvariable=self._jons_search_var, width=48)
+        self._jons_search_entry.pack(side="left", fill="x", expand=True, padx=(0, 8))
+        self._jons_search_entry.bind("<KeyRelease>", self._on_jons_search)
+
+        self._btn_reload_papers = ttk.Button(jons_top, text="Reload Papers", command=self._load_paper_index)
+        self._btn_reload_papers.pack(side="left", padx=(0, 8))
+
+        self._btn_add_jons = ttk.Button(
+            jons_top,
+            text="Add to Jon's List",
+            command=self._add_selected_to_jons_list,
+            state="disabled",
+        )
+        self._btn_add_jons.pack(side="left")
+
+        tree_frame = ttk.Frame(jons_frame)
+        tree_frame.pack(fill="both", expand=True, pady=(8, 0))
+
+        columns = ("year", "title", "doi")
+        self._jons_tree = ttk.Treeview(
+            tree_frame,
+            columns=columns,
+            show="headings",
+            height=7,
+            selectmode="browse",
+        )
+        self._jons_tree.heading("year", text="Year")
+        self._jons_tree.heading("title", text="Title")
+        self._jons_tree.heading("doi", text="DOI")
+        self._jons_tree.column("year", width=70, anchor="center", stretch=False)
+        self._jons_tree.column("title", width=560, anchor="w")
+        self._jons_tree.column("doi", width=220, anchor="w")
+        self._jons_tree.bind("<<TreeviewSelect>>", self._on_jons_select)
+        self._jons_tree.pack(side="left", fill="both", expand=True)
+
+        tree_scroll = ttk.Scrollbar(tree_frame, orient="vertical", command=self._jons_tree.yview)
+        self._jons_tree.configure(yscrollcommand=tree_scroll.set)
+        tree_scroll.pack(side="right", fill="y")
+
+        self._jons_status_var = tk.StringVar(value="Loading papers...")
+        ttk.Label(jons_frame, textvariable=self._jons_status_var, foreground="#555").pack(
+            fill="x", pady=(6, 0)
+        )
+
         # ── Buttons ──────────────────────────────────────────────────────────
         btn_frame = ttk.Frame(self.root, padding=(PADX, PADY))
         btn_frame.pack(fill="x")
@@ -316,6 +423,162 @@ class AdminGUI:
         extra = self._extra_var.get().strip()
         if entry:
             self._label_var.set(f"{entry['label']} AND {extra}" if extra else entry["label"])
+
+    # ── Jon's List helpers ──────────────────────────────────────────────────
+    def _load_paper_index(self) -> None:
+        parser_cls = _load_ris_parser_class()
+        master_ris = _find_newest_master_ris()
+        if parser_cls is None:
+            self._papers = []
+            self._filtered_papers = []
+            self._selected_paper = None
+            self._jons_status_var.set(f"RIS parser not found: {RIS_PARSER_PATH}")
+            self._refresh_jons_tree()
+            return
+        if master_ris is None:
+            self._papers = []
+            self._filtered_papers = []
+            self._selected_paper = None
+            self._jons_status_var.set(f"No pubmed*.txt master RIS found in {RIS_SOURCE_DIR}")
+            self._refresh_jons_tree()
+            return
+        try:
+            self._papers = parser_cls(str(master_ris)).parse()
+        except Exception as exc:
+            self._papers = []
+            self._filtered_papers = []
+            self._selected_paper = None
+            self._jons_status_var.set(f"Could not load master RIS: {exc}")
+            self._refresh_jons_tree()
+            return
+        self._filtered_papers = []
+        self._selected_paper = None
+        self._btn_add_jons.config(state="disabled")
+        self._jons_status_var.set(
+            f"Loaded {len(self._papers)} papers from {master_ris.name}. Type to search."
+        )
+        self._refresh_jons_tree()
+
+    def _on_jons_search(self, _event=None) -> None:
+        query = _normalize_lookup_text(self._jons_search_var.get())
+        if not query:
+            self._filtered_papers = []
+            self._selected_paper = None
+            self._btn_add_jons.config(state="disabled")
+            self._jons_status_var.set(f"Loaded {len(self._papers)} papers. Type to search.")
+            self._refresh_jons_tree()
+            return
+
+        terms = query.split()
+        matches = []
+        for paper in self._papers:
+            haystack = " ".join([
+                _normalize_lookup_text(getattr(paper, "title", "")),
+                _normalize_lookup_text(getattr(paper, "abstract", "")),
+                _normalize_lookup_text(getattr(paper, "doi", "")),
+                _normalize_lookup_text(" ".join(getattr(paper, "authors", []) or [])),
+                _normalize_lookup_text(str(getattr(paper, "year", "") or "")),
+            ])
+            if all(term in haystack for term in terms):
+                matches.append(paper)
+            if len(matches) >= 250:
+                break
+
+        self._filtered_papers = matches
+        self._selected_paper = None
+        self._btn_add_jons.config(state="disabled")
+        suffix = "showing first 250" if len(matches) == 250 else f"{len(matches)} found"
+        self._jons_status_var.set(f"Search: {suffix}. Select one paper, then Add to Jon's List.")
+        self._refresh_jons_tree()
+
+    def _refresh_jons_tree(self) -> None:
+        for item_id in self._jons_tree.get_children():
+            self._jons_tree.delete(item_id)
+
+        for idx, paper in enumerate(self._filtered_papers):
+            title = _ris_value(getattr(paper, "title", ""))
+            doi = _ris_value(getattr(paper, "doi", ""))
+            year = _ris_value(getattr(paper, "year", ""))
+            self._jons_tree.insert("", "end", iid=str(idx), values=(year, title, doi))
+
+    def _on_jons_select(self, _event=None) -> None:
+        selected = self._jons_tree.selection()
+        if not selected:
+            self._selected_paper = None
+            self._btn_add_jons.config(state="disabled")
+            return
+        idx = int(selected[0])
+        if idx < 0 or idx >= len(self._filtered_papers):
+            self._selected_paper = None
+            self._btn_add_jons.config(state="disabled")
+            return
+        self._selected_paper = self._filtered_papers[idx]
+        self._btn_add_jons.config(state="normal")
+
+    def _existing_jons_list_keys(self) -> set[str]:
+        parser_cls = _load_ris_parser_class()
+        if parser_cls is None or not JONS_LIST_PATH.is_file():
+            return set()
+        try:
+            papers = parser_cls(str(JONS_LIST_PATH)).parse()
+        except Exception:
+            return set()
+        return {_paper_lookup_key(paper) for paper in papers if _paper_lookup_key(paper) != "title:"}
+
+    def _add_selected_to_jons_list(self) -> None:
+        paper = self._selected_paper
+        if paper is None:
+            messagebox.showwarning("No paper selected", "Search for a paper and select one row first.")
+            return
+
+        title = _ris_value(getattr(paper, "title", ""))
+        doi = _ris_value(getattr(paper, "doi", ""))
+        year = _ris_value(getattr(paper, "year", ""))
+        paper_id = _ris_value(getattr(paper, "id", ""))
+        if not title and not doi:
+            messagebox.showwarning(
+                "Cannot add paper",
+                "Selected paper has neither title nor DOI, so Jon's List cannot match it later.",
+            )
+            return
+
+        key = _paper_lookup_key(paper)
+        if key in self._existing_jons_list_keys():
+            messagebox.showinfo("Already in Jon's List", "That paper is already in Jon's List.")
+            return
+
+        MANUAL_GROUPINGS_DIR.mkdir(parents=True, exist_ok=True)
+        needs_leading_newline = JONS_LIST_PATH.exists() and JONS_LIST_PATH.stat().st_size > 0
+        lines = []
+        if needs_leading_newline:
+            lines.append("")
+        lines.extend([
+            "TY  - JOUR",
+        ])
+        if title:
+            lines.append(f"TI  - {title}")
+        if doi:
+            lines.append(f"DO  - {doi}")
+        if year:
+            lines.append(f"PY  - {year}")
+        if paper_id:
+            lines.append(f"ID  - {paper_id}")
+        lines.append("ER  -")
+
+        try:
+            with open(JONS_LIST_PATH, "a", encoding="utf-8") as f:
+                f.write("\n".join(lines) + "\n")
+        except Exception as exc:
+            messagebox.showerror("Could not update Jon's List", str(exc))
+            return
+
+        self._jons_status_var.set(f"Added to Jon's List: {title or doi}")
+        self._log_line(f"\n[Jon's List] Added: {title or doi}\n")
+        messagebox.showinfo(
+            "Added to Jon's List",
+            "Added the selected paper to Jon's List.\n\n"
+            "Commit and push jons_list.txt when you want this reflected on Render.",
+        )
 
     # ── Subprocess execution ─────────────────────────────────────────────────
     @staticmethod
