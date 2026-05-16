@@ -8,6 +8,7 @@ This script:
 3. Deduplicates references using DOI, PMID, or normalized title
 4. Creates a NEW file (does NOT modify existing files) with:
    - All references from master RIS
+   - Existing master references updated with any new RN search labels
    - All new unique references from input RIS
 5. Saves to RIS_source_files with timestamped filename
 
@@ -219,11 +220,41 @@ def _identifier_keys(identifier_string: str) -> List[str]:
     return [part for part in identifier_string.split("|") if part]
 
 
-def _load_master_lookup(master_path: Path, *, cache_dir: Optional[Path] = None) -> Tuple[Dict[str, str], List[Tuple[str, str]]]:
+def _extract_rn_labels(ref_text: str) -> List[str]:
+    labels = []
+    for line in ref_text.splitlines():
+        if line.startswith("RN  -"):
+            label = line[6:].strip()
+            if label and label not in labels:
+                labels.append(label)
+    return labels
+
+
+def _merge_rn_labels(master_ref_text: str, input_ref_text: str) -> Tuple[str, bool]:
+    """Add missing RN labels from input reference to master reference text."""
+    master_labels = _extract_rn_labels(master_ref_text)
+    input_labels = _extract_rn_labels(input_ref_text)
+    missing = [label for label in input_labels if label not in master_labels]
+    if not missing:
+        return master_ref_text, False
+
+    lines = master_ref_text.splitlines()
+    rn_lines = [f"RN  - {label}" for label in missing]
+    for idx, line in enumerate(lines):
+        if re.match(r"^ER\s+-\s*$", line):
+            lines[idx:idx] = rn_lines
+            return "\n".join(lines) + "\n", True
+
+    lines.extend(rn_lines)
+    lines.append("ER  -")
+    return "\n".join(lines) + "\n", True
+
+
+def _load_master_lookup(master_path: Path, *, cache_dir: Optional[Path] = None) -> Tuple[Dict[str, int], List[Tuple[str, str]]]:
     """Parse master RIS into (identifier_index, master_refs).
 
     `identifier_index` maps each individual prefixed identifier (doi:..., pmid:...,
-    title:...) to the full ref_text. `master_refs` preserves the original order.
+    title:...) to the index of that reference in `master_refs`.
 
     Uses an mtime-keyed cache at <cache_dir>/master_lookup.json when provided.
     """
@@ -238,6 +269,7 @@ def _load_master_lookup(master_path: Path, *, cache_dir: Optional[Path] = None) 
                 if (
                     cached_master == str(master_path)
                     and cached_mtime == master_path.stat().st_mtime
+                    and payload.get("schema_version") == 2
                     and "identifier_index" in payload
                     and "refs" in payload
                 ):
@@ -247,10 +279,10 @@ def _load_master_lookup(master_path: Path, *, cache_dir: Optional[Path] = None) 
             pass
 
     master_refs = parse_ris_file(master_path)
-    identifier_index: Dict[str, str] = {}
-    for ref_text, identifier in master_refs:
+    identifier_index: Dict[str, int] = {}
+    for idx, (ref_text, identifier) in enumerate(master_refs):
         for key in _identifier_keys(identifier):
-            identifier_index[key] = ref_text
+            identifier_index[key] = idx
 
     if cache_dir is not None:
         try:
@@ -260,6 +292,7 @@ def _load_master_lookup(master_path: Path, *, cache_dir: Optional[Path] = None) 
                 json.dump(
                     {
                         "_generated_by": "automated_search/scripts/helpers/merge_ris_to_master.py",
+                        "schema_version": 2,
                         "master_path": str(master_path),
                         "master_mtime": master_path.stat().st_mtime,
                         "identifier_index": identifier_index,
@@ -319,18 +352,39 @@ def merge_ris_to_master(input_ris_path: Path, ris_source_dir: Path, output_path:
     print()
 
     # O(N) dedup: for each input ref, check if any of its identifier tokens is in the index.
+    # If the input ref is already in the master, keep the master record but add
+    # any new RN labels so the visualizer can place that paper under every
+    # query that found it.
     print("Checking for duplicates (O(N+M) dict lookup)...")
-    new_refs: List[str] = []
+    new_refs: List[Tuple[str, str]] = []
+    new_identifier_index: Dict[str, int] = {}
     duplicates: List[str] = []
+    rn_labels_merged = 0
     for ref_text, identifier in input_refs:
-        is_duplicate = any(key in identifier_index for key in _identifier_keys(identifier))
-        if is_duplicate:
+        keys = _identifier_keys(identifier)
+        master_match_idx = next((identifier_index[key] for key in keys if key in identifier_index), None)
+        if master_match_idx is not None:
             duplicates.append(identifier)
+            merged_ref, changed = _merge_rn_labels(master_refs[master_match_idx][0], ref_text)
+            if changed:
+                master_refs[master_match_idx] = (merged_ref, master_refs[master_match_idx][1])
+                rn_labels_merged += 1
+            continue
+
+        new_match_idx = next((new_identifier_index[key] for key in keys if key in new_identifier_index), None)
+        if new_match_idx is not None:
+            duplicates.append(identifier)
+            merged_ref, changed = _merge_rn_labels(new_refs[new_match_idx][0], ref_text)
+            if changed:
+                new_refs[new_match_idx] = (merged_ref, new_refs[new_match_idx][1])
+                rn_labels_merged += 1
         else:
-            new_refs.append(ref_text)
+            new_identifier_index.update({key: len(new_refs) for key in keys})
+            new_refs.append((ref_text, identifier))
 
     print(f"  New references to add: {len(new_refs)}")
     print(f"  Duplicates skipped: {len(duplicates)}")
+    print(f"  Existing references updated with new RN labels: {rn_labels_merged}")
     print()
     
     # Generate output filename if not provided
@@ -353,7 +407,7 @@ def merge_ris_to_master(input_ris_path: Path, ris_source_dir: Path, output_path:
                 f.write('\n')
         
         # Write new references
-        for ref_text in new_refs:
+        for ref_text, identifier in new_refs:
             f.write(ref_text)
             if not ref_text.endswith('\n'):
                 f.write('\n')
@@ -369,6 +423,7 @@ def merge_ris_to_master(input_ris_path: Path, ris_source_dir: Path, output_path:
     print(f"  Total references in master: {len(master_refs)}")
     print(f"  New references added: {len(new_refs)}")
     print(f"  Duplicates skipped: {len(duplicates)}")
+    print(f"  Existing references updated with new RN labels: {rn_labels_merged}")
     print(f"  Final count: {total_final}")
     print(f"  Output file: {output_path.name}")
     print(f"  Location: {output_path}")
@@ -417,5 +472,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 

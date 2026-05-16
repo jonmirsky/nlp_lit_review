@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-Batch-run the full literature pipeline for every catalog entry that defines
-`slug` and `label` in visualizer_nlp_lit_review/config.py::COMMON_SEARCH_TERMS.
+Batch-run the full literature pipeline for every registered query that defines
+`slug` and `label`.
 
 Inputs:
-- visualizer_nlp_lit_review/config.py (COMMON_SEARCH_TERMS: query, slug, label per entry).
+- visualizer_nlp_lit_review/config.py (COMMON_SEARCH_TERMS: built-in query, slug, label entries).
+- visualizer_nlp_lit_review/RIS_source_files/manual_groupings/custom_queries.json
+  (GUI-created query, slug, label entries).
 - Environment and CLI flags expected by automated_search/scripts/auto_search_wrapper.py
   (e.g. NCBI_EMAIL, LIT_REVIEW_PDF_REMOTE or LIT_REVIEW_PDF_STORE).
 
@@ -17,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import json
 import os
 import subprocess
 import sys
@@ -47,22 +50,63 @@ def _load_common_search_terms() -> dict[str, dict[str, Any]]:
     return terms  # type: ignore[return-value]
 
 
+def _load_custom_search_terms() -> dict[str, dict[str, Any]]:
+    root = _repo_root()
+    registry_path = (
+        root
+        / "visualizer_nlp_lit_review"
+        / "RIS_source_files"
+        / "manual_groupings"
+        / "custom_queries.json"
+    )
+    if not registry_path.is_file():
+        return {}
+    with open(registry_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    entries = data.get("queries", []) if isinstance(data, dict) else []
+    terms: dict[str, dict[str, Any]] = {}
+    for idx, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            continue
+        query = entry.get("query")
+        slug = entry.get("slug")
+        label = entry.get("label")
+        name = entry.get("name") or slug or f"custom_query_{idx + 1}"
+        if not query or not slug or not label:
+            continue
+        terms[str(name)] = {
+            "query": str(query),
+            "slug": str(slug),
+            "label": str(label),
+            "source_db": str(entry.get("source_db") or "pubmed"),
+        }
+    return terms
+
+
+def _load_refresh_terms() -> dict[str, dict[str, Any]]:
+    terms = {}
+    terms.update(_load_common_search_terms())
+    terms.update(_load_custom_search_terms())
+    return terms
+
+
 def _iter_refresh_entries(
     terms: dict[str, dict[str, Any]],
-) -> list[tuple[str, str, str, str]]:
-    """Return list of (query_name, query, slug, label) for batch runs."""
-    out: list[tuple[str, str, str, str]] = []
+) -> list[tuple[str, str, str, str, str]]:
+    """Return list of (query_name, query, slug, label, source_db) for batch runs."""
+    out: list[tuple[str, str, str, str, str]] = []
     for name, info in terms.items():
         if not isinstance(info, dict):
             continue
         slug = info.get("slug")
         label = info.get("label")
         query = info.get("query")
+        source_db = info.get("source_db") or "pubmed"
         if not slug or not label or not query:
             continue
         if not str(slug).strip() or not str(label).strip() or not str(query).strip():
             continue
-        out.append((name, str(query), str(slug), str(label)))
+        out.append((name, str(query), str(slug), str(label), str(source_db)))
     return out
 
 
@@ -95,7 +139,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=(
             "Run auto_search_wrapper end-to-end for each COMMON_SEARCH_TERMS entry "
-            "that includes slug, label, and query."
+            "and GUI-created custom query that includes slug, label, and query."
         ),
     )
     parser.add_argument(
@@ -111,12 +155,13 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     root = _repo_root()
-    terms = _load_common_search_terms()
+    terms = _load_refresh_terms()
     entries = _iter_refresh_entries(terms)
     if not entries:
         print(
             "No batch entries found. Add non-empty `query`, `slug`, and `label` "
-            "to COMMON_SEARCH_TERMS in visualizer_nlp_lit_review/config.py.",
+            "to COMMON_SEARCH_TERMS in visualizer_nlp_lit_review/config.py or "
+            "run a custom GUI search to create custom_queries.json.",
             file=sys.stderr,
         )
         return 1
@@ -127,7 +172,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     failures: list[str] = []
-    for query_name, query, slug, label in entries:
+    for query_name, query, slug, label, source_db in entries:
         cmd = [
             sys.executable,
             "-u",
@@ -138,6 +183,8 @@ def main(argv: list[str] | None = None) -> int:
             slug,
             "--label",
             label,
+            "--source-db",
+            source_db,
         ]
         print("=" * 70, flush=True)
         print(f"Catalog entry: {query_name} (slug={slug})", flush=True)
@@ -147,7 +194,8 @@ def main(argv: list[str] | None = None) -> int:
                 f"{sys.executable} -u {wrapper} "
                 f"--query {_shellish_repr(query)} "
                 f"--slug {_shellish_repr(slug)} "
-                f"--label {_shellish_repr(label)}"
+                f"--label {_shellish_repr(label)} "
+                f"--source-db {_shellish_repr(source_db)}"
             )
             print(f"DRY-RUN: {shown}", flush=True)
             continue
