@@ -14,7 +14,7 @@ Outputs:
 - Pipeline outputs come from spawned scripts (see their own docstrings).
 
 Usage:
-    python3 admin_gui.py
+    python3 automated_search/GUI-search.py
 """
 
 from __future__ import annotations
@@ -36,7 +36,8 @@ from typing import Any
 
 
 # ── Repo layout ─────────────────────────────────────────────────────────────
-REPO_ROOT = Path(__file__).resolve().parent
+GUI_DIR = Path(__file__).resolve().parent
+REPO_ROOT = GUI_DIR.parent if GUI_DIR.name == "automated_search" else GUI_DIR
 CONFIG_PATH = REPO_ROOT / "visualizer_nlp_lit_review" / "config.py"
 RIS_PARSER_PATH = REPO_ROOT / "visualizer_nlp_lit_review" / "ris_parser.py"
 RIS_SOURCE_DIR = REPO_ROOT / "visualizer_nlp_lit_review" / "RIS_source_files"

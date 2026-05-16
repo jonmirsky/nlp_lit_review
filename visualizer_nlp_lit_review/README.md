@@ -53,7 +53,7 @@ ENDNOTE_DATA_PATH = "/path/to/Endnote/library.Data"
 
 ### Development Mode
 
-1. Start the Flask backend (from `visualizer_nlp_lit_review/`, or from the **repo root** with `python3 run_visualizer.py`, which sets the correct working directory):
+1. Start the Flask backend from `visualizer_nlp_lit_review/`:
 ```bash
 python app.py
 ```
@@ -72,7 +72,7 @@ npm run dev
 npm run build
 ```
 
-2. Start the Flask server (same as step 1 in Development Mode, or from repo root: `python3 run_visualizer.py`):
+2. Start the Flask server from `visualizer_nlp_lit_review/`:
 ```bash
 python app.py
 ```
@@ -108,13 +108,6 @@ Add `ADMIN_ENABLED=true` to your local environment before starting the Flask ser
 ```bash
 export ADMIN_ENABLED=true
 python3 app.py
-```
-
-From the **lit_review repo root** (parent of `visualizer_nlp_lit_review/`):
-
-```bash
-export ADMIN_ENABLED=true
-python3 run_visualizer.py
 ```
 
 Or create a `.env` file in `visualizer_nlp_lit_review/` (not committed):
@@ -193,7 +186,6 @@ visualizer_nlp_lit_review/
 - **No papers showing**: Verify RIS file path and format
 - **Overlaps not calculating**: Ensure papers have unique IDs and search terms in N1 field
 - **Performance issues**: The app uses virtual scrolling, but very large datasets (>5000 papers) may need additional optimization
-
 
 
 
