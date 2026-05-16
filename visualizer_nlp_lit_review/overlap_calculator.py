@@ -52,6 +52,35 @@ class OverlapCalculator:
         if not term_variants:
             return None
         return max(term_variants, key=lambda t: sum(1 for c in t if c.isupper()))
+
+    def _label_matches_query_filter(self, label: str, query_info: Dict) -> bool:
+        label_filter = (query_info.get("label_filter") or "").strip()
+        if not label_filter:
+            return True
+        mode = (query_info.get("label_filter_mode") or "prefix").strip().lower()
+        label_norm = label.strip().lower()
+        filter_norm = label_filter.lower()
+        if mode == "exact":
+            return label_norm == filter_norm
+        return label_norm == filter_norm or label_norm.startswith(filter_norm + " and ")
+
+    def _claimed_by_other_query(self, label: str, current_query_name: str) -> bool:
+        """True when a filtered custom query owns this RN label."""
+        for other_name, other_info in self.queries.items():
+            if other_name == current_query_name:
+                continue
+            if not other_info.get("label_filter"):
+                continue
+            if self._label_matches_query_filter(label, other_info):
+                return True
+        return False
+
+    def _branch_terms_for_query(self, paper: Paper, query_name: str, query_info: Dict) -> List[str]:
+        """Return paper RN terms that belong under this query node."""
+        terms = paper.branch_terms or []
+        if query_info.get("label_filter"):
+            return [term for term in terms if self._label_matches_query_filter(term, query_info)]
+        return [term for term in terms if not self._claimed_by_other_query(term, query_name)]
         
     def load_papers_from_queries(self) -> Dict[str, str]:
         """
@@ -87,11 +116,10 @@ class OverlapCalculator:
             
             # Collect all branch term variants (case-insensitively)
             for paper in papers:
-                if paper.branch_terms:
-                    for branch_term in paper.branch_terms:
-                        normalized = branch_term.lower()
-                        if branch_term not in term_variants_by_query[query_name][normalized]:
-                            term_variants_by_query[query_name][normalized].append(branch_term)
+                for branch_term in self._branch_terms_for_query(paper, query_name, query_info):
+                    normalized = branch_term.lower()
+                    if branch_term not in term_variants_by_query[query_name][normalized]:
+                        term_variants_by_query[query_name][normalized].append(branch_term)
         
         # Build canonical term mapping: normalized_term -> canonical_term
         canonical_term_map: Dict[str, Dict[str, str]] = {}
@@ -102,21 +130,29 @@ class OverlapCalculator:
                 canonical_term_map[query_name][normalized] = canonical
         
         # Second pass: organize papers using canonical terms
+        seen_all_paper_keys = set()
         for query_name, papers in papers_by_query.items():
+            query_info = self.queries.get(query_name, {})
             # Organize papers by branch term (using canonical terms)
             for paper in papers:
-                self.all_papers.append(paper)
+                paper_key = paper.doi or paper.id or paper.title
+                if paper_key and paper_key not in seen_all_paper_keys:
+                    seen_all_paper_keys.add(paper_key)
+                    self.all_papers.append(paper)
+                elif not paper_key:
+                    self.all_papers.append(paper)
+                query_branch_terms = self._branch_terms_for_query(paper, query_name, query_info)
                 
                 # Add paper to each branch term it belongs to
                 # Papers with no RN field or blank RN field have empty branch_terms list
-                if paper.branch_terms and len(paper.branch_terms) > 0:
-                    for branch_term in paper.branch_terms:
+                if query_branch_terms:
+                    for branch_term in query_branch_terms:
                         # Normalize to get the canonical term
                         normalized = branch_term.lower()
                         canonical_term = canonical_term_map[query_name].get(normalized, branch_term)
                         # Use canonical term for grouping
                         self.papers_by_query_and_branch[query_name][canonical_term].append(paper)
-                else:
+                elif not paper.branch_terms and not query_info.get("label_filter"):
                     # If no branch terms (missing RN field or blank RN field), add to "uncategorized" group
                     self.papers_by_query_and_branch[query_name]["uncategorized"].append(paper)
         
@@ -811,8 +847,6 @@ class OverlapCalculator:
             print(f"Error in get_visualization_data: {str(e)}")
             traceback.print_exc()
             raise
-
-
 
 
 

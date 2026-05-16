@@ -14,6 +14,7 @@ Outputs:
 
 import os
 import sys
+import json
 from pathlib import Path
 from typing import Optional
 
@@ -260,13 +261,72 @@ COMMON_SEARCH_TERMS = {
     # }
 }
 
+def _query_name_from_label(label: str, slug: str = "") -> str:
+    import re
+
+    raw = slug or label
+    raw = raw.replace("(", " ").replace(")", " ")
+    name = re.sub(r"[^A-Za-z0-9]+", "_", raw).strip("_")
+    return name or "Custom_Query"
+
+
+def load_custom_search_terms():
+    """
+    Load GUI-created custom query nodes.
+
+    These entries let a custom PubMed GUI search appear as a direct child of
+    the PubMed database node. Each custom entry filters the shared master RIS
+    by its exact RN label so custom searches do not get folded into the default
+    NLP_Extraction cluster.
+    """
+    manual_folder = Path(MANUAL_GROUPINGS_FOLDER)
+    registry = manual_folder / "custom_queries.json"
+    if not registry.is_file():
+        return {}
+
+    try:
+        with open(registry, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as exc:
+        print(f"Warning: could not load custom query registry {registry}: {exc}")
+        return {}
+
+    entries = data.get("queries", []) if isinstance(data, dict) else []
+    custom_terms = {}
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        query = (entry.get("query") or "").strip()
+        label = (entry.get("label") or "").strip()
+        slug = (entry.get("slug") or "").strip()
+        source_db = (entry.get("source_db") or "pubmed").strip().lower()
+        if not query or not label:
+            continue
+        query_name = (entry.get("name") or _query_name_from_label(label, slug)).strip()
+        prefix = "pubmed" if source_db == "pubmed" else source_db
+        custom_terms[query_name] = {
+            "query": query,
+            "prefix": prefix,
+            "slug": slug or _query_name_from_label(label).lower(),
+            "label": label,
+            "label_filter": label,
+            "label_filter_mode": "exact",
+            "custom": True,
+        }
+    return custom_terms
+
+
 def get_queries_with_ris_files():
     """
     Resolve RIS file paths for all queries based on their prefixes
     Returns queries dict with ris_file paths populated
     """
     resolved_queries = {}
-    for query_name, query_info in COMMON_SEARCH_TERMS.items():
+    merged_terms = {}
+    merged_terms.update(COMMON_SEARCH_TERMS)
+    merged_terms.update(load_custom_search_terms())
+
+    for query_name, query_info in merged_terms.items():
         resolved_info = query_info.copy()
         
         # If prefix is specified, find the newest file

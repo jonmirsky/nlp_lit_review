@@ -20,6 +20,7 @@ Usage:
 from __future__ import annotations
 
 import importlib.util
+import json
 import os
 import queue
 import re
@@ -41,6 +42,7 @@ RIS_PARSER_PATH = REPO_ROOT / "visualizer_nlp_lit_review" / "ris_parser.py"
 RIS_SOURCE_DIR = REPO_ROOT / "visualizer_nlp_lit_review" / "RIS_source_files"
 MANUAL_GROUPINGS_DIR = RIS_SOURCE_DIR / "manual_groupings"
 JONS_LIST_PATH = MANUAL_GROUPINGS_DIR / "jons_list.txt"
+CUSTOM_QUERY_REGISTRY_PATH = MANUAL_GROUPINGS_DIR / "custom_queries.json"
 HELPERS_DIR = REPO_ROOT / "automated_search" / "scripts" / "helpers"
 WRAPPER_PATH = REPO_ROOT / "automated_search" / "scripts" / "auto_search_wrapper.py"
 REFRESH_PATH = REPO_ROOT / "automated_search" / "scripts" / "refresh_catalog.py"
@@ -122,6 +124,13 @@ def _paper_lookup_key(paper: Any) -> str:
 
 def _ris_value(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def _query_name_from_label(label: str, slug: str = "") -> str:
+    raw = slug or label
+    raw = raw.replace("(", " ").replace(")", " ")
+    name = re.sub(r"[^A-Za-z0-9]+", "_", raw).strip("_")
+    return name or "Custom_Query"
 
 
 def _latest_resume_decision() -> Any | None:
@@ -597,6 +606,48 @@ class AdminGUI:
             "Commit and push jons_list.txt when you want this reflected on Render.",
         )
 
+    def _register_custom_query_node(self, *, query: str, slug: str, label: str, source_db: str) -> None:
+        MANUAL_GROUPINGS_DIR.mkdir(parents=True, exist_ok=True)
+        if CUSTOM_QUERY_REGISTRY_PATH.is_file():
+            try:
+                with open(CUSTOM_QUERY_REGISTRY_PATH, "r", encoding="utf-8") as f:
+                    registry = json.load(f)
+            except Exception:
+                registry = {}
+        else:
+            registry = {}
+
+        entries = registry.get("queries", [])
+        if not isinstance(entries, list):
+            entries = []
+
+        name = _query_name_from_label(label, slug)
+        new_entry = {
+            "name": name,
+            "query": query,
+            "slug": slug,
+            "label": label,
+            "source_db": source_db,
+        }
+
+        replaced = False
+        for idx, entry in enumerate(entries):
+            if not isinstance(entry, dict):
+                continue
+            if entry.get("label") == label or entry.get("slug") == slug or entry.get("name") == name:
+                entries[idx] = new_entry
+                replaced = True
+                break
+        if not replaced:
+            entries.append(new_entry)
+
+        registry["queries"] = entries
+        with open(CUSTOM_QUERY_REGISTRY_PATH, "w", encoding="utf-8") as f:
+            json.dump(registry, f, indent=2)
+            f.write("\n")
+
+        self._log_line(f"[Visualizer] Registered custom query node: {name} ({label})\n")
+
     # ── Subprocess execution ─────────────────────────────────────────────────
     @staticmethod
     def _python_cmd(script: Path, *args: str) -> list[str]:
@@ -641,12 +692,26 @@ class AdminGUI:
         final_q = f"({base_q}) AND ({extra})" if extra else base_q
         slug = self._slug_var.get().strip()
         label = self._label_var.get().strip()
+        source_db = self._db_var.get().strip() or "pubmed"
+
+        if self._current_entry() is None:
+            try:
+                self._register_custom_query_node(
+                    query=final_q,
+                    slug=slug,
+                    label=label,
+                    source_db=source_db,
+                )
+            except Exception as exc:
+                messagebox.showerror("Could not register visualizer node", str(exc))
+                return
 
         cmd = self._python_cmd(
             WRAPPER_PATH,
             "--query", final_q,
             "--slug", slug,
             "--label", label,
+            "--source-db", source_db,
         )
         self._spawn(cmd, label=f"Search and Pull — {slug}")
 
