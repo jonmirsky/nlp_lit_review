@@ -99,6 +99,16 @@ One JSON object per line (no trailing newline within objects), appended after ea
 
 `--resume <run_dir>` reads this file and skips records whose `outcome` is `success`, `skipped_existing`, or whose `error_reason` is terminal (`not_found`, `paywall_detected`, `no_identifier`).
 
+`--resume-latest` inspects only the newest run folder. If that run is complete
+(`finished_at` set, `run_id` present in `merged_from`, and `summary.md` exists),
+it exits 0 without doing work. If the newest run is incomplete and has an
+`input.ris` or `found/found.ris`, it resumes that run. This is the safe command
+to run after a server reboot:
+
+```bash
+python3 automated_search/scripts/auto_search_wrapper.py --resume-latest
+```
+
 ## `errors.jsonl` line shape
 
 Same fields as `progress.jsonl` for failed entries, plus:

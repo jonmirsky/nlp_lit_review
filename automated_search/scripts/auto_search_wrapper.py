@@ -98,6 +98,8 @@ def _build_arg_parser() -> argparse.ArgumentParser:
                    help="Create the run folder + metadata then exit before any network call.")
     p.add_argument("--resume", type=Path,
                    help="Resume a prior run folder. Skips already-attempted records (see SCHEMA.md).")
+    p.add_argument("--resume-latest", action="store_true",
+                   help="Resume the most recent run only if it is incomplete; no-op when latest is complete.")
     p.add_argument("--legacy", action="store_true",
                    help="Use the old interactive workflow (removed in Phase 7).")
     return p
@@ -245,6 +247,20 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     if args.legacy:
         _interactive_legacy_main()
+        return 0
+
+    if args.resume_latest:
+        from resume_latest import latest_resume_decision  # type: ignore[import-not-found]
+
+        decision = latest_resume_decision()
+        print(decision.reason)
+        if not decision.can_resume:
+            return 0
+        run = decision.run
+        assert run is not None
+        print(f"Resuming latest run: {run.run_id}")
+        run_full_text_scrape(run=run, resume=True)
+        _run_post_scrape_chain(run)
         return 0
 
     if args.resume:

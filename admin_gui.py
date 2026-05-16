@@ -41,6 +41,7 @@ RIS_PARSER_PATH = REPO_ROOT / "visualizer_nlp_lit_review" / "ris_parser.py"
 RIS_SOURCE_DIR = REPO_ROOT / "visualizer_nlp_lit_review" / "RIS_source_files"
 MANUAL_GROUPINGS_DIR = RIS_SOURCE_DIR / "manual_groupings"
 JONS_LIST_PATH = MANUAL_GROUPINGS_DIR / "jons_list.txt"
+HELPERS_DIR = REPO_ROOT / "automated_search" / "scripts" / "helpers"
 WRAPPER_PATH = REPO_ROOT / "automated_search" / "scripts" / "auto_search_wrapper.py"
 REFRESH_PATH = REPO_ROOT / "automated_search" / "scripts" / "refresh_catalog.py"
 REQUIREMENTS_PATH = REPO_ROOT / "automated_search" / "requirements.txt"
@@ -121,6 +122,19 @@ def _paper_lookup_key(paper: Any) -> str:
 
 def _ris_value(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def _latest_resume_decision() -> Any | None:
+    if str(HELPERS_DIR) not in sys.path:
+        sys.path.insert(0, str(HELPERS_DIR))
+    try:
+        from resume_latest import latest_resume_decision  # type: ignore[import-not-found]
+    except Exception:
+        return None
+    try:
+        return latest_resume_decision()
+    except Exception:
+        return None
 
 
 # ── GUI ──────────────────────────────────────────────────────────────────────
@@ -360,6 +374,9 @@ class AdminGUI:
         self._btn_refresh = ttk.Button(btn_row, text="Refresh Catalog",
                                        command=self._run_refresh)
         self._btn_refresh.pack(side="left", padx=(0, 8), pady=4)
+
+        self._btn_resume = ttk.Button(btn_row, text="Resume Latest", command=self._run_resume_latest)
+        self._btn_resume.pack(side="left", padx=(0, 8), pady=4)
 
         self._btn_stop = ttk.Button(btn_row, text="Stop", command=self._stop_proc,
                                     state="disabled")
@@ -640,6 +657,19 @@ class AdminGUI:
         cmd = self._python_cmd(REFRESH_PATH)
         self._spawn(cmd, label="Refresh Catalog")
 
+    def _run_resume_latest(self) -> None:
+        decision = _latest_resume_decision()
+        if decision is None:
+            messagebox.showerror("Resume unavailable", "Could not inspect latest run state.")
+            return
+        if not decision.can_resume:
+            self._log_line(f"\n[Resume Latest] {decision.reason}\n")
+            messagebox.showinfo("Nothing to resume", decision.reason)
+            self._ensure_buttons_ready()
+            return
+        cmd = self._python_cmd(WRAPPER_PATH, "--resume-latest")
+        self._spawn(cmd, label=f"Resume Latest — {decision.run.run_id}")
+
     def _is_job_running(self) -> bool:
         if not self._job_active:
             return False
@@ -654,6 +684,7 @@ class AdminGUI:
         if running:
             self._btn_search.config(state="disabled")
             self._btn_refresh.config(state="disabled", text="Refresh Catalog (running…)")
+            self._btn_resume.config(state="disabled", text="Resume Latest (running…)")
             self._btn_stop.config(state="normal")
             self._status_var.set(f"Running: {label}…")
         else:
@@ -665,6 +696,11 @@ class AdminGUI:
         self._proc = None
         self._btn_search.config(state="normal")
         self._btn_refresh.config(state="normal", text="Refresh Catalog")
+        decision = _latest_resume_decision()
+        if decision is not None and decision.can_resume:
+            self._btn_resume.config(state="normal", text="Resume Latest")
+        else:
+            self._btn_resume.config(state="disabled", text="Resume Latest")
         self._btn_stop.config(state="disabled")
         if self._status_var.get().startswith("Running:") or "Installing" in self._status_var.get():
             self._status_var.set("Ready.")
