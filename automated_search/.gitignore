@@ -1,0 +1,19 @@
+# Codifies decision 3 of the automated-search recordkeeping refactor:
+# track per-run metadata.json and summary.md only; ignore RIS/logs/progress/pdfs.
+
+searches/**/input.ris
+searches/**/found/**
+searches/**/missing/**
+searches/**/progress.jsonl
+searches/**/errors.jsonl
+searches/**/log.txt
+searches/**/*.tmp
+
+.cache/
+
+# Temp dir used by rclone-copy mode (populated mid-download, should be empty
+# after a clean run; kept here so accidental leftover files are never committed).
+.tmp_pdfs/
+
+__pycache__/
+*.pyc

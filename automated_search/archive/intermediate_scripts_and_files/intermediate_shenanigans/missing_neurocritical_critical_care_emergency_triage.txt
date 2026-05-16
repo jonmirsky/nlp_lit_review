@@ -1,0 +1,2048 @@
+﻿TY  - JOUR
+AB  - Acute Respiratory Distress Syndrome (ARDS) is a syndrome of respiratory failure that may be identified using text from radiology reports. The objective of this study was to determine whether natural language processing (NLP) with machine learning performs better than a traditional keyword model for ARDS identification. Linguistic pre-processing of reports was performed and text features were inputs to machine learning classifiers tuned using 10-fold cross-validation on 80% of the sample size and tested in the remaining 20%. A cohort of 533 patients was evaluated, with a data corpus of 9,255 radiology reports. The traditional model had an accuracy of 67.3% (95% CI: 58.3-76.3) with a positive predictive value (PPV) of 41.7% (95% CI: 27.7-55.6). The best NLP model had an accuracy of 83.0% (95% CI: 75.9-90.2) with a PPV of 71.4% (95% CI: 52.1-90.8). A computable phenotype for ARDS with NLP may identify more cases than the traditional model.
+AU  - Afshar, Majid
+AU  - Joyce, Cara
+AU  - Oakey, Anthony
+AU  - Formanek, Perry
+AU  - Yang, Philip
+AU  - Churpek, Matthew M.
+AU  - Cooper, Richard S.
+AU  - Zelisko, Susan
+AU  - Price, Ron
+AU  - Dligach, Dmitriy
+DA  - 2018
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1559-4076
+SP  - 157–165
+ST  - A Computable Phenotype for Acute Respiratory Distress Syndrome Using Natural Language Processing and Machine Learning
+T2  - AMIA Annu Symp Proc
+TI  - A Computable Phenotype for Acute Respiratory Distress Syndrome Using Natural Language Processing and Machine Learning
+UR  - https://pmc.ncbi.nlm.nih.gov/articles/PMC6371271/
+VL  - 2018
+ID  - 4133
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4133.pdf
+ER  - 
+
+TY  - JOUR
+AB  - Event detection from social media aims at extracting specific or generic unusual happenings, such as, family reunions, earthquakes, and disease outbreaks, among others. This paper introduces a new perspective for the incremental extraction and clustering of social events from big social data streams. We present 'E-ware', a scalable and efficient big data platform that integrates data stream and geospatial processing tools for the incremental extraction and dissemination of spatio-temporal events. We introduce a pure incremental approach for event discovery, by developing unsupervised machine learning and NLP algorithms and by computing events' lifetime and spatial spanning. Our incremental clustering technique employs temporal sliding windows, in order to update the discovered topic clusters with the upcoming social streams (i.e., tweets). The system integrates an efficient spatio-temporal index for fast retrieval and updates of evolving event clusters. We conduct experiments over Twitter datasets to measure the effectiveness and efficiency of our system. The results demonstrate that E-ware has a major advantage for real-time incremental detection and tracking of events, both spatially and temporally. This leads to the development of unparalleled smart city applications, such as event-enriched trip planning, epidemic disease evolution, and proactive emergency management services.
+AU  - Afyouni, Imad
+AU  - Khan, Aamir
+AU  - Alghbari, Zaher
+DA  - 2022/06/25/
+DO  - 10.1007/s12652-022-04104-4
+KW  - Event detection
+Incremental processing
+NLP
+Social data mining
+Spatio-temporal scope
+Stream data management
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1868-5145
+SP  - 1–20
+ST  - E-ware: a big data system for the incremental discovery of spatio-temporal events from microblogs
+T2  - J Ambient Intell Humaniz Comput
+TI  - E-ware: a big data system for the incremental discovery of spatio-temporal events from microblogs
+UR  - https://doi.org/10.1007/s12652-022-04104-4
+https://link.springer.com/article/10.1007/s12652-022-04104-4
+ID  - 4090
+ER  - 
+
+TY  - JOUR
+AB  - Engineering teams need timely signals about evolving requirements and release risk, yet multilingual fan discourse around live sports is noisy, code-switched, and saturated with sarcasm and event-driven drift. We present Hybrid DeepSentX, an AI-driven framework that converts crowd commentary into actionable requirements insight and sprint-level risk scores. The pipeline couples multilingual transformer encoders with an inductive GraphSAGE conversation graph to inject relational context across posts, and adds a reinforcement learner whose reward is shaped to prioritize correct decisions on sarcasm-heavy items and rapidly shifting events. We assembled a million-plus posts from X, Reddit, and sports forums and evaluated the framework against strong baselines, including BERT, long short-term memory, support-vector machines, and recent hybrid models, with significance tests, calibration analysis, ablations, and efficiency profiling. DeepSentX achieved higher macro-averaged accuracy and F1 on code-switched and sarcastic subsets, reduced missed risk flags, and produced developer-facing artefacts that directly support backlog grooming and defect triage. Relative to prior hybrids that combine transformers with either graph reasoning or reinforcement alone, our contributions are fourfold: (i) a unified multilingual design that integrates transformer, graph, and reinforcement components for sarcasm and drift robustness, (ii) an annotated multi-platform corpus with explicit code switching and sarcasm labels and per platform language balance, (iii) a rigorous comparative study reporting accuracy, calibration, latency, memory, and parameter count, and (iv) deployment artefacts that turn model outputs into requirement clusters and sprint risk scores suitable for continuous planning.
+AU  - Alalasandra Ramakrishnaiah, Suhas
+AU  - Abdullah Rabi, Yasir
+AU  - John Patrick, Ananth
+AU  - Shabaz, Mohammad
+AU  - Khan, Surbhi B.
+AU  - Khan, Rijwan
+AU  - Almusharraf, Ahlam
+DA  - 2025/12/04/
+DO  - 10.1177/2167647X251399606
+KW  - risk prediction
+AI-driven
+fan Sentiment
+multilingual NLP
+requirements mining
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2167-6461
+ST  - Hybrid DeepSentX Framework for AI-Driven Requirements Insight and Risk Prediction in Multilingual Sports Using Natural Language Processing
+T2  - Big Data
+TI  - Hybrid DeepSentX Framework for AI-Driven Requirements Insight and Risk Prediction in Multilingual Sports Using Natural Language Processing
+UR  - https://doi.org/10.1177/2167647X251399606
+https://www.liebertpub.com/doi/10.1177/2167647X251399606
+ID  - 4008
+ER  - 
+
+TY  - JOUR
+AB  - Social media platforms like Twitter provide essential real-time information about crisis events. Although the text data generated is rich, its vast volume and unstructured format make manual analysis challenging. Information extraction technologies such as Semantic Role Labeling (SRL) are needed to identify a sentence's semantic roles, such as who is the victim, what happened, when and where the event occurred, and what objects are affected in the crisis text to speed up and facilitate the emergency response process. However, the availability of public SRL datasets, especially for Indonesian, still considered a low-resource language, is very limited. We aim to develop an Indonesian-language SRL dataset based on Twitter text focusing on crisis events. This dataset includes entity labels for Named Entity Recognition (NER), another information extraction technique besides SRL. Text data was obtained through a crawling process on Twitter using specific keywords from 2018-2023, then preprocessed to obtain clean and relevant data for crisis events in Indonesia. The cleaned text data was then manually annotated by two experts based on guidelines designed to maintain consistency, resulting in 99,206 tokens labeled with SRL and NER. The high inter-annotator agreement value (Cohen's Kappa >0.90) indicates reliable data quality. This dataset is designed to support the development of automated models for information extraction, such as SRL and NER. The results of this extraction will be used for disaster impact analysis, mapping affected areas, and planning for crisis mitigation. By providing this dataset, the research opens up new opportunities for developing Natural Language Processing (NLP) in Indonesian, especially in crisis event analysis.
+AU  - Ariyanto, Amelia Devi Putri
+AU  - Purwitasari, Diana
+AU  - Amaliah, Bilqis
+AU  - Fatichah, Chastine
+AU  - Taqiuddin, Muhammad Ghifari
+AU  - Haikal
+DA  - 2025/08//undefined
+DO  - 10.1016/j.dib.2025.111688
+KW  - Crisis event
+Indonesian Tweets
+Low-resource languages
+Named entity recognition
+Semantic role labeling
+Twitter data
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2352-3409
+SP  - 111688
+ST  - Annotated data for semantic role labeling of crisis events in Indonesian Tweets
+T2  - Data Brief
+TI  - Annotated data for semantic role labeling of crisis events in Indonesian Tweets
+UR  - https://doi.org/10.1016/j.dib.2025.111688
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12164043/
+VL  - 61
+ID  - 4025
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4025.pdf
+ER  - 
+
+TY  - JOUR
+AB  - Automating Electronic Health Records (EHR) documentation can significantly reduce the burden on care providers, particularly in emergency care settings where rapid and accurate record-keeping is crucial. A critical aspect of this automation involves using natural language processing (NLP) techniques to convert transcribed conversations into structured EHR fields. For instance, extracting temperature values like "102.4 Fahrenheit" from the transcribed text "His temperature is 39.1, which is 102.4 Fahrenheit." However, traditional rule-based and single-model NLP approaches often struggle with domain-specific medical terminology, contextual ambiguity, and numerical extraction errors. This study investigates the potential of integrating multiple Large Language Models (LLMs) to enhance EMS documentation accuracy. We developed an LLM integration framework and evaluated four state-of-the-art LLMs-Claude 3.5, GPT-4, Gemini, and Mistral-on a dataset comprising transcribed conversations from 40 EMS training simulations. The evaluation focused on precision, recall, and F1 score across zero-shot and few-shot learning scenarios. Results showed that the integrated LLM framework outperformed individual models, achieving overall F1 scores of 0.78 (zero-shot) and 0.81 (few-shot). In addition to quantitative evaluation, a preliminary user study was conducted with domain experts to assess the perceived usefulness and challenges of the integrated framework. The findings suggest that this approach has the potential to reduce documentation effort compared to traditional manual documentation. However, challenges such as misinterpretation of medical context and occasional omissions were noted, highlighting areas for further refinement and future work. This research is the first to systematically explore and evaluate the use of LLMs for real-time EMS EHR documentation. By addressing key challenges in automated transcription and structured data extraction, our work lays a foundation for real-world implementation, improving efficiency and accuracy in emergency medical documentation.
+AU  - Bai, Enze
+AU  - Luo, Xiao
+AU  - Zhang, Zhan
+AU  - Adelgais, Kathleen
+AU  - Ali, Humaira
+AU  - Finkelstein, Jack
+AU  - Kutzin, Jared
+DA  - 2025/05/17/
+DO  - 10.1007/s10916-025-02197-w
+IS  - 1
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0148-5598
+SP  - 65
+ST  - Assessment and Integration of Large Language Models for Automated Electronic Health Record Documentation in Emergency Medical Services
+T2  - J Med Syst
+TI  - Assessment and Integration of Large Language Models for Automated Electronic Health Record Documentation in Emergency Medical Services
+UR  - https://doi.org/10.1007/s10916-025-02197-w
+https://link.springer.com/article/10.1007/s10916-025-02197-w
+VL  - 49
+ID  - 4027
+ER  - 
+
+TY  - JOUR
+AB  - PURPOSE: Scoring postencounter patient notes (PNs) yields significant insights into student performance, but the resource intensity of scoring limits its use. Recent advances in natural language processing (NLP) and machine learning allow application of automated short answer grading (ASAG) for this task. This retrospective study evaluated psychometric characteristics and reliability of an ASAG system for PNs and factors contributing to implementation, including feasibility and case-specific phrase annotation required to tune the system for a new case. METHOD: PNs from standardized patient (SP) cases within a graduation competency exam were used to train the ASAG system, applying a feed-forward neural networks algorithm for scoring. Using faculty phrase-level annotation, 10 PNs per case were required to tune the ASAG system. After tuning, ASAG item-level ratings for 20 notes were compared across ASAG-faculty (4 cases, 80 pairings) and ASAG-nonfaculty (2 cases, 40 pairings). Psychometric characteristics were examined using item analysis and Cronbach's alpha. Inter-rater reliability (IRR) was examined using kappa. RESULTS: ASAG scores demonstrated sufficient variability in differentiating learner PN performance and high IRR between machine and human ratings. Across all items the ASAG-faculty scoring mean kappa was .83 (SE ± .02). The ASAG-nonfaculty pairings kappa was .83 (SE ± .02). The ASAG scoring demonstrated high item discrimination. Internal consistency reliability values at the case level ranged from a Cronbach's alpha of .65 to .77. Faculty time cost to train and supervise nonfaculty raters for 4 cases was approximately $1,856. Faculty cost to tune the ASAG system was approximately $928. CONCLUSIONS: NLP-based automated scoring of PNs demonstrated a high degree of reliability and psychometric confidence for use as learner feedback. The small number of phrase-level annotations required to tune the system to a new case enhances feasibility. ASAG-enabled PN scoring has broad implications for improving feedback in case-based learning contexts in medical education.
+AU  - Bond, William F.
+AU  - Zhou, Jianing
+AU  - Bhat, Suma
+AU  - Park, Yoon Soo
+AU  - Ebert-Allen, Rebecca A.
+AU  - Ruger, Rebecca L.
+AU  - Yudkowsky, Rachel
+DA  - 2023/11/01/
+DO  - 10.1097/ACM.0000000000005357
+IS  - 11S
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1040-2446
+SP  - S90–S97
+ST  - Automated Patient Note Grading: Examining Scoring Reliability and Feasibility
+T2  - Acad Med
+TI  - Automated Patient Note Grading: Examining Scoring Reliability and Feasibility
+UR  - https://doi.org/10.1097/ACM.0000000000005357
+VL  - 98
+ID  - 4075
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: The COVID-19 pandemic has significantly strained health care systems globally, leading to an overwhelming influx of patients and exacerbating resource limitations. Concurrently, an "infodemic" of misinformation, particularly prevalent in women's health, has emerged. This challenge has been pivotal for health care providers, especially gynecologists and obstetricians, in managing pregnant women's health. The pandemic heightened risks for pregnant women from COVID-19, necessitating balanced advice from specialists on vaccine safety versus known risks. In addition, the advent of generative artificial intelligence (AI), such as large language models (LLMs), offers promising support in health care. However, they necessitate rigorous testing. OBJECTIVE: This study aimed to assess LLMs' proficiency, clarity, and objectivity regarding COVID-19's impacts on pregnancy. METHODS: This study evaluates 4 major AI prototypes (ChatGPT-3.5, ChatGPT-4, Microsoft Copilot, and Google Bard) using zero-shot prompts in a questionnaire validated among 159 Israeli gynecologists and obstetricians. The questionnaire assesses proficiency in providing accurate information on COVID-19 in relation to pregnancy. Text-mining, sentiment analysis, and readability (Flesch-Kincaid grade level and Flesch Reading Ease Score) were also conducted. RESULTS: In terms of LLMs' knowledge, ChatGPT-4 and Microsoft Copilot each scored 97% (32/33), Google Bard 94% (31/33), and ChatGPT-3.5 82% (27/33). ChatGPT-4 incorrectly stated an increased risk of miscarriage due to COVID-19. Google Bard and Microsoft Copilot had minor inaccuracies concerning COVID-19 transmission and complications. In the sentiment analysis, Microsoft Copilot achieved the least negative score (-4), followed by ChatGPT-4 (-6) and Google Bard (-7), while ChatGPT-3.5 obtained the most negative score (-12). Finally, concerning the readability analysis, Flesch-Kincaid Grade Level and Flesch Reading Ease Score showed that Microsoft Copilot was the most accessible at 9.9 and 49, followed by ChatGPT-4 at 12.4 and 37.1, while ChatGPT-3.5 (12.9 and 35.6) and Google Bard (12.9 and 35.8) generated particularly complex responses. CONCLUSIONS: The study highlights varying knowledge levels of LLMs in relation to COVID-19 and pregnancy. ChatGPT-3.5 showed the least knowledge and alignment with scientific evidence. Readability and complexity analyses suggest that each AI's approach was tailored to specific audiences, with ChatGPT versions being more suitable for specialized readers and Microsoft Copilot for the general public. Sentiment analysis revealed notable variations in the way LLMs communicated critical information, underscoring the essential role of neutral and objective health care communication in ensuring that pregnant women, particularly vulnerable during the COVID-19 pandemic, receive accurate and reassuring guidance. Overall, ChatGPT-4, Microsoft Copilot, and Google Bard generally provided accurate, updated information on COVID-19 and vaccines in maternal and fetal health, aligning with health guidelines. The study demonstrated the potential role of AI in supplementing health care knowledge, with a need for continuous updating and verification of AI knowledge bases. The choice of AI tool should consider the target audience and required information detail level.
+AU  - Bragazzi, Nicola Luigi
+AU  - Buchinger, Michèle
+AU  - Atwan, Hisham
+AU  - Tuma, Ruba
+AU  - Chirico, Francesco
+AU  - Szarpak, Lukasz
+AU  - Farah, Raymond
+AU  - Khamisy-Farah, Rola
+DA  - 2025/02/05/
+DO  - 10.2196/56126
+KW  - accuracy
+chatGPT
+COVID-19
+generative artificial intelligence
+google bard
+gynecology
+infectious
+large language model
+microsoft copilot
+natural language processing
+obstetric
+pregnancy
+readability
+reproductive health
+sentiment
+text mining
+vaccination
+vaccine
+women
+zero shot
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2561-326X
+SP  - e56126
+ST  - Proficiency, Clarity, and Objectivity of Large Language Models Versus Specialists' Knowledge on COVID-19's Impacts in Pregnancy: Cross-Sectional Pilot Study
+T2  - JMIR Form Res
+TI  - Proficiency, Clarity, and Objectivity of Large Language Models Versus Specialists' Knowledge on COVID-19's Impacts in Pregnancy: Cross-Sectional Pilot Study
+UR  - https://doi.org/10.2196/56126
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11840386/
+VL  - 9
+ID  - 4037
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVES: This study assesses the feasibility, inter-rater reliability, and accuracy of using OpenAI's ChatGPT-4 and Google's Gemini Ultra large language models (LLMs), for Emergency Medical Services (EMS) quality assurance. The implementation of these LLMs for EMS quality assurance has the potential to significantly reduce the workload on medical directors and quality assurance staff by automating aspects of the processing and review of patient care reports. This offers the potential for more efficient and accurate identification of areas requiring improvement, thereby potentially enhancing patient care outcomes. METHODS: Two expert human reviewers, ChatGPT GPT-4, and Gemini Ultra assessed and rated 150 consecutively sampled and anonymized prehospital records from 2 large urban EMS agencies for adherence to 2020 National Association of State EMS metrics for cardiac care. We evaluated the accuracy of scoring, inter-rater reliability, and review efficiency. The inter-rater reliability for the dichotomous outcome of each EMS metric was measured using the kappa statistic. RESULTS: Human reviewers showed high interrater reliability, with 91.2% agreement and a kappa coefficient 0.782 (0.654-0.910). ChatGPT-4 achieved substantial agreement with human reviewers in EKG documentation and aspirin administration (76.2% agreement, kappa coefficient 0.401 (0.334-0.468), but performance varied across other metrics. Gemini Ultra's evaluation was discontinued due to poor performance. No significant differences were observed in median review times: 01:28 min (IQR 1:12 - 1:51 min) per human chart review, 01:24 min (IQR 01:09 - 01:53 min) per ChatGPT-4 chart review (p = 0.46), and 01:50 min (IQR 01:10-03:34 min) per Gemini Ultra review (p = 0.06). CONCLUSIONS: Large language models demonstrate potential in supporting quality assurance by effectively and objectively extracting data elements. However, their accuracy in interpreting non-standardized and time-sensitive details remains inferior to human evaluators. Our findings suggest that current LLMs may best offer supplemental support to the human review processes, but their current value remains limited. Enhancements in LLM training and integration are recommended for improved and more reliable performance in the quality assurance processes.
+AU  - Brant-Zawadzki, Graham
+AU  - Klapthor, Brent
+AU  - Ryba, Chris
+AU  - Youngquist, Drew C.
+AU  - Burton, Brooke
+AU  - Palatinus, Helen
+AU  - Youngquist, Scott T.
+DA  - 2025
+DO  - 10.1080/10903127.2024.2376757
+IS  - 3
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1090-3127
+SP  - 210–217
+ST  - The Performance of ChatGPT-4 and Gemini Ultra 1.0 for Quality Assurance Review in Emergency Medical Services Chest Pain Calls
+T2  - Prehosp Emerg Care
+TI  - The Performance of ChatGPT-4 and Gemini Ultra 1.0 for Quality Assurance Review in Emergency Medical Services Chest Pain Calls
+UR  - https://doi.org/10.1080/10903127.2024.2376757
+https://www.tandfonline.com/doi/10.1080/10903127.2024.2376757?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed
+VL  - 29
+ID  - 4055
+ER  - 
+
+TY  - JOUR
+AB  - We sought to determine whether machine learning and natural language processing (NLP) applied to electronic medical records could improve performance of automated health-care claims-based algorithms to identify anaphylaxis events using data on 516 patients with outpatient, emergency department, or inpatient anaphylaxis diagnosis codes during 2015-2019 in 2 integrated health-care institutions in the Northwest United States. We used one site's manually reviewed gold-standard outcomes data for model development and the other's for external validation based on cross-validated area under the receiver operating characteristic curve (AUC), positive predictive value (PPV), and sensitivity. In the development site 154 (64%) of 239 potential events met adjudication criteria for anaphylaxis compared with 180 (65%) of 277 in the validation site. Logistic regression models using only structured claims data achieved a cross-validated AUC of 0.58 (95% CI: 0.54, 0.63). Machine learning improved cross-validated AUC to 0.62 (0.58, 0.66); incorporating NLP-derived covariates further increased cross-validated AUCs to 0.70 (0.66, 0.75) in development and 0.67 (0.63, 0.71) in external validation data. A classification threshold with cross-validated PPV of 79% and cross-validated sensitivity of 66% in development data had cross-validated PPV of 78% and cross-validated sensitivity of 56% in external data. Machine learning and NLP-derived data improved identification of validated anaphylaxis events.
+AU  - Carrell, David S.
+AU  - Gruber, Susan
+AU  - Floyd, James S.
+AU  - Bann, Maralyssa A.
+AU  - Cushing-Haugen, Kara L.
+AU  - Johnson, Ron L.
+AU  - Graham, Vina
+AU  - Cronkite, David J.
+AU  - Hazlehurst, Brian L.
+AU  - Felcher, Andrew H.
+AU  - Bejan, Cosmin A.
+AU  - Kennedy, Adee
+AU  - Shinde, Mayura U.
+AU  - Karami, Sara
+AU  - Ma, Yong
+AU  - Stojanovic, Danijela
+AU  - Zhao, Yueqin
+AU  - Ball, Robert
+AU  - Nelson, Jennifer C.
+DA  - 2023/02/01/
+DO  - 10.1093/aje/kwac182
+IS  - 2
+KW  - anaphylaxis
+electronic health records
+health outcome identification
+machine learning, supervised
+postmarketing product surveillance
+predictive modeling
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0002-9262
+SP  - 283–295
+ST  - Improving Methods of Identifying Anaphylaxis for Medical Product Safety Surveillance Using Natural Language Processing and Machine Learning
+T2  - Am J Epidemiol
+TI  - Improving Methods of Identifying Anaphylaxis for Medical Product Safety Surveillance Using Natural Language Processing and Machine Learning
+UR  - https://doi.org/10.1093/aje/kwac182
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9896464/
+VL  - 192
+ID  - 4087
+ER  - 
+
+TY  - JOUR
+AB  - The first annual meeting of the Italian Society for Artificial Intelligence in Medicine (Società Italiana Intelligenza Artificiale in Medicina, SIIAM) on December 7, 2023, marked a significant milestone in integrating artificial intelligence (AI) into Italy's healthcare framework. This paper reports on the collaborative workshop conducted during this event, highlighting the collective efforts of 51 professionals from diverse fields including medicine, engineering, data science, and law. The interdisciplinary background of the participants played a crucial role in generating ideas for innovative AI solutions tailored to healthcare challenges. Central to the discussions were several AI applications aimed at improving patient care and streamlining healthcare processes. Notably, the use of Large Language Models (LLMs) in remote monitoring of chronic patients emerged as an area of focus. These models promise enhanced patient monitoring through detailed symptom checking and anomaly detection, thereby facilitating timely medical interventions. Another significant proposal involved employing LLMs to improve empathy in medical communication, addressing the challenges posed by cultural diversity and high-stress levels among healthcare professionals. Additionally, the development of Machine Learning algorithms for standardizing treatment in pediatric emergency departments was discussed, along with the need for educational initiatives to enhance AI adoption in rural healthcare settings. The workshop also explored using LLMs for efficient data extraction and analysis in scientific literature, interpreting healthcare norms, and streamlining hospital discharge records. This paper provides a comprehensive overview of the ideas and solutions proposed at the workshop, reflecting the participants' forward-thinking vision and the potential of AI to revolutionize healthcare.
+AU  - Causio, Francesco Andrea
+AU  - De Angelis, Luigi
+AU  - Diedenhofen, Giacomo
+AU  - Talio, Angelo
+AU  - Baglivo, Francesco
+DA  - 2024/06//undefined
+DO  - 10.15167/2421-4248/jpmh2024.65.2.3261
+IS  - 2
+KW  - Artificial Intelligence
+Large Language Models
+Machine Learning
+Workshop
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1121-2233
+SP  - E285–E289
+ST  - Perspectives on AI use in medicine: views of the Italian Society of Artificial Intelligence in Medicine
+T2  - J Prev Med Hyg
+TI  - Perspectives on AI use in medicine: views of the Italian Society of Artificial Intelligence in Medicine
+UR  - https://doi.org/10.15167/2421-4248/jpmh2024.65.2.3261
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11487733/
+VL  - 65
+ID  - 4046
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: Pediatric status epilepticus is one of the most frequent pediatric emergencies, with high mortality and morbidity. Utilizing electronic health records (EHRs) permits analysis of care approaches and disease outcomes at a lower cost than prospective research. However, reviewing EHR manually is time intensive. We aimed to compare refractory status epilepticus (rSE) cases identified by human EHR review with a natural language processing (NLP)-assisted rSE screen followed by a manual review. METHODS: We used the NLP screening tool Document Review Tool (DrT) to generate regular expressions, trained a bag-of-words NLP classifier on EHRs from 2017 to 2019, and then tested our algorithm on data from February to December 2012. We compared results from manual review to NLP-assisted search followed by manual review. RESULTS: Our algorithm identified 1528 notes in the test set. After removing notes pertaining to the same event by DrT, the user reviewed a total number of 400 notes to find patients with rSE. Within these 400 notes, we identified 31 rSE cases, including 12 new cases not found in manual review, and 19 of the 20 previously identified cases. The NLP-assisted model found 31 of 32 cases, with a sensitivity of 96.88% (95% CI = 82%-99.84%), whereas manual review identified 20 of 32 cases, with a sensitivity of 62.5% (95% CI = 43.75%-78.34%). SIGNIFICANCE: DrT provided a highly sensitive model compared to human review and an increase in patient identification through EHRs. The use of DrT is a suitable application of NLP for identifying patients with a history of recent rSE, which ultimately contributes to the implementation of monitoring techniques and treatments in near real time.
+AU  - Chafjiri, Fatemeh Mohammad Alizadeh
+AU  - Reece, Latania
+AU  - Voke, Lillian
+AU  - Landschaft, Assaf
+AU  - Clark, Justice
+AU  - Kimia, Amir A.
+AU  - Loddenkemper, Tobias
+DA  - 2023/12//undefined
+DO  - 10.1111/epi.17789
+IS  - 12
+KW  - electronic health record
+natural language processing
+pediatric
+seizure
+status epilepticus
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0013-9580
+SP  - 3227–3237
+ST  - Natural language processing for identification of refractory status epilepticus in children
+T2  - Epilepsia
+TI  - Natural language processing for identification of refractory status epilepticus in children
+UR  - https://doi.org/10.1111/epi.17789
+https://onlinelibrary.wiley.com/doi/10.1111/epi.17789
+VL  - 64
+ID  - 4076
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: The timely and accurate submission of prehospital electronic medical records is crucial for the efficiency of medical rescue operations. However, personnel professional experience, training cycles, and environmental conditions often influence its completion rate. This study proposes integrating noise-robust speech recognition technology with large language models (LLMs) to generate emergency diagnosis summaries. This approach aims to help medical personnel quickly document key patient information, streamlining the emergency response process. METHODS: A joint training model combining speech enhancement and recognition was proposed, incorporating LLMs to generate emergency diagnosis summaries. The model was trained in two rounds using actual ambulance noise data, environmental noise data, and open-source speech datasets. The model optimized Connectionist Temporal Classification(CTC) and attention loss through deep feature extraction and the selective attention mechanism. The study also analyzed the impact of different prompt designs on the quality of LLMs-generated summaries. Tukey HSD and Holm correction methods were employed for multiple comparisons of three subjective evaluation metrics under three prompts for three models, assessing the statistical significance of each factor's influence on the generation results. RESULTS: The proposed speech recognition model reduced the character error rate in real-world ambulance noise recordings to 52.92%, outperforming several comparative speech recognition models. Under the Stylized Prompt condition, the Qwen2.5-7B-Instruct model demonstrated superior accuracy and relevance compared to other models in terms of subjectivity and relevance, reducing the average completion time for prehospital electronic medical records from 20 min to 14 min. CONCLUSION: Using noise-robust speech recognition combined with LLMs to generate emergency diagnosis summaries improves efficiency and enhances medical record completion. This approach demonstrates broad application potential in emergencies and could be extended to quality evaluation, disease prediction, and risk assessment.
+AU  - Chen, Chen
+AU  - Hu, Yingying
+AU  - Cai, Wenwei
+AU  - Pan, Huibin
+AU  - Shen, Meihong
+AU  - Zhai, Yujie
+AU  - Wu, Shanhui
+AU  - Zhou, Qunyi
+AU  - Guo, Yi
+DA  - 2025/11//undefined
+DO  - 10.1016/j.ijmedinf.2025.106029
+KW  - Deep learning
+Large language models
+Speech enhancement
+Speech recognition
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1386-5056
+SP  - 106029
+ST  - Deep learning-based in-ambulance speech recognition and generation of prehospital emergency diagnostic summaries using LLMs
+T2  - Int J Med Inform
+TI  - Deep learning-based in-ambulance speech recognition and generation of prehospital emergency diagnostic summaries using LLMs
+UR  - https://doi.org/10.1016/j.ijmedinf.2025.106029
+https://www.sciencedirect.com/science/article/pii/S1386505625002461?via%3Dihub
+VL  - 203
+ID  - 4023
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4023.pdf
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: The increasing use of artificial intelligence (AI) by scholars presents a pressing challenge to healthcare publishing. While legitimate use can potentially accelerate scholarship, unethical approaches also exist, leading to factually inaccurate and biased text that may degrade scholarship. Numerous online AI detection tools exist that provide a percentage score of AI use. These can assist authors and editors in navigating this landscape. In this study, we compared the scores from three AI detection tools (ZeroGPT, PhraslyAI, and Grammarly AI Detector) across five plausible conditions of AI use and evaluated them against human assessments. METHODS: Thirty open access articles published in the journals Advances in Simulation and Simulation in Healthcare prior to 2022 were selected, and the article introductions were extracted. Five experimental conditions were examined, including: (1) 100% human written; (2) human written, light AI editing; (3) human written, heavy AI editing; (4) AI written text from human content; and (5) 100% AI written from article title. The resulting materials were assessed by three open-access AI detection tools and five blinded human raters. Results were summarized descriptively and compared using repeated measures analysis of variance (ANOVA), intraclass correlation coefficients (ICC), and Bland-Altman plots. RESULTS: The three AI detection tools were able to differentiate between the five test conditions (p < 0.001 for all), but varied significantly in absolute score, with ICC ranging from 0.57 to 0.95, raising concerns regarding overall reliability of these tools. Human scoring was far less consistent, with an overall accuracy of 19%, indistinguishable from chance. CONCLUSION: While existing AI detection tools can meaningfully distinguish plausible AI use conditions, reliability across these tools is variable. Human scoring accuracy is uniformly low. Use of AI detection tools by scholars and journal editors may assist in determining potentially unethical use but they should not be relied upon alone at this time.
+AU  - Cheng, Adam
+AU  - Lin, Yiqun
+AU  - Reedy, Gabriel
+AU  - Joseph, Christine
+AU  - Wirkowski, Samantha
+AU  - Mallette, Viviane
+AU  - Nagesh, Vikhashni
+AU  - Krieser, David
+AU  - Calhoun, Aaron
+DA  - 2025/11/22/
+DO  - 10.1186/s41077-025-00396-6
+KW  - Artificial intelligence
+Large language models
+ChatGPT
+Ethics
+Detection
+Academic writing
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2059-0628
+ST  - Ability of AI detection tools and humans to accurately identify different forms of AI-generated written content
+T2  - Adv Simul (Lond)
+TI  - Ability of AI detection tools and humans to accurately identify different forms of AI-generated written content
+UR  - https://doi.org/10.1186/s41077-025-00396-6
+https://link.springer.com/article/10.1186/s41077-025-00396-6
+ID  - 4009
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: To develop and externally validate models based on neural networks and natural language processing (NLP) to identify suspected serious infections in emergency department (ED) patients afebrile at initial presentation. METHODS: This retrospective study included adults who visited the ED afebrile at initial presentation. We developed four models based on artificial neural networks to identify suspected serious infection. Patient demographics, vital signs, laboratory test results and information extracted from initial ED physician notes using term frequency-inverse document frequency were used as model variables. Models were trained and internally validated with data from one hospital and externally validated using data from a different hospital. Model discrimination was evaluated using area under the receiver operating characteristic curve (AUC) and 95% confidence intervals (CIs). RESULTS: The training, internal validation, and external validation datasets comprised 150,699, 37,675, and 85,098 patients, respectively. The AUCs (95% CIs) for Models 1 (demographics + vital signs), 2 (demographics + vital signs + initial ED physician note), 3 (demographics + vital signs + laboratory tests), and 4 (demographics + vital signs + laboratory tests + initial ED physician note) in the internal validation dataset were 0.789 (0.782-0.796), 0.867 (0.862-0.872), 0.881 (0.876-0.887), and 0.911 (0.906-0.915), respectively. In the external validation dataset, the AUCs (95% CIs) of Models 1, 2, 3, and 4 were 0.824 (0.817-0.830), 0.895 (0.890-0.899), 0.879 (0.873-0.884), and 0.913 (0.909-0.917), respectively. Model 1 can be utilized immediately after
+AU  - Choi, Dong Hyun
+AU  - Choi, Sae Won
+AU  - Kim, Ki Hong
+AU  - Choi, Yeongho
+AU  - Kim, Yoonjic
+DA  - 2024/06//undefined
+DO  - 10.1016/j.ajem.2024.03.006
+KW  - Emergency department
+Infection
+Natural language processing
+Neural network
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0735-6757
+SP  - 67–76
+ST  - Early identification of suspected serious infection among patients afebrile at initial presentation using neural network models and natural language processing: A development and external validation study in the emergency department
+T2  - Am J Emerg Med
+TI  - Early identification of suspected serious infection among patients afebrile at initial presentation using neural network models and natural language processing: A development and external validation study in the emergency department
+UR  - https://doi.org/10.1016/j.ajem.2024.03.006
+https://www.sciencedirect.com/science/article/abs/pii/S0735675724001153?via%3Dihub
+VL  - 80
+ID  - 4068
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4068.pdf
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: ChatGPT (OpenAI), a state-of-the-art large language model, has exhibited remarkable performance in various specialized applications. Despite the growing popularity and efficacy of artificial intelligence, there is a scarcity of studies that assess ChatGPT's competence in addressing multiple-choice questions (MCQs) using KIDMAP of Rasch analysis-a website tool used to evaluate ChatGPT's performance in MCQ answering. OBJECTIVE: This study aims to (1) showcase the utility of the website (Rasch analysis, specifically RaschOnline), and (2) determine the grade achieved by ChatGPT when compared to a normal sample. METHODS: The capability of ChatGPT was evaluated using 10 items from the English tests conducted for Taiwan college entrance examinations in 2023. Under a Rasch model, 300 simulated students with normal distributions were simulated to compete with ChatGPT's responses. RaschOnline was used to generate 5 visual presentations, including item difficulties, differential item functioning, item characteristic curve, Wright map, and KIDMAP, to address the research objectives. RESULTS: The findings revealed the following: (1) the difficulty of the 10 items increased in a monotonous pattern from easier to harder, represented by logits (-2.43, -1.78, -1.48, -0.64, -0.1, 0.33, 0.59, 1.34, 1.7, and 2.47); (2) evidence of differential item functioning was observed between gender groups for item 5 (P=.04); (3) item 5 displayed a good fit to the Rasch model (P=.61); (4) all items demonstrated a satisfactory fit to the Rasch model, indicated by Infit mean square errors below the threshold of 1.5; (5) no significant difference was found in the measures obtained between gender groups (P=.83); (6) a significant difference was observed among ability grades (P<.001); and (7) ChatGPT's capability was graded as A, surpassing grades B to E. CONCLUSIONS: By using RaschOnline, this study provides evidence that ChatGPT possesses the ability to achieve a grade A when compared to a normal sample. It exhibits excellent proficiency in answering MCQs from the English tests conducted in 2023 for the Taiwan college entrance examinations.
+AU  - Chow, Julie Chi
+AU  - Cheng, Teng Yun
+AU  - Chien, Tsair-Wei
+AU  - Chou, Willy
+DA  - 2024/08/08/
+DO  - 10.2196/46800
+KW  - application
+artificial intelligence
+ChatGPT
+college
+differential item functioning
+evaluation tool
+KIDMAP
+multiple choice questions
+RaschOnline
+scoring
+students
+testing
+tool
+website tool
+Wright map
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2561-326X
+SP  - e46800
+ST  - Assessing ChatGPT's Capability for Multiple Choice Questions Using RaschOnline: Observational Study
+T2  - JMIR Form Res
+TI  - Assessing ChatGPT's Capability for Multiple Choice Questions Using RaschOnline: Observational Study
+UR  - https://doi.org/10.2196/46800
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11346125/
+VL  - 8
+ID  - 4054
+ER  - 
+
+TY  - JOUR
+AB  - Prior knowledge of the distributional characteristics of linguistic phenomena can be useful for a variety of language processing tasks. This paper describes the distribution of negation in two types of biomedical texts: scientific journal articles and progress notes. Two types of negation are examined: explicit negation at the syntactic level and affixal negation at the sub-word level. The data show that the distribution of negation is significantly different in the two document types, with explicit negation more frequent in the clinical documents than in the scientific publications and affixal negation more frequent in the journal articles at the type level and token levels. All code is available on GitHub <fnr rid="fn001" /><fn id="fn001">https://github.com/KevinBretonnelCohen/NegationDistribution </fn>.
+AU  - Cohen, K. Bretonnel
+AU  - Goss, Foster R.
+AU  - Zweigenbaum, Pierre
+AU  - Hunter, Lawrence E.
+DA  - 2017
+KW  - Data Mining
+Linguistics
+Natural Language Processing
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0926-9630
+SP  - 346–350
+ST  - Translational Morphosyntax: Distribution of Negation in Clinical Records and Biomedical Journal Articles
+T2  - Stud Health Technol Inform
+TI  - Translational Morphosyntax: Distribution of Negation in Clinical Records and Biomedical Journal Articles
+VL  - 245
+ID  - 4139
+ER  - 
+
+TY  - JOUR
+AB  - Psychosocial factors are known to have adverse health impacts, but are rarely measured; using natural language processing, we extracted factors that identified a higher risk segment of older adults with multimorbidity. We find these extracted features are highly predictive of future emergency department visits and hospitalizations, although only marginal prediction gains are seen compared to other models without these factors. Combining these extraction techniques with other measures of social determinants may help catalyze population health efforts to mitigate these health impacts.
+AU  - Dorr, David A.
+AU  - King, Taylor
+AU  - Quiñones, Ana
+DA  - 2022/06/06/
+DO  - 10.3233/SHTI220282
+KW  - biopsychosocial
+multimorbidity
+psychosocial
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0926-9630
+SP  - 1090–1091
+ST  - Prediction of Future Health Care Utilization
+T2  - Stud Health Technol Inform
+TI  - Prediction of Future Health Care Utilization
+UR  - https://doi.org/10.3233/SHTI220282
+VL  - 290
+ID  - 4093
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND AND OBJECTIVES: Housing insecurity is rising among older adults, especially for racially minoritized people. Few studies have evaluated whether healthcare institutions are meeting that challenge. Using data from a large California medical system, we examined how often older patients are (A) identified as housing insecure and then (B) referred to social services, as well as inequities in those rates. RESEARCH DESIGN AND METHODS: We analyzed electronic health records (2013-2022) for 119,127 older adults (55+) receiving primary or emergency care. We used a natural language processing model to identify housing insecurity and social services referrals/connections from unstructured notes, with referrals also captured via structured data. Trends in identification were compared to eviction and homelessness trends in the general population. Racial inequities in referrals were evaluated using logistic regression. RESULTS: 0.6% of encounters (n = 6,253) screened positive for housing insecurity. Positive screening trends were nonlinear, with initial increases followed by declines to baseline (roughly tracking regional eviction trends). Only 7% of patients identified as housing insecure were referred to social services, and connections were more likely in primary than emergency care (odds ratio [OR] = 2.04, 95% confidence interval [95% CI]: 1.41-2.96). Asian patients had lower odds of referral than non-Hispanic White patients (OR = 0.51, 95% CI: 0.28-0.95). DISCUSSION AND IMPLICATIONS: We identified urgent unmet needs for housing intervention among older patients. Healthcare systems must do more to ensure older patients, especially racially minoritized older adults, are screened for housing insecurity and connected to housing services.
+AU  - Ferguson, Erin L.
+AU  - Mehta, Shivani
+AU  - Miramontes, Silvia
+AU  - Choi, Minhyuk
+AU  - Kim, Ye Ji
+AU  - Hill-Jarrett, Tanisha G.
+AU  - Cevallos, Nicolas
+AU  - Yang, Yulin
+AU  - Zimmerman, Scott C.
+AU  - Chen, Ruijia
+AU  - Kim, Min Hee
+AU  - Sims, Kendra D.
+AU  - Schwartz, Gabriel L.
+DA  - 2025/04/09/
+DO  - 10.1093/geront/gnaf027
+IS  - 5
+KW  - Homelessness
+Housing
+Machine learning
+Social services
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0016-9013
+ST  - Identifying and Addressing Housing Insecurity in Older Patients: Trends, Referrals, and Inequities in a California Medical System
+T2  - Gerontologist
+TI  - Identifying and Addressing Housing Insecurity in Older Patients: Trends, Referrals, and Inequities in a California Medical System
+UR  - https://doi.org/10.1093/geront/gnaf027
+VL  - 65
+ID  - 4029
+ER  - 
+
+TY  - JOUR
+AB  - Artificial intelligence (AI) is a speciality within computer science that deals with creating systems that can replicate the intelligence of a human mind and has problem-solving abilities. AI includes a diverse array of techniques and approaches such as machine learning, neural networks, natural language processing, robotics, and expert systems. An electronic literature search was conducted using the databases of "PubMed" and "Google Scholar". The period for the search was from 2000 to June 2023. The search terms included "artificial intelligence", "machine learning", "liver cancers", "liver tumors", "hepatectomy", "perioperative" and their synonyms in various combinations. The search also included all MeSH terms. The extracted articles were further reviewed in a step-wise manner for identification of relevant studies. A total of 148 articles were identified after the initial literature search. Initial review included screening of article titles for relevance and identifying duplicates. Finally, 65 articles were reviewed for this review article. The future of AI in liver cancer planning and management holds immense promise. AI-driven advancements will increasingly enable precise tumour detection, location, and characterisation through enhanced image analysis. ML algorithms will predict patient-specific treatment responses and complications, allowing for tailored therapies. Surgical robots and AI-guided procedures will enhance the precision of liver resections, reducing risks and improving outcomes. AI will also streamline patient monitoring, better hemodynamic management, enabling early detection of recurrence or complications. Moreover, AI will facilitate data-driven research, accelerating the development of novel treatments and therapies. Ultimately, AI's integration will revolutionise liver cancer care, offering personalised, efficient and effective solutions, improving patients' quality of life and survival rates.
+AU  - Gairola, Shruti
+AU  - Solanki, Sohan Lal
+AU  - Patkar, Shraddha
+AU  - Goel, Mahesh
+DA  - 2024/05//undefined
+DO  - 10.1007/s13193-024-01883-4
+IS  - Suppl 2
+KW  - Artificial intelligence
+Liver resections
+Perioperative management
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0975-7651
+SP  - 186–195
+ST  - Artificial Intelligence in Perioperative Planning and Management of Liver Resection
+T2  - Indian J Surg Oncol
+TI  - Artificial Intelligence in Perioperative Planning and Management of Liver Resection
+UR  - https://doi.org/10.1007/s13193-024-01883-4
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11133260/
+VL  - 15
+ID  - 4058
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVES: Structured data fields, including medication fields involving naloxone, are routinely used to identify opioid overdoses in emergency medical services (EMS) data; between January 2021 and March 2024, there were approximately 1.2 million instances of naloxone administration in the United States. To improve the accuracy of naloxone reporting, we developed methodology for identifying naloxone administration using both structured fields and unstructured patient care narratives for events documented by EMS. METHODS: We randomly sampled 30,000 records from Kentucky's state-wide EMS database during 2019. We applied regular expressions (RegEx) capable of recognizing naloxone-related text patterns in each EMS patient's case narrative. Additionally, we applied natural language processing (NLP) techniques to extract important contextual factors such as route and dosage from these narratives. We manually reviewed cases where the structured data and unstructured data disagreed and developed an aggregate indicator for naloxone administration using either structured or unstructured data for each patient case. RESULTS: There were 437 (1.45%) records with structured documentation of naloxone. Our RegEx method identified 547 naloxone administrations in the narratives; after manual review, we determined RegEx yielded acceptable false positives (N = 31, 5.6%), false negatives (N = 23, 4.2%) and performance (precision = 0.94, recall = 0.93). In total, 552 patients had naloxone administered after combining indicators from both structured fields and verified results from unstructured narratives. The NLP approach also identified 246 (47.4%) records that specified route of administration and 358 (69.0%) records with dosage delivered. CONCLUSIONS: An additional 115 (26.3%) patients receiving naloxone were identified by using unstructured case narratives compared to structured data. New surveillance methods that incorporate unstructured EMS narratives are critically needed to avoid substantial underestimation of naloxone utilization and enumeration of opioid overdoses.
+AU  - Harris, Daniel R.
+AU  - Rock, Peter
+AU  - Anthony, Nicholas
+AU  - Quesinberry, Dana
+AU  - Delcher, Chris
+DA  - 2025
+DO  - 10.1080/10903127.2024.2446638
+IS  - 4
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1090-3127
+SP  - 332–337
+ST  - Identification of Naloxone in Emergency Medical Services Data Substantially Improves by Processing Unstructured Patient Care Narratives
+T2  - Prehosp Emerg Care
+TI  - Identification of Naloxone in Emergency Medical Services Data Substantially Improves by Processing Unstructured Patient Care Narratives
+UR  - https://doi.org/10.1080/10903127.2024.2446638
+https://www.tandfonline.com/doi/10.1080/10903127.2024.2446638?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed
+VL  - 29
+ID  - 4039
+ER  - 
+
+TY  - JOUR
+AB  - INTRODUCTION: Prior studies examining prehospital characteristics related to return of spontaneous circulation (ROSC) in pediatric out-of-hospital cardiac arrest (OHCA) are limited to structured data. Natural language processing (NLP) could identify new factors from unstructured data using free-text narratives. The purpose of this study was to use NLP to examine EMS clinician free-text narratives for characteristics associated with prehospital ROSC in pediatric OHCA. METHODS: This was a retrospective analysis of patients ages 0-17 with OHCA in 2019 from the ESO Data Collaborative. We performed an exploratory analysis of EMS narratives using NLP with an a priori token library. We then constructed biostatistical and machine learning models and compared their performance in predicting ROSC. RESULTS: There were 1,726 included EMS encounters for pediatric OHCA; 60% were male patients, and the median age was 1 year (IQR 0-9). Most cardiac arrest events (61.3%) were unwitnessed, 87.3% were identified as having medical causes, and 5.9% had initial shockable rhythms. Prehospital ROSC was achieved in 23.1%. Words most positively correlated with ROSC were "ROSC" (r =  0.42), "pulse" (r = 0.29), "drowning" (r =  0.13), and "PEA" (r =  0.12). Words negatively correlated with ROSC included "asystole" (r =  -0.25), "lividity" (r =  -0.14), and "cold" (r =  -0.14). The terms "asystole," "pulse," "no breathing," "PEA," and "dry" had the greatest difference in frequency of appearance between encounters with and without ROSC (p < 0.05). The best-performing model for predicting prehospital ROSC was logistic regression with random oversampling using free-text data only (area under the receiver operating characteristic curve 0.92). CONCLUSIONS: EMS clinician free-text narratives reveal additional characteristics associated with prehospital ROSC in pediatric OHCA. Incorporating those terms into machine learning models of prehospital ROSC improves predictive ability. Therefore, NLP holds promise as a tool for use in predictive models with the goal to increase evidence-based management of pediatric OHCA.
+AU  - Harris, Matthew
+AU  - Crowe, Remle P.
+AU  - Anders, Jennifer
+AU  - D'Acunto, Salvatore
+AU  - Adelgais, Kathleen M.
+AU  - Fishe, Jennifer N.
+DA  - 2023
+DO  - 10.1080/10903127.2022.2074180
+IS  - 5
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1090-3127
+SP  - 687–694
+ST  - Identification of Factors Associated with Return of Spontaneous Circulation after Pediatric Out-of-Hospital Cardiac Arrest Using Natural Language Processing
+T2  - Prehosp Emerg Care
+TI  - Identification of Factors Associated with Return of Spontaneous Circulation after Pediatric Out-of-Hospital Cardiac Arrest Using Natural Language Processing
+UR  - https://doi.org/10.1080/10903127.2022.2074180
+https://www.tandfonline.com/doi/10.1080/10903127.2022.2074180?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed
+VL  - 27
+ID  - 4096
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: Falls are a leading cause of morbidity and mortality among older adults. Common methods for identifying fall-related ED visits within both claims and electronic health record datasets rely on diagnosis code-based definitions, which underestimate the true prevalence of falls. This study applies a natural language processing (NLP) algorithm to ED provider notes to identify patients presenting due to falls and compares the characteristics of NLP-identified cases to those identified through diagnosis codes to identify the impact of identification strategy. MATERIALS AND METHODS: This cross-sectional study analyzed ED encounter data from older adult patients who visited an ED between December 2016 and 2020. The NLP algorithm identified falls based on provider notes, searching for keywords related to falls and excluding negated and spurious matches. We also applied common ICD code methods to identify falls. RESULTS: We processed 50 153 ED encounters and the NLP approach identified 14 604 encounters for patients who fell. Of those, 7086 (49%) were not identified using external cause of morbidity ICD codes. Patients identified by just the NLP algorithm exhibited higher Elixhauser comorbidity scores and increased likelihood of 30-day mortality. Patients identified by NLP algorithm but not ICD codes were more likely to have severe underlying conditions such as sepsis or acute kidney disease rather than traumatic injuries. DISCUSSION: The NLP algorithm identifies many fall-related visits not identified by traditional methods. CONCLUSION: If the causal relationships between falls and comorbid conditions are not considered in NLP algorithms, they can easily identify patients who fell, but the fall was a sequela of underlying medical illness.
+AU  - Hekman, Daniel J.
+AU  - Maru, Apoorva P.
+AU  - Barton, Hanna J.
+AU  - Wiegmann, Douglas
+AU  - Shah, Manish N.
+AU  - Cochran, Amy L.
+AU  - Ötleş, Erkin
+AU  - Patterson, Brian W.
+DA  - 2025/06//undefined
+DO  - 10.1093/jamiaopen/ooaf047
+IS  - 3
+KW  - emergency medicine
+falls
+natural language processing
+traumatic injuries
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2574-2531
+SP  - ooaf047
+ST  - Evaluation of falls detected by natural language processing algorithm and not coded external cause of morbidity
+T2  - JAMIA Open
+TI  - Evaluation of falls detected by natural language processing algorithm and not coded external cause of morbidity
+UR  - https://doi.org/10.1093/jamiaopen/ooaf047
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12204729/
+VL  - 8
+ID  - 4024
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: Scanned documents in electronic health records (EHR) have been a challenge for decades, and are expected to stay in the foreseeable future. Current approaches for processing include image preprocessing, optical character recognition (OCR), and natural language processing (NLP). However, there is limited work evaluating the interaction of image preprocessing methods, NLP models, and document layout. MATERIALS AND METHODS: We evaluated 2 key indicators for sleep apnea, Apnea hypopnea index (AHI) and oxygen saturation (SaO(2)), from 955 scanned sleep study reports. Image preprocessing methods include gray-scaling, dilating, eroding, and contrast. OCR was implemented with Tesseract. Seven traditional machine learning models and 3 deep learning models were evaluated. We also evaluated combinations of image preprocessing methods, and 2 deep learning architectures (with and without structured input providing document layout information), with the goal of optimizing end-to-end performance. RESULTS: Our proposed method using ClinicalBERT reached an AUROC of 0.9743 and document accuracy of 94.76% for AHI, and an AUROC of 0.9523 and document accuracy of 91.61% for SaO(2). DISCUSSION: There are multiple, inter-related steps to extract meaningful information from scanned reports. While it would be infeasible to experiment with all possible option combinations, we experimented with several of the most critical steps for information extraction, including image processing and NLP. Given that scanned documents will likely be part of healthcare for years to come, it is critical to develop NLP systems to extract key information from this data. CONCLUSION: We demonstrated the proper use of image preprocessing and document layout could be beneficial to scanned document processing.
+AU  - Hsu, Enshuo
+AU  - Malagaris, Ioannis
+AU  - Kuo, Yong-Fang
+AU  - Sultana, Rizwana
+AU  - Roberts, Kirk
+DA  - 2022/07//undefined
+DO  - 10.1093/jamiaopen/ooac045
+IS  - 2
+KW  - electronic health records
+natural language processing
+optical character recognition
+polysomnography
+scanned document
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2574-2531
+SP  - ooac045
+ST  - Deep learning-based NLP data pipeline for EHR-scanned document information extraction
+T2  - JAMIA Open
+TI  - Deep learning-based NLP data pipeline for EHR-scanned document information extraction
+UR  - https://doi.org/10.1093/jamiaopen/ooac045
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9188320/
+VL  - 5
+ID  - 4091
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Community-acquired pneumonia (CAP) is a major driver of hospital antibiotic use. Efficient methods to identify patients treated for CAP in real time using the electronic health record (EHR) are needed. Automated identification of these patients could facilitate systematic tracking, intervention, and feedback on CAP-specific metrics such as appropriate antibiotic choice and duration. METHODS: Using retrospective data, we identified suspected CAP cases by searching for patients who received CAP antibiotics AND had an admitting International Classification of Diseases, Tenth Revision (ICD-10) code for pneumonia OR chest imaging within 24 hours OR bacterial urinary antigen testing within 48 hours of admission (denominator query). We subsequently explored different structured and natural language processing (NLP)-derived data from the EHR to identify CAP cases. We evaluated combinations of these electronic variables through receiver operating characteristic (ROC) curves to assess which best identified CAP cases compared to cases identified by manual chart review. Exclusion criteria were age <18 years, absolute neutrophil count <500 cells/mm(3), and admission to an oncology unit. RESULTS: Compared to the gold standard of chart review, the area under the ROC curve to detect CAP was 0.63 (95% confidence interval [CI], .55-.72; P < .01) using structured data (ie, laboratory and vital signs) and 0.83 (95% CI, .77-.90; P < .01) when NLP-derived data from radiographic reports were included. The sensitivity and specificity of the latter model were 80% and 81%, respectively. CONCLUSIONS: Creating an electronic tool that effectively identifies CAP cases in real time is possible, but its accuracy is dependent on NLP-derived radiographic data.
+AU  - Jones, George
+AU  - Amoah, Joe
+AU  - Klein, Eili Y.
+AU  - Leeman, Hannah
+AU  - Smith, Aria
+AU  - Levin, Scott
+AU  - Milstone, Aaron M.
+AU  - Dzintars, Kathryn
+AU  - Cosgrove, Sara E.
+AU  - Fabre, Valeria
+DA  - 2021/06//undefined
+DO  - 10.1093/ofid/ofab291
+IS  - 6
+KW  - algorithm
+antibiotic stewardship
+electronic
+pneumonia
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2328-8957
+SP  - ofab291
+ST  - Development of an Electronic Algorithm to Identify in Real Time Adults Hospitalized With Suspected Community-Acquired Pneumonia
+T2  - Open Forum Infect Dis
+TI  - Development of an Electronic Algorithm to Identify in Real Time Adults Hospitalized With Suspected Community-Acquired Pneumonia
+UR  - https://doi.org/10.1093/ofid/ofab291
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8231365/
+VL  - 8
+ID  - 4107
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Despite being a pandemic, the impact of the spread of COVID-19 extends beyond public health, influencing areas such as the economy, education, work style, and social relationships. Research studies that document public opinions and estimate the long-term potential impact after the pandemic can be of value to the field. OBJECTIVE: This study aims to uncover and track concerns in Japan throughout the COVID-19 pandemic by analyzing Japanese individuals' self-disclosure of disruptions to their life plans on social media. This approach offers alternative evidence for identifying concerns that may require further attention for individuals living in Japan. METHODS: We extracted 300,778 tweets using the query phrase Corona-no-sei ("due to COVID-19," "because of COVID-19," or "considering COVID-19"), enabling us to identify the activities and life plans disrupted by the pandemic. The correlation between the number of tweets and COVID-19 cases was analyzed, along with an examination of frequently co-occurring words. RESULTS: The top 20 nouns, verbs, and noun plus verb pairs co-occurring with Corona no-sei were extracted. The top 5 keywords were graduation ceremony, cancel, school, work, and event. The top 5 verbs were disappear, go, rest, can go, and end. Our findings indicate that education emerged as the top concern when the Japanese government announced the first state of emergency. We also observed a sudden surge in anxiety about material shortages such as toilet paper. As the pandemic persisted and more states of emergency were declared, we noticed a shift toward long-term concerns, including careers, social relationships, and education. CONCLUSIONS: Our study incorporated machine learning techniques for disease monitoring through the use of tweet data, allowing the identification of underlying concerns (eg, disrupted education and work conditions) throughout the 3 stages of Japanese government emergency announcements. The comparison with COVID-19 case numbers provides valuable insights into the short- and long-term societal impacts, emphasizing the importance of considering citizens' perspectives in policy-making and supporting those affected by the pandemic, particularly in the context of Japanese government decision-making.
+AU  - Kamba, Masaru
+AU  - She, Wan Jou
+AU  - Ferawati, Kiki
+AU  - Wakamiya, Shoko
+AU  - Aramaki, Eiji
+DA  - 2024/04/01/
+DO  - 10.2196/49699
+KW  - concerns
+COVID-19
+disrupted plans
+natural language processing
+NLP
+Twitter
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2564-1891
+SP  - e49699
+ST  - Exploring the Impact of the COVID-19 Pandemic on Twitter in Japan: Qualitative Analysis of Disrupted Plans and Consequences
+T2  - JMIR Infodemiology
+TI  - Exploring the Impact of the COVID-19 Pandemic on Twitter in Japan: Qualitative Analysis of Disrupted Plans and Consequences
+UR  - https://doi.org/10.2196/49699
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10986681/
+VL  - 4
+ID  - 4066
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: The COVID-19 pandemic has highlighted gaps in the current handling of medical resource demand surges and the need for prioritizing scarce medical resources to mitigate the risk of health care facilities becoming overwhelmed. OBJECTIVE: During a health care emergency, such as the COVID-19 pandemic, the public often uses social media to express negative sentiment (eg, urgency, fear, and frustration) as a real-time response to the evolving crisis. The sentiment expressed in COVID-19 posts may provide valuable real-time information about the relative severity of medical resource demand in different regions of a country. In this study, Twitter (subsequently rebranded as X) sentiment analysis was used to investigate whether an increase in negative sentiment COVID-19 tweets corresponded to a greater demand for hospital intensive care unit (ICU) beds in specific regions of the United States, Brazil, and India. METHODS: Tweets were collected from a publicly available data set containing COVID-19 tweets with sentiment labels and geolocation information posted between February 1, 2020, and March 31, 2021. Regional medical resource shortage data were gathered from publicly available data sets reporting a time series of ICU bed demand across each country. Negative sentiment tweets were analyzed using the Granger causality test and convergent cross-mapping (CCM) analysis to assess the utility of the time series of negative sentiment tweets in forecasting ICU bed shortages. RESULTS: For the United States (30,742,934 negative sentiment tweets), the results of the Granger causality test (for whether negative sentiment COVID-19 tweets forecast ICU bed shortage, assuming a stochastic system) were significant (P<.05) for 14 (28%) of the 50 states that passed the augmented Dickey-Fuller test at lag 2, and the results of the CCM analysis (for whether negative sentiment COVID-19 tweets forecast ICU bed shortage, assuming a dynamic system) were significant (P<.05) for 46 (92%) of the 50 states. For Brazil (3,004,039 negative sentiment tweets), the results of the Granger causality test were significant (P<.05) for 6 (22%) of the 27 federative units, and the results of the CCM analysis were significant (P<.05) for 26 (96%) of the 27 federative units. For India (4,199,151 negative sentiment tweets), the results of the Granger causality test were significant (P<.05) for 6 (23%) of the 26 included regions (25 states and the national capital region of Delhi), and the results of the CCM analysis were significant (P<.05) for 26 (100%) of the 26 included regions. CONCLUSIONS: This study provides a novel approach for identifying the regions of high hospital bed demand during a health care emergency scenario by analyzing Twitter sentiment data. Leveraging analyses that take advantage of natural language processing-driven tweet extraction systems has the potential to be an effective method for the early detection of medical resource demand surges.
+AU  - Kaur, Mahakprit
+AU  - Cargill, Taylor
+AU  - Hui, Kevin
+AU  - Vu, Minh
+AU  - Bragazzi, Nicola Luigi
+AU  - Kong, Jude Dzevela
+DA  - 2024/01/29/
+DO  - 10.2196/46087
+KW  - causal analysis
+convergent cross-mapping
+COVID-19
+global health
+Granger
+ICU bed
+intensive care unit bed
+medical supply shortage
+pandemic
+social media
+Twitter
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2561-326X
+SP  - e46087
+ST  - A Novel Approach for the Early Detection of Medical Resource Demand Surges During Health Care Emergencies: Infodemiology Study of Tweets
+T2  - JMIR Form Res
+TI  - A Novel Approach for the Early Detection of Medical Resource Demand Surges During Health Care Emergencies: Infodemiology Study of Tweets
+UR  - https://doi.org/10.2196/46087
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10862249/
+VL  - 8
+ID  - 4070
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Intensive care research has predominantly relied on conventional methods like randomized controlled trials. However, the increasing popularity of open-access, free databases in the past decade has opened new avenues for research, offering fresh insights. Leveraging machine learning (ML) techniques enables the analysis of trends in a vast number of studies. OBJECTIVE: This study aims to conduct a comprehensive bibliometric analysis using ML to compare trends and research topics in traditional intensive care unit (ICU) studies and those done with open-access databases (OADs). METHODS: We used ML for the analysis of publications in the Web of Science database in this study. Articles were categorized into "OAD" and "traditional intensive care" (TIC) studies. OAD studies were included in the Medical Information Mart for Intensive Care (MIMIC), eICU Collaborative Research Database (eICU-CRD), Amsterdam University Medical Centers Database (AmsterdamUMCdb), High Time Resolution ICU Dataset (HiRID), and Pediatric Intensive Care database. TIC studies included all other intensive care studies. Uniform manifold approximation and projection was used to visualize the corpus distribution. The BERTopic technique was used to generate 30 topic-unique identification numbers and to categorize topics into 22 topic families. RESULTS: A total of 227,893 records were extracted. After exclusions, 145,426 articles were identified as TIC and 1301 articles as OAD studies. TIC studies experienced exponential growth over the last 2 decades, culminating in a peak of 16,378 articles in 2021, while OAD studies demonstrated a consistent upsurge since 2018. Sepsis, ventilation-related research, and pediatric intensive care were the most frequently discussed topics. TIC studies exhibited broader coverage than OAD studies, suggesting a more extensive research scope. CONCLUSIONS: This study analyzed ICU research, providing valuable insights from a large number of publications. OAD studies complement TIC studies, focusing on predictive modeling, while TIC studies capture essential qualitative information. Integrating both approaches in a complementary manner is the future direction for ICU research. Additionally, natural language processing techniques offer a transformative alternative for literature review and bibliometric analysis.
+AU  - Ke, Yuhe
+AU  - Yang, Rui
+AU  - Liu, Nan
+DA  - 2024/04/17/
+DO  - 10.2196/48330
+KW  - BERTopic
+critical care
+eICU
+machine learning
+Medical Information Mart for Intensive Care
+MIMIC
+natural language processing
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1438-8871
+SP  - e48330
+ST  - Comparing Open-Access Database and Traditional Intensive Care Studies Using Machine Learning: Bibliometric Analysis Study
+T2  - J Med Internet Res
+TI  - Comparing Open-Access Database and Traditional Intensive Care Studies Using Machine Learning: Bibliometric Analysis Study
+UR  - https://doi.org/10.2196/48330
+VL  - 26
+ID  - 4064
+ER  - 
+
+TY  - JOUR
+AB  - This study evaluates fine-tuned Llama 3.2 models for extracting vaccine-related information from emergency department triage notes to support near real-time vaccine safety surveillance. Prompt engineering was used to initially create a labeled dataset, which was then confirmed by human annotators. The performance of prompt-engineered models, fine-tuned models, and a rule-based approach was compared. The fine-tuned Llama 3 billion parameter model outperformed other models in its accuracy of extracting vaccine names. Model quantization enabled efficient deployment in resource-constrained environments. Findings demonstrate the potential of large language models in automating data extraction from emergency department notes, supporting efficient vaccine safety surveillance and early detection of emerging adverse events following immunization issues.
+AU  - Khademi, Sedigh
+AU  - Black, Jim
+AU  - Palmer, Christopher
+AU  - Javed, Muhammad
+AU  - Clothier, Hazel
+AU  - Buttery, Jim
+AU  - Dimaguila, Gerardo Luis
+DA  - 2025/08/07/
+DO  - 10.3233/SHTI251023
+KW  - Emergency department
+Natural language processing
+vaccine safety
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0926-9630
+SP  - 1170–1174
+ST  - Enhancing Vaccine Safety Surveillance: Extracting Vaccine Mentions from Emergency Department Triage Notes Using Fine-Tuned Large Language Models
+T2  - Stud Health Technol Inform
+TI  - Enhancing Vaccine Safety Surveillance: Extracting Vaccine Mentions from Emergency Department Triage Notes Using Fine-Tuned Large Language Models
+UR  - https://doi.org/10.3233/SHTI251023
+VL  - 329
+ID  - 4019
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Safety culture development is essential for patient safety in healthcare institution. Perceptions of patient safety and cultural changes are reflected in patient safety reports; however, they were rarely investigated. The aim of this study was to investigate the perception of physicians and to explore the development of safety culture using quantitative content analysis for patient safety reports. METHODS: A retrospective analysis of free descriptions of harmful patient safety reports submitted by physicians was performed. Natural language processing and text analysis were conducted using the "KH Coder." A co-occurrence analysis was performed in each period to identify and analyze the safety concepts. The study period was grouped into three for comparison. RESULTS: The patient safety reports from physicians were collected between April 2004 and March 2020. Of these, 3351 reports were harmful: 839 reports were included in period 1, 1016 reports in period 2, and 1496 reports in period 3. Natural language processing identified 316 307 words in the free descriptions of 3351 reports. We identified seven concepts from the cluster in co-occurrence analysis as follows: "explanation of adverse event to patients and families," "central venous catheter," "intraoperative procedure and injury," "minimally invasive surgery," "life-threatening events," "blood loss," and "medical emergency team and critical care." These seven concepts showed significant differences among the three periods, except for "blood loss." The "explanation of adverse event to patients and families" decreased in proportion from 11.3% to 8.8% (P < .05). The "central venous catheter" decreased from 17.3% to 11.3% (P < .01). Meanwhile, "minimally invasive surgeries" and "intraoperative procedures" increased from 3.9% to 12.9% (P < .01) and from 10.8% to 14.6% (P < .05), respectively. Focusing on patients' events, "life-threatening events" decreased from 13.0% to 8.1% (P < .01); however, "medical emergency teams and critical care" increased from 3.3% to 10.6% (P < .01). CONCLUSION: Free description in patient safety reports is useful for evaluating the safety culture. Co-occurrence analysis revealed multiple concepts of physicians' perceptions. Quantitative content analysis revealed changes in perceptions and attitudes, and a disclosure policy of adverse events and the priority of patient care appeared with the development of safety culture.
+AU  - Koike, Daisuke
+AU  - Ito, Masahiro
+AU  - Horiguchi, Akihiko
+AU  - Yatsuya, Hiroshi
+AU  - Ota, Atsuhiko
+DA  - 2025/01/11/
+DO  - 10.1093/intqhc/mzae108
+IS  - 1
+KW  - incident reporting
+patient safety
+quantitative content analysis
+safety culture
+text mining
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1353-4505
+ST  - Exploring the development of safety culture among physicians with text mining of patient safety reports: a retrospective study
+T2  - Int J Qual Health Care
+TI  - Exploring the development of safety culture among physicians with text mining of patient safety reports: a retrospective study
+UR  - https://doi.org/10.1093/intqhc/mzae108
+VL  - 37
+ID  - 4042
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVES: To evaluate the linguistic changes of transgender-related resources prior to 1999 to create a comprehensive dataset of resources using an ontology-derived search system, laying a framework for ontology-based reviews to be used in informatics. METHODS: We analyzed 77 bibliographies and 11 databases for transgender resources published prior to 31 December 1999. We used 858 variants of the term "transgender" to identify resources. Individual sources were tagged by subject matter and major conceptual terminology usage. We evaluated the accuracy of a Gender, Sex, and Sexual Orientation (GSSO) ontology-based mechanism on tagging relevant literature searches. RESULTS: We identified 3,058 sources in 19 languages. Primary subjects covered included surgery, psychology, psychiatry, endocrinology, and sexology. The GSSO-based tagging mechanism correctly tagged 97.7% of MEDLINE resources as transgender-related. DISCUSSION: The GSSO-based tagging mechanism was more effective than keyword-specific elucidations of terminologically complex literature and was just as effective at manual identification of subjects discussed within resources. Diverse language relating to transgender persons can be identified using the GSSO, which can also be used for structured literature review based on subject matter thus improving research in the area.
+AU  - Kronk, Clair A.
+AU  - Dexheimer, Judith W.
+DA  - 2021/12//undefined
+DO  - 10.1016/j.ijmedinf.2021.104601
+KW  - Bibliography
+Biological Ontologies
+Natural Language Processing
+Transgender Persons
+Transsexualism
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1386-5056
+SP  - 104601
+ST  - An ontology-based review of transgender literature: Revealing a history of medicalization and pathologization
+T2  - Int J Med Inform
+TI  - An ontology-based review of transgender literature: Revealing a history of medicalization and pathologization
+UR  - https://doi.org/10.1016/j.ijmedinf.2021.104601
+https://www.sciencedirect.com/science/article/abs/pii/S1386505621002276?via%3Dihub
+VL  - 156
+ID  - 4105
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4105.pdf
+ER  - 
+
+TY  - JOUR
+AB  - In many medical fields, the maintenance of unabiguous terminologies, the comparison and aggregation of different terminologies go through the building of formal specialized clinical terminologies, the ontologies. In this paper, we describe the building of an ontology in the surgical intensive care medical domain. We considered textual reports as the main source of information and a natural language processing tool, the SYNTEX software, is used to build the ontology. We have tested the possibility for an expert to build a sizeable ontology in a reasonable time. The quality of the ontology has been evaluated according to its capacity to cover the ICD-10 terminology in the field. Examples of coding activity with the ontology are proposed and discussed.
+AU  - Le Moigno, Sophie
+AU  - Charlet, Jean
+AU  - Bourigault, Didier
+AU  - Degoulet, Patrice
+AU  - Jaulent, Marie-Christine
+DA  - 2002
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1531-605X
+SP  - 430–4
+ST  - Terminology extraction from text to build an ontology in surgical intensive care
+T2  - Proc AMIA Symp
+TI  - Terminology extraction from text to build an ontology in surgical intensive care
+ID  - 4148
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4148.pdf
+ER  - 
+
+TY  - JOUR
+AB  - This paper investigates how information timeliness and richness affect public engagement using text data from China's largest social media platform during times of the COVID-19 pandemic. We utilize a similarity calculation method based on natural language processing (NLP) and text mining to evaluate three dimensions of information timeliness: retrospectiveness, immediateness, and prospectiveness. Public engagement is divided into breadth and depth. The empirical results show that information retrospectiveness is negatively associated with public engagement breadth but positively with depth. Both information immediateness and prospectiveness improved the breadth and depth of public engagement. Interestingly, information richness has a positive moderating effect on the relationships between information retrospectiveness, prospectiveness, and public engagement breadth but no significant effects on immediateness; meanwhile, it has a negative moderating effect on the relationship between retrospectiveness and depth but a positive effect on immediateness, prospectiveness. In the extension analysis, we constructed a supervised NLP model to identify and classify health emergency-related information (epidemic prevention and help-seeking) automatically. We find that public engagement differs in the two emergency-related information categories. The findings can promote a more responsive public health strategy that magnifies the transfer speed for critical information and mitigates the negative impacts of information uncertainty or false information.
+AU  - Li, Kai
+AU  - Zhou, Cheng
+AU  - Luo, Xin Robert
+AU  - Benitez, Jose
+AU  - Liao, Qinyu
+DA  - 2022/11//undefined
+DO  - 10.1016/j.dss.2022.113752
+KW  - Health emergencies
+Information richness
+Information timeliness
+Natural language processing (NLP) for societal benefit
+Public engagement
+Social media
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0167-9236
+SP  - 113752
+ST  - Impact of information timeliness and richness on public engagement on social media during COVID-19 pandemic: An empirical investigation based on NLP and machine learning
+T2  - Decis Support Syst
+TI  - Impact of information timeliness and richness on public engagement on social media during COVID-19 pandemic: An empirical investigation based on NLP and machine learning
+UR  - https://doi.org/10.1016/j.dss.2022.113752
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8839801/
+VL  - 162
+ID  - 4099
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4099.pdf
+ER  - 
+
+TY  - JOUR
+AB  - The curation of precision oncology knowledge bases requires intensive screening of scientific literature. Large Language Models (LLMs) offer potential to assist with knowledge extraction and curation through automated abstract screening, though their utility in this context remains unexplored. We developed a decision tree-based pipeline utilising LLMs to automate literature screening for precision oncology knowledge bases. The system employs structured prompts to evaluate biomarker-therapeutic relationships across 8,012 abstracts from 25 oncology journals published in 2024. Performance was assessed against expert review using standard evaluation metrics; the pipeline achieved an overall accuracy of 92.9% (sensitivity [recall] 87.1%, specificity 93.7%) in shortlisting 1,328 candidate abstracts, of which 888 are considered relevant by experts, delivering a 5.26-fold enrichment in classification precision. Analysis of correctly identified abstracts revealed comprehensive coverage of key molecular targets, drug classes (immunotherapies and targeted therapies), and relevant cancer types. This pipeline automates literature triage for precision oncology knowledge bases for relevance, maintaining high specificity and potentially reducing manual screening burden whilst offering a scalable framework for sustainable knowledge base maintenance.
+AU  - Lin, Frank P.
+AU  - Tran, Minh
+AU  - Thavaneswaran, Subotheni
+AU  - Grady, John P.
+AU  - Kansara, Maya
+AU  - Chan, Jeffrey
+AU  - Ballinger, Mandy L.
+AU  - Simes, John
+AU  - Thomas, David M.
+DA  - 2025/08/07/
+DO  - 10.3233/SHTI250839
+KW  - Artificial intelligence
+Genomics
+Large language models
+Natural language processing
+Oncology
+Precision medicine
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0926-9630
+SP  - 248–252
+ST  - Automating Precision Oncology Literature Curation: A Decision Tree Approach Using Large Language Models
+T2  - Stud Health Technol Inform
+TI  - Automating Precision Oncology Literature Curation: A Decision Tree Approach Using Large Language Models
+UR  - https://doi.org/10.3233/SHTI250839
+VL  - 329
+ID  - 4020
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Little systematic information has been collected about the nature and types of articles published in 2 journals by identifying the latent topics and analyzing the extracted research themes and sentiments using text mining and machine learning within the 2020 time frame. The goals of this study were to conduct a content analysis of articles published in 2 journals, describe the research type, identify possible gaps, and propose future agendas for readers. METHODS: We downloaded 5610 abstracts in the journals of Medicine (Baltimore) and the Journal of the Formosan Medical Association (JFMA) from the PubMed library in 2020. Sentiment analysis (ie, opinion mining using a natural language processing technique) was performed to determine whether the article abstract was positive or negative toward sentiment to help readers capture article characteristics from journals. Cluster analysis was used to identify article topics based on medical subject headings (MeSH terms) using social network analysis (SNA). Forest plots were applied to distinguish the similarities and differences in article mood and MeSH terms between these 2 journals. The Q statistic and I(2) index were used to evaluate the difference in proportions of MeSH terms in journals. RESULTS: The comparison of research topics between the 2 journals using the 737 cited articles was made and found that most authors are from mainland China and Taiwan in Medicine and JFMA, respectively, similarity is supported by observing the abstract mood (Q = 8.3, I(2) = 0, P = .68; Z = 0.46, P = .65), 2 journals are in a common cluster (named latent topic of patient and treatment) using SNA, and difference in overall effect was found by the odds ratios of MeSH terms (Q = 185.5 I(2) = 89.8, P < .001; Z = 5.93, P < .001) and a greater proportion of COVID-19 articles in JFMA. CONCLUSIONS: SNA and forest plots were provided to readers with deep insight into the relationships between journals in research topics using MeSH terms. The results of this research provide readers with a concept diagram for future submissions to a given journal. HIGHLIGHTS: The main approaches frequently used in Meta-analysis for drawing forest plots contributed to the following: 1. Comparing abstract mood in 2 journals, which is modern and innovative in the literature. 2. Extracting article topics from MeSH terms using SNA, 3. drawing visual representations by using SNA, choropleth map, and forest plots that can inspire other relevant research to replicate the approaches for the other 2 paired journals in comparison of differences in research topics in the future.
+AU  - Lin, Ju-Kuo
+AU  - Chien, Tsair-Wei
+AU  - Yeh, Yu-Tsen
+AU  - Ho, Sam Yu-Chieh
+AU  - Chou, Willy
+DA  - 2022/03/18/
+DO  - 10.1097/MD.0000000000029029
+IS  - 11
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0025-7974
+ST  - Using sentiment analysis to identify similarities and differences in research topics and medical subject headings (MeSH terms) between Medicine (Baltimore) and the Journal of the Formosan Medical Association (JFMA) in 2020: A bibliometric study
+T2  - Medicine (Baltimore)
+TI  - Using sentiment analysis to identify similarities and differences in research topics and medical subject headings (MeSH terms) between Medicine (Baltimore) and the Journal of the Formosan Medical Association (JFMA) in 2020: A bibliometric study
+UR  - https://doi.org/10.1097/MD.0000000000029029
+VL  - 101
+ID  - 4098
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Gastrointestinal endoscopy represents a useful tool for the diagnosis and treatment of gastrointestinal diseases. Video platforms for spreading endoscopy-related knowledge may help patients understand the pros and cons of endoscopy on the premise of ensuring accuracy. However, videos with misinformation may lead to adverse consequences. OBJECTIVE: This study aims to evaluate the quality of gastrointestinal endoscopy-related videos on YouTube and to assess whether large language models (LLMs) can help patients obtain information from videos more efficiently. METHODS: We collected information from YouTube videos about 3 commonly used gastrointestinal endoscopes (gastroscopy, colonoscopy, and capsule endoscopy) and assessed their quality (rated by the modified DISCERN Tool, mDISCERN), reliability (rated by the Journal of the American Medical Association), and recommendation (rated by the Global Quality Score). We tasked LLM with summarizing the video content and assessed it from 3 perspectives: accuracy, completeness, and readability. RESULTS: A total of 167 videos were included. According to the indicated scoring, the quality, reliability, and recommendation of the 3 gastrointestinal endoscopy-related videos on YouTube were overall unsatisfactory, and the quality of the videos released by patients was particularly poor. Capsule endoscopy yielded a significantly lower Global Quality Score than did gastroscopy and colonoscopy. LLM-based summaries yielded accuracy scores of 4 (IQR 4-5), completeness scores of 4 (IQR 4-5), and readability scores of 2 (IQR 1-2). CONCLUSIONS: The quality of gastrointestinal endoscope-related videos currently on YouTube is poor. Moreover, additional regulatory and improvement strategies are needed in the future. LLM may be helpful in generalizing video-related information, but there is still room for improvement in its ability.
+AU  - Liu, Jinpei
+AU  - Qiu, Yifan
+AU  - Liu, Yilong
+AU  - Xu, Wenping
+AU  - Ning, Weichen
+AU  - Shi, Peimei
+AU  - Yuan, Zongli
+AU  - Wang, Fang
+AU  - Shi, Yihai
+DA  - 2025/03/11/
+DO  - 10.2196/58855
+KW  - colonoscopy
+cross-sectional study
+endoscopy
+endoscopy-related videos
+gastrointestinal endoscopy
+gastroscopy
+health information
+large language model
+LLM
+patient education
+quality
+reliability
+social media gastrointestinal
+video
+YouTube
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1438-8871
+SP  - e58855
+ST  - The Reliability and Quality of Videos as Guidance for Gastrointestinal Endoscopy: Cross-Sectional Study
+T2  - J Med Internet Res
+TI  - The Reliability and Quality of Videos as Guidance for Gastrointestinal Endoscopy: Cross-Sectional Study
+UR  - https://doi.org/10.2196/58855
+VL  - 27
+ID  - 4033
+ER  - 
+
+TY  - JOUR
+AB  - Attention about the risks of online social networks (SNs) has been called upon reports describing their use to express emotional distress and suicidal ideation or plans. On the Internet, cyberbullying, suicide pacts, Internet addiction, and "extreme" communities seem to increase suicidal behavior (SB). In this study, the scientific literature about SBs and SNs was narratively reviewed. Some authors focus on detecting at-risk populations through data mining, identification of risks factors, and web activity patterns. Others describe prevention practices on the Internet, such as websites, screening, and applications. Targeted interventions through SNs are also contemplated when suicidal ideation is present. Multiple predictive models should be defined, implemented, tested, and combined in order to deal with the risk of SB through an effective decision support system. This endeavor might require a reorganization of care for SNs users presenting suicidal ideation.
+AU  - Lopez-Castroman, Jorge
+AU  - Moulahi, Bilel
+AU  - Azé, Jérôme
+AU  - Bringay, Sandra
+AU  - Deninotti, Julie
+AU  - Guillaume, Sebastien
+AU  - Baca-Garcia, Enrique
+DA  - 2020/04//undefined
+DO  - 10.1002/jnr.24404
+IS  - 4
+KW  - mood disorders
+natural language processing
+social networks
+suicidal behavior
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0360-4012
+SP  - 616–625
+ST  - Mining social networks to improve suicide prevention: A scoping review
+T2  - J Neurosci Res
+TI  - Mining social networks to improve suicide prevention: A scoping review
+UR  - https://doi.org/10.1002/jnr.24404
+https://onlinelibrary.wiley.com/doi/10.1002/jnr.24404
+VL  - 98
+ID  - 4134
+ER  - 
+
+TY  - JOUR
+AB  - Background: Homicide ranks among the top causes of pregnancy-associated mortality in the United States. Intimate partner violence (IPV) has been implicated in violent maternal deaths, before which pregnant women may interact with health care, law enforcement, and legal systems. Objective: To understand IPV and system engagement prior to maternal deaths and to test the viability of using artificial intelligence (AI) for the analysis of narratives, we compared AI and human-rater analyses of National Violent Death Reporting System Restricted Access Data (NVDRS-RAD) narratives for IPV circumstances and system interactions. Study Design: We conducted a secondary data analysis of the female homicide records in the 2018-2020 NVDRS-RAD narratives. We trained a bidirectional encoder representations from transformers (BERT) model on 5,082 female nonpregnant cases, validating it with the 351 pregnant or recently pregnant cases. We conducted AI performance metrics for sensitivity, specificity, precision, and kappa values, identified key terms, and compared AI with human-rater analyses. Results: Among 351 complete NVDRS narrative records of pregnant or postpartum female homicide victims, 285 had primary suspects identified. Human-rater and AI analysis identified similar numbers for whether the suspect was a current or former partner and whether IPV history was noted before homicide. Natural language processing (NLP)-identified word patterns highlighted differences between IPV and non-IPV cases. Human raters identified 24% (80/351), compared with NLP's identification of 21% (72/351), of pregnant women before death who interacted with health care and other systems. All AI models had strong performance metrics. Conclusions: Pregnant women in violent relationships interact with health care, law enforcement, and legal systems prior to their deaths. AI analysis is comparable with human raters in detecting IPV circumstances and system interactions among maternal homicides in the NVDRS. These findings highlight missed opportunities across sectors, underlining the importance of multisectoral interventions to prevent homicides of pregnant women.
+AU  - Lucea, Marguerite B.
+AU  - Ramirez, Andrea N.
+AU  - Singh, Vijay
+AU  - Campbell, Jacqueline C.
+AU  - Pandian, Vinciya
+DA  - 2025/09/25/
+DO  - 10.1177/15409996251380353
+KW  - homicide
+intimate partner violence
+pregnant women
+prevention
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1540-9996
+ST  - Homicides of Pregnant Women: Artificial Intelligence Detects Partner Violence and System Interaction
+T2  - J Womens Health (Larchmt)
+TI  - Homicides of Pregnant Women: Artificial Intelligence Detects Partner Violence and System Interaction
+UR  - https://doi.org/10.1177/15409996251380353
+https://www.liebertpub.com/doi/10.1177/15409996251380353
+ID  - 4013
+ER  - 
+
+TY  - JOUR
+AB  - INTRODUCTION: The FDA Adverse Event Reporting System (FAERS) is a primary data source for identifying unlabeled adverse events (AEs) in a drug or biologic drug product's postmarketing phase. Many AE reports must be reviewed by drug safety experts to identify unlabeled AEs, even if the reported AEs are previously identified, labeled AEs. Integrating the labeling status of drug product AEs into FAERS could increase report triage and review efficiency. Medical Dictionary for Regulatory Activities (MedDRA) is the standard for coding AE terms in FAERS cases. However, drug manufacturers are not required to use MedDRA to describe AEs in product labels. We hypothesized that natural language processing (NLP) tools could assist in automating the extraction and MedDRA mapping of AE terms in drug product labels. MATERIALS AND METHODS: We evaluated the performance of three NLP systems, (ETHER, I2E, MetaMap) for their ability to extract AE terms from drug labels and translate the terms to MedDRA Preferred Terms (PTs). Pharmacovigilance-based annotation guidelines for extracting AE terms from drug labels were developed for this study. We compared each system's output to MedDRA
+AU  - Ly, Thomas
+AU  - Pamer, Carol
+AU  - Dang, Oanh
+AU  - Brajovic, Sonja
+AU  - Haider, Shahrukh
+AU  - Botsis, Taxiarchis
+AU  - Milward, David
+AU  - Winter, Andrew
+AU  - Lu, Susan
+AU  - Ball, Robert
+DA  - 2018/07//undefined
+DO  - 10.1016/j.jbi.2018.05.019
+KW  - Drug Safety
+FDA
+Labeling
+MedDRA
+Pharmacovigilance
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1532-0464
+SP  - 73–86
+ST  - Evaluation of Natural Language Processing (NLP) systems to annotate drug product labeling with MedDRA terminology
+T2  - J Biomed Inform
+TI  - Evaluation of Natural Language Processing (NLP) systems to annotate drug product labeling with MedDRA terminology
+UR  - https://doi.org/10.1016/j.jbi.2018.05.019
+https://www.sciencedirect.com/science/article/pii/S1532046418301060?via%3Dihub
+VL  - 83
+ID  - 4138
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4138.pdf
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Consensus-based large language model (LLM) ensembles might provide an automated solution for extracting structured data from unstructured text in echocardiography reports. METHODS: This cross-sectional study utilised 600 intraoperative transoesophageal reports (100 for prompt engineering; 500 for testing) randomly sampled from 7106 adult patients undergoing cardiac surgery at two hospitals within the University of Pennsylvania Healthcare System. Three echocardiographic parameters (left ventricular ejection fraction, right ventricular systolic function, and tricuspid regurgitation) were extracted from both the presurgical and postsurgical sections of the reports. LLM ensembles were generated using five open-source LLMs and four voting strategies: (1) unanimous (five out of five in agreement); (2) supermajority (four or more of five in agreement); (3) majority (three or more of five in agreement); and (4) plurality (two or more of five in agreement). Returned LLM ensemble responses were compared with the reference standard dataset to calculate raw accuracy, consensus accuracy, error rate, and yield. RESULTS: Of the four LLM ensembles, the unanimous LLM ensemble achieved the highest consensus accuracies (99.4% presurgical; 97.9% postsurgical) and the lowest error rates (0.6% presurgical; 2.1% postsurgical) but had the lowest data extraction yields (81.7% presurgical; 80.5% postsurgical) and the lowest raw accuracies (81.2% presurgical; 78.9% postsurgical). In contrast, the plurality LLM ensemble achieved the highest raw accuracies (96.1% presurgical; 93.7% postsurgical) and the highest data extraction yields (99.4% presurgical; 98.9% postsurgical) but had the lowest consensus accuracies (96.7% presurgical; 94.7% postsurgical) and highest error rates (3.3% presurgical; 5.3% postsurgical). CONCLUSIONS: A consensus-based LLM ensemble successfully generated structured data from unstructured text contained in intraoperative transoesophageal reports.
+AU  - MacKay, Emily J.
+AU  - Goldfinger, Shir
+AU  - Chan, Trevor J.
+AU  - Grasfield, Rachel H.
+AU  - Eswar, Vikram J.
+AU  - Li, Kelly
+AU  - Cao, Quy
+AU  - Pouch, Alison M.
+DA  - 2025/05//undefined
+DO  - 10.1016/j.bja.2025.01.028
+IS  - 5
+KW  - artificial intelligence (AI)
+cardiac surgery
+echocardiography
+large language models
+perioperative medicine
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0007-0912
+SP  - 1308–1317
+ST  - Automated structured data extraction from intraoperative echocardiography reports using large language models
+T2  - Br J Anaesth
+TI  - Automated structured data extraction from intraoperative echocardiography reports using large language models
+UR  - https://doi.org/10.1016/j.bja.2025.01.028
+https://www.bjanaesthesia.org/article/S0007-0912(25)00065-0/abstract
+VL  - 134
+ID  - 4034
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4034.pdf
+ER  - 
+
+TY  - JOUR
+AB  - Generative artificial intelligence utilizing transformer technology is widely seen as a groundbreaking advancement in applied artificial intelligence. The technology creates a unique opportunity to extract unstructured data from medical notes. In the current experiments, we extracted fundamental sleep parameters from polysomnography notes of veterans in the Corporate Data Warehouse national database using large language models. The "SOLAR-10.7B-Instruct" model extracted values associated with total sleep time, sleep onset latency, and sleep efficiency from the polysomnography notes. The model's performance was evaluated using 464 human annotated notes. The analysis showed close accuracy for the large language model compared to the human total sleep time and sleep efficiency extraction, and a considerable accuracy improvement (7.6%) in extracting sleep onset latency for the machine compared to human annotation. The large language model shows negligible hallucination (no more than 3.6%), and it has the capability to perform complicated reasoning to extract the desired sleep parameter. CITATION: Maghsoudi A, Sharafkhaneh A, Azarian M, Ramezani A, Hirshkowitz M, Razjouyan J. A case study on generative artificial intelligence to extract the fundamental sleep parameters from polysomnography notes. J Clin Sleep Med. 2025;21(6):1123-1127.
+AU  - Maghsoudi, Arash
+AU  - Sharafkhaneh, Amir
+AU  - Azarian, Mehrnaz
+AU  - Ramezani, Amin
+AU  - Hirshkowitz, Max
+AU  - Razjouyan, Javad
+DA  - 2025/06/01/
+DO  - 10.5664/jcsm.11594
+IS  - 6
+KW  - artificial intelligence
+large language model
+polysomnography
+sleep notes
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1550-9389
+SP  - 1123–1127
+ST  - A case study on generative artificial intelligence to extract the fundamental sleep parameters from polysomnography notes
+T2  - J Clin Sleep Med
+TI  - A case study on generative artificial intelligence to extract the fundamental sleep parameters from polysomnography notes
+UR  - https://doi.org/10.5664/jcsm.11594
+VL  - 21
+ID  - 4035
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: This study assessed the feasibility of nursing handoff notes to identify underreported hospital-acquired pressure injury (HAPI) events. METHODS: We have established a natural language processing-assisted manual review process and workflow for data extraction from a corpus of nursing notes across all medical inpatient and intensive care units in a tertiary care pediatric center. This system is trained by 2 domain experts. Our workflow started with keywords around HAPI and treatments, then regular expressions, distributive semantics, and finally a document classifier. We generated 3 models: a tri-gram classifier, binary logistic regression model using the regular expressions as predictors, and a random forest model using both models together. Our final output presented to the event screener was generated using a random forest model validated using derivation and validation sets. RESULTS: Our initial corpus involved 70,981 notes during a 1-year period from 5484 unique admissions for 4220 patients. Our interrater human reviewer agreement on identifying HAPI was high ( κ = 0.67; 95% confidence interval [CI], 0.58-0.75). Our random forest model had 95% sensitivity (95% CI, 90.6%-99.3%), 71.2% specificity (95% CI, 65.1%-77.2%), and 78.7% accuracy (95% CI, 74.1%-83.2%). A total of 264 notes from 148 unique admissions (2.7% of all admissions) were identified describing likely HAPI. Sixty-one described new injuries, and 64 describe known yet possibly evolving injuries. Relative to the total patient population during our study period, HAPI incidence was 11.9 per 1000 discharges, and incidence rate was 1.2 per 1000 bed-days. CONCLUSIONS: Natural language processing-based surveillance is proven to be feasible and high yield using nursing handoff notes.
+AU  - Milliren, Carly E.
+AU  - Ozonoff, Al
+AU  - Fournier, Kerri A.
+AU  - Welcher, Jennifer
+AU  - Landschaft, Assaf
+AU  - Kimia, Amir A.
+DA  - 2024/03/01/
+DO  - 10.1097/PTS.0000000000001193
+IS  - 2
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1549-8417
+SP  - 119–124
+ST  - Enhancing Pressure Injury Surveillance Using Natural Language Processing
+T2  - J Patient Saf
+TI  - Enhancing Pressure Injury Surveillance Using Natural Language Processing
+UR  - https://doi.org/10.1097/PTS.0000000000001193
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10922576/
+VL  - 20
+ID  - 4072
+ER  - 
+
+TY  - JOUR
+AB  - The focus of this article is the application of natural language processing (NLP) for information extraction in event-based surveillance (EBS) systems. We describe common information extraction applications from open-source news articles and media sources in EBS systems, methods, value in public health, challenges and emerging developments.
+AU  - Ng, Victoria
+AU  - Rees, Erin E.
+AU  - Niu, Jingcheng
+AU  - Zaghool, Abdelhamid
+AU  - Ghiasbeglou, Homeira
+AU  - Verster, Adrian
+DA  - 2020/06/04/
+DO  - 10.14745/ccdr.46i06a06
+IS  - 6
+KW  - algorithms
+event-based surveillance
+information extraction
+natural language processing
+NLP
+open-source data
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1188-4169
+SP  - 186–191
+ST  - Application of natural language processing algorithms for extracting information from news articles in event-based surveillance
+T2  - Can Commun Dis Rep
+TI  - Application of natural language processing algorithms for extracting information from news articles in event-based surveillance
+UR  - https://doi.org/10.14745/ccdr.46i06a06
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7755067/
+VL  - 46
+ID  - 4114
+ER  - 
+
+TY  - JOUR
+AB  - Many patients with gout flares treated in the Emergency Department (ED) often do not receive optimal continuity of care after an ED visit. Thus, developing methods to identify patients with gout flares in the ED and referring them to appropriate outpatient gout care is required. While Natural Language Processing (NLP) has been used to detect gout flares retrospectively, it is much more challenging to identify patients prospectively during an ED visit where documentation is usually minimal. We annotate a corpus of ED triage nurse chief complaint notes for the presence of gout flares and implement a simple algorithm for gout flare ED alerts. We show that the chief complaint alone has strong predictive power for gout flares. We make available a de-identified version of this corpus annotated for gout mentions, which is to our knowledge the first free text chief complaint clinical corpus available.
+AU  - Osborne, John D.
+AU  - Booth, James S.
+AU  - O'Leary, Tobias
+AU  - Mudano, Amy
+AU  - Rosas, Giovanna
+AU  - Foster, Phillip J.
+AU  - Saag, Kenneth G.
+AU  - Danila, Maria I.
+DA  - 2020
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1559-4076
+SP  - 973–982
+ST  - Identification of Gout Flares in Chief Complaint Text Using Natural Language Processing
+T2  - AMIA Annu Symp Proc
+TI  - Identification of Gout Flares in Chief Complaint Text Using Natural Language Processing
+UR  - https://pmc.ncbi.nlm.nih.gov/articles/PMC8075438/
+VL  - 2020
+ID  - 4111
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4111.pdf
+ER  - 
+
+TY  - JOUR
+AB  - More than half a million people were experiencing homelessness in America on any given night in 2021, yet only around 50% of them used shelters. To address unmet needs in homelessness, we report the creation of housing for homeless (H4H), the largest comprehensive repository of emergency shelters and other housing resources, from which we deployed state-of-the-art natural language processing approaches to extract information vital to individuals experiencing homelessness, including admission process, service provided, duration of stay, and eligibility. We frame information extraction as a question-answer task. Using 2,055 question-answer pairs for training and evaluation, the best performing system was a two-step classification and question-answering Roberta model with prompting, achieving a macro-average of 75.83 for F1 score. H4H and the annotated entries are publicly available as a benchmark dataset.
+AU  - Osebe, Samue
+AU  - Tsai, Jack
+AU  - Hong, Yu
+DA  - 2023
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2153-4063
+SP  - 427–437
+ST  - H4H: A Comprehensive Repository of Housing Resources for Homelessness
+T2  - AMIA Jt Summits Transl Sci Proc
+TI  - H4H: A Comprehensive Repository of Housing Resources for Homelessness
+UR  - https://pmc.ncbi.nlm.nih.gov/articles/PMC10283121/
+VL  - 2023
+ID  - 4081
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4081.pdf
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: The World Wide Web has become a huge repository of knowledge in many domains, including health problems and remedy. An intelligent system, having the capability of mining the relevant information from the web, can provide instant guidance in our basic health problems. OBJECTIVE: The first objective is to convert the free-form long user query into a structured summary. The second objective is to provide an advice for a health query posed by a user. The suggestion can be in the form of names of medicines and related information or a warning to indicate that the situation is a medical emergency. METHODS: First, a set of template information is extracted from the user question. A search query is formed to retrieve relevant pages from a set of trusted websites. The retrieved pages are processed in various levels to extract the remedy and related information. RESULTS AND CONCLUSION: The system is tested using a set of real questions collected from various relevant websites. The system generated suggestions are evaluated by experts. Evaluation results show that the system provides relevant results in 92.92% cases.
+AU  - Prakash, Amit
+AU  - Saha, Sujan Kumar
+DA  - 2019
+DO  - 10.3233/THC-181382
+IS  - 1
+KW  - E-health
+health information management
+medical informatics applications
+natural language processing
+online remedy finding
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0928-7329
+SP  - 23–35
+ST  - A study on use of the web for automatic answering of remedy finding questions of common users
+T2  - Technol Health Care
+TI  - A study on use of the web for automatic answering of remedy finding questions of common users
+UR  - https://doi.org/10.3233/THC-181382
+https://journals.sagepub.com/doi/10.3233/THC-181382?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed
+VL  - 27
+ID  - 4136
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVES: The surge in patient portal messages (PPMs) with increasing needs and workloads for efficient PPM triage in healthcare settings has spurred the exploration of AI-driven solutions to streamline the healthcare workflow processes, ensuring timely responses to patients to satisfy their healthcare needs. However, there has been less focus on isolating and understanding patient primary concerns in PPMs-a practice which holds the potential to yield more nuanced insights and enhances the quality of healthcare delivery and patient-centered care. MATERIALS AND METHODS: We propose a fusion framework to leverage pretrained language models (LMs) with different language advantages via a Convolution Neural Network for precise identification of patient primary concerns via multi-class classification. We examined 3 traditional machine learning models, 9 BERT-based language models, 6 fusion models, and 2 ensemble models. RESULTS: The outcomes of our experimentation underscore the superior performance achieved by BERT-based models in comparison to traditional machine learning models. Remarkably, our fusion model emerges as the top-performing solution, delivering a notably improved accuracy score of 77.67 ± 2.74% and an F1 score of 74.37 ± 3.70% in macro-average. DISCUSSION: This study highlights the feasibility and effectiveness of multi-class classification for patient primary concern detection and the proposed fusion framework for enhancing primary concern detection. CONCLUSIONS: The use of multi-class classification enhanced by a fusion of multiple pretrained LMs not only improves the accuracy and efficiency of patient primary concern identification in PPMs but also aids in managing the rising volume of PPMs in healthcare, ensuring critical patient communications are addressed promptly and accurately.
+AU  - Ren, Yang
+AU  - Wu, Yuqi
+AU  - Fan, Jungwei W.
+AU  - Khurana, Aditya
+AU  - Fu, Sunyang
+AU  - Wu, Dezhi
+AU  - Liu, Hongfang
+AU  - Huang, Ming
+DA  - 2024/08/01/
+DO  - 10.1093/jamia/ocae144
+IS  - 8
+KW  - BERT
+deep learning
+natural language processing
+patient centered care
+patient concern
+patient portal message
+pretrained language model
+text classification
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1067-5027
+SP  - 1714–1724
+ST  - Automatic uncovering of patient primary concerns in portal messages using a fusion framework of pretrained language models
+T2  - J Am Med Inform Assoc
+TI  - Automatic uncovering of patient primary concerns in portal messages using a fusion framework of pretrained language models
+UR  - https://doi.org/10.1093/jamia/ocae144
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11258404/
+VL  - 31
+ID  - 4056
+ER  - 
+
+TY  - JOUR
+AB  - Emergency care is one of the cornerstone parts of the world health organization's action plan. Rapid response and immediate care are considered in agile emergency care. Artificial intelligence (AI) and informatics have been applied to fulfill these requirements through automated emergency technology. Machine learning (ML) is one of the main parts of some of these proposed technologies. There are various ML algorithms and techniques which are potentially applicable for different purposes of emergency care. AI-based approaches using classification and clustering algorithms, natural language processing, and text mining are some of the possible techniques that could prove useful for investigating models of emergency prevention and management and proposing improved procedures for handling such critical situations. ML is known as a field of AI which attempts to automatically learn from data and applies that learning to make better decisions. Decision-support tools can apply the results of either supervised or various semi-supervised or unsupervised learning methods to tackle the how decisions about emergency situations are typically handled by the best professionals at the scene of an emergency, in the pre-hospital, and in healthcare facility settings. Enhanced and rapid communication at the moment of emergency, with the most effective decision making for triaging to estimate the acute nature of injuries and possible complications, how to keep a patient stable on the way to the care facility, and also avoiding adverse drug reactions, are some of the possible directions for exploring how ML can help to gather the data and to make emergency management more efficient and effective. The wide range of scenarios present in emergency situations and the complexity of different legal and ethical constraints on what responding personnel are allowed to perform on an injured subject before reaching a hospital makes for a most challenging set of problems for investigating the components of "intelligent" decision support that could help in these highly interactive and humanly tragic situations.
+AU  - Rostam Niakan Kalhori, Sharareh
+DA  - 2022/05/20/
+DO  - 10.3233/SHTI220003
+KW  - Artificial Intelligence
+Emergency Care
+Informatics
+Machine Learning
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0926-9630
+SP  - 3–16
+ST  - Towards the Application of Machine Learning in Emergency Informatics
+T2  - Stud Health Technol Inform
+TI  - Towards the Application of Machine Learning in Emergency Informatics
+UR  - https://doi.org/10.3233/SHTI220003
+VL  - 291
+ID  - 4095
+ER  - 
+
+TY  - JOUR
+AB  - Emergency events are unexpected and dangerous situations which the authorities must manage and respond to as quickly as possible. The main objectives of emergency management are to provide human safety and security, and Social Big Data (SBD) offers an important information source, created directly from eyewitness reports, to assist with these issues. However, the manual extraction of hidden meaning from SBD is both time-consuming and labor-intensive, which are major drawbacks for a process that needs accurate information to be produced in real-time. The solution is an automatic approach to knowledge discovery, and we propose a semantic description technique based on the use of triple store indexing for named entity recognition and relation extraction. Our technique can discover hidden SBD information more effectively than traditional approaches, and can be used for intelligent emergency management.
+AU  - Sahoh, Bukhoree
+AU  - Choksuriwong, Anant
+DA  - 2020
+DO  - 10.1007/s11518-019-5453-5
+IS  - 4
+KW  - information extraction
+named entity recognition
+natural language processing
+Ontology
+semantic index
+triplestore
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1004-3756
+SP  - 412–428
+ST  - Automatic Semantic Description Extraction from Social Big Data for Emergency Management
+T2  - J Syst Sci Syst Eng
+TI  - Automatic Semantic Description Extraction from Social Big Data for Emergency Management
+UR  - https://doi.org/10.1007/s11518-019-5453-5
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7282698/
+VL  - 29
+ID  - 4120
+ER  - 
+
+TY  - JOUR
+AB  - Investigating crimes against children, specifically sexual solicitations, are complicated because not all offenders are contact-driven, meaning they want to meet the minor for sex in the physical world; instead, some offenders are fantasy-driven, in that they are more interested in cybersex and role-play. In addition, the sheer volume of cases involving the online sexual solicitation of minors makes it difficult for law enforcement to determine whether an offender is contact-driven vs. fantasy-driven. However, research shows that there are language-based differences between minors and contact-driven offenders vs. fantasy driven-offenders. Thus, we developed the Chat Analysis Triage Tool (CATT), a forensically sound investigative tool that, based on natural language processing methods, analyzes and compares chats between minors and contact-driven vs. non-contract driven offenders. Using an SVM classifier, we were successful in differentiating the classes based on character trigrams. In a matter of seconds, the existing algorithms provide an identification of an offender's risk level based on the likelihood of contact offending as inferred from the model, which assists law enforcement in their ability to triage and prioritize cases involving the sexual solicitation of minors.
+AU  - Seigfried-Spellar, Kathryn C.
+AU  - Rogers, Marcus K.
+AU  - Rayz, Julia T.
+AU  - Yang, Shih-Feng
+AU  - Misra, Kanishka
+AU  - Ringenberg, Tatiana
+DA  - 2019/04//undefined
+DO  - 10.1016/j.forsciint.2019.02.028
+KW  - Chat, machine learning
+Child sexual exploitation
+Digital forensics
+Internet crimes against children
+Linguistic inquiry and word count
+Sexual solicitations
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0379-0738
+SP  - e8–e10
+ST  - Chat Analysis Triage Tool: Differentiating contact-driven vs. fantasy-driven child sex offenders
+T2  - Forensic Sci Int
+TI  - Chat Analysis Triage Tool: Differentiating contact-driven vs. fantasy-driven child sex offenders
+UR  - https://doi.org/10.1016/j.forsciint.2019.02.028
+https://www.sciencedirect.com/science/article/abs/pii/S0379073818304420?via%3Dihub
+VL  - 297
+ID  - 4132
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4132.pdf
+ER  - 
+
+TY  - JOUR
+AB  - Chronic Obstructive Pulmonary Disease (COPD) exacerbation exhibits a set of overlapping symptoms with various forms of cardiovascular disease, which makes its early identification challenging. Timely identification of the underlying condition that caused acute admission of COPD patients in the emergency room (ER) may improve patient care and reduce care costs. This study aims to use machine learning combined with natural language processing (NLP) of ER notes to facilitate differential diagnosis in COPD patients admitted to ER. Using unstructured patient information extracted from the notes documented at the very first hours of admission to the hospital, four machine learning models were developed and tested. The random forest model demonstrated the best performance with F1 score of 93%.
+AU  - Shah-Mohammadi, Fatemeh
+AU  - Finkelstein, Joseph
+DA  - 2023/06/29/
+DO  - 10.3233/SHTI230549
+KW  - Chronic obstructive pulmonary disease
+differential diagnosis
+machine learning
+NLP
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0926-9630
+SP  - 525–528
+ST  - Combining NLP and Machine Learning for Differential Diagnosis of COPD Exacerbation Using Emergency Room Data
+T2  - Stud Health Technol Inform
+TI  - Combining NLP and Machine Learning for Differential Diagnosis of COPD Exacerbation Using Emergency Room Data
+UR  - https://doi.org/10.3233/SHTI230549
+VL  - 305
+ID  - 4080
+ER  - 
+
+TY  - JOUR
+AB  - This protocol outlines a systematic review and meta-analysis examining the effectiveness of fully automated, AI-driven chatbot interventions in reducing subjective burden among informal caregivers. We will search 8 electronic databases (PubMed, Web of Science, Embase, CINAHL, MEDLINE, Cochrane Library, PsycINFO, Scopus) and grey literature sources from January 2010 to December 2024 for randomized controlled trials (RCTs) meeting predefined eligibility criteria. The primary outcome is caregiver burden, assessed using validated scales such as the Zarit Burden Interview. Secondary outcomes encompass caregiver mental health, quality of life, self-efficacy and care recipient status. Two reviewers will independently perform study selection, data extraction, risk of bias evaluation using Cochrane RoB 2 tool, and appraise certainty of evidence utilizing the GRADE approach. We will conduct random-effects meta-analyses, subgroup analyses, and meta-regression to compute pooled effect estimates and explore heterogeneity. If quantitative synthesis is precluded, narrative synthesis will be undertaken following SWiM guideline. Caregiver partners will provide input on interpretation and dissemination of findings.•Protocol adheres to PRISMA-P reporting standards and will be prospectively registered in PROSPERO•Graphviz code for replicating the systematic review methodology diagram is provided•Review will yield critical evidence to guide development and implementation of chatbots into caregiver support services.
+AU  - Shankar, Ravi
+AU  - Bundele, Anjali
+AU  - Mukhopadhyay, Amartya
+DA  - 2025/06//undefined
+DO  - 10.1016/j.mex.2025.103272
+KW  - Artificial intelligence
+Caregiver burden
+Chatbots
+Conversational agents
+Natural language processing
+Systematic Review and Meta-analysis.
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2215-0161
+SP  - 103272
+ST  - Effectiveness of Chatbot interventions for reducing caregiver burden: Protocol for a systematic review and meta-analysis
+T2  - MethodsX
+TI  - Effectiveness of Chatbot interventions for reducing caregiver burden: Protocol for a systematic review and meta-analysis
+UR  - https://doi.org/10.1016/j.mex.2025.103272
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11978356/
+VL  - 14
+ID  - 4030
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4030.pdf
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Opioid overdose is a global public health emergency, with the United States experiencing high rates of morbidity and mortality due to prescription and illicit opioid use. Traditional public health monitoring systems often fail to provide real-time insights, limiting their capacity for early detection and intervention. Social media platforms, especially Reddit, offer a promising alternative for timely toxicovigilance due to the abundance of user-generated, real-time content. OBJECTIVE: This study aimed to explore the use of Reddit as a real-time, high-volume source for toxicovigilance and develop an automated system that can classify and analyze opioid-related social media posts to detect behavioral patterns and monitor the evolution of public discourse on opioid use. METHODS: To investigate evolving social media discourse around opioid use, we collected a large-scale dataset from Reddit spanning 6 years, from January 1, 2018, to December 30, 2023. Using a comprehensive opioid lexicon-including formal drug names, street slang, common misspellings, and abbreviations-we filtered relevant posts for further analysis. A subset of these data was manually annotated according to well-defined annotation guidelines into 4 categories: self-misuse, external misuse, information, and unrelated, with distributions of 37.21%, 27.25%, 27.57%, and 7.97%, respectively. To automate the classification of opioid-related chatter, we developed a robust natural language processing pipeline leveraging classical machine learning algorithms, deep learning models, and transformer-based architecture, and fine-tuned a state-of-the-art large language model (LLM; OpenAI GPT-3.5 Turbo). In the final stage, the trained LLM was deployed on an unlabeled dataset comprising 74,975 additional Reddit chatter posts. This enabled a detailed temporal analysis of opioid-related discussions, aligned with 6 years of opioid-related death records from the Centers for Disease Control and Prevention (CDC). For this study, self-misuse and external misuse were merged into a misuse category for direct comparison with the CDC's mortality data, examining whether trends in social media discourse on opioid misuse reflect patterns in real-world mortality statistics. RESULTS: The fine-tuned GPT-3.5 Turbo model achieved the highest classification accuracy of 0.93, outperforming the baseline (random forest 0.85) by representing a performance improvement of 9.14% over the machine learning model. The temporal analysis of the unlabeled data revealed evolving trends in opioid-related discussions, indicating shifts in user behavior and overdose-related chatter over time. To quantify this relationship, we calculated the Pearson correlation coefficient between misuse-related posts and CDC death records (r=0.854). This correlation was statistically significant (P<.001), indicating a strong positive relationship between web-based discussions and CDC mortality data. CONCLUSIONS: This study demonstrates the potential of integrating advanced natural language processing techniques and LLMs with social media data to support real-time public health surveillance. Reddit provides a valuable platform for identifying emerging trends in opioid use and overdose risk. The proposed system offers a proactive tool for researchers, clinicians, and policymakers to better understand and respond to the opioid crisis.
+AU  - Sidorov, Grigori
+AU  - Ahmad, Muhammad
+AU  - Basile, Pierpaolo
+AU  - Waqas, Muhammad
+AU  - Orji, Rita
+AU  - Batyrshin, Ildar
+DA  - 2025/11/04/
+DO  - 10.2196/77279
+KW  - artificial intelligence
+CDC
+Centers for Disease Control and Prevention
+data mining
+drug analysis
+health care
+large language models
+LLM
+opioid overdose
+Reddit
+social media
+temporal analysis
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2564-1891
+SP  - e77279
+ST  - Monitoring Opioid-Related Social Media Chatter Using Natural Language Processing and Large Language Models: Temporal Analysis
+T2  - JMIR Infodemiology
+TI  - Monitoring Opioid-Related Social Media Chatter Using Natural Language Processing and Large Language Models: Temporal Analysis
+UR  - https://doi.org/10.2196/77279
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12585000/
+VL  - 5
+ID  - 4011
+ER  - 
+
+TY  - JOUR
+AB  - Natural language processing (NLP) methods would improve outcomes in the area of prehospital Emergency Medical Services (EMS) data collection and abstraction. This study evaluated off-the-shelf solutions for automating labelling of clinically relevant data from EMS reports. A qualitative approach for choosing the best possible ensemble of pretrained NLP systems was developed and validated along with a feature using word embeddings to test phrase synonymy. The ensemble showed increased performance over individual systems.
+AU  - Silverman, Greg M.
+AU  - Lindemann, Elizabeth A.
+AU  - Rajamani, Geetanjali
+AU  - Finzel, Raymond L.
+AU  - McEwan, Reed
+AU  - Knoll, Benjamin C.
+AU  - Pakhomov, Serguei
+AU  - Melton, Genevieve B.
+AU  - Tignanelli, Christopher J.
+DA  - 2019/08/21/
+DO  - 10.3233/SHTI190547
+KW  - Emergency medical services
+Labeling
+Natural language processing
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0926-9630
+SP  - 1586–1587
+ST  - Named Entity Recognition in Prehospital Trauma Care
+T2  - Stud Health Technol Inform
+TI  - Named Entity Recognition in Prehospital Trauma Care
+UR  - https://doi.org/10.3233/SHTI190547
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7360018/
+VL  - 264
+ID  - 4130
+ER  - 
+
+TY  - JOUR
+AB  - PURPOSE: Learner development and promotion rely heavily on narrative assessment comments, but narrative assessment quality is rarely evaluated in medical education. Educators have developed tools such as the Quality of Assessment for Learning (QuAL) tool to evaluate the quality of narrative assessment comments; however, scoring the comments generated in medical education assessment programs is time intensive. The authors developed a natural language processing (NLP) model for applying the QuAL score to narrative supervisor comments. METHOD: Samples of 2,500 Entrustable Professional Activities assessments were randomly extracted and deidentified from the McMaster (1,250 comments) and Saskatchewan (1,250 comments) emergency medicine (EM) residency training programs during the 2019-2020 academic year. Comments were rated using the QuAL score by 25 EM faculty members and 25 EM residents. The results were used to develop and test an NLP model to predict the overall QuAL score and QuAL subscores. RESULTS: All 50 raters completed the rating exercise. Approximately 50% of the comments had perfect agreement on the QuAL score, with the remaining resolved by the study authors. Creating a meaningful suggestion for improvement was the key differentiator between high- and moderate-quality feedback. The overall QuAL model predicted the exact human-rated score or 1 point above or below it in 87% of instances. Overall model performance was excellent, especially regarding the subtasks on suggestions for improvement and the link between resident performance and improvement suggestions, which achieved 85% and 82% balanced accuracies, respectively. CONCLUSIONS: This model could save considerable time for programs that want to rate the quality of supervisor comments, with the potential to automatically score a large volume of comments. This model could be used to provide faculty with real-time feedback or as a tool to quantify and track the quality of assessment comments at faculty, rotation, program, or institution levels.
+AU  - Spadafore, Maxwell
+AU  - Yilmaz, Yusuf
+AU  - Rally, Veronica
+AU  - Chan, Teresa M.
+AU  - Russell, Mackenzie
+AU  - Thoma, Brent
+AU  - Singh, Sim
+AU  - Monteiro, Sandra
+AU  - Pardhan, Alim
+AU  - Martin, Lynsey
+AU  - Monrad, Seetha U.
+AU  - Woods, Rob
+DA  - 2024/05/01/
+DO  - 10.1097/ACM.0000000000005634
+IS  - 5
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1040-2446
+SP  - 534–540
+ST  - Using Natural Language Processing to Evaluate the Quality of Supervisor Narrative Comments in Competency-Based Medical Education
+T2  - Acad Med
+TI  - Using Natural Language Processing to Evaluate the Quality of Supervisor Narrative Comments in Competency-Based Medical Education
+UR  - https://doi.org/10.1097/ACM.0000000000005634
+https://www.ingentaconnect.com/content/wk/acm/2024/00000099/00000005/art00019;jsessionid=lfc0qamojc8j.x-ic-live-01
+VL  - 99
+ID  - 4071
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: The objective of this study was to undertake a proof of concept that demonstrated the use of primary care data and natural language processing and term extraction to assess emergency room use. The study extracted biopsychosocial concepts from primary care free text and related them to inappropriate emergency room use through the use of odds ratios. METHODS: De-identified free text notes were extracted from a primary care clinic in Guelph, Ontario and analyzed with a software toolkit that incorporated General Architecture for Text Engineering (GATE) and MetaMap components for natural language processing and term extraction. RESULTS: Over 10 million concepts were extracted from 13,836 patient records. Codes found in at least 1% percent of the sample were regressed against inappropriate emergency room use. 77 codes fell within the realm of biopsychosocial, were very statistically significant (p < 0.001) and had an OR > 2.0. Thematically, these codes involved mental health and pain related concepts. CONCLUSIONS: Analyzed thematically, mental health issues and pain are important themes; we have concluded that pain and mental health problems are primary drivers for inappropriate emergency room use. Age and sex were not significant. This proof of concept demonstrates the feasibly of combining natural language processing and primary care data to analyze a system use question. As a first work it supports further research and could be applied to investigate other, more complex problems.
+AU  - St-Maurice, J.
+AU  - Kuo, M. H.
+AU  - Gooch, P.
+DA  - 2013
+DO  - 10.3414/ME12-01-0012
+IS  - 1
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0026-1270
+SP  - 33–42
+ST  - A proof of concept for assessing emergency room use with primary care data and natural language processing
+T2  - Methods Inf Med
+TI  - A proof of concept for assessing emergency room use with primary care data and natural language processing
+UR  - https://doi.org/10.3414/ME12-01-0012
+https://www.thieme-connect.com/products/ejournals/abstract/10.3414/ME12-01-0012
+VL  - 52
+ID  - 4144
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: To demonstrate the potential of machine learning and capability of natural language processing (NLP) to predict disposition of patients based on triage notes in the ED. METHODS: A retrospective cohort of ED triage notes from St Vincent's Hospital (Melbourne) was used to develop a deep-learning algorithm that predicts patient disposition. Bidirectional Encoder Representations from Transformers, a recent language representation model developed by Google, was utilised for NLP. Eighty percent of the dataset was used for training the model and 20% was used to test the algorithm performance. Ktrain library, a wrapper for TensorFlow Keras, was employed to develop the model. RESULTS: The accuracy of the algorithm was 83% and the area under the curve was 0.88. Sensitivity, specificity, precision and F1-score of the algorithm were 72%, 86%, 56% and 63%, respectively. CONCLUSION: Machine learning and NLP can be together applied to the
+AU  - Tahayori, Bahman
+AU  - Chini-Foroush, Noushin
+AU  - Akhlaghi, Hamed
+DA  - 2021/06//undefined
+DO  - 10.1111/1742-6723.13656
+IS  - 3
+KW  - artificial intelligence
+natural language processing
+patient disposition
+triage note
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1742-6723
+SP  - 480–484
+ST  - Advanced natural language processing technique to predict patient disposition based on emergency triage notes
+T2  - Emerg Med Australas
+TI  - Advanced natural language processing technique to predict patient disposition based on emergency triage notes
+UR  - https://doi.org/10.1111/1742-6723.13656
+VL  - 33
+ID  - 4118
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVES: Medically minor but clinically important findings associated with physical child abuse, such as bruises in pre-mobile infants, may be identified by frontline clinicians yet the association of these injuries with child abuse is often not recognized, potentially allowing the abuse to continue and even to escalate. An accurate natural language processing (NLP) algorithm to identify high-risk injuries in electronic health record notes could improve detection and awareness of abuse. The objectives were to: 1) develop an NLP algorithm that accurately identifies injuries in infants associated with abuse and 2) determine the accuracy of this algorithm. METHODS: An NLP algorithm was designed to identify ten specific injuries known to be associated with physical abuse in infants. Iterative cycles of review identified inaccurate triggers, and coding of the algorithm was adjusted. The optimized NLP algorithm was applied to emergency department (ED) providers' notes on 1344 consecutive sample of infants seen in 9 EDs over 3.5 months. Results were compared with review of the same notes conducted by a trained reviewer blind to the NLP results with discrepancies adjudicated by a child abuse expert. RESULTS: Among the 1344 encounters, 41 (3.1%) had one of the high-risk injuries. The NLP algorithm had a sensitivity and specificity of 92.7% (95% confidence interval [CI]: 79.0%-98.1%) and 98.1% (95%
+AU  - Tiyyagura, Gunjan
+AU  - Asnes, Andrea G.
+AU  - Leventhal, John M.
+AU  - Shapiro, Eugene D.
+AU  - Auerbach, Marc
+AU  - Teng, Wei
+AU  - Powers, Emily
+AU  - Thomas, Amy
+AU  - Lindberg, Daniel M.
+AU  - McClelland, Justin
+AU  - Kutryb, Carol
+AU  - Polzin, Thomas
+AU  - Daughtridge, Karen
+AU  - Sevin, Virginia
+AU  - Hsiao, Allen L.
+DA  - 2022/08//undefined
+DO  - 10.1016/j.acap.2021.11.004
+IS  - 6
+KW  - child abuse
+emergency department
+natural language processing
+test characteristics
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1876-2859
+SP  - 981–988
+ST  - Development and Validation of a Natural Language Processing Tool to Identify Injuries in Infants Associated With Abuse
+T2  - Acad Pediatr
+TI  - Development and Validation of a Natural Language Processing Tool to Identify Injuries in Infants Associated With Abuse
+UR  - https://doi.org/10.1016/j.acap.2021.11.004
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9095755/
+VL  - 22
+ID  - 4104
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4104.pdf
+ER  - 
+
+TY  - JOUR
+AB  - We derived machine learning models utilizing features generated by natural language processing (NLP) of free-text data from an ambulance services provider to identify fall cases. The data comprised samples of electronic patient care records care records (ePCRs) from St John Western Australia (WA), the sole ambulance services provider in most of WA. We manually labeled fall cases by reviewing the free-text summary. The models used features including case characteristics (e.g., age) and text frequency-inverse document frequency (tf-idf) of each word of the free-text generated by NLP. Support vector machine (SVM) and random forest were used as classifiers. We compared the performance of the models against the manual identification of falls by recall, precision, and F-measure. A total of 9,447 cases (1%) were randomly sampled, of which 1,648 (17%) were labeled as fall. The best model was an SVM model using case characteristics and tf-idf's of the first 100 words of free-text, with recall of 0.84, precision of 0.86, and F-measure of 0.85. This performance was better than an SVM model with only case characteristics. Machine-learning models incorporated with features generated by NLP improved the performance of classifying fall cases compared with models without such features. Scope remains for further improvement.
+AU  - Tohira, Hideo
+AU  - Finn, Judith
+AU  - Ball, Stephen
+AU  - Brink, Deon
+AU  - Buzzacott, Peter
+DA  - 2022/10/02/
+DO  - 10.1080/17538157.2021.2019038
+IS  - 4
+KW  - Emergency medical services
+random forest
+support vector machine
+text frequency-inverse document frequency
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1753-8157
+SP  - 403–413
+ST  - Machine learning and natural language processing to identify falls in electronic patient care records from ambulance attendances
+T2  - Inform Health Soc Care
+TI  - Machine learning and natural language processing to identify falls in electronic patient care records from ambulance attendances
+UR  - https://doi.org/10.1080/17538157.2021.2019038
+https://www.tandfonline.com/doi/10.1080/17538157.2021.2019038?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed
+VL  - 47
+ID  - 4102
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Nurses often document patient symptoms in narrative notes. PURPOSE: This study used a technique called natural language processing (NLP) to: (1) Automatically identify documentation of seven common symptoms (anxiety, cognitive disturbance, depressed mood, fatigue, sleep disturbance, pain, and well-being) in homecare narrative nursing notes, and (2) examine the association between symptoms and emergency department visits or hospital admissions from homecare. METHOD: NLP was applied on a large subset of narrative notes (2.5 million notes) documented for 89,825 patients admitted to one large homecare agency in the Northeast United States. FINDINGS: NLP accurately identified symptoms in narrative notes. Patients with more documented symptom categories had higher risk of emergency department visit or hospital admission. DISCUSSION: Further research is needed to explore additional symptoms and implement NLP systems in the homecare setting to enable early identification of concerning patient trends leading to emergency department visit or hospital admission.
+AU  - Topaz, Maxim
+AU  - Koleck, Theresa A.
+AU  - Onorato, Nicole
+AU  - Smaldone, Arlene
+AU  - Bakken, Suzanne
+DA  - 2021/06//May undefined
+DO  - 10.1016/j.outlook.2020.12.007
+IS  - 3
+KW  - Health informatics
+home health
+natural language processing
+Nursing
+nursing documentation
+symptoms
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0029-6554
+SP  - 435–446
+ST  - Nursing documentation of symptoms is associated with higher risk of emergency department visits and hospitalizations in homecare patients
+T2  - Nurs Outlook
+TI  - Nursing documentation of symptoms is associated with higher risk of emergency department visits and hospitalizations in homecare patients
+UR  - https://doi.org/10.1016/j.outlook.2020.12.007
+https://pmc.ncbi.nlm.nih.gov/articles/PMC8327386/
+VL  - 69
+ID  - 4113
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4113.pdf
+ER  - 
+
+TY  - JOUR
+AB  - Background: Natural language processing (NLP), a form of computer-assisted data abstraction, rapidly identifies serious illness communication domains such as code-status confirmation and goals of care (GOC) discussions within free-text notes, using a codebook of phrases. Differences in the phrases associated with palliative care for patients with different types of illness are unknown. Objective: To compare communication of code-status clarification and GOC discussions between patients with advanced pancreatic cancer undergoing palliative procedures and patients admitted with life-threatening trauma. Design: Retrospective cohort study. Setting/Subjects: Patients with in-hospital admissions within two academic medical centers. Measurements: Sensitivity and specificity of NLP-identified communication domains compared with manual review. Results: Among patients with advanced pancreatic cancer (n = 523), NLP identified code-status clarification in 54% of admissions and GOC discussions in 49% of admissions. The sensitivity and specificity for code-status clarification were 94% and 99% respectively, while the sensitivity and specificity for a GOC discussion were 93% and 100%, respectively. Using the same codebook in patients with life-threatening trauma (n = 2093), NLP identified code-status clarification in 25.9% of admissions and GOC discussions in 6.3% of admissions. While NLP identification had 100% specificity, the sensitivity for code-status clarification and GOC discussion was reduced to 86% and 50%, respectively. Adding dynamic phrases such as "ongoing discussions" and phrases related to "family meetings" increased the sensitivity of the NLP codebook for code status to 98% and for GOC discussions to 100%. Conclusions: Communication of code status and GOC differ between patients with advanced cancer and those with life-threatening trauma. Recognition of these differences can aid in identification in patterns of palliative care delivery.
+AU  - Udelsman, Brooks V.
+AU  - Lee, Katherine C.
+AU  - Lilley, Elizabeth J.
+AU  - Chang, David C.
+AU  - Lindvall, Charlotta
+AU  - Cooper, Zara
+DA  - 2020/03//undefined
+DO  - 10.1089/jpm.2019.0268
+IS  - 3
+KW  - natural language processing
+palliative care communication
+surgical palliative care
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1557-7740
+SP  - 411–414
+ST  - Variation in Serious Illness Communication among Surgical Patients Receiving Palliative Care
+T2  - J Palliat Med
+TI  - Variation in Serious Illness Communication among Surgical Patients Receiving Palliative Care
+UR  - https://doi.org/10.1089/jpm.2019.0268
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7643760/
+VL  - 23
+ID  - 4129
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: The mpox outbreak resulted in 32,063 cases and 58 deaths in the United States and 95,912 cases worldwide from May 2022 to March 2024 according to the US Centers for Disease Control and Prevention (CDC). Like other disease outbreaks (eg, HIV) with perceived community associations, mpox can create the risk of stigma, exacerbate homophobia, and potentially hinder health care access and social equity. However, the existing literature on mpox has limited representation of the perspective of sexual minority men and gender-diverse (SMMGD) individuals. OBJECTIVE: To fill this gap, this study aimed to synthesize themes of discussions among SMMGD individuals and listen to SMMGD voices for identifying problems in current public health communication surrounding mpox to improve inclusivity, equity, and justice. METHODS: We analyzed mpox-related posts (N=8688) posted between October 2020 and September 2022 by 2326 users who self-identified on Twitter/X as SMMGD and were geolocated in the United States. We applied BERTopic (a topic-modeling technique) on the tweets, validated the machine-generated topics through human labeling and annotations, and conducted content analysis of the tweets in each topic. Geographic analysis was performed on the size of the most prominent topic across US states in relation to the University of California, Los Angeles (UCLA) lesbian, gay, and bisexual (LGB) social climate index. RESULTS: BERTopic identified 11 topics, which annotators labeled as mpox health activism (n=2590, 29.81%), mpox vaccination (n=2242, 25.81%), and adverse events (n=85, 0.98%); sarcasm, jokes, and emotional expressions (n=1220, 14.04%); COVID-19 and mpox (n=636, 7.32%); government or public health response (n=532, 6.12%); mpox symptoms (n=238, 2.74%); case reports (n=192, 2.21%); puns on the naming of the virus (ie, mpox; n=75, 0.86%); media publicity (n=59, 0.68%); and mpox in children (n=58, 0.67%). Spearman rank correlation indicated significant negative correlation (ρ=-0.322, P=.03) between the topic size of health activism and the UCLA LGB social climate index at the US state level. CONCLUSIONS: Discussions among SMMGD individuals on mpox encompass both utilitarian (eg, vaccine access, case reports, and mpox symptoms) and emotionally charged (ie, promoting awareness, advocating against homophobia, misinformation/disinformation, and health stigma) themes. Mpox health activism is more prevalent in US states with lower LGB social acceptance, suggesting a resilient communicative pattern among SMMGD individuals in the face of public health oppression. Our method for social listening could facilitate future public health efforts, providing a cost-effective way to capture the perspective of impacted populations. This study illuminates SMMGD engagement with the mpox discourse, underscoring the need for more inclusive public health programming. Findings also highlight the social impact of mpox: health stigma. Our findings could inform interventions to optimize the delivery of informational and tangible health resources leveraging computational mixed-method analyses (eg, BERTopic) and big data.
+AU  - Wang, Yunwen
+AU  - O'Connor, Karen
+AU  - Flores, Ivan
+AU  - Berdahl, Carl T.
+AU  - Urbanowicz, Ryan J.
+AU  - Stevens, Robin
+AU  - Bauermeister, José A.
+AU  - Gonzalez-Hernandez, Graciela
+DA  - 2024/08/13/
+DO  - 10.2196/59193
+KW  - BERTopic
+emerging infectious disease
+health activism
+health equity
+health promotion
+health stigma
+infectious disease outbreak
+monkeypox
+mpox
+natural language processing
+sexual minority
+sexual minority men and gender diverse
+SMMGD
+social media
+stigma prevention
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2369-2960
+SP  - e59193
+ST  - Mpox Discourse on Twitter by Sexual Minority Men and Gender-Diverse Individuals: Infodemiological Study Using BERTopic
+T2  - JMIR Public Health Surveill
+TI  - Mpox Discourse on Twitter by Sexual Minority Men and Gender-Diverse Individuals: Infodemiological Study Using BERTopic
+UR  - https://doi.org/10.2196/59193
+VL  - 10
+ID  - 4053
+ER  - 
+
+TY  - JOUR
+AB  - Systematic literature review is essential for evidence-based medicine, requiring comprehensive analysis of clinical trial publications. However, the application of artificial intelligence (AI) models for medical literature mining has been limited by insufficient training and evaluation across broad therapeutic areas and diverse tasks. Here, we present LEADS, an AI foundation model for study search, screening, and data extraction from medical literature. The model is trained on 633,759 instruction data points in LEADSInstruct, curated from 21,335 systematic reviews, 453,625 clinical trial publications, and 27,015 clinical trial registries. We showed that LEADS demonstrates consistent improvements over four cutting-edge generic large language models (LLMs) on six tasks. Furthermore, LEADS enhances expert workflows by providing supportive references following expert requests, streamlining processes while maintaining high-quality results. A study with 16 clinicians and medical researchers from 14 different institutions revealed that experts collaborating with LEADS achieved a recall of 0.81 compared to 0.77 experts working alone in study selection, with a time savings of 22.6%. In data extraction tasks, experts using LEADS achieved an accuracy of 0.85 versus 0.80 without using LEADS, alongside a 26.9% time savings. These findings highlight the potential of specialized medical literature foundation models to outperform generic models, delivering significant quality and efficiency benefits when integrated into expert workflows for medical literature mining.
+AU  - Wang, Zifeng
+AU  - Cao, Lang
+AU  - Jin, Qiao
+AU  - Chan, Joey
+AU  - Wan, Nicholas
+AU  - Afzali, Behdad
+AU  - Cho, Hyun-Jin
+AU  - Choi, Chang-In
+AU  - Emamverdi, Mehdi
+AU  - Gill, Manjot K.
+AU  - Kim, Sun-Hyung
+AU  - Li, Yijia
+AU  - Liu, Yi
+AU  - Ong, Hanley
+AU  - Rousseau, Justin
+AU  - Sheikh, Irfan
+AU  - Wei, Jenny J.
+AU  - Xu, Ziyang
+AU  - Zallek, Christopher M.
+AU  - Kim, Kyungsang
+AU  - Peng, Yifan
+AU  - Lu, Zhiyong
+AU  - Sun, Jimeng
+DA  - 2025/01/27/
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2331-8422
+ST  - A foundation model for human-AI collaboration in medical literature mining
+T2  - ArXiv
+TI  - A foundation model for human-AI collaboration in medical literature mining
+ID  - 4021
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4021.pdf
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: Large language models (LLMs) demonstrate significant potential in biomedical knowledge discovery, yet their performance in extracting fine-grained biological information, such as miRNA, remains insufficiently explored. Accurate extraction of miRNA-related information is essential for understanding disease mechanisms and identifying biomarkers. This study aims to comprehensively evaluate the capabilities of LLMs in miRNA information extraction through diverse prompt learning strategies. METHODS: Three high-quality miRNA information extraction datasets were constructed to support the benchmarking and training of generative LLMs, specifically Re-Tex, Re-miR and miR-Cancer. These datasets encompass three types of entities: miRNAs, genes, and diseases, along with their relationships. The accuracy and reliability of three LLMs, including GPT-4o, Gemini, and Claude, were evaluated and compared with traditional models. Different prompt engineering strategies were implemented to enhance the LLMs' performance, including baseline prompts, 5-shot Chain of Thought prompts, and generated knowledge prompts. RESULTS: The combination of optimized prompt strategies significantly improved overall entity extraction performance across both trained and untrained datasets. Generated knowledge prompting achieved the highest performance, with maximum F1 scores of 76.6 % for entity extraction and 54.8 % for relationship extraction. Comparative analysis indicated GPT-4o exhibited superior performance to Gemini, while Claude showed the lowest performance levels. Extraction accuracy varied considerably across entity types, with miRNA recognition achieving the highest performance and gene/protein identification demonstrating the lowest accuracy levels. Furthermore, binary relationship extraction accuracy was significantly lower than entity extraction performance. The three evaluated LLMs showed similarly limited capability in relationship extraction tasks, with no statistically significant differences observed between models. Finally, comparison with conventional computational methods revealed LLMs have not yet exceeded traditional methods in this specialized domain. CONCLUSION: This study established high-quality miRNA datasets to support information extraction and knowledge discovery. The overall performance of LLMs in this study proved limited, and challenges remain in processing miRNA-related information extraction. However, optimized prompt combinations can substantially improve performance. Future work should focus on further refinement of LLMs to accelerate the discovery and application of potential diagnostic and therapeutic targets.
+AU  - Wu, Rongrong
+AU  - Zong, Hui
+AU  - Wu, Erman
+AU  - Li, Jiakun
+AU  - Zhou, Yi
+AU  - Zhang, Chi
+AU  - Zhang, Yingbo
+AU  - Wang, Jiao
+AU  - Tang, Tong
+AU  - Shen, Bairong
+DA  - 2025/11//undefined
+DO  - 10.1016/j.cmpb.2025.109033
+KW  - Cancer
+Datasets
+Information extraction
+Large language models
+MicroRNA
+Prompt engineering
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0169-2607
+SP  - 109033
+ST  - Improving large language models for miRNA information extraction via prompt engineering
+T2  - Comput Methods Programs Biomed
+TI  - Improving large language models for miRNA information extraction via prompt engineering
+UR  - https://doi.org/10.1016/j.cmpb.2025.109033
+https://www.sciencedirect.com/science/article/pii/S016926072500450X?via%3Dihub
+VL  - 271
+ID  - 4017
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4017.pdf
+ER  - 
+
+TY  - JOUR
+AB  - In the past decades, marine accidents brought the serious loss of life and property and environmental contamination. With the accumulation of marine accident data, especially accident investigation reports, compared with subjective reasoning based on expert experience, data-driven methods for analysis and accident prevention are more comprehensive and objective. This paper aims to develop a content-aware corpus-based model for the analysis of marine accidents to mine the accident semantic features. The general research framework is established to combine accident data, expert prior knowledge, and semi-automated natural language processing (NLP) technology. The NLP models are optimized, fused, and applied to the case study of ship collision accidents. The results show that the proposed model can accurately and quickly extract hazards, accident causes, and scenarios from the accident reports, and perform semantic analysis for the latent relationships between them to extend the accident causation theory. This study can provide a powerful and innovative analysis tool for marine accidents for maritime traffic safety management departments and relevant research institutions.
+AU  - Yan, Kai
+AU  - Wang, Yanhui
+AU  - Jia, Limin
+AU  - Wang, Wenhao
+AU  - Liu, Shengli
+AU  - Geng, Yanbin
+DA  - 2023/05//undefined
+DO  - 10.1016/j.aap.2023.106991
+KW  - Accident analysis
+Hazard identification
+Marine accident
+Natural language processing
+Topic model
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0001-4575
+SP  - 106991
+ST  - A content-aware corpus-based model for analysis of marine accidents
+T2  - Accid Anal Prev
+TI  - A content-aware corpus-based model for analysis of marine accidents
+UR  - https://doi.org/10.1016/j.aap.2023.106991
+https://www.sciencedirect.com/science/article/abs/pii/S0001457523000386?via%3Dihub
+VL  - 184
+ID  - 4085
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4085.pdf
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVES: Accelerating demand for patient messaging has impacted the practice of many providers. Messages are not recommended for urgent medical issues, but some do require rapid attention. This presents an opportunity for artificial intelligence (AI) methods to prioritize review of messages. Our study aimed to highlight some patient portal messages for prioritized review using a custom AI system integrated into the electronic health record (EHR). MATERIALS AND METHODS: We developed a Bidirectional Encoder Representations from Transformers (BERT)-based large language model using 40 132 patient-sent messages to identify patterns involving high acuity topics that warrant an immediate callback. The model was then implemented into 2 shared pools of patient messages managed by dozens of registered nurses. A primary outcome, such as the time before messages were read, was evaluated with a difference-in-difference methodology. RESULTS: Model validation on an expert-reviewed dataset (n = 7260) yielded very promising performance (C-statistic = 97%, average-precision = 72%). A binarized output (precision = 67%, sensitivity = 63%) was integrated into the EHR for 2 years. In a pre-post analysis (n = 396 466), an improvement exceeding the trend was observed in the time high-scoring messages sit unread (21 minutes, 63 vs 42 for messages sent outside business hours). DISCUSSION: Our work shows great promise in improving care when AI is aligned with human workflow. Future work involves audience expansion, aiding users with suggested actions, and drafting responses. CONCLUSION: Many patients utilize patient portal messages, and while most messages are routine, a small fraction describe alarming symptoms. Our AI-based workflow shortens the turnaround time to get a trained clinician to review these messages to provide safer, higher-quality care.
+AU  - Yang, Jie
+AU  - So, Jonathan
+AU  - Zhang, Hao
+AU  - Jones, Simon
+AU  - Connolly, Denise M.
+AU  - Golding, Claudia
+AU  - Griffes, Esmelin
+AU  - Szerencsy, Adam C.
+AU  - Wu, Tzer Jason
+AU  - Aphinyanaphongs, Yindalon
+AU  - Major, Vincent J.
+DA  - 2024/10//undefined
+DO  - 10.1093/jamiaopen/ooae078
+IS  - 3
+KW  - artificial intelligence
+natural language processing
+patient portals
+supervised machine-learning
+triage
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2574-2531
+SP  - ooae078
+ST  - Development and evaluation of an artificial intelligence-based workflow for the prioritization of patient portal messages
+T2  - JAMIA Open
+TI  - Development and evaluation of an artificial intelligence-based workflow for the prioritization of patient portal messages
+UR  - https://doi.org/10.1093/jamiaopen/ooae078
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11328532/
+VL  - 7
+ID  - 4052
+ER  - 
+
+TY  - JOUR
+AB  - OBJECTIVE: The rapid expansion of the biomedical literature challenges traditional review methods, especially during outbreaks of emerging infectious diseases when quick action is critical. Our study aims to explore the potential of ChatGPT to automate the biomedical literature review for rapid drug discovery. MATERIALS AND METHODS: We introduce a novel automated pipeline helping to identify drugs for a given virus in response to a potential future global health threat. Our approach can be used to select PubMed articles identifying a drug target for the given virus. We tested our approach on two known pathogens: SARS-CoV-2, where the literature is vast, and Nipah, where the literature is sparse. Specifically, a panel of three experts reviewed a set of PubMed articles and labeled them as either describing a drug target for the given virus or not. The same task was given to the automated pipeline and its performance was based on whether it labeled the articles similarly to the human experts. We applied a number of prompt engineering techniques to improve the performance of ChatGPT. RESULTS: Our best configuration used GPT-4 by OpenAI and achieved an out-of-sample validation performance with accuracy/F1-score/sensitivity/specificity of 92.87%/88.43%/83.38%/97.82% for SARS-CoV-2 and 87.40%/73.90%/74.72%/91.36% for Nipah. CONCLUSION: These results highlight the utility of ChatGPT in drug discovery and development and reveal their potential to enable rapid drug target identification during a pandemic-level health emergency.
+AU  - Yang, Jingmei
+AU  - Walker, Kenji C.
+AU  - Bekar-Cesaretli, Ayse A.
+AU  - Hao, Boran
+AU  - Bhadelia, Nahid
+AU  - Joseph-McCarthy, Diane
+AU  - Paschalidis, Ioannis Ch
+DA  - 2024/09//undefined
+DO  - 10.1016/j.ijmedinf.2024.105500
+KW  - Drug development
+GPT-4
+Large language model
+Target identification
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1386-5056
+SP  - 105500
+ST  - Automating biomedical literature review for rapid drug discovery: Leveraging GPT-4 to expedite pandemic response
+T2  - Int J Med Inform
+TI  - Automating biomedical literature review for rapid drug discovery: Leveraging GPT-4 to expedite pandemic response
+UR  - https://doi.org/10.1016/j.ijmedinf.2024.105500
+VL  - 189
+ID  - 4059
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4059.pdf
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Residents receive a numeric performance rating (eg, 1-7 scoring scale) along with a narrative (ie, qualitative) feedback based on their performance in each workplace-based assessment (WBA). Aggregated qualitative data from WBA can be overwhelming to process and fairly adjudicate as part of a global decision about learner competence. Current approaches with qualitative data require a human rater to maintain attention and appropriately weigh various data inputs within the constraints of working memory before rendering a global judgment of performance. OBJECTIVE: This study explores natural language processing (NLP) and machine learning (ML) applications for identifying trainees at risk using a large WBA narrative comment data set associated with numerical ratings. METHODS: NLP was performed retrospectively on a complete data set of narrative comments (ie, text-based feedback to residents based on their performance on a task) derived from WBAs completed by faculty members from multiple hospitals associated with a single, large, residency program at McMaster University, Canada. Narrative comments were vectorized to quantitative ratings using the bag-of-n-grams technique with 3 input types: unigram, bigrams, and trigrams. Supervised ML models using linear regression were trained with the quantitative ratings, performed binary classification, and output a prediction of whether a resident fell into the category of at risk or not at risk. Sensitivity, specificity, and accuracy metrics are reported. RESULTS: The database comprised 7199 unique direct observation assessments, containing both narrative comments and a rating between 3 and 7 in imbalanced distribution (scores 3-5: 726 ratings; and scores 6-7: 4871 ratings). A total of 141 unique raters from 5 different hospitals and 45 unique residents participated over the course of 5 academic years. When comparing the 3 different input types for diagnosing if a trainee would be rated low (ie, 1-5) or high (ie, 6 or 7), our accuracy for trigrams was 87%, bigrams 86%, and unigrams 82%. We also found that all 3 input types had better prediction accuracy when using a bimodal cut (eg, lower or higher) compared with predicting performance along the full 7-point rating scale (50%-52%). CONCLUSIONS: The ML models can accurately identify underperforming residents via narrative comments provided for WBAs. The words generated in WBAs can be a worthy data set to augment human decisions for educators tasked with processing large volumes of narrative assessments.
+AU  - Yilmaz, Yusuf
+AU  - Jurado Nunez, Alma
+AU  - Ariaeinejad, Ali
+AU  - Lee, Mark
+AU  - Sherbino, Jonathan
+AU  - Chan, Teresa M.
+DA  - 2022/05/27/
+DO  - 10.2196/30537
+IS  - 2
+KW  - assessment
+competency-based medical education
+machine learning
+machine learning algorithms
+medical education
+medical residents
+natural language processing
+prediction models
+work performance
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2369-3762
+SP  - e30537
+ST  - Harnessing Natural Language Processing to Support Decisions Around Workplace-Based Assessment: Machine Learning Study of Competency-Based Medical Education
+T2  - JMIR Med Educ
+TI  - Harnessing Natural Language Processing to Support Decisions Around Workplace-Based Assessment: Machine Learning Study of Competency-Based Medical Education
+UR  - https://doi.org/10.2196/30537
+VL  - 8
+ID  - 4094
+ER  - 
+
+TY  - JOUR
+AB  - INTRODUCTION: Emergency 9-1-1 incident data are recorded voluntarily within fire-department-specific computer-aided dispatch systems. The National Fire Incident Reporting System serves as a repository for these data, but inconsistency and variability in reporting practices across departments often lead to challenges in data quality and utility. This study aims to enhance emergency incident categorization and explore the feasibility of an automated system using free-text incident data from the National Fire Operations Reporting System (NFORS). METHOD: Researchers extracted and standardized 3,564 unique 9-1-1 incident descriptions from six fire departments using NFORS data, including narrative fields from emergency reports. The data were preprocessed using natural language processing (NLP) techniques, such as tokenization, stop word removal, and feature extraction (e.g., TF-IDF and n-grams). These features were used to train and evaluate Machine Learning (ML) models, including Naïve Bayes, Random Forest, and Support Vector Machine, to classify incidents into nine categories. The NLP techniques prepared the text data for the ML models, which performed the classification and assessed the automated system's performance. RESULTS: The study demonstrated significant improvements in incident categorization accuracy using the NLP and ML approach. Unigram models achieved 93% accuracy when applied to 3,564 unique incident descriptions. This performance was evaluated by comparing the automated classifications to manually assigned categories, which served as the reference. Mis-categorizations primarily occurred with "Emergency Medical Services (EMS)." CONCLUSIONS: Standardized and consistent incident categorization is vital for informed decision-making, efficient resource allocation, and effective emergency response. Our findings suggest that adopting a robust categorization system, such as the nine-category model using NLP and ML, can improve categorization accuracy and enhance data quality and utility for decision-making. PRACTICAL APPLICATIONS: Public safety agencies can leverage these insights to modernize data systems, strengthen occupational surveillance, and create more resilient and sustainable public safety data systems.
+AU  - Yoon, N. Katherine
+AU  - Quinn, Tyler D.
+AU  - Furek, Alexa
+AU  - Payne, Nora Y.
+AU  - Haas, Emily J.
+DA  - 2025/07//undefined
+DO  - 10.1016/j.jsr.2025.04.001
+KW  - Automated classification
+Data standardization
+Emergency incident categorization
+Machine learning
+Natural language processing
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0022-4375
+SP  - 335–341
+ST  - Improving the usability of large emergency 911 data reporting systems: A machine learning case study using emergency incident descriptions
+T2  - J Safety Res
+TI  - Improving the usability of large emergency 911 data reporting systems: A machine learning case study using emergency incident descriptions
+UR  - https://doi.org/10.1016/j.jsr.2025.04.001
+https://www.sciencedirect.com/science/article/abs/pii/S0022437525000593?via%3Dihub
+VL  - 93
+ID  - 4026
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4026.pdf
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Wireless emergency alerts (WEAs), which deliver disaster information directly to individuals' mobile phones, have been widely used to provide information related to COVID-19 and to encourage compliance with social distancing guidelines during the COVID-19 pandemic. The floating population refers to the number of people temporarily staying in a specific area, and this demographic data can be a useful indicator to understand the level of social distancing people are complying with during the COVID-19 pandemic. OBJECTIVE: This study aimed to empirically analyze the impact of WEAs on the floating population where WEAs were transmitted in the early stages of the COVID-19 pandemic. As most WEA messages focus on compliance with the government's social distancing guidelines, one of the goals of transmitting WEAs during the COVID-19 pandemic is to control the floating population at an appropriate level. METHODS: We investigated the empirical impact of WEAs on the floating population across 25 districts in Seoul by estimating a panel regression model at the district-hour level with a series of fixed effects. The main independent variables were the number of instant WEAs, the daily cumulative number of WEAs, the total cumulative number of WEAs, and information extracted from WEAs by natural language processing at the district-hour level. The data set provided a highly informative empirical setting as WEAs were sent by different local governments with various identifiable district-hour-level data. RESULTS: The estimates of the impact of WEAs on the floating population were significantly negative (-0.013, P=.02 to -0.014, P=.01) across all specifications, implying that an additional WEA issuance reduced the floating population by 1.3% (=100(1-e(-0.013))) to 1.4% (=100(1-e(-0.014))). Although the coefficients of DCN (the daily cumulative number of WEAs) were also negative (-0.0034, P=.34 to -0.0052, P=.15) across all models, they were not significant. The impact of WEAs on the floating population doubled (-0.025, P=.02 to -0.033, P=.005) when the first 82 days of observations were used as subsamples to reduce the possibility of people blocking WEAs. CONCLUSIONS: Our results suggest that issuing WEAs and distributing information related to COVID-19 to a specific district was associated with a decrease in the floating population of that district. Furthermore, among the various types of information in the WEAs, location information was the only significant type of information that was related to a decrease in the floating population. This study makes important contributions. First, this study measured the impact of WEAs in a highly informative empirical setting. Second, this study adds to the existing literature on the mechanisms by which WEAs can affect public response. Lastly, this study has important implications for making optimal WEAs and suggests that location information should be included.
+AU  - Yoon, Sungwook
+AU  - Lim, Hyungsoo
+AU  - Park, Sungho
+DA  - 2024/03/25/
+DO  - 10.2196/43554
+KW  - COVID-19
+empirical identification
+floating population
+social distancing
+wireless emergency alert
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 2369-2960
+SP  - e43554
+ST  - The Impact of Wireless Emergency Alerts on a Floating Population in Seoul, South Korea: Panel Data Analysis
+T2  - JMIR Public Health Surveill
+TI  - The Impact of Wireless Emergency Alerts on a Floating Population in Seoul, South Korea: Panel Data Analysis
+UR  - https://doi.org/10.2196/43554
+VL  - 10
+ID  - 4067
+ER  - 
+
+TY  - JOUR
+AB  - CONTEXT: Adverse events in healthcare are often collated in incident reports which contain unstructured free text. Learning from these events may improve patient safety. Natural language processing (NLP) uses computational techniques to interrogate free text, reducing the human workload associated with its analysis. There is growing interest in applying NLP to patient safety, but the evidence in the field has not been summarised and evaluated to date. OBJECTIVE: To perform a systematic literature review and narrative synthesis to describe and evaluate NLP methods for classification of incident reports and adverse events in healthcare. METHODS: Data sources included Medline, Embase, The Cochrane Library, CINAHL, MIDIRS, ISI Web of Science, SciELO, Google Scholar, PROSPERO, hand searching of key articles, and OpenGrey. Data items were manually abstracted to a standardised extraction form. RESULTS: From 428 articles screened for eligibility, 35 met the inclusion criteria of using NLP to perform a classification task on incident reports, or with the aim of detecting adverse events. The majority of studies used free text from incident reporting systems or electronic health records. Models were typically designed to classify by type of incident, type of medication error, or harm severity. A broad range of NLP techniques are demonstrated to perform these classification tasks with favourable performance outcomes. There are methodological challenges in how these results can be interpreted in a broader context. CONCLUSION: NLP can generate meaningful information from unstructured data in the specific domain of the classification of incident reports and adverse events. Understanding what or why incidents are occurring is important in adverse event analysis. If NLP enables these insights to be drawn from larger datasets it may improve the learning from adverse events in healthcare.
+AU  - Young, Ian James Bruce
+AU  - Luz, Saturnino
+AU  - Lone, Nazir
+DA  - 2019/12//undefined
+DO  - 10.1016/j.ijmedinf.2019.103971
+KW  - Adverse event analysis
+Incident reporting
+Machine learning
+Natural language processing
+Patient safety
+Text classification
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1386-5056
+SP  - 103971
+ST  - A systematic review of natural language processing for classification tasks in the field of incident reporting and adverse event analysis
+T2  - Int J Med Inform
+TI  - A systematic review of natural language processing for classification tasks in the field of incident reporting and adverse event analysis
+UR  - https://doi.org/10.1016/j.ijmedinf.2019.103971
+https://www.sciencedirect.com/science/article/abs/pii/S1386505619302370?via%3Dihub
+VL  - 132
+ID  - 4126
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4126.pdf
+ER  - 
+
+TY  - JOUR
+AB  - Background: There is no gold standard approach for delirium diagnosis, making the assessment of its epidemiology difficult. Delirium can only be inferred though observation of behavioural disturbance and described with relevant nouns or adjectives. Objective: We aimed to use natural language processing (NLP) and its identification of words descriptive of behavioural disturbance to study the epidemiology of delirium in critically ill patients. Study design: Retrospective study using data collected from the electronic health records of a university-affiliated intensive care unit (ICU) in Melbourne, Australia. Participants: 12 375 patients Intervention: Analysis of electronic progress notes. Identification using NLP of at least one of a list of words describing behavioural disturbance within such notes. Results: We analysed 199 648 progress notes in 12 375 patients. Of these, 5108 patients (41.3%) had NLP-diagnosed behavioural disturbance (NLP-Dx-BD). Compared with those who did not have NLP-Dx-DB, these patients were older, more severely ill, and likely to have medical or unplanned admissions, neurological diagnosis, chronic kidney or liver disease and to receive mechanical ventilation and renal replacement therapy (P < 0.001). The unadjusted hospital mortality for NLP-Dx-BD patients was 14.1% versus 9.6% for patients without NLP-Dx-BD. After adjustment for baseline characteristics and illness severity, NLP-Dx-BD was not associated with increased risk of death (odds ratio [OR], 0.94; 95% CI, 0.80-1.10); a finding robust to multiple sensitivity, subgroups and time of observation subcohort analyses. In mechanically ventilated patients, NLP-Dx-BD was associated with decreased hospital mortality (OR, 0.80; 95% CI, 0.65-0.99) after adjustment for baseline severity of illness and year of admission. Conclusions: NLP enabled rapid assessment of large amounts of data identifying a population of ICU patients with typical high risk characteristics for delirium. Moreover, this technique enabled identification of previously poorly understood associations. Further investigations of this technique appear justified.
+AU  - Young, Marcus
+AU  - Holmes, Natasha
+AU  - Robbins, Raymond
+AU  - Marhoon, Nada
+AU  - Amjad, Sobia
+AU  - Neto, Ary Serpa
+AU  - Bellomo, Rinaldo
+DA  - 2021/06//undefined
+DO  - 10.51893/2021.2.oa1
+IS  - 2
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 1441-2772
+SP  - 144–153
+ST  - Natural language processing to assess the epidemiology of delirium-suggestive behavioural disturbances in critically ill patients
+T2  - Crit Care Resusc
+TI  - Natural language processing to assess the epidemiology of delirium-suggestive behavioural disturbances in critically ill patients
+UR  - https://doi.org/10.51893/2021.2.oa1
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10692527/
+VL  - 23
+ID  - 4074
+ER  - 
+
+TY  - JOUR
+AB  - BACKGROUND: Obtaining total knee arthroplasty patient-reported outcomes for quality assessment is costly and difficult. We asked whether a large language model (LLM) could interpret electronic health record notes to differentiate patients attaining a 1-year minimum clinically important difference (MCID) for the Knee Osteoarthritis Outcome Score-Joint Replacement (KOOS-JR) from those who did not. We also investigated whether sufficient information to infer MCID achievement exists in the chart by having a blinded orthopaedic surgeon make the same determination. METHODS: In this retrospective case-control study, we selected 40 total knee arthroplasty patients who achieved 1-year KOOS-JR MCID and 40 who did not. Orthopaedic, emergency medicine, and primary care notes from zero to six months preoperatively and nine to 15 months postoperatively were deidentified. ChatGPT 3.5 (ChatGPT) interpreted these notes to determine whether the patient improved after surgery. A blinded orthopaedic surgeon classified these patients using all chart information. The sensitivity, specificity, and accuracy of ChatGPT and the surgeon's responses were calculated. RESULTS: ChatGPT classified 78 of 80 cases with 97% sensitivity, but only 33% specificity. The surgeon's assessment had 90% sensitivity and 63% specificity. Given the equal distribution of patients meeting or not meeting MCID, Chat GPT's accuracy was 65%. The surgeon's was 76%. CONCLUSIONS: ChatGPT's assessment of KOOS-JR MCID attainment had 97% sensitivity, but only 33% specificity. False positives were commonly due to the LLM not having access to, or not properly interpreting, signs of problems in the chart. This was an initial evaluation of the current ability of a general-purpose LLM to evaluate patient outcomes based on information in chart notes. An orthopaedic surgeon's assessment of the full chart suggests an opportunity to improve on this baseline performance, possibly enabling quality monitoring and identification of best practices across a large health care system. Additional work is needed to optimize model performance and confirm the utility of this approach.
+AU  - Zalikha, Leo
+AU  - Hong, Thomas S.
+AU  - Small, Easton A.
+AU  - Constant, Michael
+AU  - Harris, Alex H. S.
+AU  - Giori, Nicholas J.
+DA  - 2025/07//undefined
+DO  - 10.1016/j.arth.2025.03.049
+IS  - 40 SUPPL 1
+KW  - artificial intelligence
+large language model
+patient reported outcomes
+prediction
+total knee arthroplasty
+LA  - eng
+RN  - neurocritical_OR_"critical_care"_OR_triage_OR_emergency
+SN  - 0883-5403
+SP  - S153–S157
+ST  - Can a Large Language Model Interpret Data in the Electronic Health Record to Infer Minimum Clinically Important Difference Achievement of Knee Osteoarthritis Outcome Score-Joint Replacement Score Following Total Knee Arthroplasty?
+T2  - J Arthroplasty
+TI  - Can a Large Language Model Interpret Data in the Electronic Health Record to Infer Minimum Clinically Important Difference Achievement of Knee Osteoarthritis Outcome Score-Joint Replacement Score Following Total Knee Arthroplasty?
+UR  - https://doi.org/10.1016/j.arth.2025.03.049
+https://www.arthroplastyjournal.org/article/S0883-5403(25)00261-X/abstract
+VL  - 40
+ID  - 4032
+L1  - /Users/jon/Documents/badjatia_hu/found_papers/downloaded_papers/V3_scraped_papers/4032.pdf
+ER  - 
+

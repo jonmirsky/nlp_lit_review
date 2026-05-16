@@ -1,0 +1,447 @@
+================================================================================
+AI AGENT GUIDE: NLP Literature Review — Automated Search Pipeline
+================================================================================
+Generated for: external LLMs / coding agents with no prior repo context
+Date: 2026-05-18
+Repository root: lit_review/  (sibling: visualizer_nlp_lit_review/)
+
+Purpose of this document
+--------------------------
+Enable confident, safe, effective changes to the automated literature-search
+pipeline: PubMed fetch → PDF acquisition → RIS labeling → master merge →
+visualizer + cloud PDF delivery. Read this before editing any file under
+automated_search/ or pipeline-related paths in visualizer_nlp_lit_review/.
+
+You do not need to read the whole file. Use the index below to jump to the
+section that matches your task; default skim for most edits: §1, §2, §10, §15.
+
+
+INDEX — SECTIONS (jump by heading number)
+-----------------------------------------
+
+  §1   SYSTEM PURPOSE ........................... one-paragraph overview
+  §2   HIGH-LEVEL ARCHITECTURE ................ flow diagram, component map
+  §3   REPOSITORY LAYOUT ........................ what to touch vs avoid
+  §4   ENTRY POINTS ............................. CLI, GUI, Flask, --resume
+  §5   PIPELINE STAGES (DETAILED) ............... bootstrap → Entrez → V4 → merge → R2
+       STAGE 0–6 under §5 (bootstrap, Entrez, V4, post-scrape, visualizer)
+  §6   CATALOG ↔ PIPELINE ↔ VISUALIZER ........ COMMON_SEARCH_TERMS, RN/branch_terms
+  §7   RUN FOLDER CONTRACT .................... metadata.json, progress.jsonl, SCHEMA.md
+  §8   PDF STORE & DEDUPLICATION .............. CAS keys, skip existing PDFs
+  §9   ENVIRONMENT VARIABLES .................. NCBI_EMAIL, LIT_REVIEW_PDF_REMOTE, SSL, R2
+  §10  PROJECT CONVENTIONS (MANDATORY) ........ script headers, git, do-not list
+  §11  TESTING ................................ pytest before merging changes
+  §12  INTERRUPTION, STOP, PARTIAL STATE ...... Stop mid-run, --resume
+  §13  LEGACY MODE ............................ --legacy only; do not extend
+  §14  SAFE CHANGE PATTERNS ................... recipes: new search, skip Entrez, GUI, merge
+  §15  KEY FILE QUICK REFERENCE ............... concern → primary file table
+  §16  DEPLOYMENT NOTES ....................... git push RIS, Render, R2
+  §17  TROUBLESHOOTING CHEAT SHEET ............ common errors and fixes
+
+INDEX — TASK → SECTION (read only these unless you need more)
+--------------------------------------------------------------
+
+  New to the pipeline ......................... §1, §2, §15
+  Add or change a catalog search .............. §6, §14; then §4
+  Edit wrapper / orchestration ................ §5, §4, §15
+  Edit V4 scraper or PDF download ............. §5 STAGE 2, §8, §15
+  Edit merge or master RIS .................... §5 STAGE 3 Step 3, §15
+  Edit metadata / run folders / --resume ...... §7, §5 STAGE 0, §12
+  Edit admin GUI or refresh_catalog ........... §4, §3
+  Fix NCBI / Entrez / SSL ..................... §9, §17
+  Fix rclone / Drive / R2 ..................... §8, §9, §16, §17
+  User stopped run or partial state ........... §12
+  Deploy visualizer after a successful run .... §16, §6
+  Run tests or validate a PR .................. §11, §10
+
+
+1. SYSTEM PURPOSE (ONE PARAGRAPH)
+---------------------------------
+This pipeline maintains a living systematic-review catalog for an NLP
+literature review project. For each configured PubMed query it: (1) fetches
+or accepts RIS bibliographic records, (2) attempts full-text PDF download via
+Selenium (V4 scraper), (3) stores PDFs in a content-addressable Google Drive
+folder (and mirrors to Cloudflare R2), (4) stamps each record with a search-
+term label in the RIS `RN` field, (5) merges new records into the visualizer's
+master RIS under visualizer_nlp_lit_review/RIS_source_files/, and (6) records
+every run in a timestamped folder with auditable metadata. The Flask
+"visualizer" web app reads that master RIS to render query/branch flowcharts,
+overlap stats, and PDF links.
+
+
+2. HIGH-LEVEL ARCHITECTURE
+--------------------------
+
+                    ┌─────────────────────────────────────┐
+                    │ visualizer_nlp_lit_review/config.py │
+                    │ COMMON_SEARCH_TERMS (query,slug,    │
+                    │ label, prefix) — SINGLE SOURCE for    │
+                    │ catalog + batch refresh             │
+                    └──────────────┬──────────────────────┘
+                                   │
+         ┌─────────────────────────┼─────────────────────────┐
+         │                         │                         │
+         v                         v                         v
+  admin_gui.py              refresh_catalog.py         Flask /admin (optional)
+  (tkinter desktop)         (batch all catalog entries) ADMIN_ENABLED=true
+         │                         │                         │
+         └─────────────────────────┴─────────────────────────┘
+                                   │
+                                   v
+              automated_search/scripts/auto_search_wrapper.py
+                                   │
+         ┌─────────────────────────┼─────────────────────────┐
+         │                         │                         │
+         v                         v                         v
+  search_run.py              full_text_scrape_V4.py    post-scrape chain
+  bootstrap, Entrez,         Selenium PDF download     (in wrapper):
+  metadata, progress         + skip existing PDFs      Step1: absolute L1
+                             + rclone upload            Step2: RN label
+                                                        Step3: merge master
+                                                        + R2 sync
+                                   │
+         ┌─────────────────────────┴─────────────────────────┐
+         v                         v                         v
+  automated_search/searches/<run_id>/   PDF store (Drive)   RIS_source_files/
+  metadata, input.ris, found.ris, etc.   gdrive:.../pdfs     pubmed_*.txt (newest)
+                                                                   │
+                                                                   v
+                                                    visualizer Flask app
+                                                    (flowchart, overlap, PDFs via R2)
+
+
+3. REPOSITORY LAYOUT (WHAT TO TOUCH / AVOID)
+--------------------------------------------
+
+lit_review/
+├── admin_gui.py                    # Desktop GUI; spawns wrapper / refresh_catalog
+├── run_visualizer.py               # Optional Flask launcher (separate from admin GUI)
+├── automated_search/
+│   ├── README.md                   # Human quickstart; keep in sync with changes
+│   ├── SCHEMA.md                   # Run-folder + metadata contract (AUTHORITATIVE)
+│   ├── requirements.txt            # biopython, certifi, requests
+│   ├── scripts/
+│   │   ├── auto_search_wrapper.py  # MAIN ORCHESTRATOR — start here for flow
+│   │   ├── refresh_catalog.py      # Batch: one wrapper run per catalog entry
+│   │   ├── sync_pdfs_to_r2.py      # Drive → R2 mirror (also end-of-run auto)
+│   │   └── helpers/
+│   │       ├── search_run.py       # SearchRun dataclass, bootstrap, Entrez, metadata I/O
+│   │       ├── full_text_scrape_V4.py  # Large Selenium scraper (~4k+ lines)
+│   │       ├── ensure_pdf_store.py # CAS keys, Drive index, master RIS skip set
+│   │       ├── entrez_ssl.py       # NCBI SSL workaround for hospital networks
+│   │       ├── merge_ris_to_master.py
+│   │       ├── label_papers_w_search_terms_v2.py
+│   │       └── convert_composite_ris_paths_to_absolute.py
+│   ├── searches/                   # Per-run artifacts (mostly gitignored)
+│   ├── tests/                      # pytest — run before merging pipeline changes
+│   └── archive/                    # Legacy scripts — do not extend unless --legacy
+└── visualizer_nlp_lit_review/
+    ├── config.py                   # COMMON_SEARCH_TERMS — catalog definition
+    ├── RIS_source_files/           # Master merged RIS (pubmed_*.txt) — DEPLOY THESE
+    ├── app.py                      # Flask visualizer + optional admin API
+    └── overlap_calculator.py       # Uses branch_terms from RN field
+
+
+4. ENTRY POINTS (HOW WORK IS STARTED)
+-------------------------------------
+
+A) Single search (recommended CLI):
+   python3 automated_search/scripts/auto_search_wrapper.py \
+     --query '<PubMed query>' \
+     --slug nlp_extraction \
+     --label '( NLP extraction )'
+
+B) Batch all catalog searches:
+   python3 automated_search/scripts/refresh_catalog.py
+   (--dry-run, --continue-on-error supported)
+
+C) Desktop admin (no Flask required):
+   python3 admin_gui.py
+   - "Search and Pull": one wrapper run (catalog + optional extra AND terms)
+   - "Refresh Catalog": refresh_catalog.py
+   - "Stop": SIGTERM to process group (see §12)
+
+D) Flask admin (local only, ADMIN_ENABLED=true):
+   visualizer_nlp_lit_review/app.py routes /admin, /api/run_search, etc.
+   NOT enabled on production Render deploy.
+
+E) Resume interrupted scrape:
+   python3 automated_search/scripts/auto_search_wrapper.py \
+     --resume automated_search/searches/<run_id>
+
+
+5. PIPELINE STAGES (DETAILED)
+-----------------------------
+
+STAGE 0 — Bootstrap (search_run.bootstrap_search_run)
+  - Allocates automated_search/searches/YYYY_MM_DD_HHMMSS__<slug>/
+  - Collision suffix -2, -3, ... if folder exists
+  - Writes metadata.json (atomic write via save_metadata)
+  - Creates found/, missing/, progress/errors/log paths
+  - query_source determines next step:
+      entrez        → fetch PubMed via Bio.Entrez → input.ris
+      manual_export → copy --input-ris → input.ris
+      byo_found_ris → skip V4; use --found-ris as found/found.ris
+
+STAGE 1 — Entrez fetch (if query_source == entrez)
+  - Requires: NCBI_EMAIL (ToS), optional NCBI_API_KEY
+  - SSL: entrez_ssl.apply_entrez_ssl_settings() before Entrez calls
+    - LIT_REVIEW_ENTREZ_INSECURE_SSL=1 on inspected networks (GUI checkbox)
+    - Or LIT_REVIEW_SSL_CA_BUNDLE / certifi
+  - Always re-fetches PubMed on refresh (new input.ris per run)
+
+STAGE 2 — V4 full-text scrape (full_text_scrape_V4.run_full_text_scrape)
+  - Input: run.input_ris
+  - Selenium browser automation per reference
+  - PDF storage modes (env-driven):
+      LIT_REVIEW_PDF_REMOTE (preferred): rclone copy to gdrive:.../pdfs
+        — no FUSE mount; works on macOS 26+
+      LIT_REVIEW_PDF_STORE (legacy): local FUSE-mounted folder + symlinks
+  - Content-addressable filenames: pmid_<id>.pdf, doi_<hash>.pdf, title_<hash>.pdf
+  - SKIP existing PDFs (do not re-download):
+      1. build_cas_index / build_remote_index on Drive pdfs/
+      2. build_master_pdf_skip_keys on newest pubmed_*.txt in RIS_source_files
+         (records with L1/L2/L3 attachment paths)
+  - Per-record progress.jsonl (append immediately) — powers --resume
+  - On completion: found/found.ris, missing/still_missing.ris, summary counts
+  - found.ris is written ONLY at end of V4 loop (not incrementally)
+
+STAGE 3 — Post-scrape chain (_run_post_scrape_chain in auto_search_wrapper.py)
+  Step 1: convert_ris_to_absolute_paths(found.ris)
+  Step 2: add_research_notes_to_ris_with_explicit_label(..., metadata.search_term_label)
+          — writes RN field verbatim; this becomes visualizer branch_terms
+  Step 3: merge_ris_to_master(step2_output, RIS_source_files/)
+          — O(N) dedupe by DOI/PMID/normalized title
+          — Creates NEW file pubmed_NLP_v4_<timestamp>.txt (never overwrites in place)
+          — Uses .cache/master_lookup.json keyed by master mtime
+  Step 4: save_metadata(finished_at=...), write_summary.md
+  Step 5: sync_run_to_r2 (unless LIT_REVIEW_AUTO_R2_SYNC=0)
+
+STAGE 6 — Visualizer consumption (separate process)
+  - config.get_queries_with_ris_files() picks newest file per prefix (e.g. pubmed)
+  - Papers parsed; RN → branch_terms; grouped under query nodes
+  - Deployed site needs git push of new RIS + R2 already synced
+  - Local reload: GET /api/reload or restart Flask
+
+
+6. CATALOG ↔ PIPELINE ↔ VISUALIZER CONTRACT
+-------------------------------------------
+
+COMMON_SEARCH_TERMS in visualizer_nlp_lit_review/config.py is the single
+catalog. Each automated entry MUST have all three:
+  - query   : PubMed query string
+  - slug    : normalized run-folder suffix (e.g. nlp_extraction)
+  - label   : exact string written to RIS RN field (e.g. "( NLP extraction )")
+
+refresh_catalog.py and admin_gui.py both load this dict via importlib.
+The visualizer query name (dict key, e.g. "NLP_Extraction") is separate from
+slug/label but should stay semantically aligned.
+
+Mapping to visualizer tree:
+  Query node  ← config key / prefix-resolved master RIS
+  Branch node ← each distinct RN / branch_term on papers under that query
+
+When adding a new live search: update config.py FIRST, then run wrapper or
+refresh_catalog. Commit new pubmed_*.txt under RIS_source_files/ for deploy.
+
+
+7. RUN FOLDER CONTRACT (automated_search/SCHEMA.md)
+---------------------------------------------------
+
+run_id = YYYY_MM_DD_HHMMSS__<slug>[-N]
+
+Tracked in git:     metadata.json, summary.md
+Gitignored:         input.ris, found/*, missing/*, progress.jsonl, errors.jsonl, log.txt
+
+metadata.json:
+  - Validated by search_run._validate_metadata — DO NOT add fields without
+    updating SCHEMA.md, validator, and tests/test_metadata_schema.py
+  - MUST be written only via save_metadata() (atomic .tmp + os.replace)
+  - search_term_label is used verbatim for RN stamping
+
+progress.jsonl:
+  - One JSON object per line per attempted record
+  - --resume skips success, skipped_existing, and terminal error_reasons
+
+Agents: treat SCHEMA.md as authoritative; grep search_run.py for enforcement.
+
+
+8. PDF STORE & DEDUPLICATION
+----------------------------
+
+CAS key priority: pmid → doi (normalized hash) → title (normalized hash)
+
+ensure_pdf_store.py centralizes:
+  - resolve_pdf_store / remote index via rclone lsf
+  - cas_key_for_reference, pdf_already_on_file
+  - build_master_pdf_skip_keys (master RIS L1/L2/L3)
+  - upload_pdf_to_remote (rclone copy)
+
+Design intent: Refresh Catalog always re-queries PubMed but must NOT waste
+time re-downloading PDFs already on Drive or already attached in master RIS.
+
+If changing skip logic: update V4 startup counts AND log lines; add tests in
+automated_search/tests/ where feasible.
+
+
+9. ENVIRONMENT VARIABLES (REFERENCE)
+------------------------------------
+
+Required for typical run:
+  NCBI_EMAIL              — NCBI ToS contact
+  LIT_REVIEW_PDF_REMOTE   — e.g. gdrive:nlp_lit_review_1_papers/pdfs
+    OR LIT_REVIEW_PDF_STORE — absolute mount path (legacy)
+
+Recommended:
+  NCBI_API_KEY            — higher Entrez rate limits
+
+Optional:
+  LIT_REVIEW_R2_REMOTE, LIT_REVIEW_GDRIVE_REMOTE — R2 sync overrides
+  LIT_REVIEW_AUTO_R2_SYNC=0 — skip end-of-run R2 sync
+  LIT_REVIEW_ENTREZ_INSECURE_SSL=1 — hospital SSL inspection (use sparingly)
+  LIT_REVIEW_SSL_CA_BUNDLE — institutional CA PEM
+  ADMIN_ENABLED=true — Flask admin routes (local only)
+  PYTHONUNBUFFERED=1 — real-time logs in GUI/subprocess
+
+rclone remotes gdrive: and r2: must be configured on the machine running the pipeline.
+
+
+10. PROJECT CONVENTIONS (MANDATORY FOR AGENTS)
+----------------------------------------------
+
+Python scripts:
+  - Top-of-file comment block: INPUT files/dirs and OUTPUT files/dirs
+  - Generated outputs: header comment naming generating script
+
+Analysis / versioned outputs (repo-wide user rule):
+  - If output file exists (same base name ignoring v# suffix), move old file to
+    archive/ subfolder at same level, then write new file with v# suffix
+
+Git safety:
+  - automated_search/searches/* large artifacts are gitignored except metadata/summary
+  - DO commit new master RIS in visualizer_nlp_lit_review/RIS_source_files/ after
+    successful merges intended for production
+
+Do NOT:
+  - Write metadata.json directly (bypass save_metadata)
+  - Break schema_version without migration plan
+  - Enable ADMIN_ENABLED on production Render
+  - Hardcode absolute OneDrive paths in new code (legacy fallback only)
+  - Reintroduce per-paper rglob over entire download trees (use CAS index)
+  - Set LIT_REVIEW_ENTREZ_INSECURE_SSL by default in committed code
+
+
+11. TESTING BEFORE MERGING PIPELINE CHANGES
+-------------------------------------------
+
+cd <repo_root>
+python3 -m pytest automated_search/tests/ -v
+
+Covers: slug normalization, run allocation, metadata schema, CAS helpers,
+explicit label stamper, bootstrap fixture run.
+
+For V4/Selenium changes: manual smoke test with --dry-run or small fixture RIS.
+
+
+12. INTERRUPTION, STOP, AND PARTIAL STATE
+---------------------------------------
+
+admin_gui Stop → killpg(SIGTERM) on wrapper or refresh_catalog process group.
+
+If stopped mid-V4:
+  - PDFs already uploaded to Drive: KEPT
+  - progress.jsonl: partial audit trail
+  - found.ris: often MISSING (written at V4 end)
+  - master RIS: NOT updated (merge is post-V4)
+  - visualizer: unchanged until new merge + deploy/reload
+
+Resume: auto_search_wrapper.py --resume <run_folder>
+
+refresh_catalog: stops current wrapper; does not auto-resume prior partial runs;
+  completed catalog entries before stop will have merged.
+
+
+13. LEGACY MODE
+---------------
+
+auto_search_wrapper.py --legacy
+  - Interactive flow under automated_search/found_papers/ and missing_papers/
+  - Scheduled for removal (Phase 7 per plan)
+  - Do not build new features on --legacy
+
+
+14. SAFE CHANGE PATTERNS (FOR AGENTS)
+-------------------------------------
+
+Add a new catalog search:
+  1. Add entry to COMMON_SEARCH_TERMS (query, slug, label, prefix)
+  2. Run wrapper or refresh_catalog
+  3. Commit new RIS_source_files/pubmed_*.txt
+  4. Deploy visualizer; R2 sync should already have run
+
+Add scrape-only / skip Entrez (not yet a GUI button):
+  - Use --input-ris or --found-ris on wrapper
+  - Or extend wrapper with new query_source (update SCHEMA + validator + tests)
+
+Improve PDF skip:
+  - ensure_pdf_store.py + V4 call sites only
+  - Preserve cas_key_for_reference priority order
+
+Change merge dedupe:
+  - merge_ris_to_master.py + invalidate .cache/master_lookup.json logic
+
+Wire V4 to new run paths:
+  - SearchRun fields in search_run.py; pass run= to run_full_text_scrape
+
+Add GUI feature:
+  - admin_gui.py only spawns scripts; business logic stays in scripts/helpers
+
+Add Flask admin feature:
+  - app.py behind ADMIN_ENABLED guard; mirror env vars from admin_gui._build_env
+
+
+15. KEY FILE QUICK REFERENCE
+----------------------------
+
+| Concern              | Primary file(s)                                      |
+|----------------------|------------------------------------------------------|
+| Orchestration        | auto_search_wrapper.py                               |
+| Run bootstrap        | search_run.py                                        |
+| Schema contract      | SCHEMA.md, search_run._validate_metadata             |
+| PDF download         | full_text_scrape_V4.py                               |
+| PDF skip / CAS       | ensure_pdf_store.py                                  |
+| NCBI SSL             | entrez_ssl.py, search_run.fetch_pubmed_via_entrez    |
+| RN labeling          | label_papers_w_search_terms_v2.py                    |
+| Master merge         | merge_ris_to_master.py                               |
+| Catalog definition   | visualizer_nlp_lit_review/config.py                  |
+| Batch driver         | refresh_catalog.py                                   |
+| Desktop UI           | admin_gui.py                                         |
+| R2 sync              | sync_pdfs_to_r2.py                                   |
+| Visualizer data load | config.get_queries_with_ris_files(), overlap_calculator|
+| Human docs           | automated_search/README.md                           |
+| Refactor plan        | .cursor/plans/automated-search-recordkeeping_*.plan.md |
+
+
+16. DEPLOYMENT NOTES
+--------------------
+
+- Production visualizer (Render) reads RIS from repo / RIS_source_files
+- PDFs served from Cloudflare R2 public bucket (synced from Drive)
+- Pipeline runs on developer machine with rclone + Selenium + Chrome
+- After successful refresh: git commit RIS_source_files changes, push, reload
+
+
+17. TROUBLESHOOTING CHEAT SHEET
+-------------------------------
+
+PdfStoreUnavailable → set LIT_REVIEW_PDF_REMOTE or fix rclone
+Entrez SSL errors → LIT_REVIEW_ENTREZ_INSECURE_SSL or CA bundle
+ModuleNotFoundError Bio → pip install biopython
+Empty GUI log during refresh → ensure PYTHONUNBUFFERED / python -u (already in refresh_catalog)
+Visualizer shows old data → merge didn't finish OR need /api/reload OR redeploy
+R2 out of sync → sync_pdfs_to_r2.py --run <run>
+
+
+================================================================================
+END OF AI AGENT GUIDE
+================================================================================

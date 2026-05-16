@@ -1,0 +1,14 @@
+ID Conflict Analysis for Endnote Library Consolidation
+Generated: $(date)
+
+Total conflicting IDs found: $(wc -l < /tmp/id_conflicts.txt)
+
+Strategy: For each conflicting ID, we will rename the NLP_v4 folder by adding "_nlp4" suffix
+to preserve both PDFs. This ensures no data loss while consolidating libraries.
+
+Conflicting IDs:
+$(cat /tmp/id_conflicts.txt)
+
+
+
+

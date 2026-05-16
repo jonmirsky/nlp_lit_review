@@ -1,0 +1,2633 @@
+PMID- 41027081
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20251112
+LR  - 20251112
+IS  - 1573-2509 (Electronic)
+IS  - 0920-9964 (Linking)
+VI  - 285
+DP  - 2025 Nov
+TI  - Advancing the sensori-/psychomotor domain in schizophrenia spectrum disorders: 
+      From clinical observation to translational innovation.
+PG  - 185-195
+LID - S0920-9964(25)00331-7 [pii]
+LID - 10.1016/j.schres.2025.09.021 [doi]
+AB  - Sensori-/psychomotor dysfunction has historically been an underrecognized domain 
+      in schizophrenia spectrum disorders (SSD), often overshadowed by a narrow focus 
+      on medication-induced side effects such as acute extrapyramidal motor symptoms, 
+      akathisia, dystonia, parkinsonism, and tardive dyskinesia. Two decades ago, 
+      research in this area was largely confined to these pharmacologically related 
+      phenomena, as well as to neurological soft signs (NSS) and catatonia. In the last 
+      ten years, however, the sensori-/psychomotor domain has garnered renewed interest 
+      as a core feature of SSD-relevant not only for symptom profiling but also for 
+      early detection, prognostic stratification, and individualized treatment planning 
+      across the lifespan. This narrative review synthesizes major advances from the 
+      past five years across Psychiatry, Neuroscience, Human Movement Science, and 
+      Affective Computing. It highlights a paradigm shift from traditional hand-based 
+      sensori-/psychomotor assessments toward novel, scalable approaches for 
+      investigating sensori-/psychomotor dysfunction. Emerging tools-such as 
+      actigraphy, 3D motion capture systems, standardized sensorimotor tasks, and 
+      multimodal neuroimaging-now allow for more objective, multimodal assessment of 
+      sensori-/psychomotor behavior, including gesture dynamics and patterns of 
+      physical inactivity. In parallel, computational innovations have enabled the 
+      large-scale analysis of sensori-/psychomotor abnormalities, including 
+      retrospective mining of unstructured clinical notes through natural language 
+      processing and machine learning techniques. Together, these developments 
+      underscore the shifting view of sensori-/psychomotor dysfunction as more than 
+      behavioral epiphenomena or drug effects. We argue that the integration of 
+      emerging technologies and refined methodologies into clinical workflows is 
+      essential for translating research findings into personalized, real-world care of 
+      mental disorders across the lifespan.
+CI  - Copyright © 2025 The Authors. Published by Elsevier B.V. All rights reserved.
+FAU - Hirjak, Dusan
+AU  - Hirjak D
+AD  - Department of Psychiatry and Psychotherapy, Central Institute of Mental Health, 
+      Medical Faculty Mannheim, University of Heidelberg, Mannheim, Germany; German 
+      Centre for Mental Health (DZPG), Partner site Mannheim, Mannheim, Germany. 
+      Electronic address: dusan.hirjak@zi-mannheim.de.
+FAU - Volkmer, Sebastian
+AU  - Volkmer S
+AD  - Department of Psychiatry and Psychotherapy, Central Institute of Mental Health, 
+      Medical Faculty Mannheim, University of Heidelberg, Mannheim, Germany; German 
+      Centre for Mental Health (DZPG), Partner site Mannheim, Mannheim, Germany; Hector 
+      Institute for Artificial Intelligence in Psychiatry, Central Institute of Mental 
+      Health, Medical Faculty Mannheim, Heidelberg University, Mannheim, Germany.
+FAU - Pokorny, Victor
+AU  - Pokorny V
+AD  - Department of Psychology, Northwestern University, Evanston, IL, 60208, United 
+      States.; Department of Psychiatry, Northwestern University, Chicago, IL, 60611, 
+      United States.
+FAU - Mittal, Vijay A
+AU  - Mittal VA
+AD  - Department of Psychology, Northwestern University, Evanston, IL, 60208, United 
+      States.; Department of Psychiatry, Northwestern University, Chicago, IL, 60611, 
+      United States.; The Institute for Adolescent Mental Health and Well-Being, 
+      Northwestern University, Evanston, IL, 60208, United States.
+LA  - eng
+PT  - Journal Article
+PT  - Review
+DEP - 20250929
+PL  - Netherlands
+TA  - Schizophr Res
+JT  - Schizophrenia research
+JID - 8804207
+SB  - IM
+MH  - Humans
+MH  - *Schizophrenia/physiopathology/complications/diagnosis
+MH  - *Psychomotor Disorders/physiopathology/etiology/diagnosis
+MH  - *Translational Research, Biomedical
+OTO - NOTNLM
+OT  - Diagnosis
+OT  - MRI
+OT  - Neuroscience
+OT  - Prediction
+OT  - Psychomotor
+OT  - Sensorimotor
+COIS- Declaration of competing interest DH has received honoraria from Rovi and Teva, 
+      speaker fees from DGPPN and editorial fees from Elsevier and Thieme Verlag. The 
+      other authors declare that they have no conflict of interest in relation to the 
+      subject of this review.
+EDAT- 2025/10/01 00:28
+MHDA- 2025/11/12 23:30
+CRDT- 2025/09/30 18:02
+PHST- 2025/07/23 00:00 [received]
+PHST- 2025/09/18 00:00 [revised]
+PHST- 2025/09/22 00:00 [accepted]
+PHST- 2025/11/12 23:30 [medline]
+PHST- 2025/10/01 00:28 [pubmed]
+PHST- 2025/09/30 18:02 [entrez]
+AID - S0920-9964(25)00331-7 [pii]
+AID - 10.1016/j.schres.2025.09.021 [doi]
+PST - ppublish
+SO  - Schizophr Res. 2025 Nov;285:185-195. doi: 10.1016/j.schres.2025.09.021. Epub 2025 
+      Sep 29.
+
+PMID- 40934113
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20250915
+LR  - 20250915
+IS  - 2050-084X (Electronic)
+IS  - 2050-084X (Linking)
+VI  - 13
+DP  - 2025 Sep 11
+TI  - Mining the neuroimaging literature.
+LID - 10.7554/eLife.94909 [doi]
+LID - RP94909
+AB  - Automated analysis of the biomedical literature (literature mining) offers a rich 
+      source of insights. However, such analysis requires collecting a large number of 
+      articles and extracting and processing their content. This task is often 
+      prohibitively difficult and time-consuming. Here, we provide tools to easily 
+      collect, process, and annotate the biomedical literature. In particular, 
+      https://neuroquery.github.io/pubget/pubget.html is an efficient and reliable 
+      command-line tool for downloading articles in bulk from PubMed Central, 
+      extracting their contents and metadata into convenient formats, and extracting 
+      and analyzing information such as stereotactic brain coordinates. 
+      https://jeromedockes.github.io/labelbuddy/labelbuddy/current/ is a lightweight 
+      local application for annotating text, which facilitates the extraction of 
+      complex information or the creation of ground-truth labels to validate automated 
+      information extraction methods. Further, we describe repositories where 
+      researchers can share their analysis code and their manual annotations in a 
+      format that facilitates reuse. These resources can help streamline text mining 
+      and meta-science projects and make text mining of the biomedical literature more 
+      accessible, effective, and reproducible. We describe a typical workflow based on 
+      these tools and illustrate it with several example projects.
+CI  - © 2024, Dockès, Oudyk et al.
+FAU - Dockès, Jérome
+AU  - Dockès J
+AUID- ORCID: 0000-0002-5304-2496
+AD  - National Institute for Research in Digital Science and Technology (INRIA), Paris, 
+      France.
+FAU - Oudyk, Kendra M
+AU  - Oudyk KM
+AUID- ORCID: 0000-0003-4087-5402
+AD  - Montreal Neurological Institute, McGill University, Montreal, Canada.
+FAU - Torabi, Mohammad
+AU  - Torabi M
+AUID- ORCID: 0000-0002-4429-8481
+AD  - Montreal Neurological Institute, McGill University, Montreal, Canada.
+FAU - de la Vega, Alejandro I
+AU  - de la Vega AI
+AUID- ORCID: 0000-0001-9062-3778
+AD  - The University of Texas at Austin, Austin, United States.
+FAU - Poline, Jean-Baptiste
+AU  - Poline JB
+AUID- ORCID: 0000-0002-9794-749X
+AD  - Montreal Neurological Institute, McGill University, Montreal, Canada.
+LA  - eng
+GR  - PJT-197805/CAPMC/CIHR/Canada
+GR  - 256648/Natural Sciences and Engineering Research Council of Canada/
+GR  - 291772/Fonds de Recherche du Québec - Santé/
+GR  - PJT-185948/CAPMC/CIHR/Canada
+GR  - R01MH096906/MH/NIMH NIH HHS/United States
+GR  - Healthy Brains for Healthy Lives initiative (NeuroHub)/Canada First Research 
+      Excellence Fund/
+GR  - EOSS5-0000000401/Chan Zuckerberg Initiative/
+GR  - RGPIN/03543-2021/Natural Sciences and Engineering Research Council of Canada/
+GR  - P41 EB019936 (ReproNim) - funded meetings/NH/NIH HHS/United States
+GR  - P41 EB019936/EB/NIBIB NIH HHS/United States
+GR  - R01 MH096906/MH/NIMH NIH HHS/United States
+PT  - Journal Article
+DEP - 20250911
+PL  - England
+TA  - Elife
+JT  - eLife
+JID - 101579614
+SB  - IM
+UOF - doi: 10.1101/2023.10.30.564783
+UOF - doi: 10.7554/eLife.94909.1
+MH  - *Data Mining/methods
+MH  - *Neuroimaging/methods
+MH  - Humans
+PMC - PMC12425474
+OTO - NOTNLM
+OT  - meta-research
+OT  - meta-science
+OT  - natural language processing
+OT  - neuroimaging
+OT  - neuroscience
+OT  - none
+OT  - text mining
+COIS- JD, KO, MT, Ad, JP No competing interests declared
+EDAT- 2025/09/11 18:30
+MHDA- 2025/09/16 00:32
+PMCR- 2025/09/11
+CRDT- 2025/09/11 12:53
+PHST- 2025/09/16 00:32 [medline]
+PHST- 2025/09/11 18:30 [pubmed]
+PHST- 2025/09/11 12:53 [entrez]
+PHST- 2025/09/11 00:00 [pmc-release]
+AID - 94909 [pii]
+AID - 10.7554/eLife.94909 [doi]
+PST - epublish
+SO  - Elife. 2025 Sep 11;13:RP94909. doi: 10.7554/eLife.94909.
+
+PMID- 40344361
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20250510
+LR  - 20250516
+IS  - 1755-5949 (Electronic)
+IS  - 1755-5930 (Print)
+IS  - 1755-5930 (Linking)
+VI  - 31
+IP  - 5
+DP  - 2025 May
+TI  - ND-AMD: A Web-Based Database for Animal Models of Neurological Disease With 
+      Analysis Tools.
+PG  - e70411
+LID - 10.1111/cns.70411 [doi]
+LID - e70411
+AB  - BACKGROUND: Research on animal models of neurological diseases has primarily 
+      focused on understanding pathogenic mechanisms, advacing diagnostic strateggies, 
+      developing pharmacotherapies, and exploring preventive interventions. To 
+      facilitate comprehensive and systematic studies in this filed, we have developed 
+      the Neurological Disease Animal Model Database (ND-AMD), accessible at 
+      https://www.uc-med.net/NDAMD. This database is signed around the central theme of 
+      "Big Data - Neurological Diseases - Animal Models - Mechanism Research," 
+      integrating large-scale, multi-dimensional, and multi-scale data to facilitate 
+      in-depth analyses. ND-AMD serves as a resource for panoramic studies, enabling 
+      comparative and mechanistic research across diverse experimental conditions, 
+      species, and disease models. METHOD: Data were systematically retrieved from 
+      PubMed, Web of Science, and other relevant databases using Boolean search 
+      strategies with standardized MeSH terms and keywords. The collected data were 
+      curated and integrated into a structured SQL-based framework, ensuring 
+      consistency through automated validation checks and manual verification. 
+      Heterogeneity and sensitivity analyses were conducted using Cochran's Q test and 
+      the I(2) statistic to assess variability across studies. Statistical workflows 
+      were implemented in Python (SciPy, Pandas, NumPy) to support multi-scale data 
+      integration, trend analysis, and model validation. Additionally, a text 
+      co-occurrence network analysis was performed using Natural Language Processing 
+      (TF-IDF and word embeddings) to identify key conceptual linkages and semantic 
+      structures across studies. RESULTS: ND-AMD integrates data from 483 animal models 
+      of neurological diseases, covering eight disease categories, 21 specific 
+      diseases, 13 species, and 152 strains. The database provides a comprehensive 
+      repository of experimental and phenotypic data, covering behavioral, 
+      physiological, biochemical, molecular pathology, immunological, and imaging 
+      characteristics. Additionally, it incorporates application-oriented data, such as 
+      drug evaluation outcomes. To enhance data accessibility and facilitate in-depth 
+      analysis, ND-AMD features three custom-developed online tools: Model Frequency 
+      Analysis, Comparative Phenotypic Analysis, and Bibliometric Analysis, enabling 
+      systematic comparison and trend identification across models and experimental 
+      conditions. CONCLUSIONS: The centralized feature of ND-AMD enables comparative 
+      analysis across different animal models, strains, and experimental conditions. It 
+      helps capture intricate interactions between biological systems at different 
+      levels, ranging from molecular mechanisms to cellular processes, neural networks, 
+      and behavioral outcomes. These models play a vital role as tools in replicating 
+      pathological conditions of neurological diseases. By offering users convenient, 
+      efficient, and intuitive access to data, ND-AMD enables researchers to identify 
+      patterns, trends, and potential therapeutic targets that may not be apparent in 
+      individual studies.
+CI  - © 2025 The Author(s). CNS Neuroscience & Therapeutics published by John Wiley & 
+      Sons Ltd.
+FAU - Wu, Yue
+AU  - Wu Y
+AUID- ORCID: 0000-0001-5874-8263
+AD  - Institute of Laboratory Animal Sciences, CAMS & PUMC, National Human Diseases 
+      Animal Model Resource Center, National Center of Technology Innovation for Animal 
+      Model, NHC Key Laboratory of Comparative Medicine, State Key Laboratory of 
+      Respiratory Health and Multimorbidity, Key Laboratory of Pathogen Infection 
+      Prevention and Control (Peking Union Medical College), Ministry of Education, 
+      Beijing, China.
+FAU - Li, Lu
+AU  - Li L
+AD  - Nutshell Therapeutics (Shanghai) co., Ltd, Shanghai, China.
+FAU - Li, Yi-Tong
+AU  - Li YT
+AD  - Institute of Laboratory Animal Sciences, CAMS & PUMC, National Human Diseases 
+      Animal Model Resource Center, National Center of Technology Innovation for Animal 
+      Model, NHC Key Laboratory of Comparative Medicine, State Key Laboratory of 
+      Respiratory Health and Multimorbidity, Key Laboratory of Pathogen Infection 
+      Prevention and Control (Peking Union Medical College), Ministry of Education, 
+      Beijing, China.
+FAU - Zhang, Lei
+AU  - Zhang L
+AD  - Institute of Laboratory Animal Sciences, CAMS & PUMC, National Human Diseases 
+      Animal Model Resource Center, National Center of Technology Innovation for Animal 
+      Model, NHC Key Laboratory of Comparative Medicine, State Key Laboratory of 
+      Respiratory Health and Multimorbidity, Key Laboratory of Pathogen Infection 
+      Prevention and Control (Peking Union Medical College), Ministry of Education, 
+      Beijing, China.
+FAU - Gong, Shuang
+AU  - Gong S
+AD  - Institute of Laboratory Animal Sciences, CAMS & PUMC, National Human Diseases 
+      Animal Model Resource Center, National Center of Technology Innovation for Animal 
+      Model, NHC Key Laboratory of Comparative Medicine, State Key Laboratory of 
+      Respiratory Health and Multimorbidity, Key Laboratory of Pathogen Infection 
+      Prevention and Control (Peking Union Medical College), Ministry of Education, 
+      Beijing, China.
+FAU - Zhang, Yang
+AU  - Zhang Y
+AD  - Nutshell Therapeutics (Shanghai) co., Ltd, Shanghai, China.
+FAU - Wang, Jue
+AU  - Wang J
+AD  - Institute of Laboratory Animal Sciences, CAMS & PUMC, National Human Diseases 
+      Animal Model Resource Center, National Center of Technology Innovation for Animal 
+      Model, NHC Key Laboratory of Comparative Medicine, State Key Laboratory of 
+      Respiratory Health and Multimorbidity, Key Laboratory of Pathogen Infection 
+      Prevention and Control (Peking Union Medical College), Ministry of Education, 
+      Beijing, China.
+FAU - Zhang, Ling
+AU  - Zhang L
+AD  - Institute of Laboratory Animal Sciences, CAMS & PUMC, National Human Diseases 
+      Animal Model Resource Center, National Center of Technology Innovation for Animal 
+      Model, NHC Key Laboratory of Comparative Medicine, State Key Laboratory of 
+      Respiratory Health and Multimorbidity, Key Laboratory of Pathogen Infection 
+      Prevention and Control (Peking Union Medical College), Ministry of Education, 
+      Beijing, China.
+FAU - Kong, Qi
+AU  - Kong Q
+AD  - Institute of Laboratory Animal Sciences, CAMS & PUMC, National Human Diseases 
+      Animal Model Resource Center, National Center of Technology Innovation for Animal 
+      Model, NHC Key Laboratory of Comparative Medicine, State Key Laboratory of 
+      Respiratory Health and Multimorbidity, Key Laboratory of Pathogen Infection 
+      Prevention and Control (Peking Union Medical College), Ministry of Education, 
+      Beijing, China.
+LA  - eng
+GR  - 2021-I2M-1-034/Chinese Academy of Medical Sciences Initiative for Innovative 
+      Medicine/
+GR  - 2023-PT180-01/Non-profit Central Research Institute Fund of Chinese Academy of 
+      Medical Sciences/
+PT  - Journal Article
+PL  - England
+TA  - CNS Neurosci Ther
+JT  - CNS neuroscience & therapeutics
+JID - 101473265
+SB  - IM
+MH  - Animals
+MH  - *Nervous System Diseases
+MH  - *Disease Models, Animal
+MH  - *Databases, Factual
+MH  - *Internet
+MH  - Humans
+PMC - PMC12063205
+OTO - NOTNLM
+OT  - analysis tools
+OT  - animal models
+OT  - behavioral test
+OT  - bioinformatics
+OT  - database
+OT  - degenerative diseases
+OT  - neuroscience
+COIS- The authors declare no conflicts of interest.
+EDAT- 2025/05/09 18:32
+MHDA- 2025/05/11 00:46
+PMCR- 2025/05/09
+CRDT- 2025/05/09 15:02
+PHST- 2025/04/09 00:00 [revised]
+PHST- 2024/12/12 00:00 [received]
+PHST- 2025/04/15 00:00 [accepted]
+PHST- 2025/05/11 00:46 [medline]
+PHST- 2025/05/09 18:32 [pubmed]
+PHST- 2025/05/09 15:02 [entrez]
+PHST- 2025/05/09 00:00 [pmc-release]
+AID - CNS70411 [pii]
+AID - 10.1111/cns.70411 [doi]
+PST - ppublish
+SO  - CNS Neurosci Ther. 2025 May;31(5):e70411. doi: 10.1111/cns.70411.
+
+PMID- 39990438
+OWN - NLM
+STAT- PubMed-not-MEDLINE
+LR  - 20250304
+IS  - 2692-8205 (Electronic)
+IS  - 2692-8205 (Linking)
+DP  - 2025 Feb 12
+TI  - Spike sorting AI agent.
+LID - 2025.02.11.637754 [pii]
+LID - 10.1101/2025.02.11.637754 [doi]
+AB  - Spike sorting is a fundamental process for decoding neural activity, involving 
+      preprocessing, spike detection, feature extraction, clustering, and validation. 
+      However, conventional spike sorting methods are highly fragmented, 
+      labor-intensive, and heavily reliant on expert manual curation, limiting their 
+      scalability and reproducibility. This challenge has become more pressing with 
+      advances in neural recording technology, such as high-density Neuropixels for 
+      large-scale neural recording or flexible electrodes for long-term stable 
+      recording over months to years. The volume and complexity of these datasets make 
+      manual curation infeasible, requiring an automated and scalable solution. Here, 
+      we introduce SpikeAgent, a multimodal large language model (LLM)-based AI agent 
+      that automates and standardizes the entire spike sorting pipeline. Unlike 
+      traditional approaches, SpikeAgent integrates multiple LLM backends, coding 
+      functions, and established algorithms, autonomously performing spike sorting with 
+      reasoning-based decision-making and real-time interaction with intermediate 
+      results. It generates interpretable reports, providing transparent justifications 
+      for each sorting decision, enhancing transparency and reliability. We benchmarked 
+      SpikeAgent against human experts across various neural recording technology, 
+      demonstrating its versatility and ability to achieve curation consistency that 
+      are equal to, or even higher than human experts. It also drastically reduces the 
+      expertise barrier and accelerates the curation and validation time by orders of 
+      magnitude. Moreover, it enables automated interpretability of the neural spiking 
+      data, which cannot be achieved by any conventional methods. SpikeAgent presents a 
+      paradigm shift in processing signals for neuroscience and brain-computer 
+      interfaces, while laying the ground for AI agent-augmented science across various 
+      domains.
+FAU - Lin, Zuwan
+AU  - Lin Z
+AUID- ORCID: 0000-0001-5786-9768
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+AD  - Broad Institute of MIT and Harvard, Cambridge, MA, USA.
+AD  - These authors contributed equally and are listed in random order.
+FAU - Marin-Llobet, Arnau
+AU  - Marin-Llobet A
+AUID- ORCID: 0009-0008-8128-4119
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+AD  - These authors contributed equally and are listed in random order.
+FAU - Baek, Jongmin
+AU  - Baek J
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+FAU - He, Yichun
+AU  - He Y
+AUID- ORCID: 0000-0001-9573-2682
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+AD  - Broad Institute of MIT and Harvard, Cambridge, MA, USA.
+FAU - Lee, Jaeyong
+AU  - Lee J
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+FAU - Wang, Wenbo
+AU  - Wang W
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+AD  - Broad Institute of MIT and Harvard, Cambridge, MA, USA.
+FAU - Zhang, Xinhe
+AU  - Zhang X
+AUID- ORCID: 0000-0002-1223-220X
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+AD  - Broad Institute of MIT and Harvard, Cambridge, MA, USA.
+FAU - Lee, Ariel J
+AU  - Lee AJ
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+AD  - Electrical Engineering and Computer Science, Massachusetts Institute of 
+      Technology, Cambridge, MA, USA.
+FAU - Liang, Ningyue
+AU  - Liang N
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+FAU - Du, Jin
+AU  - Du J
+AD  - School of Statistics, University of Minnesota Twin Cities, Minneapolis, MN, USA.
+FAU - Ding, Jie
+AU  - Ding J
+AD  - School of Statistics, University of Minnesota Twin Cities, Minneapolis, MN, USA.
+FAU - Li, Na
+AU  - Li N
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+FAU - Liu, Jia
+AU  - Liu J
+AUID- ORCID: 0000-0003-2217-6982
+AD  - John A. Paulson School of Engineering and Applied Sciences, Harvard University, 
+      Boston, MA, USA.
+LA  - eng
+GR  - DP1 DK130673/DK/NIDDK NIH HHS/United States
+GR  - R01 LM014465/LM/NLM NIH HHS/United States
+PT  - Journal Article
+PT  - Preprint
+DEP - 20250212
+PL  - United States
+TA  - bioRxiv
+JT  - bioRxiv : the preprint server for biology
+JID - 101680187
+PMC - PMC11844495
+COIS- Competing interest statement J.L. is cofounder of Axoft, Inc..
+EDAT- 2025/02/24 12:26
+MHDA- 2025/02/24 12:27
+PMCR- 2025/02/21
+CRDT- 2025/02/24 06:16
+PHST- 2025/02/24 12:26 [pubmed]
+PHST- 2025/02/24 12:27 [medline]
+PHST- 2025/02/24 06:16 [entrez]
+PHST- 2025/02/21 00:00 [pmc-release]
+AID - 2025.02.11.637754 [pii]
+AID - 10.1101/2025.02.11.637754 [doi]
+PST - epublish
+SO  - bioRxiv [Preprint]. 2025 Feb 12:2025.02.11.637754. doi: 
+      10.1101/2025.02.11.637754.
+
+PMID- 39538127
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20241114
+LR  - 20241116
+IS  - 1471-2164 (Electronic)
+IS  - 1471-2164 (Linking)
+VI  - 25
+IP  - 1
+DP  - 2024 Nov 13
+TI  - Harnessing full-text publications for deep insights into C. elegans and 
+      Drosophila biomaps.
+PG  - 1080
+LID - 10.1186/s12864-024-10997-6 [doi]
+LID - 1080
+AB  - In the rapidly expanding domain of scientific research, tracking and synthesizing 
+      information from the rapidly increasing volume of publications pose significant 
+      challenges. To address this, we introduce a novel high-throughput pipeline that 
+      employs ChatGPT to systematically extract and analyze connectivity information 
+      from the full-texts and abstracts of 24,237 and 150,538 research publications 
+      concerning Caenorhabditis elegans and Drosophila melanogaster, respectively. This 
+      approach has effectively identified 200,219 and 1,194,587 interactions within the 
+      C. elegans and Drosophila biomaps, respectively. Utilizing Cytoscape Web, we have 
+      developed a searchable online biomaps that link relevant keywords to their 
+      corresponding PubMed IDs, thus providing seamless access to an extensive 
+      knowledge network encompassing C. elegans and Drosophila. Our work highlights the 
+      transformative potential of integrating artificial intelligence with 
+      bioinformatics to deepen our understanding of complex biological systems. By 
+      revealing the intricate web of relationships among key entities in C. elegans and 
+      Drosophila, we offer invaluable insights that promise to propel advancements in 
+      genetics, developmental biology, neuroscience, longevity, and beyond. We also 
+      provide details and discuss significant nodes within both biomaps, including the 
+      insulin/IGF-1 signaling (IIS) and the notch pathways. Our innovative methodology 
+      sets a robust foundation for future research aimed at unravelling complex 
+      biological networks across diverse organisms. The two databases are available at 
+      worm.bio-map.com and drosophila.bio-map.com.
+CI  - © 2024. The Author(s).
+FAU - Arulprakasam, Karthick Raja
+AU  - Arulprakasam KR
+AUID- ORCID: 0000-0002-0403-2910
+AD  - School of Biological Sciences, Nanyang Technological University, Singapore, 
+      637551, Singapore.
+FAU - Toh, Janelle Wing Shan
+AU  - Toh JWS
+AD  - School of Biological Sciences, Nanyang Technological University, Singapore, 
+      637551, Singapore.
+FAU - Foo, Herman
+AU  - Foo H
+AD  - School of Biological Sciences, Nanyang Technological University, Singapore, 
+      637551, Singapore.
+FAU - Kumar, Mani R
+AU  - Kumar MR
+AD  - School of Biological Sciences, Nanyang Technological University, Singapore, 
+      637551, Singapore.
+FAU - Kutevska, An-Nikol
+AU  - Kutevska AN
+AD  - School of Biological Sciences, Nanyang Technological University, Singapore, 
+      637551, Singapore.
+FAU - Davey, Emilia Emmanuelle
+AU  - Davey EE
+AD  - School of Biological Sciences, Nanyang Technological University, Singapore, 
+      637551, Singapore.
+FAU - Mutwil, Marek
+AU  - Mutwil M
+AUID- ORCID: 0000-0002-7848-0126
+AD  - School of Biological Sciences, Nanyang Technological University, Singapore, 
+      637551, Singapore. mutwil@ntu.edu.sg.
+FAU - Thibault, Guillaume
+AU  - Thibault G
+AUID- ORCID: 0000-0002-7926-4812
+AD  - School of Biological Sciences, Nanyang Technological University, Singapore, 
+      637551, Singapore. thibault@ntu.edu.sg.
+AD  - Mechanobiology Institute, National University of Singapore, Singapore, 117411, 
+      Singapore. thibault@ntu.edu.sg.
+LA  - eng
+GR  - MOET32020-0001/Ministry of Education - Singapore/
+GR  - MOET32022-0002/Ministry of Education - Singapore/
+GR  - RG96/22/Ministry of Education - Singapore/
+PT  - Journal Article
+DEP - 20241113
+PL  - England
+TA  - BMC Genomics
+JT  - BMC genomics
+JID - 100965258
+SB  - IM
+MH  - Animals
+MH  - *Caenorhabditis elegans/genetics
+MH  - *Drosophila melanogaster/genetics
+MH  - Computational Biology/methods
+MH  - Signal Transduction
+MH  - Publications
+PMC - PMC11562368
+OTO - NOTNLM
+OT  - Biological databases
+OT  - C. elegans
+OT  - Computational biology
+OT  - Data visualization
+OT  - Drosophila
+OT  - Genetic interactions
+OT  - Natural language processing
+OT  - Network analysis
+OT  - Protein-protein interactions
+OT  - Text mining
+COIS- Declarations Ethics approval and consent to participate Not applicable. Consent 
+      for publication Not applicable. Competing interests The authors declare no 
+      competing interests.
+EDAT- 2024/11/14 17:35
+MHDA- 2024/11/15 05:01
+PMCR- 2024/11/13
+CRDT- 2024/11/13 23:51
+PHST- 2024/05/17 00:00 [received]
+PHST- 2024/11/05 00:00 [accepted]
+PHST- 2024/11/15 05:01 [medline]
+PHST- 2024/11/14 17:35 [pubmed]
+PHST- 2024/11/13 23:51 [entrez]
+PHST- 2024/11/13 00:00 [pmc-release]
+AID - 10.1186/s12864-024-10997-6 [pii]
+AID - 10997 [pii]
+AID - 10.1186/s12864-024-10997-6 [doi]
+PST - epublish
+SO  - BMC Genomics. 2024 Nov 13;25(1):1080. doi: 10.1186/s12864-024-10997-6.
+
+PMID- 39464853
+OWN - NLM
+STAT- PubMed-not-MEDLINE
+LR  - 20241029
+IS  - 2396-8923 (Electronic)
+IS  - 2396-8923 (Linking)
+VI  - 9
+IP  - 1
+DP  - 2024
+TI  - Unpacking unstructured data: A pilot study on extracting insights from 
+      neuropathological reports of Parkinson's Disease patients using large language 
+      models.
+PG  - bpae072
+LID - 10.1093/biomethods/bpae072 [doi]
+LID - bpae072
+AB  - The aim of this study was to make unstructured neuropathological data, located in 
+      the NeuroBioBank (NBB), follow Findability, Accessibility, Interoperability, and 
+      Reusability principles and investigate the potential of large language models 
+      (LLMs) in wrangling unstructured neuropathological reports. By making the 
+      currently inconsistent and disparate data findable, our overarching goal was to 
+      enhance research output and speed. The NBB catalog currently includes information 
+      from medical records, interview results, and neuropathological reports. These 
+      reports contain crucial information necessary for conducting an in-depth analysis 
+      of NBB data but have multiple formats that vary across different NBB 
+      biorepositories and change over time. In this study, we focused on a subset of 
+      822 donors with Parkinson's disease (PD) from seven NBB biorepositories. We 
+      developed a data model with combined Brain Region and Pathological Findings data 
+      at its core. This approach made it easier to build an extraction pipeline and was 
+      flexible enough to convert resulting data to Common Data Elements, a standardized 
+      data collection tool used by the neuroscience community to improve consistency 
+      and facilitate data sharing across studies. This pilot study demonstrated the 
+      potential of LLMs in structuring unstructured neuropathological reports of PD 
+      patients available in the NBB. The pipeline enabled successful extraction of 
+      detailed tissue-level (microscopic) and gross anatomical (macroscopic) 
+      observations, along with staging information from pathology reports, with 
+      extraction quality comparable to manual curation results. To our knowledge, this 
+      is the first attempt to automatically standardize neuropathological information 
+      at this scale. The collected data have the potential to serve as a valuable 
+      resource for PD researchers, facilitating integration with clinical information 
+      and genetic data (such as genome-wide genotyping and whole-genome sequencing) 
+      available through the NBB, thereby enabling a more comprehensive understanding of 
+      the disease.
+CI  - © The Author(s) 2024. Published by Oxford University Press.
+FAU - Stroganov, Oleg
+AU  - Stroganov O
+AUID- ORCID: 0000-0001-6190-823X
+AD  - Rancho BioSciences LLC, 16955 Via Del Campo #220, San Diego, CA 92127, USA.
+FAU - Schedlbauer, Amber
+AU  - Schedlbauer A
+AD  - Rancho BioSciences LLC, 16955 Via Del Campo #220, San Diego, CA 92127, USA.
+FAU - Lorenzen, Emily
+AU  - Lorenzen E
+AD  - Rancho BioSciences LLC, 16955 Via Del Campo #220, San Diego, CA 92127, USA.
+FAU - Kadhim, Alex
+AU  - Kadhim A
+AD  - Rancho BioSciences LLC, 16955 Via Del Campo #220, San Diego, CA 92127, USA.
+FAU - Lobanova, Anna
+AU  - Lobanova A
+AD  - Rancho BioSciences LLC, 16955 Via Del Campo #220, San Diego, CA 92127, USA.
+FAU - Lewis, David A
+AU  - Lewis DA
+AUID- ORCID: 0000-0002-3225-6778
+AD  - Department of Psychiatry, University of Pittsburgh, 4200 Fifth Ave, Pittsburgh, 
+      PA 15260, USA.
+FAU - Glausier, Jill R
+AU  - Glausier JR
+AD  - Department of Psychiatry, University of Pittsburgh, 4200 Fifth Ave, Pittsburgh, 
+      PA 15260, USA.
+LA  - eng
+PT  - Journal Article
+DEP - 20241004
+PL  - England
+TA  - Biol Methods Protoc
+JT  - Biology methods & protocols
+JID - 101693064
+PMC - PMC11513015
+OTO - NOTNLM
+OT  - Data Extraction
+OT  - Large Language Model
+OT  - NeuroBioBank
+OT  - Neuropathology
+OT  - Parkinson’s Disease
+EDAT- 2024/10/28 06:23
+MHDA- 2024/10/28 06:24
+PMCR- 2024/10/04
+CRDT- 2024/10/28 05:25
+PHST- 2024/04/26 00:00 [received]
+PHST- 2024/09/13 00:00 [revised]
+PHST- 2024/10/02 00:00 [accepted]
+PHST- 2024/10/28 06:24 [medline]
+PHST- 2024/10/28 06:23 [pubmed]
+PHST- 2024/10/28 05:25 [entrez]
+PHST- 2024/10/04 00:00 [pmc-release]
+AID - bpae072 [pii]
+AID - 10.1093/biomethods/bpae072 [doi]
+PST - epublish
+SO  - Biol Methods Protoc. 2024 Oct 4;9(1):bpae072. doi: 10.1093/biomethods/bpae072. 
+      eCollection 2024.
+
+PMID- 39251659
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20240909
+LR  - 20240912
+IS  - 2045-2322 (Electronic)
+IS  - 2045-2322 (Linking)
+VI  - 14
+IP  - 1
+DP  - 2024 Sep 9
+TI  - Bridging auditory perception and natural language processing with semantically 
+      informed deep neural networks.
+PG  - 20994
+LID - 10.1038/s41598-024-71693-9 [doi]
+LID - 20994
+AB  - Sound recognition is effortless for humans but poses a significant challenge for 
+      artificial hearing systems. Deep neural networks (DNNs), especially convolutional 
+      neural networks (CNNs), have recently surpassed traditional machine learning in 
+      sound classification. However, current DNNs map sounds to labels using binary 
+      categorical variables, neglecting the semantic relations between labels. 
+      Cognitive neuroscience research suggests that human listeners exploit such 
+      semantic information besides acoustic cues. Hence, our hypothesis is that 
+      incorporating semantic information improves DNN's sound recognition performance, 
+      emulating human behaviour. In our approach, sound recognition is framed as a 
+      regression problem, with CNNs trained to map spectrograms to continuous semantic 
+      representations from NLP models (Word2Vec, BERT, and CLAP text encoder). Two DNN 
+      types were trained: semDNN with continuous embeddings and catDNN with categorical 
+      labels, both with a dataset extracted from a collection of 388,211 sounds 
+      enriched with semantic descriptions. Evaluations across four external datasets, 
+      confirmed the superiority of semantic labeling from semDNN compared to catDNN, 
+      preserving higher-level relations. Importantly, an analysis of human similarity 
+      ratings for natural sounds, showed that semDNN approximated human listener 
+      behaviour better than catDNN, other DNNs, and NLP models. Our work contributes to 
+      understanding the role of semantics in sound recognition, bridging the gap 
+      between artificial systems and human auditory perception.
+CI  - © 2024. The Author(s).
+FAU - Esposito, Michele
+AU  - Esposito M
+AD  - Department of Cognitive Neuroscience, Faculty of Psychology and Neuroscience, 
+      Maastricht University, Maastricht, The Netherlands. 
+      m.esposito@maastrichtuniversity.nl.
+FAU - Valente, Giancarlo
+AU  - Valente G
+AD  - Department of Cognitive Neuroscience, Faculty of Psychology and Neuroscience, 
+      Maastricht University, Maastricht, The Netherlands.
+FAU - Plasencia-Calaña, Yenisel
+AU  - Plasencia-Calaña Y
+AD  - BISS Institute, Faculty of Science and Engineering, Maastricht University, 
+      Maastricht, The Netherlands.
+FAU - Dumontier, Michel
+AU  - Dumontier M
+AD  - Institute of Data Science, Maastricht University, Maastricht, The Netherlands.
+FAU - Giordano, Bruno L
+AU  - Giordano BL
+AD  - Institut des Neurosciences de La Timone, CNRS UMR 7289-Université Aix-Marseille, 
+      Marseille, France.
+FAU - Formisano, Elia
+AU  - Formisano E
+AD  - Department of Cognitive Neuroscience, Faculty of Psychology and Neuroscience, 
+      Maastricht University, Maastricht, The Netherlands. 
+      e.formisano@maastrichtuniversity.nl.
+AD  - BISS Institute, Faculty of Science and Engineering, Maastricht University, 
+      Maastricht, The Netherlands. e.formisano@maastrichtuniversity.nl.
+LA  - eng
+GR  - ANR-21-CE37-0027-01/Agence Nationale de la Recherche/
+GR  - 406.20.GO.030/Nederlandse Organisatie voor Wetenschappelijk Onderzoek/
+PT  - Journal Article
+DEP - 20240909
+PL  - England
+TA  - Sci Rep
+JT  - Scientific reports
+JID - 101563288
+SB  - IM
+MH  - Humans
+MH  - *Auditory Perception/physiology
+MH  - *Semantics
+MH  - *Natural Language Processing
+MH  - *Neural Networks, Computer
+MH  - Deep Learning
+MH  - Sound
+PMC - PMC11383964
+OTO - NOTNLM
+OT  - Acoustic-to-semantic transformation
+OT  - Auditory perception
+OT  - Cognitive neuroscience
+OT  - Deep neural networks
+OT  - Natural language processing
+OT  - Semantic embeddings
+OT  - Sound recognition
+COIS- The authors declare no competing interests.
+EDAT- 2024/09/10 00:43
+MHDA- 2024/09/10 00:44
+PMCR- 2024/09/09
+CRDT- 2024/09/09 23:31
+PHST- 2023/12/21 00:00 [received]
+PHST- 2024/08/30 00:00 [accepted]
+PHST- 2024/09/10 00:44 [medline]
+PHST- 2024/09/10 00:43 [pubmed]
+PHST- 2024/09/09 23:31 [entrez]
+PHST- 2024/09/09 00:00 [pmc-release]
+AID - 10.1038/s41598-024-71693-9 [pii]
+AID - 71693 [pii]
+AID - 10.1038/s41598-024-71693-9 [doi]
+PST - epublish
+SO  - Sci Rep. 2024 Sep 9;14(1):20994. doi: 10.1038/s41598-024-71693-9.
+
+PMID- 38722233
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20240620
+LR  - 20250510
+IS  - 1527-974X (Electronic)
+IS  - 1067-5027 (Print)
+IS  - 1067-5027 (Linking)
+VI  - 31
+IP  - 7
+DP  - 2024 Jun 20
+TI  - Automating literature screening and curation with applications to computational 
+      neuroscience.
+PG  - 1463-1470
+LID - 10.1093/jamia/ocae097 [doi]
+AB  - OBJECTIVE: ModelDB (https://modeldb.science) is a discovery platform for 
+      computational neuroscience, containing over 1850 published model codes with 
+      standardized metadata. These codes were mainly supplied from unsolicited model 
+      author submissions, but this approach is inherently limited. For example, we 
+      estimate we have captured only around one-third of NEURON models, the most common 
+      type of models in ModelDB. To more completely characterize the state of 
+      computational neuroscience modeling work, we aim to identify works containing 
+      results derived from computational neuroscience approaches and their standardized 
+      associated metadata (eg, cell types, research topics). MATERIALS AND METHODS: 
+      Known computational neuroscience work from ModelDB and identified neuroscience 
+      work queried from PubMed were included in our study. After pre-screening with 
+      SPECTER2 (a free document embedding method), GPT-3.5, and GPT-4 were used to 
+      identify likely computational neuroscience work and relevant metadata. RESULTS: 
+      SPECTER2, GPT-4, and GPT-3.5 demonstrated varied but high abilities in 
+      identification of computational neuroscience work. GPT-4 achieved 96.9% accuracy 
+      and GPT-3.5 improved from 54.2% to 85.5% through instruction-tuning and Chain of 
+      Thought. GPT-4 also showed high potential in identifying relevant metadata 
+      annotations. DISCUSSION: Accuracy in identification and extraction might further 
+      be improved by dealing with ambiguity of what are computational elements, 
+      including more information from papers (eg, Methods section), improving prompts, 
+      etc. CONCLUSION: Natural language processing and large language model techniques 
+      can be added to ModelDB to facilitate further model discovery, and will 
+      contribute to a more standardized and comprehensive framework for establishing 
+      domain-specific resources.
+CI  - © The Author(s) 2024. Published by Oxford University Press on behalf of the 
+      American Medical Informatics Association. All rights reserved. For permissions, 
+      please email: journals.permissions@oup.com.
+FAU - Ji, Ziqing
+AU  - Ji Z
+AD  - Biostatistics, Yale School of Public Health, Yale University, New Haven, CT 
+      06510, United States.
+FAU - Guo, Siyan
+AU  - Guo S
+AD  - Biostatistics, Yale School of Public Health, Yale University, New Haven, CT 
+      06510, United States.
+FAU - Qiao, Yujie
+AU  - Qiao Y
+AD  - Biostatistics, Yale School of Public Health, Yale University, New Haven, CT 
+      06510, United States.
+AD  - Integrative Genomics, Princeton University, Princeton, NJ 08540, United States.
+FAU - McDougal, Robert A
+AU  - McDougal RA
+AUID- ORCID: 0000-0001-6394-3127
+AD  - Biostatistics, Yale School of Public Health, Yale University, New Haven, CT 
+      06510, United States.
+AD  - Biomedical Informatics and Data Science, Yale School of Medicine, Yale 
+      University, New Haven, CT 06510, United States.
+AD  - Program in Computational Biology and Bioinformatics, Yale University, New Haven, 
+      CT 06510, United States.
+AD  - Wu Tsai Institute, Yale University, New Haven, CT 06510, United States.
+LA  - eng
+PT  - Journal Article
+PL  - England
+TA  - J Am Med Inform Assoc
+JT  - Journal of the American Medical Informatics Association : JAMIA
+JID - 9430800
+SB  - IM
+MH  - *Neurosciences
+MH  - *Computational Biology/methods
+MH  - Humans
+MH  - Metadata
+MH  - Data Curation/methods
+MH  - Models, Neurological
+MH  - Data Mining/methods
+MH  - Databases, Factual
+PMC - PMC11187430
+OTO - NOTNLM
+OT  - automated curation
+OT  - computational neuroscience
+OT  - large language model
+OT  - natural language processing
+COIS- The authors have no competing interests to declare.
+EDAT- 2024/05/09 14:27
+MHDA- 2024/06/20 06:41
+PMCR- 2025/05/09
+CRDT- 2024/05/09 09:54
+PHST- 2024/01/16 00:00 [received]
+PHST- 2024/03/19 00:00 [revised]
+PHST- 2024/04/16 00:00 [accepted]
+PHST- 2024/06/20 06:41 [medline]
+PHST- 2024/05/09 14:27 [pubmed]
+PHST- 2024/05/09 09:54 [entrez]
+PHST- 2025/05/09 00:00 [pmc-release]
+AID - 7667646 [pii]
+AID - ocae097 [pii]
+AID - 10.1093/jamia/ocae097 [doi]
+PST - ppublish
+SO  - J Am Med Inform Assoc. 2024 Jun 20;31(7):1463-1470. doi: 10.1093/jamia/ocae097.
+
+PMID- 38432177
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20240327
+LR  - 20240522
+IS  - 1973-8102 (Electronic)
+IS  - 0010-9452 (Linking)
+VI  - 173
+DP  - 2024 Apr
+TI  - Reconsidering Luria's speech mediation: Verbalization and haptic picture 
+      identification in children with congenital total blindness.
+PG  - 263-282
+LID - S0010-9452(24)00038-8 [pii]
+LID - 10.1016/j.cortex.2024.01.010 [doi]
+AB  - Current accounts of behavioral and neurocognitive correlates of plasticity in 
+      blindness are just beginning to incorporate the role of speech and verbal 
+      production. We assessed Vygotsky/Luria's speech mediation hypothesis, according 
+      to which speech activity can become a mediating tool for perception of complex 
+      stimuli, specifically, for encoding tactual/haptic spatial patterns which convey 
+      pictorial information (haptic pictures). We compared verbalization in 
+      congenitally totally blind (CTB) and age-matched sighted but visually impaired 
+      (VI) children during a haptic picture naming task which included two repeated, 
+      test-retest, identifications. The children were instructed to explore 10 haptic 
+      schematic pictures of objects (e.g., cup) and body parts (e.g., face) and provide 
+      (without experimenter's feedback) their typical name. Children's explorations and 
+      verbalizations were videorecorded and transcribed into audio segments. Using the 
+      Computerized Analysis of Language (CLAN) program, we extracted several 
+      measurements from the observed verbalizations, including number of utterances and 
+      words, utterance/word duration, and exploration time. Using the Word2Vec natural 
+      language processing technique we operationalized semantic content from the 
+      relative distances between the names provided. Furthermore, we conducted an 
+      observational content analysis in which three judges categorized verbalizations 
+      according to a rating scale assessing verbalization content. Results consistently 
+      indicated across all measures that the CTB children were faster and semantically 
+      more precise than their VI counterparts in the first identification test, 
+      however, the VI children reached the same level of precision and speed as the CTB 
+      children at retest. Overall, the task was harder for the VI group. Consistent 
+      with current neuroscience literature, the prominent role of speech in CTB and VI 
+      children's data suggests that an underlying cross-modal involvement of integrated 
+      brain networks, notably associated with Broca's network, likely also influenced 
+      by Braille, could play a key role in compensatory plasticity via the mediational 
+      mechanism postulated by Luria.
+CI  - Copyright © 2024 The Author(s). Published by Elsevier Ltd.. All rights reserved.
+FAU - D'Angiulli, Amedeo
+AU  - D'Angiulli A
+AD  - Carleton University, Department of Neuroscience, Canada; Children's Hospital of 
+      Eastern Ontario Research Institute, Neurodevelopmental Health, Canada. Electronic 
+      address: amedeo.dangiulli@carleton.ca.
+FAU - Wymark, Dana
+AU  - Wymark D
+AD  - Carleton University, Department of Neuroscience, Canada.
+FAU - Temi, Santa
+AU  - Temi S
+AD  - Carleton University, Department of Neuroscience, Canada.
+FAU - Bahrami, Sahar
+AU  - Bahrami S
+AD  - Carleton University, Department of Neuroscience, Canada.
+FAU - Telfer, Andre
+AU  - Telfer A
+AD  - Carleton University, Department of Neuroscience, Canada.
+LA  - eng
+PT  - Journal Article
+PT  - Observational Study
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20240216
+PL  - Italy
+TA  - Cortex
+JT  - Cortex; a journal devoted to the study of the nervous system and behavior
+JID - 0100725
+SB  - IM
+MH  - Child
+MH  - Humans
+MH  - *Speech
+MH  - *Haptic Technology
+MH  - Blindness/psychology
+MH  - Vision Disorders
+MH  - Touch
+OTO - NOTNLM
+OT  - Alexander Luria
+OT  - Blindness
+OT  - Broca's network
+OT  - Cross-modal plasticity
+OT  - Haptic picture identification
+OT  - Low vision
+OT  - Semiotic mediation
+OT  - Speech
+EDAT- 2024/03/04 00:43
+MHDA- 2024/03/27 06:44
+CRDT- 2024/03/03 18:10
+PHST- 2023/07/06 00:00 [received]
+PHST- 2023/11/20 00:00 [revised]
+PHST- 2024/01/18 00:00 [accepted]
+PHST- 2024/03/27 06:44 [medline]
+PHST- 2024/03/04 00:43 [pubmed]
+PHST- 2024/03/03 18:10 [entrez]
+AID - S0010-9452(24)00038-8 [pii]
+AID - 10.1016/j.cortex.2024.01.010 [doi]
+PST - ppublish
+SO  - Cortex. 2024 Apr;173:263-282. doi: 10.1016/j.cortex.2024.01.010. Epub 2024 Feb 
+      16.
+
+PMID- 37799340
+OWN - NLM
+STAT- PubMed-not-MEDLINE
+LR  - 20231026
+IS  - 1662-4548 (Print)
+IS  - 1662-453X (Electronic)
+IS  - 1662-453X (Linking)
+VI  - 17
+DP  - 2023
+TI  - Application of Entity-BERT model based on neuroscience and brain-like cognition 
+      in electronic medical record entity recognition.
+PG  - 1259652
+LID - 10.3389/fnins.2023.1259652 [doi]
+LID - 1259652
+AB  - INTRODUCTION: In the medical field, electronic medical records contain a large 
+      amount of textual information, and the unstructured nature of this information 
+      makes data extraction and analysis challenging. Therefore, automatic extraction 
+      of entity information from electronic medical records has become a significant 
+      issue in the healthcare domain. METHODS: To address this problem, this paper 
+      proposes a deep learning-based entity information extraction model called 
+      Entity-BERT. The model aims to leverage the powerful feature extraction 
+      capabilities of deep learning and the pre-training language representation 
+      learning of BERT(Bidirectional Encoder Representations from Transformers), 
+      enabling it to automatically learn and recognize various entity types in medical 
+      electronic records, including medical terminologies, disease names, drug 
+      information, and more, providing more effective support for medical research and 
+      clinical practices. The Entity-BERT model utilizes a multi-layer neural network 
+      and cross-attention mechanism to process and fuse information at different levels 
+      and types, resembling the hierarchical and distributed processing of the human 
+      brain. Additionally, the model employs pre-trained language and sequence models 
+      to process and learn textual data, sharing similarities with the language 
+      processing and semantic understanding of the human brain. Furthermore, the 
+      Entity-BERT model can capture contextual information and long-term dependencies, 
+      combining the cross-attention mechanism to handle the complex and diverse 
+      language expressions in electronic medical records, resembling the information 
+      processing method of the human brain in many aspects. Additionally, exploring how 
+      to utilize competitive learning, adaptive regulation, and synaptic plasticity to 
+      optimize the model's prediction results, automatically adjust its parameters, and 
+      achieve adaptive learning and dynamic adjustments from the perspective of 
+      neuroscience and brain-like cognition is of interest. RESULTS AND DISCUSSION: 
+      Experimental results demonstrate that the Entity-BERT model achieves outstanding 
+      performance in entity recognition tasks within electronic medical records, 
+      surpassing other existing entity recognition models. This research not only 
+      provides more efficient and accurate natural language processing technology for 
+      the medical and health field but also introduces new ideas and directions for the 
+      design and optimization of deep learning models.
+CI  - Copyright © 2023 Lu, Jiang, Shi, Zhong, Gu, Huangfu and Gong.
+FAU - Lu, Weijia
+AU  - Lu W
+AD  - Science and Technology Department, Affiliated Hospital of Nantong University, 
+      Nantong, China.
+AD  - Jianghai Hospital of Nantong Sutong Science and Technology Park, Nantong, China.
+FAU - Jiang, Jiehui
+AU  - Jiang J
+AD  - Department of Biomedical Engineering, Shanghai University, Shanghai, China.
+FAU - Shi, Yaxiang
+AU  - Shi Y
+AD  - Network Information Center, Zhongda Hospital Southeast University, Nanjing, 
+      China.
+FAU - Zhong, Xiaowei
+AU  - Zhong X
+AD  - School of Information and Control Engineering, China University of Mining and 
+      Technology, Xuzhou, China.
+FAU - Gu, Jun
+AU  - Gu J
+AD  - Department of Respiratory, Affiliated Hospital Nantong University, Nantong, 
+      China.
+FAU - Huangfu, Lixia
+AU  - Huangfu L
+AD  - Information Center Department, Affiliated Hospital of Nantong University, 
+      Nantong, China.
+FAU - Gong, Ming
+AU  - Gong M
+AD  - Information Center Department, Affiliated Hospital of Nantong University, 
+      Nantong, China.
+LA  - eng
+PT  - Journal Article
+DEP - 20230920
+PL  - Switzerland
+TA  - Front Neurosci
+JT  - Frontiers in neuroscience
+JID - 101478481
+PMC - PMC10547885
+OTO - NOTNLM
+OT  - BERT
+OT  - LSTM
+OT  - cross attention
+OT  - electronic medical records
+OT  - entity recognition
+COIS- The authors declare that the research was conducted in the absence of any 
+      commercial or financial relationships that could be construed as a potential 
+      conflict of interest.
+EDAT- 2023/10/06 06:43
+MHDA- 2023/10/06 06:44
+PMCR- 2023/01/01
+CRDT- 2023/10/06 03:48
+PHST- 2023/07/16 00:00 [received]
+PHST- 2023/08/14 00:00 [accepted]
+PHST- 2023/10/06 06:44 [medline]
+PHST- 2023/10/06 06:43 [pubmed]
+PHST- 2023/10/06 03:48 [entrez]
+PHST- 2023/01/01 00:00 [pmc-release]
+AID - 10.3389/fnins.2023.1259652 [doi]
+PST - epublish
+SO  - Front Neurosci. 2023 Sep 20;17:1259652. doi: 10.3389/fnins.2023.1259652. 
+      eCollection 2023.
+
+PMID- 37270143
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20231006
+LR  - 20231028
+IS  - 1532-0480 (Electronic)
+IS  - 1532-0464 (Print)
+IS  - 1532-0464 (Linking)
+VI  - 143
+DP  - 2023 Jul
+TI  - Creating an ignorance-base: Exploring known unknowns in the scientific 
+      literature.
+PG  - 104405
+LID - S1532-0464(23)00126-0 [pii]
+LID - 10.1016/j.jbi.2023.104405 [doi]
+AB  - BACKGROUND: Scientific discovery progresses by exploring new and uncharted 
+      territory. More specifically, it advances by a process of transforming unknown 
+      unknowns first into known unknowns, and then into knowns. Over the last few 
+      decades, researchers have developed many knowledge bases to capture and connect 
+      the knowns, which has enabled topic exploration and contextualization of 
+      experimental results. But recognizing the unknowns is also critical for finding 
+      the most pertinent questions and their answers. Prior work on known unknowns has 
+      sought to understand them, annotate them, and automate their identification. 
+      However, no knowledge-bases yet exist to capture these unknowns, and little work 
+      has focused on how scientists might use them to trace a given topic or 
+      experimental result in search of open questions and new avenues for exploration. 
+      We show here that a knowledge base of unknowns can be connected to ontologically 
+      grounded biomedical knowledge to accelerate research in the field of prenatal 
+      nutrition. RESULTS: We present the first ignorance-base, a knowledge-base created 
+      by combining classifiers to recognize ignorance statements (statements of missing 
+      or incomplete knowledge that imply a goal for knowledge) and biomedical concepts 
+      over the prenatal nutrition literature. This knowledge-base places biomedical 
+      concepts mentioned in the literature in context with the ignorance statements 
+      authors have made about them. Using our system, researchers interested in the 
+      topic of vitamin D and prenatal health were able to uncover three new avenues for 
+      exploration (immune system, respiratory system, and brain development) by 
+      searching for concepts enriched in ignorance statements. These were buried among 
+      the many standard enriched concepts. Additionally, we used the ignorance-base to 
+      enrich concepts connected to a gene list associated with vitamin D and 
+      spontaneous preterm birth and found an emerging topic of study (brain 
+      development) in an implied field (neuroscience). The researchers could look to 
+      the field of neuroscience for potential answers to the ignorance statements. 
+      CONCLUSION: Our goal is to help students, researchers, funders, and publishers 
+      better understand the state of our collective scientific ignorance (known 
+      unknowns) in order to help accelerate research through the continued illumination 
+      of and focus on the known unknowns and their respective goals for scientific 
+      knowledge.
+CI  - Copyright © 2023 The Author(s). Published by Elsevier Inc. All rights reserved.
+FAU - Boguslav, Mayla R
+AU  - Boguslav MR
+AD  - Computational Bioscience Program, University of Colorado, Anschutz Medical 
+      Campus, E 17th Avenue, Aurora, 80045, CO, USA. Electronic address: 
+      Mayla.Boguslav@CUAnschutz.edu.
+FAU - Salem, Nourah M
+AU  - Salem NM
+AD  - Computational Bioscience Program, University of Colorado, Anschutz Medical 
+      Campus, E 17th Avenue, Aurora, 80045, CO, USA.
+FAU - White, Elizabeth K
+AU  - White EK
+AD  - Computational Bioscience Program, University of Colorado, Anschutz Medical 
+      Campus, E 17th Avenue, Aurora, 80045, CO, USA; Center for Genes, Environment and 
+      Health, National Jewish Health, Jackson Street, Denver, 80206, CO, USA.
+FAU - Sullivan, Katherine J
+AU  - Sullivan KJ
+AD  - Computational Bioscience Program, University of Colorado, Anschutz Medical 
+      Campus, E 17th Avenue, Aurora, 80045, CO, USA.
+FAU - Bada, Michael
+AU  - Bada M
+AD  - Computational Bioscience Program, University of Colorado, Anschutz Medical 
+      Campus, E 17th Avenue, Aurora, 80045, CO, USA.
+FAU - Hernandez, Teri L
+AU  - Hernandez TL
+AD  - College of Nursing, Department of Medicine/Division of Endocrinology, Metabolism, 
+      & Diabetes, University of Colorado, Anschutz Medical Campus, E 17th Avenue, 
+      Aurora, 80045, CO, USA.
+FAU - Leach, Sonia M
+AU  - Leach SM
+AD  - Computational Bioscience Program, University of Colorado, Anschutz Medical 
+      Campus, E 17th Avenue, Aurora, 80045, CO, USA; Center for Genes, Environment and 
+      Health, National Jewish Health, Jackson Street, Denver, 80206, CO, USA.
+FAU - Hunter, Lawrence E
+AU  - Hunter LE
+AD  - Computational Bioscience Program, University of Colorado, Anschutz Medical 
+      Campus, E 17th Avenue, Aurora, 80045, CO, USA.
+LA  - eng
+GR  - R01 LM008111/LM/NLM NIH HHS/United States
+GR  - R01 LM013400/LM/NLM NIH HHS/United States
+PT  - Journal Article
+PT  - Research Support, N.I.H., Extramural
+DEP - 20230601
+PL  - United States
+TA  - J Biomed Inform
+JT  - Journal of biomedical informatics
+JID - 100970413
+RN  - 1406-16-2 (Vitamin D)
+SB  - IM
+MH  - Female
+MH  - Humans
+MH  - Infant, Newborn
+MH  - *Knowledge
+MH  - *Knowledge Bases
+MH  - Premature Birth
+MH  - Publications
+MH  - Vitamin D
+MH  - *Natural Language Processing
+PMC - PMC10528083
+MID - NIHMS1909239
+OTO - NOTNLM
+OT  - Epistemology
+OT  - Information extraction
+OT  - Knowledge representation
+OT  - Knowledge-base
+OT  - Natural language processing
+COIS- Declaration of competing interest The authors declare that they have no known 
+      competing financial interests or personal relationships that could have appeared 
+      to influence the work reported in this paper.
+EDAT- 2023/06/04 01:08
+MHDA- 2023/09/29 06:43
+PMCR- 2023/09/27
+CRDT- 2023/06/03 19:26
+PHST- 2022/11/08 00:00 [received]
+PHST- 2023/05/18 00:00 [revised]
+PHST- 2023/05/21 00:00 [accepted]
+PHST- 2023/09/29 06:43 [medline]
+PHST- 2023/06/04 01:08 [pubmed]
+PHST- 2023/06/03 19:26 [entrez]
+PHST- 2023/09/27 00:00 [pmc-release]
+AID - S1532-0464(23)00126-0 [pii]
+AID - 10.1016/j.jbi.2023.104405 [doi]
+PST - ppublish
+SO  - J Biomed Inform. 2023 Jul;143:104405. doi: 10.1016/j.jbi.2023.104405. Epub 2023 
+      Jun 1.
+
+PMID- 36344713
+OWN - NLM
+STAT- PubMed-not-MEDLINE
+LR  - 20240215
+IS  - 2198-4018 (Print)
+IS  - 2198-4026 (Electronic)
+IS  - 2198-4026 (Linking)
+VI  - 9
+IP  - 1
+DP  - 2022 Nov 7
+TI  - Assisted neuroscience knowledge extraction via machine learning applied to neural 
+      reconstruction metadata on NeuroMorpho.Org.
+PG  - 26
+LID - 10.1186/s40708-022-00174-4 [doi]
+LID - 26
+AB  - The amount of unstructured text produced daily in scholarly journals is enormous. 
+      Systematically identifying, sorting, and structuring information from such a 
+      volume of data is increasingly challenging for researchers even in delimited 
+      domains. Named entity recognition is a fundamental natural language processing 
+      tool that can be trained to annotate, structure, and extract information from 
+      scientific articles. Here, we harness state-of-the-art machine learning 
+      techniques and develop a smart neuroscience metadata suggestion system accessible 
+      by both humans through a user-friendly graphical interface and machines via 
+      Application Programming Interface. We demonstrate a practical application to the 
+      public repository of neural reconstructions, NeuroMorpho.Org, thus expanding the 
+      existing web-based metadata management system currently in use. Quantitative 
+      analysis indicates that the suggestion system reduces personnel labor by at least 
+      50%. Moreover, our results show that larger training datasets with the same 
+      software architecture are unlikely to further improve performance without ad-hoc 
+      heuristics due to intrinsic ambiguities in neuroscience nomenclature. All 
+      components of this project are released open source for community enhancement and 
+      extensions to additional applications.
+CI  - © 2022. The Author(s).
+FAU - Bijari, Kayvan
+AU  - Bijari K
+AD  - College of Science, Neuroscience Program, George Mason University, Fairfax, USA.
+AD  - Center for Neural Informatics, Structures, & Plasticity, Krasnow Institute for 
+      Advanced Study, George Mason University, Fairfax, USA.
+FAU - Zoubi, Yasmeen
+AU  - Zoubi Y
+AD  - College of Science, Neuroscience Program, George Mason University, Fairfax, USA.
+AD  - Center for Neural Informatics, Structures, & Plasticity, Krasnow Institute for 
+      Advanced Study, George Mason University, Fairfax, USA.
+FAU - Ascoli, Giorgio A
+AU  - Ascoli GA
+AD  - College of Science, Neuroscience Program, George Mason University, Fairfax, USA. 
+      ascoli@gmu.edu.
+AD  - Center for Neural Informatics, Structures, & Plasticity, Krasnow Institute for 
+      Advanced Study, George Mason University, Fairfax, USA. ascoli@gmu.edu.
+AD  - Bioengineering Department, Volgenau School of Engineering, George Mason 
+      University, Fairfax, USA. ascoli@gmu.edu.
+LA  - eng
+GR  - R01 NS039600/NS/NINDS NIH HHS/United States
+GR  - R01 NS086082/NS/NINDS NIH HHS/United States
+PT  - Journal Article
+DEP - 20221107
+PL  - Germany
+TA  - Brain Inform
+JT  - Brain informatics
+JID - 101673751
+PMC - PMC9640520
+OTO - NOTNLM
+OT  - Deep learning
+OT  - Machine intelligence
+OT  - Metadata management
+OT  - Named entity recognition
+OT  - Natural language processing
+OT  - Neuro-curation
+OT  - Neuroinformatics
+OT  - Transformers
+COIS- The authors declared that they have no competing interests.
+EDAT- 2022/11/08 06:00
+MHDA- 2022/11/08 06:01
+PMCR- 2022/11/07
+CRDT- 2022/11/07 23:38
+PHST- 2022/08/11 00:00 [received]
+PHST- 2022/10/06 00:00 [accepted]
+PHST- 2022/11/07 23:38 [entrez]
+PHST- 2022/11/08 06:00 [pubmed]
+PHST- 2022/11/08 06:01 [medline]
+PHST- 2022/11/07 00:00 [pmc-release]
+AID - 10.1186/s40708-022-00174-4 [pii]
+AID - 174 [pii]
+AID - 10.1186/s40708-022-00174-4 [doi]
+PST - epublish
+SO  - Brain Inform. 2022 Nov 7;9(1):26. doi: 10.1186/s40708-022-00174-4.
+
+PMID- 36186874
+OWN - NLM
+STAT- PubMed-not-MEDLINE
+LR  - 20221004
+IS  - 1664-0640 (Print)
+IS  - 1664-0640 (Electronic)
+IS  - 1664-0640 (Linking)
+VI  - 13
+DP  - 2022
+TI  - Natural language processing in clinical neuroscience and psychiatry: A review.
+PG  - 946387
+LID - 10.3389/fpsyt.2022.946387 [doi]
+LID - 946387
+AB  - Natural language processing (NLP) is rapidly becoming an important topic in the 
+      medical community. The ability to automatically analyze any type of medical 
+      document could be the key factor to fully exploit the data it contains. 
+      Cutting-edge artificial intelligence (AI) architectures, particularly machine 
+      learning and deep learning, have begun to be applied to this topic and have 
+      yielded promising results. We conducted a literature search for 1,024 papers that 
+      used NLP technology in neuroscience and psychiatry from 2010 to early 2022. After 
+      a selection process, 115 papers were evaluated. Each publication was classified 
+      into one of three categories: information extraction, classification, and data 
+      inference. Automated understanding of clinical reports in electronic health 
+      records has the potential to improve healthcare delivery. Overall, the 
+      performance of NLP applications is high, with an average F1-score and AUC above 
+      85%. We also derived a composite measure in the form of Z-scores to better 
+      compare the performance of NLP models and their different classes as a whole. No 
+      statistical differences were found in the unbiased comparison. Strong asymmetry 
+      between English and non-English models, difficulty in obtaining high-quality 
+      annotated data, and train biases causing low generalizability are the main 
+      limitations. This review suggests that NLP could be an effective tool to help 
+      clinicians gain insights from medical reports, clinical research forms, and more, 
+      making NLP an effective tool to improve the quality of healthcare services.
+CI  - Copyright © 2022 Crema, Attardi, Sartiano and Redolfi.
+FAU - Crema, Claudio
+AU  - Crema C
+AD  - Laboratory of Neuroinformatics, IRCCS Istituto Centro San Giovanni di Dio 
+      Fatebenefratelli, Brescia, Italy.
+FAU - Attardi, Giuseppe
+AU  - Attardi G
+AD  - Department of Informatics, University of Pisa, Pisa, Italy.
+FAU - Sartiano, Daniele
+AU  - Sartiano D
+AD  - Istituto di Informatica e Telematica, Consiglio Nazionale delle Ricerche, Pisa, 
+      Italy.
+FAU - Redolfi, Alberto
+AU  - Redolfi A
+AD  - Laboratory of Neuroinformatics, IRCCS Istituto Centro San Giovanni di Dio 
+      Fatebenefratelli, Brescia, Italy.
+LA  - eng
+PT  - Journal Article
+PT  - Systematic Review
+DEP - 20220914
+PL  - Switzerland
+TA  - Front Psychiatry
+JT  - Frontiers in psychiatry
+JID - 101545006
+PMC - PMC9515453
+OTO - NOTNLM
+OT  - deep learning
+OT  - electronic health record
+OT  - information extraction
+OT  - natural language processing
+OT  - neuroscience
+OT  - psychiatry
+COIS- The authors declare that the research was conducted in the absence of any 
+      commercial or financial relationships that could be construed as a potential 
+      conflict of interest.
+EDAT- 2022/10/04 06:00
+MHDA- 2022/10/04 06:01
+PMCR- 2022/09/14
+CRDT- 2022/10/03 04:41
+PHST- 2022/05/17 00:00 [received]
+PHST- 2022/08/22 00:00 [accepted]
+PHST- 2022/10/03 04:41 [entrez]
+PHST- 2022/10/04 06:00 [pubmed]
+PHST- 2022/10/04 06:01 [medline]
+PHST- 2022/09/14 00:00 [pmc-release]
+AID - 10.3389/fpsyt.2022.946387 [doi]
+PST - epublish
+SO  - Front Psychiatry. 2022 Sep 14;13:946387. doi: 10.3389/fpsyt.2022.946387. 
+      eCollection 2022.
+
+PMID- 35759334
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20220629
+LR  - 20230223
+IS  - 1438-8871 (Electronic)
+IS  - 1439-4456 (Print)
+IS  - 1438-8871 (Linking)
+VI  - 24
+IP  - 6
+DP  - 2022 Jun 27
+TI  - Establishing Institutional Scores With the Rigor and Transparency Index: 
+      Large-scale Analysis of Scientific Reporting Quality.
+PG  - e37324
+LID - 10.2196/37324 [doi]
+LID - e37324
+AB  - BACKGROUND: Improving rigor and transparency measures should lead to improvements 
+      in reproducibility across the scientific literature; however, the assessment of 
+      measures of transparency tends to be very difficult if performed manually. 
+      OBJECTIVE: This study addresses the enhancement of the Rigor and Transparency 
+      Index (RTI, version 2.0), which attempts to automatically assess the rigor and 
+      transparency of journals, institutions, and countries using manuscripts scored on 
+      criteria found in reproducibility guidelines (eg, Materials Design, Analysis, and 
+      Reporting checklist criteria). METHODS: The RTI tracks 27 entity types using 
+      natural language processing techniques such as Bidirectional Long Short-term 
+      Memory Conditional Random Field-based models and regular expressions; this 
+      allowed us to assess over 2 million papers accessed through PubMed Central. 
+      RESULTS: Between 1997 and 2020 (where data were readily available in our data 
+      set), rigor and transparency measures showed general improvement (RTI 2.29 to 
+      4.13), suggesting that authors are taking the need for improved reporting 
+      seriously. The top-scoring journals in 2020 were the Journal of Neurochemistry 
+      (6.23), British Journal of Pharmacology (6.07), and Nature Neuroscience (5.93). 
+      We extracted the institution and country of origin from the author affiliations 
+      to expand our analysis beyond journals. Among institutions publishing >1000 
+      papers in 2020 (in the PubMed Central open access set), Capital Medical 
+      University (4.75), Yonsei University (4.58), and University of Copenhagen (4.53) 
+      were the top performers in terms of RTI. In country-level performance, we found 
+      that Ethiopia and Norway consistently topped the RTI charts of countries with 100 
+      or more papers per year. In addition, we tested our assumption that the RTI may 
+      serve as a reliable proxy for scientific replicability (ie, a high RTI represents 
+      papers containing sufficient information for replication efforts). Using work by 
+      the Reproducibility Project: Cancer Biology, we determined that replication 
+      papers (RTI 7.61, SD 0.78) scored significantly higher (P<.001) than the original 
+      papers (RTI 3.39, SD 1.12), which according to the project required additional 
+      information from authors to begin replication efforts. CONCLUSIONS: These results 
+      align with our view that RTI may serve as a reliable proxy for scientific 
+      replicability. Unfortunately, RTI measures for journals, institutions, and 
+      countries fall short of the replicated paper average. If we consider the RTI of 
+      these replication studies as a target for future manuscripts, more work will be 
+      needed to ensure that the average manuscript contains sufficient information for 
+      replication attempts.
+CI  - ©Joe Menke, Peter Eckmann, Ibrahim Burak Ozyurt, Martijn Roelandse, Nathan 
+      Anderson, Jeffrey Grethe, Anthony Gamst, Anita Bandrowski. Originally published 
+      in the Journal of Medical Internet Research (https://www.jmir.org), 27.06.2022.
+FAU - Menke, Joe
+AU  - Menke J
+AUID- ORCID: 0000-0002-7374-7549
+AD  - Center for Research in Biological Systems, University of California, San Diego, 
+      La Jolla, CA, United States.
+AD  - SciCrunch Inc., San Diego, CA, United States.
+FAU - Eckmann, Peter
+AU  - Eckmann P
+AUID- ORCID: 0000-0002-5388-9451
+AD  - SciCrunch Inc., San Diego, CA, United States.
+AD  - Department of Neuroscience, University of California, San Diego, La Jolla, CA, 
+      United States.
+FAU - Ozyurt, Ibrahim Burak
+AU  - Ozyurt IB
+AUID- ORCID: 0000-0003-3944-1893
+AD  - SciCrunch Inc., San Diego, CA, United States.
+AD  - Department of Neuroscience, University of California, San Diego, La Jolla, CA, 
+      United States.
+FAU - Roelandse, Martijn
+AU  - Roelandse M
+AUID- ORCID: 0000-0001-5596-8084
+AD  - Martijnroelandse.dev, Ouderkerk aan de Amstel, Netherlands.
+FAU - Anderson, Nathan
+AU  - Anderson N
+AUID- ORCID: 0000-0001-5408-5095
+AD  - SciCrunch Inc., San Diego, CA, United States.
+FAU - Grethe, Jeffrey
+AU  - Grethe J
+AUID- ORCID: 0000-0001-5212-7052
+AD  - SciCrunch Inc., San Diego, CA, United States.
+AD  - Department of Neuroscience, University of California, San Diego, La Jolla, CA, 
+      United States.
+FAU - Gamst, Anthony
+AU  - Gamst A
+AUID- ORCID: 0000-0002-6811-7649
+AD  - Department of Mathematics, University of California, San Diego, CA, United 
+      States.
+FAU - Bandrowski, Anita
+AU  - Bandrowski A
+AUID- ORCID: 0000-0002-5497-0243
+AD  - SciCrunch Inc., San Diego, CA, United States.
+AD  - Department of Neuroscience, University of California, San Diego, La Jolla, CA, 
+      United States.
+LA  - eng
+GR  - U24 DK097771/DK/NIDDK NIH HHS/United States
+GR  - R43 OD024432/OD/NIH HHS/United States
+GR  - R24 GM144308/GM/NIGMS NIH HHS/United States
+GR  - U24 DA039832/DA/NIDA NIH HHS/United States
+GR  - R44 MH119094/MH/NIMH NIH HHS/United States
+PT  - Journal Article
+PT  - Research Support, N.I.H., Extramural
+DEP - 20220627
+PL  - Canada
+TA  - J Med Internet Res
+JT  - Journal of medical Internet research
+JID - 100959882
+SB  - IM
+MH  - *Checklist
+MH  - Humans
+MH  - Norway
+MH  - *Publishing
+MH  - Reproducibility of Results
+MH  - Research Design
+PMC - PMC9274430
+OTO - NOTNLM
+OT  - cell line authentication
+OT  - data and code availability
+OT  - reporting transparency
+OT  - reproducibility crisis
+OT  - research metric
+OT  - research reproducibility
+OT  - rigor and transparency
+OT  - science of science
+OT  - university ranking
+COIS- Conflicts of Interest: AB, JG, and IBO have an equity interest in SciCrunch Inc, 
+      the company behind the development of SciScore. PE and NA were employed by 
+      SciCrunch as the scientific curators. JM was employed as a scientific curator 
+      until 2020. The terms of this arrangement were reviewed and approved by the 
+      University of California, San Diego, California, in accordance with its conflicts 
+      of interest policies. MR and IBO serve as independent contractors for SciCrunch.
+EDAT- 2022/06/28 06:00
+MHDA- 2022/06/30 06:00
+PMCR- 2022/06/27
+CRDT- 2022/06/27 11:54
+PHST- 2022/02/15 00:00 [received]
+PHST- 2022/05/23 00:00 [accepted]
+PHST- 2022/05/10 00:00 [revised]
+PHST- 2022/06/27 11:54 [entrez]
+PHST- 2022/06/28 06:00 [pubmed]
+PHST- 2022/06/30 06:00 [medline]
+PHST- 2022/06/27 00:00 [pmc-release]
+AID - v24i6e37324 [pii]
+AID - 10.2196/37324 [doi]
+PST - epublish
+SO  - J Med Internet Res. 2022 Jun 27;24(6):e37324. doi: 10.2196/37324.
+
+PMID- 34862552
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20211207
+LR  - 20231031
+IS  - 0065-1419 (Print)
+IS  - 0065-1419 (Linking)
+VI  - 134
+DP  - 2022
+TI  - Natural Language Processing Applications in the Clinical Neurosciences: A Machine 
+      Learning Augmented Systematic Review.
+PG  - 277-289
+LID - 10.1007/978-3-030-85292-4_32 [doi]
+AB  - Natural language processing (NLP), a domain of artificial intelligence (AI) that 
+      models human language, has been used in medicine to automate diagnostics, detect 
+      adverse events, support decision making and predict clinical outcomes. However, 
+      applications to the clinical neurosciences appear to be limited. NLP has matured 
+      with the implementation of deep transformer models (e.g., XLNet, BERT, T5, and 
+      RoBERTa) and transfer learning. The objectives of this study were to (1) 
+      systematically review NLP applications in the clinical neurosciences, and (2) 
+      explore NLP analysis to facilitate literature synthesis, providing clear examples 
+      to demonstrate the potential capabilities of these technologies for a clinical 
+      audience. Our NLP analysis consisted of keyword identification, text 
+      summarization and document classification. A total of 48 articles met inclusion 
+      criteria. NLP has been applied in the clinical neurosciences to facilitate 
+      literature synthesis, data extraction, patient identification, automated clinical 
+      reporting and outcome prediction. The number of publications applying NLP has 
+      increased rapidly over the past five years. Document classifiers trained to 
+      differentiate included and excluded articles demonstrated moderate performance 
+      (XLNet AUC = 0.66, BERT AUC = 0.59, RoBERTa AUC = 0.62). The T5 transformer model 
+      generated acceptable abstract summaries. The application of NLP has the potential 
+      to enhance research and practice in the clinical neurosciences.
+CI  - © 2022. The Author(s), under exclusive license to Springer Nature Switzerland AG.
+FAU - Buchlak, Quinlan D
+AU  - Buchlak QD
+AD  - School of Medicine, The University of Notre Dame Australia, Sydney, NSW, 
+      Australia. quinlan.buchlak1@my.nd.edu.au.
+FAU - Esmaili, Nazanin
+AU  - Esmaili N
+AD  - School of Medicine, The University of Notre Dame Australia, Sydney, NSW, 
+      Australia.
+AD  - Faculty of Engineering and Information Technology, University of Technology 
+      Sydney, Ultimo, NSW, Australia.
+FAU - Bennett, Christine
+AU  - Bennett C
+AD  - School of Medicine, The University of Notre Dame Australia, Sydney, NSW, 
+      Australia.
+FAU - Farrokhi, Farrokh
+AU  - Farrokhi F
+AD  - Neuroscience Institute, Virginia Mason Medical Center, Seattle, WA, USA.
+LA  - eng
+PT  - Journal Article
+PT  - Systematic Review
+PL  - Austria
+TA  - Acta Neurochir Suppl
+JT  - Acta neurochirurgica. Supplement
+JID - 100962752
+SB  - IM
+MH  - Artificial Intelligence
+MH  - Humans
+MH  - Machine Learning
+MH  - *Natural Language Processing
+MH  - *Neurosciences
+OTO - NOTNLM
+OT  - Artificial intelligence
+OT  - Clinical neuroscience
+OT  - Machine learning
+OT  - Natural language processing
+OT  - Text analytics
+EDAT- 2021/12/05 06:00
+MHDA- 2021/12/15 06:00
+CRDT- 2021/12/04 06:09
+PHST- 2021/12/04 06:09 [entrez]
+PHST- 2021/12/05 06:00 [pubmed]
+PHST- 2021/12/15 06:00 [medline]
+AID - 10.1007/978-3-030-85292-4_32 [doi]
+PST - ppublish
+SO  - Acta Neurochir Suppl. 2022;134:277-289. doi: 10.1007/978-3-030-85292-4_32.
+
+PMID- 34076859
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20211019
+LR  - 20211019
+IS  - 1867-1462 (Electronic)
+IS  - 1867-1462 (Linking)
+VI  - 13
+IP  - 4
+DP  - 2021 Dec
+TI  - Application of Supervised Machine Learning to Extract Brain Connectivity 
+      Information from Neuroscience Research Articles.
+PG  - 731-750
+LID - 10.1007/s12539-021-00443-6 [doi]
+AB  - Understanding the complex connectivity structure of the brain is a major 
+      challenge in neuroscience. Vast and ever-expanding literature about neuronal 
+      connectivity between brain regions already exists in published research articles 
+      and databases. However, with the ever-expanding increase in published articles 
+      and repositories, it becomes difficult for a neuroscientist to engage with the 
+      breadth and depth of any given field within neuroscience. Natural Language 
+      Processing (NLP) techniques can be used to mine 'Brain Region Connectivity' 
+      information from published articles to build a centralized connectivity resource 
+      helping neuroscience researchers to gain quick access to research findings. 
+      Manually curating and continuously updating such a resource involves significant 
+      time and effort. This paper presents an application of supervised machine 
+      learning algorithms that perform shallow and deep linguistic analysis of text to 
+      automatically extract connectivity between brain region mentions. Our proposed 
+      algorithms are evaluated using benchmark datasets collated from PubMed and our 
+      own dataset of full text articles annotated by a domain expert. We also present a 
+      comparison with state-of-the-art methods including BioBERT. Proposed methods 
+      achieve best recall and [Formula: see text] scores negating the need for any 
+      domain-specific predefined linguistic patterns. Our paper presents a novel effort 
+      towards automatically generating interpretable patterns of connectivity for 
+      extracting connected brain region mentions from text and can be expanded to 
+      include any other domain-specific information.
+CI  - © 2021. International Association of Scientists in the Interdisciplinary Areas.
+FAU - Sharma, Ashika
+AU  - Sharma A
+AD  - Center for Artificial Intelligence and Robotics, DRDO Complex, Bangalore, 560093, 
+      India. ashika@cse.iitm.ac.in.
+AD  - Department of Computer Science and Engineering, Indian Institute of Technology 
+      Madras, Chennai, 600036, India. ashika@cse.iitm.ac.in.
+FAU - Jayakumar, Jaikishan
+AU  - Jayakumar J
+AD  - Center for Computational Brain Research, IIT Madras, Chennai, 600036, India.
+FAU - Mitra, Partha P
+AU  - Mitra PP
+AD  - Cold Spring Harbour Laboratory, Cold Spring Harbour, New York, 11724, USA.
+FAU - Chakraborti, Sutanu
+AU  - Chakraborti S
+AD  - Department of Computer Science and Engineering, Indian Institute of Technology 
+      Madras, Chennai, 600036, India.
+FAU - Kumar, P Sreenivasa
+AU  - Kumar PS
+AD  - Department of Computer Science and Engineering, Indian Institute of Technology 
+      Madras, Chennai, 600036, India.
+LA  - eng
+PT  - Journal Article
+DEP - 20210602
+PL  - Germany
+TA  - Interdiscip Sci
+JT  - Interdisciplinary sciences, computational life sciences
+JID - 101515919
+SB  - IM
+MH  - *Algorithms
+MH  - Brain
+MH  - Databases, Factual
+MH  - *Natural Language Processing
+MH  - Supervised Machine Learning
+OTO - NOTNLM
+OT  - Brain region connectivity extraction
+OT  - Machine learning
+OT  - Natural language processing
+OT  - Neuroscience
+OT  - Text mining
+EDAT- 2021/06/03 06:00
+MHDA- 2021/10/21 06:00
+CRDT- 2021/06/02 12:27
+PHST- 2020/09/14 00:00 [received]
+PHST- 2021/05/18 00:00 [accepted]
+PHST- 2021/05/15 00:00 [revised]
+PHST- 2021/06/03 06:00 [pubmed]
+PHST- 2021/10/21 06:00 [medline]
+PHST- 2021/06/02 12:27 [entrez]
+AID - 10.1007/s12539-021-00443-6 [pii]
+AID - 10.1007/s12539-021-00443-6 [doi]
+PST - ppublish
+SO  - Interdiscip Sci. 2021 Dec;13(4):731-750. doi: 10.1007/s12539-021-00443-6. Epub 
+      2021 Jun 2.
+
+PMID- 33921483
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20210503
+LR  - 20210503
+IS  - 1424-8220 (Electronic)
+IS  - 1424-8220 (Linking)
+VI  - 21
+IP  - 8
+DP  - 2021 Apr 12
+TI  - Subsentence Extraction from Text Using Coverage-Based Deep Learning Language 
+      Models.
+LID - 10.3390/s21082712 [doi]
+LID - 2712
+AB  - Sentiment prediction remains a challenging and unresolved task in various 
+      research fields, including psychology, neuroscience, and computer science. This 
+      stems from its high degree of subjectivity and limited input sources that can 
+      effectively capture the actual sentiment. This can be even more challenging with 
+      only text-based input. Meanwhile, the rise of deep learning and an unprecedented 
+      large volume of data have paved the way for artificial intelligence to perform 
+      impressively accurate predictions or even human-level reasoning. Drawing 
+      inspiration from this, we propose a coverage-based sentiment and subsentence 
+      extraction system that estimates a span of input text and recursively feeds this 
+      information back to the networks. The predicted subsentence consists of auxiliary 
+      information expressing a sentiment. This is an important building block for 
+      enabling vivid and epic sentiment delivery (within the scope of this paper) and 
+      for other natural language processing tasks such as text summarisation and Q&A. 
+      Our approach outperforms the state-of-the-art approaches by a large margin in 
+      subsentence prediction (i.e., Average Jaccard scores from 0.72 to 0.89). For the 
+      evaluation, we designed rigorous experiments consisting of 24 ablation studies. 
+      Finally, our learned lessons are returned to the community by sharing software 
+      packages and a public dataset that can reproduce the results presented in this 
+      paper.
+FAU - Lim, JongYoon
+AU  - Lim J
+AD  - CARES, Department of Electrical, Computer and Software Engineering, University of 
+      Auckland, Auckland 1142, New Zealand.
+FAU - Sa, Inkyu
+AU  - Sa I
+AUID- ORCID: 0000-0001-5429-0515
+AD  - CSIRO Data61, Robotics and Autonomous Systems Group, Perception Group, Pullenvale 
+      4069, Australia.
+FAU - Ahn, Ho Seok
+AU  - Ahn HS
+AD  - CARES, Department of Electrical, Computer and Software Engineering, University of 
+      Auckland, Auckland 1142, New Zealand.
+FAU - Gasteiger, Norina
+AU  - Gasteiger N
+AUID- ORCID: 0000-0001-7801-7417
+AD  - CARES, Department of Electrical, Computer and Software Engineering, University of 
+      Auckland, Auckland 1142, New Zealand.
+FAU - Lee, Sanghyub John
+AU  - Lee SJ
+AUID- ORCID: 0000-0001-6714-0225
+AD  - CARES, Department of Electrical, Computer and Software Engineering, University of 
+      Auckland, Auckland 1142, New Zealand.
+FAU - MacDonald, Bruce
+AU  - MacDonald B
+AUID- ORCID: 0000-0001-7602-8497
+AD  - CARES, Department of Electrical, Computer and Software Engineering, University of 
+      Auckland, Auckland 1142, New Zealand.
+LA  - eng
+GR  - 10077553/The Ministry of Trade, Industry & Energy (MI, Korea)/
+PT  - Journal Article
+DEP - 20210412
+PL  - Switzerland
+TA  - Sensors (Basel)
+JT  - Sensors (Basel, Switzerland)
+JID - 101204366
+SB  - IM
+MH  - *Artificial Intelligence
+MH  - *Deep Learning
+MH  - Humans
+MH  - Language
+MH  - Natural Language Processing
+MH  - Research Design
+PMC - PMC8068876
+OTO - NOTNLM
+OT  - bidirectional transformer
+OT  - human robot interaction
+OT  - natural language processing
+OT  - sentiment analysis
+OT  - span prediction
+OT  - text extraction
+COIS- The authors declare no conflict of interest.
+EDAT- 2021/05/01 06:00
+MHDA- 2021/05/04 06:00
+PMCR- 2021/04/12
+CRDT- 2021/04/30 01:19
+PHST- 2021/03/24 00:00 [received]
+PHST- 2021/04/07 00:00 [revised]
+PHST- 2021/04/08 00:00 [accepted]
+PHST- 2021/04/30 01:19 [entrez]
+PHST- 2021/05/01 06:00 [pubmed]
+PHST- 2021/05/04 06:00 [medline]
+PHST- 2021/04/12 00:00 [pmc-release]
+AID - s21082712 [pii]
+AID - sensors-21-02712 [pii]
+AID - 10.3390/s21082712 [doi]
+PST - epublish
+SO  - Sensors (Basel). 2021 Apr 12;21(8):2712. doi: 10.3390/s21082712.
+
+PMID- 33446890
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20210809
+LR  - 20210809
+IS  - 2045-2322 (Electronic)
+IS  - 2045-2322 (Linking)
+VI  - 11
+IP  - 1
+DP  - 2021 Jan 14
+TI  - Predicting adult neuroscience intensive care unit admission from emergency 
+      department triage using a retrospective, tabular-free text machine learning 
+      approach.
+PG  - 1381
+LID - 10.1038/s41598-021-80985-3 [doi]
+LID - 1381
+AB  - Early admission to the neurosciences intensive care unit (NSICU) is associated 
+      with improved patient outcomes. Natural language processing offers new 
+      possibilities for mining free text in electronic health record data. We sought to 
+      develop a machine learning model using both tabular and free text data to 
+      identify patients requiring NSICU admission shortly after arrival to the 
+      emergency department (ED). We conducted a single-center, retrospective cohort 
+      study of adult patients at the Mount Sinai Hospital, an academic medical center 
+      in New York City. All patients presenting to our institutional ED between January 
+      2014 and December 2018 were included. Structured (tabular) demographic, clinical, 
+      bed movement record data, and free text data from triage notes were extracted 
+      from our institutional data warehouse. A machine learning model was trained to 
+      predict likelihood of NSICU admission at 30 min from arrival to the ED. We 
+      identified 412,858 patients presenting to the ED over the study period, of whom 
+      1900 (0.5%) were admitted to the NSICU. The daily median number of ED 
+      presentations was 231 (IQR 200-256) and the median time from ED presentation to 
+      the decision for NSICU admission was 169 min (IQR 80-324). A model trained only 
+      with text data had an area under the receiver-operating curve (AUC) of 0.90 (95% 
+      confidence interval (CI) 0.87-0.91). A structured data-only model had an AUC of 
+      0.92 (95% CI 0.91-0.94). A combined model trained on structured and text data had 
+      an AUC of 0.93 (95% CI 0.92-0.95). At a false positive rate of 1:100 (99% 
+      specificity), the combined model was 58% sensitive for identifying NSICU 
+      admission. A machine learning model using structured and free text data can 
+      predict NSICU admission soon after ED arrival. This may potentially improve ED 
+      and NSICU resource allocation. Further studies should validate our findings.
+FAU - Klang, Eyal
+AU  - Klang E
+AD  - Institute for Healthcare Delivery Science, Icahn School of Medicine at Mount 
+      Sinai, New York, NY, USA.
+FAU - Kummer, Benjamin R
+AU  - Kummer BR
+AD  - Department of Neurology, Icahn School of Medicine at Mount Sinai, One Gustave 
+      Levy Place, Box 1137, New York, NY, USA. benjamin.kummer@mountsinai.org.
+AD  - Clinical Informatics, Mount Sinai Health System, New York, NY, USA. 
+      benjamin.kummer@mountsinai.org.
+FAU - Dangayach, Neha S
+AU  - Dangayach NS
+AD  - Department of Neurology, Icahn School of Medicine at Mount Sinai, One Gustave 
+      Levy Place, Box 1137, New York, NY, USA.
+AD  - Department of Neurosurgery, Icahn School of Medicine at Mount Sinai, New York, 
+      NY, USA.
+FAU - Zhong, Amy
+AU  - Zhong A
+AD  - Icahn School of Medicine at Mount Sinai, New York, NY, USA.
+FAU - Kia, M Arash
+AU  - Kia MA
+AD  - Institute for Healthcare Delivery Science, Icahn School of Medicine at Mount 
+      Sinai, New York, NY, USA.
+FAU - Timsina, Prem
+AU  - Timsina P
+AD  - Institute for Healthcare Delivery Science, Icahn School of Medicine at Mount 
+      Sinai, New York, NY, USA.
+FAU - Cossentino, Ian
+AU  - Cossentino I
+AD  - Icahn School of Medicine at Mount Sinai, New York, NY, USA.
+FAU - Costa, Anthony B
+AU  - Costa AB
+AD  - Department of Neurosurgery, Icahn School of Medicine at Mount Sinai, New York, 
+      NY, USA.
+FAU - Levin, Matthew A
+AU  - Levin MA
+AD  - Institute for Healthcare Delivery Science, Icahn School of Medicine at Mount 
+      Sinai, New York, NY, USA.
+AD  - Department of Anesthesiology, Perioperative and Pain Medicine, Icahn School of 
+      Medicine at Mount Sinai, New York, NY, USA.
+FAU - Oermann, Eric K
+AU  - Oermann EK
+AD  - Department of Neurosurgery, Icahn School of Medicine at Mount Sinai, New York, 
+      NY, USA.
+LA  - eng
+PT  - Journal Article
+DEP - 20210114
+PL  - England
+TA  - Sci Rep
+JT  - Scientific reports
+JID - 101563288
+SB  - IM
+MH  - Adult
+MH  - *Emergency Service, Hospital
+MH  - Female
+MH  - *Hospitalization
+MH  - Humans
+MH  - *Machine Learning
+MH  - Male
+MH  - *Natural Language Processing
+MH  - Nervous System Diseases/*diagnosis
+MH  - Neurosciences
+MH  - New York City
+MH  - Retrospective Studies
+MH  - *Triage
+PMC - PMC7809037
+COIS- The authors declare no competing interests.
+EDAT- 2021/01/16 06:00
+MHDA- 2021/08/10 06:00
+PMCR- 2021/01/14
+CRDT- 2021/01/15 05:57
+PHST- 2020/09/29 00:00 [received]
+PHST- 2020/12/28 00:00 [accepted]
+PHST- 2021/01/15 05:57 [entrez]
+PHST- 2021/01/16 06:00 [pubmed]
+PHST- 2021/08/10 06:00 [medline]
+PHST- 2021/01/14 00:00 [pmc-release]
+AID - 10.1038/s41598-021-80985-3 [pii]
+AID - 80985 [pii]
+AID - 10.1038/s41598-021-80985-3 [doi]
+PST - epublish
+SO  - Sci Rep. 2021 Jan 14;11(1):1381. doi: 10.1038/s41598-021-80985-3.
+
+PMID- 32771179
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20210427
+LR  - 20210802
+IS  - 2451-9030 (Electronic)
+IS  - 2451-9022 (Print)
+IS  - 2451-9022 (Linking)
+VI  - 5
+IP  - 8
+DP  - 2020 Aug
+TI  - Using Language Processing and Speech Analysis for the Identification of Psychosis 
+      and Other Disorders.
+PG  - 770-779
+LID - S2451-9022(20)30154-3 [pii]
+LID - 10.1016/j.bpsc.2020.06.004 [doi]
+AB  - Increasingly, data-driven methods have been implemented to understand 
+      psychopathology. Language is the main source of information in psychiatry and 
+      represents "big data" at the level of the individual. Language and behavior are 
+      amenable to computational natural language processing (NLP) analytics, which may 
+      help operationalize the mental status examination. In this review, we highlight 
+      the application of NLP to schizophrenia and its risk states as an exemplar of its 
+      use, operationalizing tangential and concrete speech as reductions in semantic 
+      coherence and syntactic complexity, respectively. Other clinical applications are 
+      reviewed, including forecasting suicide risk and detecting intoxication. 
+      Challenges and future directions are discussed, including biomarker development, 
+      harmonization, and application of NLP more broadly to behavior, including 
+      intonation/prosody, facial expression and gesture, and the integration of these 
+      in dyads and during discourse. Similar NLP analytics can also be applied beyond 
+      humans to behavioral motifs across species, important for modeling 
+      psychopathology in animal models. Finally, clinical neuroscience can inform the 
+      development of artificial intelligence.
+CI  - Copyright © 2020 Society of Biological Psychiatry. Published by Elsevier Inc. All 
+      rights reserved.
+FAU - Corcoran, Cheryl Mary
+AU  - Corcoran CM
+AD  - Icahn School of Medicine at Mount Sinai, New York; James J. Peters Veterans 
+      Administration Medical Center, Bronx. Electronic address: 
+      Cheryl.corcoran@mssm.edu.
+FAU - Cecchi, Guillermo A
+AU  - Cecchi GA
+AD  - Thomas J. Watson Research Center, IBM Corporation, Yorktown Heights, New York.
+LA  - eng
+GR  - R01 MH107558/MH/NIMH NIH HHS/United States
+GR  - R01 MH115332/MH/NIMH NIH HHS/United States
+PT  - Journal Article
+PT  - Research Support, N.I.H., Extramural
+PT  - Review
+DEP - 20200614
+PL  - United States
+TA  - Biol Psychiatry Cogn Neurosci Neuroimaging
+JT  - Biological psychiatry. Cognitive neuroscience and neuroimaging
+JID - 101671285
+SB  - IM
+MH  - Artificial Intelligence
+MH  - Humans
+MH  - Natural Language Processing
+MH  - *Psychotic Disorders/diagnosis
+MH  - Semantics
+MH  - *Speech
+PMC - PMC7430500
+MID - NIHMS1603959
+OTO - NOTNLM
+OT  - Language
+OT  - Schizophrenia
+OT  - Semantics
+OT  - Speech graphs
+OT  - Suicidal
+OT  - Syntax
+EDAT- 2020/08/11 06:00
+MHDA- 2021/04/28 06:00
+PMCR- 2021/08/01
+CRDT- 2020/08/11 06:00
+PHST- 2020/01/16 00:00 [received]
+PHST- 2020/06/09 00:00 [revised]
+PHST- 2020/06/09 00:00 [accepted]
+PHST- 2020/08/11 06:00 [entrez]
+PHST- 2020/08/11 06:00 [pubmed]
+PHST- 2021/04/28 06:00 [medline]
+PHST- 2021/08/01 00:00 [pmc-release]
+AID - S2451-9022(20)30154-3 [pii]
+AID - 10.1016/j.bpsc.2020.06.004 [doi]
+PST - ppublish
+SO  - Biol Psychiatry Cogn Neurosci Neuroimaging. 2020 Aug;5(8):770-779. doi: 
+      10.1016/j.bpsc.2020.06.004. Epub 2020 Jun 14.
+
+PMID- 28940969
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20180619
+LR  - 20200613
+IS  - 1097-0193 (Electronic)
+IS  - 1065-9471 (Print)
+IS  - 1065-9471 (Linking)
+VI  - 38
+IP  - 12
+DP  - 2017 Dec
+TI  - Decoding the neural representation of story meanings across languages.
+PG  - 6096-6106
+LID - 10.1002/hbm.23814 [doi]
+AB  - Drawing from a common lexicon of semantic units, humans fashion narratives whose 
+      meaning transcends that of their individual utterances. However, while brain 
+      regions that represent lower-level semantic units, such as words and sentences, 
+      have been identified, questions remain about the neural representation of 
+      narrative comprehension, which involves inferring cumulative meaning. To address 
+      these questions, we exposed English, Mandarin, and Farsi native speakers to 
+      native language translations of the same stories during fMRI scanning. Using a 
+      new technique in natural language processing, we calculated the distributed 
+      representations of these stories (capturing the meaning of the stories in 
+      high-dimensional semantic space), and demonstrate that using these 
+      representations we can identify the specific story a participant was reading from 
+      the neural data. Notably, this was possible even when the distributed 
+      representations were calculated using stories in a different language than the 
+      participant was reading. Our results reveal that identification relied on a 
+      collection of brain regions most prominently located in the default mode network. 
+      These results demonstrate that neuro-semantic encoding of narratives happens at 
+      levels higher than individual semantic units and that this encoding is systematic 
+      across both individuals and languages. Hum Brain Mapp 38:6096-6106, 2017. © 2017 
+      Wiley Periodicals, Inc.
+CI  - © 2017 Wiley Periodicals, Inc.
+FAU - Dehghani, Morteza
+AU  - Dehghani M
+AUID- ORCID: 0000-0002-9478-4365
+AD  - University of Southern California, Los Angeles, CA.
+FAU - Boghrati, Reihane
+AU  - Boghrati R
+AD  - University of Southern California, Los Angeles, CA.
+FAU - Man, Kingson
+AU  - Man K
+AD  - University of Southern California, Los Angeles, CA.
+FAU - Hoover, Joe
+AU  - Hoover J
+AD  - University of Southern California, Los Angeles, CA.
+FAU - Gimbel, Sarah I
+AU  - Gimbel SI
+AD  - University of Southern California, Los Angeles, CA.
+FAU - Vaswani, Ashish
+AU  - Vaswani A
+AD  - Google Brain, Mountain View, California.
+FAU - Zevin, Jason D
+AU  - Zevin JD
+AD  - University of Southern California, Los Angeles, CA.
+FAU - Immordino-Yang, Mary Helen
+AU  - Immordino-Yang MH
+AD  - University of Southern California, Los Angeles, CA.
+FAU - Gordon, Andrew S
+AU  - Gordon AS
+AD  - University of Southern California, Los Angeles, CA.
+FAU - Damasio, Antonio
+AU  - Damasio A
+AD  - University of Southern California, Los Angeles, CA.
+FAU - Kaplan, Jonas T
+AU  - Kaplan JT
+AD  - University of Southern California, Los Angeles, CA.
+LA  - eng
+PT  - Journal Article
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20170920
+PL  - United States
+TA  - Hum Brain Mapp
+JT  - Human brain mapping
+JID - 9419065
+SB  - IM
+MH  - Adult
+MH  - Brain/diagnostic imaging/*physiology
+MH  - Brain Mapping
+MH  - Comprehension/*physiology
+MH  - Culture
+MH  - Female
+MH  - Humans
+MH  - Magnetic Resonance Imaging
+MH  - Male
+MH  - *Multilingualism
+MH  - *Narration
+MH  - Neuropsychological Tests
+MH  - Pattern Recognition, Visual/physiology
+MH  - Psycholinguistics
+MH  - *Reading
+MH  - *Semantics
+MH  - Translating
+MH  - Young Adult
+PMC - PMC6867091
+OTO - NOTNLM
+OT  - knowledge representation
+OT  - language neuroscience
+OT  - machine learning
+OT  - natural language processing
+OT  - semantics
+EDAT- 2017/09/25 06:00
+MHDA- 2018/06/21 06:00
+PMCR- 2017/09/20
+CRDT- 2017/09/24 06:00
+PHST- 2017/06/09 00:00 [received]
+PHST- 2017/09/01 00:00 [revised]
+PHST- 2017/09/06 00:00 [accepted]
+PHST- 2017/09/25 06:00 [pubmed]
+PHST- 2018/06/21 06:00 [medline]
+PHST- 2017/09/24 06:00 [entrez]
+PHST- 2017/09/20 00:00 [pmc-release]
+AID - HBM23814 [pii]
+AID - 10.1002/hbm.23814 [doi]
+PST - ppublish
+SO  - Hum Brain Mapp. 2017 Dec;38(12):6096-6106. doi: 10.1002/hbm.23814. Epub 2017 Sep 
+      20.
+
+PMID- 27859320
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20170731
+LR  - 20211204
+IS  - 1749-6632 (Electronic)
+IS  - 0077-8923 (Linking)
+VI  - 1387
+IP  - 1
+DP  - 2017 Jan
+TI  - Advanced literature analysis in a Big Data world.
+PG  - 25-33
+LID - 10.1111/nyas.13270 [doi]
+AB  - Comprehensive data mining of the scientific literature has become an increasing 
+      challenge. To address this challenge, Elsevier's Pathway Studio software uses the 
+      techniques of natural language processing to systematically extract specific 
+      biological information from journal articles and abstracts that is then used to 
+      create a very large, structured, and constantly expanding literature 
+      knowledgebase. Highly sophisticated visualization tools allow the user to 
+      interactively explore the vast number of connections created and stored in the 
+      Pathway Studio database. We demonstrate the value of this structured information 
+      approach by way of a biomarker use case example and describe a comprehensive 
+      collection of biomarkers and biomarker candidates, as reported in the literature. 
+      We use four major neuropsychiatric diseases to demonstrate common and unique 
+      biomarker elements, demonstrate specific enrichment patterns, and highlight 
+      strategies for identifying the most recent and novel reports for potential 
+      biomarker discovery. Finally, we introduce an innovative new taxonomy based on 
+      brain region identifications, which greatly increases the potential depth and 
+      complexity of information retrieval related to, and now accessible for, 
+      neuroscience research.
+CI  - © 2016 New York Academy of Sciences.
+FAU - Cheadle, Chris
+AU  - Cheadle C
+AD  - Department of Genomics Research, R&D Solutions, Rockville, Maryland.
+AD  - Department of Medicine, Johns Hopkins University School of Medicine, Baltimore, 
+      Maryland.
+FAU - Cao, Hongbao
+AU  - Cao H
+AD  - Department of Genomics Research, R&D Solutions, Rockville, Maryland.
+FAU - Kalinin, Andrey
+AU  - Kalinin A
+AD  - Department of Genomics Research, R&D Solutions, Rockville, Maryland.
+FAU - Hodgkinson, Jaqui
+AU  - Hodgkinson J
+AD  - Department of Genomics Research, R&D Solutions, Rockville, Maryland.
+LA  - eng
+PT  - Journal Article
+PT  - Review
+DEP - 20161110
+PL  - United States
+TA  - Ann N Y Acad Sci
+JT  - Annals of the New York Academy of Sciences
+JID - 7506858
+RN  - 0 (Biomarkers)
+SB  - IM
+MH  - Abstracting and Indexing
+MH  - Animals
+MH  - Anxiety Disorders/classification/diagnosis/metabolism/therapy
+MH  - Biomarkers/metabolism
+MH  - Biomedical Research/*methods/trends
+MH  - Bipolar Disorder/classification/diagnosis/metabolism/therapy
+MH  - Computational Biology/*methods/trends
+MH  - Data Mining/*methods/trends
+MH  - *Database Management Systems/trends
+MH  - Databases, Bibliographic
+MH  - Depressive Disorder, Major/classification/diagnosis/metabolism/therapy
+MH  - Humans
+MH  - Mass Screening/*methods/trends
+MH  - Mental Disorders/classification/*diagnosis/metabolism/therapy
+MH  - National Institute of Mental Health (U.S.)
+MH  - *Natural Language Processing
+MH  - Periodicals as Topic
+MH  - Prognosis
+MH  - Schizophrenia/classification/diagnosis/metabolism/therapy
+MH  - Software
+MH  - Translational Research, Biomedical/methods/trends
+MH  - United States
+OTO - NOTNLM
+OT  - Pathway Studio
+OT  - literature analysis
+OT  - literature data mining
+OT  - natural language processing
+EDAT- 2016/11/20 06:00
+MHDA- 2017/08/02 06:00
+CRDT- 2016/11/19 06:00
+PHST- 2016/04/22 00:00 [received]
+PHST- 2016/08/30 00:00 [revised]
+PHST- 2016/09/09 00:00 [accepted]
+PHST- 2016/11/20 06:00 [pubmed]
+PHST- 2017/08/02 06:00 [medline]
+PHST- 2016/11/19 06:00 [entrez]
+AID - 10.1111/nyas.13270 [doi]
+PST - ppublish
+SO  - Ann N Y Acad Sci. 2017 Jan;1387(1):25-33. doi: 10.1111/nyas.13270. Epub 2016 Nov 
+      10.
+
+PMID- 26074781
+OWN - NLM
+STAT- PubMed-not-MEDLINE
+DCOM- 20150615
+LR  - 20200930
+IS  - 1662-5129 (Print)
+IS  - 1662-5129 (Electronic)
+IS  - 1662-5129 (Linking)
+VI  - 9
+DP  - 2015
+TI  - Automatic target validation based on neuroscientific literature mining for 
+      tractography.
+PG  - 66
+LID - 10.3389/fnana.2015.00066 [doi]
+LID - 66
+AB  - Target identification for tractography studies requires solid anatomical 
+      knowledge validated by an extensive literature review across species for each 
+      seed structure to be studied. Manual literature review to identify targets for a 
+      given seed region is tedious and potentially subjective. Therefore, complementary 
+      approaches would be useful. We propose to use text-mining models to automatically 
+      suggest potential targets from the neuroscientific literature, full-text articles 
+      and abstracts, so that they can be used for anatomical connection studies and 
+      more specifically for tractography. We applied text-mining models to three 
+      structures: two well-studied structures, since validated deep brain stimulation 
+      targets, the internal globus pallidus and the subthalamic nucleus and, the 
+      nucleus accumbens, an exploratory target for treating psychiatric disorders. We 
+      performed a systematic review of the literature to document the projections of 
+      the three selected structures and compared it with the targets proposed by 
+      text-mining models, both in rat and primate (including human). We ran 
+      probabilistic tractography on the nucleus accumbens and compared the output with 
+      the results of the text-mining models and literature review. Overall, text-mining 
+      the literature could find three times as many targets as two man-weeks of 
+      curation could. The overall efficiency of the text-mining against literature 
+      review in our study was 98% recall (at 36% precision), meaning that over all the 
+      targets for the three selected seeds, only one target has been missed by 
+      text-mining. We demonstrate that connectivity for a structure of interest can be 
+      extracted from a very large amount of publications and abstracts. We believe this 
+      tool will be useful in helping the neuroscience community to facilitate 
+      connectivity studies of particular brain regions. The text mining tools used for 
+      the study are part of the HBP Neuroinformatics Platform, publicly available at 
+      http://connectivity-brainer.rhcloud.com/.
+FAU - Vasques, Xavier
+AU  - Vasques X
+AD  - Blue Brain Project, Brain Mind Institute, Ecole Polytechnique Fédérale de 
+      Lausanne Lausanne, Switzerland ; IBM Systems France ; Laboratoire de Recherche en 
+      Neurosciences Cliniques France.
+FAU - Richardet, Renaud
+AU  - Richardet R
+AD  - Blue Brain Project, Brain Mind Institute, Ecole Polytechnique Fédérale de 
+      Lausanne Lausanne, Switzerland.
+FAU - Hill, Sean L
+AU  - Hill SL
+AD  - Blue Brain Project, Brain Mind Institute, Ecole Polytechnique Fédérale de 
+      Lausanne Lausanne, Switzerland.
+FAU - Slater, David
+AU  - Slater D
+AD  - Laboratoire de Recherche Neuroimagerie, Université de Lausanne Lausanne, 
+      Switzerland ; Département des Neurosciences Cliniques, Centre Hospitalier 
+      Universitaire Vaudois, Université de Lausanne Lausanne, Switzerland.
+FAU - Chappelier, Jean-Cedric
+AU  - Chappelier JC
+AD  - School of Computer and Communication Sciences, Ecole Polytechnique Fédérale de 
+      Lausanne Lausanne, Switzerland.
+FAU - Pralong, Etienne
+AU  - Pralong E
+AD  - Département des Neurosciences Cliniques, Centre Hospitalier Universitaire 
+      Vaudois, Université de Lausanne Lausanne, Switzerland.
+FAU - Bloch, Jocelyne
+AU  - Bloch J
+AD  - Département des Neurosciences Cliniques, Centre Hospitalier Universitaire 
+      Vaudois, Université de Lausanne Lausanne, Switzerland.
+FAU - Draganski, Bogdan
+AU  - Draganski B
+AD  - Laboratoire de Recherche Neuroimagerie, Université de Lausanne Lausanne, 
+      Switzerland ; Département des Neurosciences Cliniques, Centre Hospitalier 
+      Universitaire Vaudois, Université de Lausanne Lausanne, Switzerland.
+FAU - Cif, Laura
+AU  - Cif L
+AD  - Laboratoire de Recherche Neuroimagerie, Université de Lausanne Lausanne, 
+      Switzerland ; Département des Neurosciences Cliniques, Centre Hospitalier 
+      Universitaire Vaudois, Université de Lausanne Lausanne, Switzerland ; Département 
+      de Neurochirurgie, Hôpital Gui de Chauliac, Centre Hospitalier Régional 
+      Universitaire de Montpellier, Université Montpellier 1 Montpellier, France.
+LA  - eng
+PT  - Journal Article
+DEP - 20150527
+PL  - Switzerland
+TA  - Front Neuroanat
+JT  - Frontiers in neuroanatomy
+JID - 101477943
+PMC - PMC4445321
+OTO - NOTNLM
+OT  - globus pallidus internus
+OT  - information extraction
+OT  - natural language processing
+OT  - nucleus accumbens
+OT  - subthalamic nucleus
+OT  - text mining
+OT  - tractography
+EDAT- 2015/06/16 06:00
+MHDA- 2015/06/16 06:01
+PMCR- 2015/01/01
+CRDT- 2015/06/16 06:00
+PHST- 2015/01/27 00:00 [received]
+PHST- 2015/05/09 00:00 [accepted]
+PHST- 2015/06/16 06:00 [entrez]
+PHST- 2015/06/16 06:00 [pubmed]
+PHST- 2015/06/16 06:01 [medline]
+PHST- 2015/01/01 00:00 [pmc-release]
+AID - 10.3389/fnana.2015.00066 [doi]
+PST - epublish
+SO  - Front Neuroanat. 2015 May 27;9:66. doi: 10.3389/fnana.2015.00066. eCollection 
+      2015.
+
+PMID- 24684448
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20150921
+LR  - 20240610
+IS  - 1530-888X (Electronic)
+IS  - 0899-7667 (Print)
+IS  - 0899-7667 (Linking)
+VI  - 26
+IP  - 6
+DP  - 2014 Jun
+TI  - On nonnegative matrix factorization algorithms for signal-dependent noise with 
+      application to electromyography data.
+PG  - 1128-68
+LID - 10.1162/NECO_a_00576 [doi]
+AB  - Nonnegative matrix factorization (NMF) by the multiplicative updates algorithm is 
+      a powerful machine learning method for decomposing a high-dimensional nonnegative 
+      matrix V into two nonnegative matrices, W and H, where V ~ WH. It has been 
+      successfully applied in the analysis and interpretation of large-scale data 
+      arising in neuroscience, computational biology, and natural language processing, 
+      among other areas. A distinctive feature of NMF is its nonnegativity constraints 
+      that allow only additive linear combinations of the data, thus enabling it to 
+      learn parts that have distinct physical representations in reality. In this 
+      letter, we describe an information-theoretic approach to NMF for signal-dependent 
+      noise based on the generalized inverse gaussian model. Specifically, we propose 
+      three novel algorithms in this setting, each based on multiplicative updates, and 
+      prove monotonicity of updates using the EM algorithm. In addition, we develop 
+      algorithm-specific measures to evaluate their goodness of fit on data. Our 
+      methods are demonstrated using experimental data from electromyography studies, 
+      as well as simulated data in the extraction of muscle synergies, and compared 
+      with existing algorithms for signal-dependent noise.
+FAU - Devarajan, Karthik
+AU  - Devarajan K
+AD  - Department of Biostatistics and Bioinformatics, Fox Chase Cancer Center, 
+      Philadelphia, PA 19111, U.S.A. karthik.devarajan@fccc.edu.
+FAU - Cheung, Vincent C K
+AU  - Cheung VC
+LA  - eng
+GR  - RC1-NS068103-01/NS/NINDS NIH HHS/United States
+GR  - NS44393/NS/NINDS NIH HHS/United States
+GR  - CA06297/CA/NCI NIH HHS/United States
+GR  - P30 CA006927/CA/NCI NIH HHS/United States
+GR  - RC1 NS068103/NS/NINDS NIH HHS/United States
+GR  - P01 NS044393/NS/NINDS NIH HHS/United States
+PT  - Letter
+PT  - Research Support, N.I.H., Extramural
+DEP - 20140331
+PL  - United States
+TA  - Neural Comput
+JT  - Neural computation
+JID - 9426182
+SB  - IM
+MH  - *Algorithms
+MH  - Animals
+MH  - *Artificial Intelligence
+MH  - Computational Biology
+MH  - *Electromyography
+MH  - Humans
+MH  - Muscle, Skeletal/*physiology
+MH  - Normal Distribution
+MH  - *Pattern Recognition, Automated
+PMC - PMC5548326
+MID - NIHMS860552
+EDAT- 2014/04/02 06:00
+MHDA- 2015/09/22 06:00
+PMCR- 2017/08/08
+CRDT- 2014/04/02 06:00
+PHST- 2014/04/02 06:00 [entrez]
+PHST- 2014/04/02 06:00 [pubmed]
+PHST- 2015/09/22 06:00 [medline]
+PHST- 2017/08/08 00:00 [pmc-release]
+AID - 10.1162/NECO_a_00576 [doi]
+PST - ppublish
+SO  - Neural Comput. 2014 Jun;26(6):1128-68. doi: 10.1162/NECO_a_00576. Epub 2014 Mar 
+      31.
+
+PMID- 19750194
+OWN - NLM
+STAT- PubMed-not-MEDLINE
+DCOM- 20130704
+LR  - 20240314
+IS  - 1662-5196 (Electronic)
+IS  - 1662-5196 (Linking)
+VI  - 3
+DP  - 2009
+TI  - Automated recognition of brain region mentions in neuroscience literature.
+PG  - 29
+LID - 10.3389/neuro.11.029.2009 [doi]
+LID - 29
+AB  - The ability to computationally extract mentions of neuroanatomical regions from 
+      the literature would assist linking to other entities within and outside of an 
+      article. Examples include extracting reports of connectivity or region-specific 
+      gene expression. To facilitate text mining of neuroscience literature we have 
+      created a corpus of manually annotated brain region mentions. The corpus contains 
+      1,377 abstracts with 18,242 brain region annotations. Interannotator agreement 
+      was evaluated for a subset of the documents, and was 90.7% and 96.7% for strict 
+      and lenient matching respectively. We observed a large vocabulary of over 6,000 
+      unique brain region terms and 17,000 words. For automatic extraction of brain 
+      region mentions we evaluated simple dictionary methods and complex natural 
+      language processing techniques. The dictionary methods based on neuroanatomical 
+      lexicons recalled 36% of the mentions with 57% precision. The best performance 
+      was achieved using a conditional random field (CRF) with a rich feature set. 
+      Features were based on morphological, lexical, syntactic and contextual 
+      information. The CRF recalled 76% of mentions at 81% precision, by counting 
+      partial matches recall and precision increase to 86% and 92% respectively. We 
+      suspect a large amount of error is due to coordinating conjunctions, previously 
+      unseen words and brain regions of less commonly studied organisms. We found 
+      context windows, lemmatization and abbreviation expansion to be the most 
+      informative techniques. The corpus is freely available at 
+      http://www.chibi.ubc.ca/WhiteText/.
+FAU - French, Leon
+AU  - French L
+AD  - Bioinformatics Graduate Program, University of British Columbia Vancouver, BC, 
+      Canada.
+FAU - Lane, Suzanne
+AU  - Lane S
+FAU - Xu, Lydia
+AU  - Xu L
+FAU - Pavlidis, Paul
+AU  - Pavlidis P
+LA  - eng
+GR  - R01 GM076990/GM/NIGMS NIH HHS/United States
+PT  - Journal Article
+DEP - 20090901
+PL  - Switzerland
+TA  - Front Neuroinform
+JT  - Frontiers in neuroinformatics
+JID - 101477957
+PMC - PMC2741206
+OTO - NOTNLM
+OT  - conditional random field
+OT  - corpus
+OT  - natural language processing
+OT  - neuroanatomy
+OT  - text mining
+EDAT- 2009/09/15 06:00
+MHDA- 2009/09/15 06:01
+PMCR- 2009/01/01
+CRDT- 2009/09/15 06:00
+PHST- 2009/06/13 00:00 [received]
+PHST- 2009/08/11 00:00 [accepted]
+PHST- 2009/09/15 06:00 [entrez]
+PHST- 2009/09/15 06:00 [pubmed]
+PHST- 2009/09/15 06:01 [medline]
+PHST- 2009/01/01 00:00 [pmc-release]
+AID - 10.3389/neuro.11.029.2009 [doi]
+PST - epublish
+SO  - Front Neuroinform. 2009 Sep 1;3:29. doi: 10.3389/neuro.11.029.2009. eCollection 
+      2009.
+
+PMID- 18446237
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20080528
+LR  - 20211020
+IS  - 1932-6203 (Electronic)
+IS  - 1932-6203 (Linking)
+VI  - 3
+IP  - 4
+DP  - 2008 Apr 30
+TI  - An analysis of the abstracts presented at the annual meetings of the Society for 
+      Neuroscience from 2001 to 2006.
+PG  - e2052
+LID - 10.1371/journal.pone.0002052 [doi]
+LID - e2052
+AB  - Annual meeting abstracts published by scientific societies often contain rich 
+      arrays of information that can be computationally mined and distilled to 
+      elucidate the state and dynamics of the subject field. We extracted and processed 
+      abstract data from the Society for Neuroscience (SFN) annual meeting abstracts 
+      during the period 2001-2006 in order to gain an objective view of contemporary 
+      neuroscience. An important first step in the process was the application of data 
+      cleaning and disambiguation methods to construct a unified database, since the 
+      data were too noisy to be of full utility in the raw form initially available. 
+      Using natural language processing, text mining, and other data analysis 
+      techniques, we then examined the demographics and structure of the scientific 
+      collaboration network, the dynamics of the field over time, major research 
+      trends, and the structure of the sources of research funding. Some interesting 
+      findings include a high geographical concentration of neuroscience research in 
+      the north eastern United States, a surprisingly large transient population (66% 
+      of the authors appear in only one out of the six studied years), the central role 
+      played by the study of neurodegenerative disorders in the neuroscience community, 
+      and an apparent growth of behavioral/systems neuroscience with a corresponding 
+      shrinkage of cellular/molecular neuroscience over the six year period. The 
+      results from this work will prove useful for scientists, policy makers, and 
+      funding agencies seeking to gain a complete and unbiased picture of the community 
+      structure and body of knowledge encapsulated by a specific scientific domain.
+FAU - Lin, John M
+AU  - Lin JM
+AD  - Cold Spring Harbor Laboratory, Cold Spring Harbor, New York, United States of 
+      America. jlin@cshl.edu
+FAU - Bohland, Jason W
+AU  - Bohland JW
+FAU - Andrews, Peter
+AU  - Andrews P
+FAU - Burns, Gully A P C
+AU  - Burns GA
+FAU - Allen, Cara B
+AU  - Allen CB
+FAU - Mitra, Partha P
+AU  - Mitra PP
+LA  - eng
+GR  - R01 LM007061/LM/NLM NIH HHS/United States
+PT  - Journal Article
+PT  - Meta-Analysis
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20080430
+PL  - United States
+TA  - PLoS One
+JT  - PloS one
+JID - 101285081
+SB  - IM
+MH  - *Abstracting and Indexing/statistics & numerical data
+MH  - Algorithms
+MH  - Authorship
+MH  - Cluster Analysis
+MH  - *Congresses as Topic
+MH  - Demography
+MH  - Geography
+MH  - Linguistics
+MH  - National Institutes of Health (U.S.)
+MH  - *Neurosciences
+MH  - Research Support as Topic
+MH  - *Societies, Medical
+MH  - United States
+PMC - PMC2324197
+COIS- Competing Interests: The authors have declared that no competing interests exist.
+EDAT- 2008/05/01 09:00
+MHDA- 2008/05/29 09:00
+PMCR- 2008/04/30
+CRDT- 2008/05/01 09:00
+PHST- 2007/12/04 00:00 [received]
+PHST- 2008/03/15 00:00 [accepted]
+PHST- 2008/05/01 09:00 [pubmed]
+PHST- 2008/05/29 09:00 [medline]
+PHST- 2008/05/01 09:00 [entrez]
+PHST- 2008/04/30 00:00 [pmc-release]
+AID - 07-PONE-RA-02928R2 [pii]
+AID - 10.1371/journal.pone.0002052 [doi]
+PST - epublish
+SO  - PLoS One. 2008 Apr 30;3(4):e2052. doi: 10.1371/journal.pone.0002052.

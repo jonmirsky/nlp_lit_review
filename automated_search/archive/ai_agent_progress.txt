@@ -1,0 +1,8 @@
+# AI Agent Download Progress
+# Format: label_id|status|notes
+
+1773|success|Already downloaded
+581|skipped|Ebook page, may require access
+2344|pending|
+1682|pending|
+1044|pending|

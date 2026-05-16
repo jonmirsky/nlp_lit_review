@@ -1,0 +1,102 @@
+-------MANUAL STUFF----------
+
+1. SEARCH AND DOWNLOAD
+   - Search databases (e.g., PubMed)
+   - Download .nbib files containing search results
+
+2. IMPORT TO ZOTERO
+   - Import reference file(s) to Zotero
+   - Search for full text using Zotero (highlight all references)
+     * WARNING: Will take a long time if many references
+     * May freeze computer - use activity monitor to manage memory
+     * Check hard drive space before starting
+
+3. SEARCH FOR REMAINING FULL TEXTS IN ENDNOTE
+Import all references from zotero ris (including files with full texts found, 
+keep everything in one place)
+   3a. EndNote can only search for 250 full texts at a time
+   3b. Use the "Find full text" folder in EndNote to see where EndNote left off,
+       so you know where to start your next batch of 250 references
+   3c. If there are still missing attachments, move onto the Python scripts (Step 4)...
+
+-------SCRIPTS-------
+
+4. PYTHON SCRAPER FOR MISSING FULL TEXTS
+   NOTE: Before running scraper, highlight all newly imported references (or all references),
+   go to library > change/move/copy fields > move/copy fields > click copy field > 
+   from: Record Number to: Label > replace entire field
+   
+   - Run full_text_scrape_V4.py to search for full text for all references that don't 
+     have full text using EndNote
+   - Input: RIS file from missing_papers/still_missing/ directory
+   - Output: 
+     * PDF files: found_papers/downloaded_papers/V3_scraped_papers/
+     * RIS file with attachments: found_papers/RIS_files/import_to_endnote/
+       Format: {input_filename}_post_scrape.txt
+     * Failed downloads: missing_papers/still_missing/
+       Format: missing_after_second_scrape*.txt
+
+5. PREP AND MERGE FILES TO MASTER RIS SOURCE FILE
+   - Use the wrapper script: prep_merge_ris_to_source_ris.py
+     This script automatically:
+     1. Converts L1 paths to absolute (if needed)
+     2. Adds search term tags (RN fields) by matching against .ris files in 
+        Endnote/search_term_results/
+     3. Merges with master RIS file in visualizer_nlp_lit_review/RIS_source_files/
+   
+   The script:
+   - Finds the newest master RIS file in RIS_source_files (by modification time)
+   - Deduplicates references using DOI → PMID → normalized title
+   - Creates a NEW master RIS file (does NOT modify existing files)
+   - Output filename: pubmed_NLP_v4_{timestamp}.txt
+   - Saves to visualizer_nlp_lit_review/RIS_source_files/
+
+6. DEPLOYMENT
+   - The new master RIS file is automatically saved to the visualizer location
+   - The visualizer automatically uses the newest RIS file with "pubmed" prefix
+   - No additional deployment steps needed
+
+INDIVIDUAL SCRIPTS (if needed separately)
+------------------------------------------
+
+Essential Scripts:
+- helpers/convert_ris_to_absolute_paths.py
+  * Converts relative L1 paths to absolute paths
+  * Needed for Zotero exports (Zotero uses relative paths)
+  
+- helpers/label_papers_w_search_terms_v2.py
+  * Adds RN (Research Notes) fields with search terms
+  * Matches papers using PMID, DOI, Title, or ISSN/ISBN
+  * Reads .ris files from Endnote/search_term_results/ to extract search terms
+  
+- helpers/merge_ris_to_master.py
+  * Merges input RIS file with master RIS file
+  * Deduplicates references
+  * Creates new master RIS file (doesn't modify existing)
+
+Utility Scripts (not needed for master RIS creation):
+- compare_import_maps.py - Comparison utility
+- create_endnote_ris_with_attachments.py - Creates RIS with attachments from import map
+- create_endnote_xml_with_attachments.py - Creates XML, not RIS
+- create_import_map_from_endnote_files.py - Creates import maps from EndNote files folder
+- debug_attach_files_to_endnote_v2.py - EndNote automation for attaching files
+
+FILE LOCATIONS
+--------------
+- Search term RIS files: Endnote/search_term_results/ (contains pubmed_*.ris files)
+- Master RIS file: visualizer_nlp_lit_review/RIS_source_files/pubmed_NLP_v4_*.txt
+- Scraper output: found_papers/RIS_files/import_to_endnote/
+- Missing papers: missing_papers/still_missing/
+- Scripts: post_zotero_endnote_paper_pull/
+
+IMPORTANT NOTES
+---------------
+- The visualizer automatically uses the newest RIS file with "pubmed" prefix
+- RN fields contain comma-separated search terms (e.g., "radiology, brain, clinical")
+- L1 fields contain absolute paths to PDF attachments
+- The master RIS file grows through a "snowball" process:
+  1. Start with EndNote export (base master RIS)
+  2. Add scraper-generated RIS files (with full texts found by Python scripts)
+  3. Each new search adds to the master RIS
+- Always use prep_merge_ris_to_source_ris.py wrapper script for streamlined workflow
+- The wrapper script creates a NEW master RIS file - existing files are preserved as backups

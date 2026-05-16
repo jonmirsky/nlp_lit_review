@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lit Review Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f2f5;
+      color: #1a1a1a;
+      min-height: 100vh;
+      padding: 32px 16px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 0.875rem;
+      color: #555;
+      margin-bottom: 28px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      padding: 24px 28px;
+      max-width: 800px;
+      margin: 0 auto 24px;
+    }
+    .card h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .field { margin-bottom: 16px; }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .hint {
+      font-size: 0.75rem;
+      color: #888;
+      margin-top: 4px;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    select, input[type="text"], textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #d0d0d0;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #1a1a1a;
+      background: #fafafa;
+      transition: border-color 0.15s;
+    }
+    select:focus, input[type="text"]:focus, textarea:focus {
+      outline: none;
+      border-color: #4a90e2;
+      background: #fff;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+      font-family: 'SF Mono', 'Fira Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+    input[readonly], textarea[readonly] {
+      background: #f0f2f5;
+      color: #666;
+      cursor: default;
+    }
+
+    .row { display: flex; gap: 16px; }
+    .row .field { flex: 1; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border: none;
+      border-radius: 7px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+      text-decoration: none;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-primary { background: #4a90e2; color: #fff; }
+    .btn-primary:hover:not(:disabled) { background: #357abd; }
+    .btn-secondary { background: #6c757d; color: #fff; }
+    .btn-secondary:hover:not(:disabled) { background: #545b62; }
+    .btn-success { background: #28a745; color: #fff; }
+    .btn-success:hover:not(:disabled) { background: #1e7e34; }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    /* Job status log */
+    #job-log {
+      margin-top: 20px;
+    }
+    .job-entry {
+      border: 1px solid #e0e0e0;
+      border-radius: 7px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      background: #fafafa;
+    }
+    .job-entry .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 5px;
+    }
+    .job-entry .job-cmd { font-family: monospace; font-size: 0.8rem; color: #333; }
+    .job-entry .job-time { font-size: 0.75rem; color: #888; white-space: nowrap; }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-running { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+    .badge-ok      { background: #d4edda; color: #155724; border: 1px solid #28a745; }
+    .badge-fail    { background: #f8d7da; color: #721c24; border: 1px solid #dc3545; }
+
+    .divider {
+      height: 1px;
+      background: #e8e8e8;
+      margin: 20px 0;
+    }
+
+    .inline-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    #reload-status {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    /* Node mapping explainer */
+    .info-box {
+      background: #eef4fb;
+      border-left: 3px solid #4a90e2;
+      border-radius: 0 6px 6px 0;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      color: #2d5a8e;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+    .info-box strong { display: block; margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+<div style="max-width:800px;margin:0 auto">
+  <h1>Lit Review Admin</h1>
+  <p class="subtitle">
+    Run new PubMed searches, refresh the full catalog, and reload visualizer data.
+    This page is only served when <code>ADMIN_ENABLED=true</code>.
+  </p>
+
+  <!-- ── SEARCH AND PULL ─────────────────────────────────────── -->
+  <div class="card">
+    <h2>Search and Pull</h2>
+
+    <div class="field">
+      <label>Catalog entry</label>
+      <select id="catalog-select">
+        <option value="">⟳ Loading catalog…</option>
+      </select>
+      <div class="hint">
+        Select an existing catalog entry to pre-fill the query and label,
+        or choose "— Custom —" to enter your own.
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Database</label>
+      <select id="database-select">
+        <option value="pubmed" selected>PubMed</option>
+        <option value="openalex" disabled>OpenAlex (coming soon)</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Base query</label>
+      <textarea id="base-query" rows="4" readonly
+        placeholder="Select a catalog entry above, or choose Custom…"></textarea>
+    </div>
+
+    <div class="field">
+      <label>Additional search terms <span style="font-weight:400;text-transform:none">(optional)</span></label>
+      <input type="text" id="extra-terms"
+        placeholder='e.g. "head CT" OR "CT scan"'>
+      <div class="hint">
+        If provided, this is ANDed with the base query:
+        <code>(&lt;base query&gt;) AND (&lt;additional terms&gt;)</code>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>
+          Label
+          <span style="font-weight:400;text-transform:none;color:#888"> — controls visualizer node</span>
+        </label>
+        <input type="text" id="label-field" placeholder="e.g. ( NLP extraction )">
+        <div class="hint">
+          This exact string becomes the <code>RN</code> field in the merged RIS.
+          Papers are filed into the visualizer branch node that matches this label.
+          Adding extra terms creates a new sub-branch; keeping the base label folds
+          results into the existing branch.
+        </div>
+      </div>
+      <div class="field" style="max-width:220px">
+        <label>Slug <span style="font-weight:400;text-transform:none;color:#888">(run folder name)</span></label>
+        <input type="text" id="slug-field" placeholder="e.g. nlp_extraction">
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>How node mapping works</strong>
+      Each paper fetched by the pipeline is stamped with the Label above in its
+      <code>RN</code> field. The visualizer reads that field as <em>branch_terms</em>
+      and places each paper under the matching branch node inside the selected
+      catalog entry's query node. Choosing the same label as an existing catalog entry
+      folds new papers into that branch; choosing a new label (e.g. adding extra terms)
+      creates a new branch node alongside the existing ones.
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" id="btn-search" disabled onclick="runSearch()">
+        Search and Pull
+      </button>
+      <span id="search-hint" style="font-size:0.82rem;color:#888">
+        Fill in base query, label, and slug to enable.
+      </span>
+    </div>
+  </div>
+
+  <!-- ── CATALOG / VISUALIZER ────────────────────────────────── -->
+  <div class="card">
+    <h2>Catalog &amp; Visualizer</h2>
+
+    <div class="inline-actions">
+      <button class="btn btn-secondary" id="btn-refresh" onclick="refreshCatalog()">
+        Refresh Catalog
+      </button>
+      <span style="font-size:0.82rem;color:#666">
+        Runs <code>refresh_catalog.py</code> — re-fetches every catalog entry end-to-end
+        (Entrez → V4 scrape → merge → R2 sync). Long-running; check terminal for progress.
+      </span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="inline-actions">
+      <button class="btn btn-success" onclick="reloadVisualizer()">
+        Reload Visualizer Data
+      </button>
+      <span id="reload-status">
+        Busts the in-memory cache so the visualizer picks up any newly merged RIS
+        without restarting the server.
+      </span>
+    </div>
+  </div>
+
+  <!-- ── JOB LOG ──────────────────────────────────────────────── -->
+  <div class="card">
+    <h2>Job Log</h2>
+    <div id="job-log">
+      <p style="color:#888;font-size:0.85rem">No jobs started yet this session.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── State ───────────────────────────────────────────────────────────────────
+  let catalog = [];
+  let labelManuallyEdited = false;
+  const pollIntervals = {};
+
+  // ── On load ─────────────────────────────────────────────────────────────────
+  window.addEventListener('DOMContentLoaded', loadCatalog);
+
+  async function loadCatalog() {
+    try {
+      const res = await fetch('/api/catalog');
+      catalog = await res.json();
+    } catch (e) {
+      catalog = [];
+    }
+    const sel = document.getElementById('catalog-select');
+    sel.innerHTML = '<option value="">— Custom —</option>';
+    catalog.forEach(entry => {
+      const opt = document.createElement('option');
+      opt.value = entry.name;
+      opt.textContent = entry.name;
+      sel.appendChild(opt);
+    });
+    // Pre-select first catalog entry if available
+    if (catalog.length > 0) {
+      sel.value = catalog[0].name;
+      onCatalogChange();
+    }
+  }
+
+  // ── Catalog entry selection ─────────────────────────────────────────────────
+  document.getElementById('catalog-select').addEventListener('change', onCatalogChange);
+
+  function onCatalogChange() {
+    const name = document.getElementById('catalog-select').value;
+    const entry = catalog.find(c => c.name === name);
+    const baseQueryEl = document.getElementById('base-query');
+    const slugEl = document.getElementById('slug-field');
+    const labelEl = document.getElementById('label-field');
+
+    labelManuallyEdited = false; // reset on catalog switch
+
+    if (entry) {
+      baseQueryEl.value = entry.query;
+      baseQueryEl.readOnly = true;
+      slugEl.value = entry.slug;
+      slugEl.readOnly = true;
+      labelEl.value = entry.label;
+    } else {
+      // Custom
+      baseQueryEl.value = '';
+      baseQueryEl.readOnly = false;
+      slugEl.value = '';
+      slugEl.readOnly = false;
+      labelEl.value = '';
+    }
+
+    syncLabelFromExtra();
+    validateSearch();
+  }
+
+  // ── Extra terms → auto-update label ────────────────────────────────────────
+  document.getElementById('extra-terms').addEventListener('input', () => {
+    if (!labelManuallyEdited) syncLabelFromExtra();
+    validateSearch();
+  });
+
+  document.getElementById('label-field').addEventListener('input', () => {
+    labelManuallyEdited = true;
+    validateSearch();
+  });
+
+  document.getElementById('base-query').addEventListener('input', validateSearch);
+  document.getElementById('slug-field').addEventListener('input', validateSearch);
+
+  function syncLabelFromExtra() {
+    if (labelManuallyEdited) return;
+    const name = document.getElementById('catalog-select').value;
+    const entry = catalog.find(c => c.name === name);
+    const extra = document.getElementById('extra-terms').value.trim();
+    const labelEl = document.getElementById('label-field');
+
+    if (entry) {
+      labelEl.value = extra ? `${entry.label} AND ${extra}` : entry.label;
+    }
+    // For custom: leave blank (user fills it in)
+  }
+
+  // ── Validate: enable Search and Pull button ─────────────────────────────────
+  function validateSearch() {
+    const q = document.getElementById('base-query').value.trim();
+    const s = document.getElementById('slug-field').value.trim();
+    const l = document.getElementById('label-field').value.trim();
+    const btn = document.getElementById('btn-search');
+    const hint = document.getElementById('search-hint');
+
+    const ready = q && s && l;
+    btn.disabled = !ready;
+    hint.textContent = ready
+      ? `Will run: --slug "${s}" --label "${l}"`
+      : 'Fill in base query, label, and slug to enable.';
+  }
+
+  // ── Search and Pull ─────────────────────────────────────────────────────────
+  async function runSearch() {
+    const payload = {
+      query:       document.getElementById('base-query').value.trim(),
+      slug:        document.getElementById('slug-field').value.trim(),
+      label:       document.getElementById('label-field').value.trim(),
+      extra_terms: document.getElementById('extra-terms').value.trim(),
+    };
+
+    const btn = document.getElementById('btn-search');
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('/api/run_search', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        addJobEntry(null, `ERROR: ${data.error}`, null, 'error');
+        return;
+      }
+      addJobEntry(data.job_id, data.command_summary, data.started_at, 'running');
+      pollJob(data.job_id);
+    } catch (e) {
+      addJobEntry(null, `Network error: ${e.message}`, null, 'error');
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  // ── Refresh Catalog ─────────────────────────────────────────────────────────
+  async function refreshCatalog() {
+    const btn = document.getElementById('btn-refresh');
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('/api/refresh_catalog', { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok) {
+        addJobEntry(null, `ERROR: ${data.error}`, null, 'error');
+        return;
+      }
+      addJobEntry(data.job_id, data.command_summary, data.started_at, 'running');
+      pollJob(data.job_id);
+    } catch (e) {
+      addJobEntry(null, `Network error: ${e.message}`, null, 'error');
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  // ── Reload Visualizer ───────────────────────────────────────────────────────
+  async function reloadVisualizer() {
+    const statusEl = document.getElementById('reload-status');
+    statusEl.textContent = 'Reloading…';
+    try {
+      const res = await fetch('/api/reload');
+      const data = await res.json();
+      if (res.ok) {
+        statusEl.textContent = `✓ Reloaded successfully (${new Date().toLocaleTimeString()})`;
+      } else {
+        statusEl.textContent = `✗ Reload failed: ${data.error || data.status}`;
+      }
+    } catch (e) {
+      statusEl.textContent = `✗ Network error: ${e.message}`;
+    }
+  }
+
+  // ── Job log helpers ─────────────────────────────────────────────────────────
+  function addJobEntry(jobId, summary, startedAt, state) {
+    const log = document.getElementById('job-log');
+    // Clear placeholder
+    if (log.querySelector('p')) log.innerHTML = '';
+
+    const el = document.createElement('div');
+    el.className = 'job-entry';
+    el.id = jobId ? `job-${jobId}` : null;
+    el.innerHTML = `
+      <div class="job-header">
+        <span class="job-cmd">${escHtml(summary)}</span>
+        <span class="job-time">${startedAt ? new Date(startedAt).toLocaleTimeString() : ''}</span>
+      </div>
+      <div>
+        <span class="badge ${badgeClass(state)}" id="badge-${jobId || 'err'}">${badgeLabel(state)}</span>
+        ${jobId ? `<span style="font-size:0.75rem;color:#aaa;margin-left:8px">job ${jobId}</span>` : ''}
+      </div>`;
+    log.prepend(el);
+  }
+
+  function updateJobEntry(jobId, state) {
+    const badge = document.getElementById(`badge-${jobId}`);
+    if (badge) {
+      badge.className = `badge ${badgeClass(state)}`;
+      badge.textContent = badgeLabel(state);
+    }
+  }
+
+  function badgeClass(state) {
+    if (state === 'running') return 'badge-running';
+    if (state === 'ok')      return 'badge-ok';
+    return 'badge-fail';
+  }
+
+  function badgeLabel(state) {
+    if (state === 'running') return 'running';
+    if (state === 'ok')      return 'done ✓';
+    if (state === 'error')   return 'error';
+    return `done (exit ${state})`;
+  }
+
+  // ── Polling ─────────────────────────────────────────────────────────────────
+  function pollJob(jobId) {
+    const interval = setInterval(async () => {
+      try {
+        const res = await fetch(`/api/job_status/${jobId}`);
+        const data = await res.json();
+        if (data.status === 'done') {
+          clearInterval(interval);
+          delete pollIntervals[jobId];
+          const state = data.returncode === 0 ? 'ok' : `exit ${data.returncode}`;
+          updateJobEntry(jobId, state);
+        }
+      } catch (_) { /* network hiccup; keep polling */ }
+    }, 5000);
+    pollIntervals[jobId] = interval;
+  }
+
+  function escHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+</script>
+</body>
+</html>

@@ -1,41 +1,60 @@
-# Dependencies
-node_modules/
-
-# Build outputs
-dist/
-build/
-
-# Python
+# Python / tooling
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
-*.egg-info/
-.eggs/
-*.egg
-
-# Virtual environments
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
 venv/
 env/
-.env
 
-# IDE
+# OS / IDE
+.DS_Store
+Thumbs.db
 .idea/
 .vscode/
+.cursor/
 *.swp
 *.swo
 
-# OS files
-.DS_Store
-Thumbs.db
+# Environment and local secrets
+.env
+.env.*
+*.pem
+credentials.json
+.rclone.conf
+tokens.txt
 
-# Logs
-*.log
+# Node / visualizer build outputs
+node_modules/
+visualizer_nlp_lit_review/node_modules/
+visualizer_nlp_lit_review/dist/
+visualizer_nlp_lit_review/build/
 npm-debug.log*
 
-# PyInstaller
-*.spec.bak
+# Pipeline run artifacts.
+# Source code and master RIS files are tracked; per-run scrape outputs are local/server runtime state.
+automated_search/searches/
+automated_search/.cache/
+automated_search/.tmp_pdfs/
+automated_search/found_papers/
+automated_search/missing_papers/
+archive/found_papers/
+archive/found_papers/downloaded_papers/
 
-# PDFs (stored in Cloudflare R2, not in Git)
-pdfs_for_github/
+# PDFs live in Google Drive / R2, not Git.
+visualizer_nlp_lit_review/pdfs_for_github/
+**/pdfs_for_github/
+
+# Local RIS backups; commit real pubmed_*.txt files deliberately.
+visualizer_nlp_lit_review/RIS_source_files/*.bak
+visualizer_nlp_lit_review/RIS_source_files/*.bak[0-9]*
+visualizer_nlp_lit_review/RIS_source_files/**/*.backup
+
+# Local packaged backups or archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz

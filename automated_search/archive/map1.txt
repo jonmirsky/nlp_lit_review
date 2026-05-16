@@ -1,0 +1,212 @@
+﻿64 [Tab Key] Automatic computation of CHA2DS2-VASc score: information extraction from clinical texts for thromboembolism risk assessment
+350 [Tab Key] A Computable Phenotype for Acute Respiratory Distress Syndrome Using Natural Language Processing and Machine Learning
+401 [Tab Key] Annotation for information extraction from mammography reports
+416 [Tab Key] Coding free text radiology reports using the Cancer Text Information Extraction System (caTIES)
+421 [Tab Key] Multilingual information retrieval in thoracic radiology: feasibility study
+303 [Tab Key] RadLex Normalization in Radiology Reports
+316 [Tab Key] Rad-SpatialNet: A Frame-based Resource for Fine-Grained Spatial Relations in Radiology Reports
+426 [Tab Key] NLP techniques associated with the OpenGALEN ontology for semi-automatic textual extraction of medical knowledge: abstracting and mapping equivalent linguistic and logical constructs
+428 [Tab Key] Automatic extraction of PIOPED interpretations from ventilation/perfusion lung scan reports
+108 [Tab Key] LEAVS: An LLM-based Labeler for Abdominal CT Supervision
+326 [Tab Key] Extraction and Analysis of Clinically Important Follow-up Recommendations in a Large Radiology Dataset
+424 [Tab Key] Automated extraction and normalization of findings from cancer-related free-text radiology reports
+385 [Tab Key] Identification of Incidental Pulmonary Nodules in Free-text Radiology Reports: An Initial Investigation
+357 [Tab Key] NegBio: a high-performance tool for negation and uncertainty detection in radiology reports
+412 [Tab Key] Natural language processing for lines and devices in portable chest x-rays
+281 [Tab Key] A Fusion NLP Model for the Inference of Standardized Thyroid Nodule Malignancy Scores from Radiology Report Text
+411 [Tab Key] Discovering peripheral arterial disease cases from radiology notes using natural language processing
+395 [Tab Key] Automatically pairing measured findings across narrative abdomen CT reports
+397 [Tab Key] Identifying Abdominal Aortic Aneurysm Cases and Controls using Natural Language Processing of Radiology Reports
+302 [Tab Key] AI Accelerated Human-in-the-loop Structuring of Radiology Reports
+408 [Tab Key] Automatic identification of critical follow-up recommendation sentences in radiology reports
+371 [Tab Key] Tumor information extraction in radiology reports for hepatocellular carcinoma patients
+644 [Tab Key] Natural language processing to identify adverse drug events
+464 [Tab Key] Extraction of Normalized Symptom Mentions From Clinical Narratives Using Large Language Models
+625 [Tab Key] Assessing the Utility of Automatic Cancer Registry Notifications Data Extraction from Free-Text Pathology Reports
+641 [Tab Key] Knowledge representation and management: transforming textual information into useful knowledge
+615 [Tab Key] Identifying Metastases-related Information from Pathology Reports of Lung Cancer Patients
+647 [Tab Key] A successful technique for removing names in pathology reports using an augmented search and replace method
+645 [Tab Key] Facilitating research in pathology using natural language processing
+441 [Tab Key] [A Three‒Tiered AI Framework Toward Precision Oncology-Structuring, Reclassification, and Integration]
+2336 [Tab Key] Natural Language Processing for Enterprise-scale De-identification of Protected Health Information in Clinical Notes
+1221 [Tab Key] Clinical Information Extraction with Large Language Models: A Case Study on Organ Procurement
+1179 [Tab Key] Enhancing Healthcare Data Integration: A Machine Learning Approach to Harmonizing Laboratory Labels
+1947 [Tab Key] Auditing Learned Associations in Deep Learning Approaches to Extract Race and Ethnicity from Clinical Text
+1786 [Tab Key] Large Language Models for Efficient Medical Information Extraction
+2414 [Tab Key] Controversial Trials First: Identifying Disagreement Between Clinical Guidelines and New Evidence
+2164 [Tab Key] Cohort Identification from Free-Text Clinical Notes Using SNOMED CT's Hierarchical Semantic Relations
+1223 [Tab Key] Toward Identifying New Risk Aversions and Subsequent Limitations and Biases When Making De-identified Structured Data Sets Openly Available in a Post-LLM world
+2411 [Tab Key] Automated Extraction of Pain Symptoms: A Natural Language Approach using Electronic Health Records
+2418 [Tab Key] Clinical Note Section Detection Using a Hidden Markov Model of Unified Medical Language System Semantic Types
+1082 [Tab Key] Improving Drug Identification in Overdose Death Surveillance using Large Language Models
+1224 [Tab Key] Boosting Social Determinants of Health Extraction with Semantic Knowledge Augmented Large Language Model
+1226 [Tab Key] The Use of Large Language Models to Accelerate Literature Review Towards Digital Health Equity and Inclusiveness
+1222 [Tab Key] Artificial Intelligence-assisted Biomedical Literature Knowledge Synthesis to Support Decision-making in Precision Oncology
+2162 [Tab Key] Methodological information extraction from randomized controlled trial publications: a pilot study
+1063 [Tab Key] Multi-Label Classification with Generative AI Models in Healthcare: A Case Study of Suicidality and Risk Factors
+1787 [Tab Key] Automated Information Extraction from Thyroid Operation Narrative: A Comparative Study of GPT-4 and Fine-tuned KoELECTRA
+2049 [Tab Key] PubMed and Beyond: Biomedical Literature Search in the Age of Artificial Intelligence
+1227 [Tab Key] Harnessing the Power of Large Language Models (LLMs) to Unravel the Influence of Genes and Medications on Biological Processes of Wound Healing
+1946 [Tab Key] De-identifying Norwegian Clinical Text using Resources from Swedish and Danish
+1220 [Tab Key] Large-scale Text Mining of Suicide Attempt improves Identification of Distinct Suicidal Events in Electronic Health Records
+2416 [Tab Key] Reducing Physicians' Cognitive Load During Chart Review: A Problem-Oriented Summary of the Patient Electronic Record
+2415 [Tab Key] Extraction of Active Medications and Adherence Using Natural Language Processing for Glaucoma Patients
+1949 [Tab Key] RECAP-KG: Mining Knowledge Graphs from Raw Primary Care Physician Notes for Remote COVID-19 Assessment in Primary Care
+2163 [Tab Key] Semi-automated Clinical Content Curation of COVID-19 Chatbot Remote Patient Monitoring Solution
+1178 [Tab Key] DIRI: Adversarial Patient Reidentification with Large Language Models for Evaluating Clinical Text Anonymization
+1185 [Tab Key] Early Alzheimer's Detection Through Voice Analysis: Harnessing Locally Deployable LLMs via ADetectoLocum, a privacy-preserving diagnostic system
+1183 [Tab Key] Identifying Opioid Overdose and Opioid Use Disorder and Related Information from Clinical Narratives Using Large Language Models
+2123 [Tab Key] Towards an Open-Source Platform to Harmonize and Share Research Results from COVID-19 Interventional and Observational Studies
+1948 [Tab Key] Extracting Thyroid Nodules Characteristics from Ultrasound Reports Using Transformer-based Natural Language Processing Methods
+1180 [Tab Key] Enhancing Cross-Domain Generalizability in Social Determinants of Health Extraction with Prompt-Tuning Large Language Models
+1181 [Tab Key] Not Fully Synthetic: LLM-based Hybrid Approaches Towards Privacy-Preserving Clinical Note Sharing
+1184 [Tab Key] Exploring ChatGPT 3.5 for structured data extraction from oncological notes
+2122 [Tab Key] Extracting Temporal Expressions of First Seizure Onset from Epilepsy Patient Discharge Summaries
+2095 [Tab Key] Jointly Extracting Interventions, Outcomes, and Findings from RCT Reports with LLMs
+1067 [Tab Key] Active Learning for Forecasting Severity among Patients with Post Acute Sequelae of SARS-CoV-2
+1812 [Tab Key] GestaltMML: Enhancing Rare Genetic Disease Diagnosis through Multimodal Machine Learning Combining Facial Images and Clinical Texts
+1950 [Tab Key] A Systematic Temporal Extraction Pipeline for Medical Concepts in Clinical Notes
+1731 [Tab Key] Automatically Extracting Numerical Results from Randomized Controlled Trials with Large Language Models
+2417 [Tab Key] Validation of Administrative Coding and Clinical Notes for Hospital-Acquired Acute Kidney Injury in Adults
+882 [Tab Key] CaseReportBench: An LLM Benchmark Dataset for Dense Information Extraction in Clinical Case Reports
+2993 [Tab Key] Ascertaining Depression Severity by Extracting Patient Health Questionnaire-9 (PHQ-9) Scores from Clinical Notes
+3070 [Tab Key] Automated Extraction and Classification of Cancer Stage Mentions fromUnstructured Text Fields in a Central Cancer Registry
+3335 [Tab Key] Unsupervised information extraction from italian clinical records
+3506 [Tab Key] Extraction of adverse drug effects from clinical records
+3126 [Tab Key] MedEx/J: A One-Scan Simple and Fast NLP Tool for Japanese Clinical Texts
+3586 [Tab Key] A comparison of semantic categories of the ISO reference terminology models for nursing and the MedLEE natural language processing system
+3407 [Tab Key] Engineering natural language processing solutions for structured information from clinical text: extracting sentinel events from palliative care consult letters
+3235 [Tab Key] Extraction of UMLS(R) Concepts Using Apache cTAKES for German Language
+3178 [Tab Key] Personalized Guideline-Based Treatment Recommendations Using Natural Language Processing Techniques
+3373 [Tab Key] Automated extraction of family history information from clinical notes
+2607 [Tab Key] Using Natural Language Processing and Machine Learning to Identify Hospitalized Patients with Opioid Use Disorder
+3189 [Tab Key] Automated Detection of Privacy Sensitive Conditions in C-CDAs: Security Labeling Services at the Department of Veterans Affairs
+2992 [Tab Key] An Automated Feature Engineering for Digital Rectal Examination Documentation using Natural Language Processing
+2606 [Tab Key] Selection of Clinical Text Features for Classifying Suicide Attempts
+3473 [Tab Key] Naive Electronic Health Record phenotype identification for Rheumatoid arthritis
+3543 [Tab Key] Enhancing clinical problem lists through data mining and natural language processing
+3585 [Tab Key] Extracting phenotypic information from the literature via natural language processing
+3125 [Tab Key] Translational Morphosyntax: Distribution of Negation in Clinical Records and Biomedical Journal Articles
+3432 [Tab Key] EpiDEA: extracting structured epilepsy and seizure information from patient discharge summaries for cohort identification
+3504 [Tab Key] Extracting medication information from French clinical texts
+3436 [Tab Key] Building gold standard corpora for medical natural language processing tasks
+3344 [Tab Key] Sublanguage analysis of medical weblogs
+3061 [Tab Key] Structuring Clinical Decision Support Rules for Drug Safety Using Natural Language Processing
+3124 [Tab Key] Extracting Sexual Trauma Mentions from Electronic Medical Notes Using Natural Language Processing
+3123 [Tab Key] General Symptom Extraction from VA Electronic Medical Notes
+3607 [Tab Key] Associating semantic grammars with the SNOMED: processing medical language and representing clinical facts into a language-independent frame
+3558 [Tab Key] Enabling integrative genomic analysis of high-impact human diseases through text mining
+3547 [Tab Key] NLP-based identification of pneumonia cases from free-text radiological reports
+3572 [Tab Key] Using a natural language processing system to extract and code family history data from admission reports
+3500 [Tab Key] Application of language processing techniques to capture the use of nursing clinical terms from narrative statements: report of a pilot study
+3358 [Tab Key] Comparison of clinical practice guidelines from a knowledge modelling perspective: a case study with the management of hypertension
+3596 [Tab Key] A humanist's legacy in medical informatics: visions and accomplishments of Professor Jean-Raoul Scherrer
+3542 [Tab Key] Identification and extraction of family history information from clinical reports
+3399 [Tab Key] Knowledge representation and management: towards an integration of a semantic web in daily health practice
+3559 [Tab Key] Application of Natural Language Processing to VA Electronic Health Records to Identify Phenotypic Characteristics for Clinical and Research Purposes
+3431 [Tab Key] Methods for identifying suicide or suicidal ideation in EHRs
+3087 [Tab Key] 3000PA-Towards a National Reference Corpus of German Clinical Language
+2781 [Tab Key] sig2db: a Workflow for Processing Natural Language from Prescription Instructions for Clinical Data Warehouses
+3376 [Tab Key] Developing a section labeler for clinical documents
+3598 [Tab Key] Mining free-text medical records
+3180 [Tab Key] Prevalence Estimation of Protected Health Information in Swedish Clinical Text
+3079 [Tab Key] Mining Electronic Health Records to Extract Patient-Centered Outcomes Following Prostate Cancer Treatment
+3117 [Tab Key] A New Essential Functions Installed DWH in Hospital Information System: Process Mining Techniques and Natural Language Processing
+3499 [Tab Key] Tools for improving the characterization and visualization of changes in neuro-oncology patients
+3118 [Tab Key] Usability Evaluation of NLP-PIER: A Clinical Document Search Engine for Researchers
+3069 [Tab Key] Usability Evaluation of an Unstructured Clinical Document Query Tool for Researchers
+3375 [Tab Key] TextHunter--A User Friendly Tool for Extracting Generic Concepts from Free Text in Clinical Research
+3604 [Tab Key] Identification of findings suspicious for breast cancer based on natural language processing of mammogram reports
+3606 [Tab Key] Identification of suspected tuberculosis patients based on natural language processing of chest radiograph reports
+2544 [Tab Key] A Discrete Joint Model for Entity and Relation Extraction from Clinical Notes
+2780 [Tab Key] BERT-based Ranking for Biomedical Entity Normalization
+3435 [Tab Key] Extracting semantic lexicons from discharge summaries using machine learning and the C-Value method
+3068 [Tab Key] From Sour Grapes to Low-Hanging Fruit: A Case Study Demonstrating a Practical Strategy for Natural Language Processing Portability
+3589 [Tab Key] A native XML database design for clinical document research
+3374 [Tab Key] Trends in publication of nursing informatics research
+3408 [Tab Key] Improving heart failure information extraction by domain adaptation
+2991 [Tab Key] Ensemble-based Methods to Improve De-identification of Electronic Health Record Narratives
+2605 [Tab Key] Comparative Study of Various Approaches for Ensemble-based De-identification of Electronic Health Record Narratives
+3309 [Tab Key] Semantic retrieval and navigation in clinical document collections
+3168 [Tab Key] Semantic Technologies for Re-Use of Clinical Routine Data
+3188 [Tab Key] Ensembles of NLP Tools for Data Element Extraction from Clinical Notes
+3595 [Tab Key] Terminology extraction from text to build an ontology in surgical intensive care
+3594 [Tab Key] NLP-based information extraction for managing the molecular biology literature
+3380 [Tab Key] An information extraction framework for cohort identification using electronic health records
+3471 [Tab Key] Modeling drug exposure data in electronic medical records: an application to warfarin
+3434 [Tab Key] A study of transportability of an existing smoking status detection module across institutions
+3148 [Tab Key] Correlating Lab Test Results in Clinical Notes with Structured Lab Data: A Case Study in HbA1c and Glucose
+3372 [Tab Key] Extracting patient demographics and personal medical information from online health forums
+3085 [Tab Key] Towards Phenotyping of Clinical Trial Eligibility Criteria
+3119 [Tab Key] A Semi-Automatic Framework to Identify Abnormal States in EHR Narratives
+2940 [Tab Key] Comparison of Natural Language Processing Techniques in Analysis of Sparse Clinical Data: Insulin Decline by Patients
+3078 [Tab Key] Extracting Healthcare Quality Information from Unstructured Data
+3538 [Tab Key] Inductive creation of an annotation schema and a reference standard for de-identification of VA electronic clinical notes
+3400 [Tab Key] State of the art in clinical informatics: evidence and examples
+3217 [Tab Key] NLP-PIER: A Scalable Natural Language Processing, Indexing, and Searching Architecture for Clinical Notes
+3579 [Tab Key] Evaluation of Medical Problem Extraction from Electronic Clinical Documents Using MetaMap Transfer (MMTx)
+3343 [Tab Key] Can physicians recognize their own patients in de-identified notes?
+3537 [Tab Key] A clinical use case to evaluate the i2b2 Hive: predicting asthma exacerbations
+3379 [Tab Key] How much does automatic text de-identification impact clinical problems, tests, and treatments?
+3505 [Tab Key] Automatically detecting medications and the reason for their prescription in clinical narrative text documents
+3605 [Tab Key] Corpus-based identification and refinement of semantic classes
+3214 [Tab Key] Clinical Information Extraction at the CLEF eHealth Evaluation lab 2016
+2543 [Tab Key] Understanding Clinical Trial Reports: Extracting Medical Entities and Their Relations
+2604 [Tab Key] Identification of Gout Flares in Chief Complaint Text Using Natural Language Processing
+3569 [Tab Key] Electronic medical records for clinical research: application to the identification of heart failure
+3552 [Tab Key] Agreement between patient-reported symptoms and their documentation in the medical record
+3405 [Tab Key] Building a common pipeline for rule-based document classification
+3181 [Tab Key] Developing a Manually Annotated Corpus of Clinical Letters for Breast Cancer Patients on Routine Follow-Up
+3147 [Tab Key] SemanticFind: Locating What You Want in a Patient Record, Not Just What You Ask For
+3280 [Tab Key] A Semantic Web-based System for Mining Genetic Mutations in Cancer Clinical Trials
+3554 [Tab Key] Decision support, knowledge representation and management: structuring knowledge for better access. Findings from the Yearbook 2008 Section on Decision Support, Knowledge Representation and Management
+3448 [Tab Key] Knowledge Representation and Management: Towards Patient Health Self-management
+3544 [Tab Key] Using regular expressions to extract information on pacemaker implantation procedures from clinical reports
+3179 [Tab Key] Acronym Disambiguation in Spanish Electronic Health Narratives Using Machine Learning Techniques
+3257 [Tab Key] Linkage of Indiana State Cancer Registry and Indiana Network for Patient Care Data
+3536 [Tab Key] Towards temporal relation discovery from the clinical narrative
+3177 [Tab Key] HTP-NLP: A New NLP System for High Throughput Phenotyping
+2798 [Tab Key] Using Natural Language Processing to improve EHR Structured Data-based Surgical Site Infection Surveillance
+2990 [Tab Key] A Frame-Based NLP System for Cancer-Related Information Extraction
+3404 [Tab Key] A rule-based method for continuity of care identification in discharge summaries
+3584 [Tab Key] Potential impact of advanced clinical information technology on healthcare in 2015
+2593 [Tab Key] Artificial Intelligence for Understanding Imaging, Text, and Data in Gastroenterology
+3541 [Tab Key] A tool for improving the longitudinal imaging characterization for neuro-oncology cases
+2797 [Tab Key] De-identification of Clinical Text via Bi-LSTM-CRF with Neural Language Models
+3571 [Tab Key] Concept negation in free text components of vaccine safety reports
+3231 [Tab Key] Mining Clinicians' Electronic Documentation to Identify Heart Failure Patients with Ineffective Self-Management: A Pilot Text-Mining Study
+3545 [Tab Key] Second i2b2 workshop on natural language processing challenges for clinical records
+3496 [Tab Key] Corpus-Based Problem Selection for EHR Note Summarization
+3332 [Tab Key] Towards a Generalizable Time Expression Model for Temporal Reasoning in Clinical Notes
+3454 [Tab Key] Feasibility of pooling annotated corpora for clinical concept extraction
+3546 [Tab Key] Using natural language processing for identification of pneumonia cases from clinical records of patients with serologically proven influenza
+3208 [Tab Key] Extracting PICO Sentences from Clinical Trial Reports using Supervised Distant Supervision
+3279 [Tab Key] A Hybrid Approach to Extracting Disorder Mentions from Clinical Notes
+3149 [Tab Key] Discovering adverse drug events combining spontaneous reports with electronic medical records: a case study of conventional DMARDs and biologics for rheumatoid arthritis
+3005 [Tab Key] Cancer Phenotype Development: A Literature Review
+3331 [Tab Key] Automated Extraction of Substance Use Information from Clinical Texts
+3122 [Tab Key] Mining Adverse Events of Dietary Supplements from Product Labels by Topic Modeling
+3278 [Tab Key] Prescription Extraction from Clinical Notes: Towards Automating EMR Medication Reconciliation
+2796 [Tab Key] Relation Extraction from Clinical Narratives Using Pre-trained Language Models
+3495 [Tab Key] A high throughput semantic concept frequency based approach for patient identification: a case study using type 2 diabetes mellitus clinical notes
+2542 [Tab Key] CQL4NLP: Development and Integration of FHIR NLP Extensions in Clinical Quality Language for EHR-driven Phenotyping
+3352 [Tab Key] Towards symbiosis in knowledge representation and natural language processing for structuring clinical practice guidelines
+3603 [Tab Key] Knowledge discovery and data mining to assist natural language understanding
+3121 [Tab Key] Uncovering Hidden Topics in Hong Kong Clinical Research Through Hospital Authority Convention Publications
+3120 [Tab Key] Aligned-Layer Text Search in Clinical Notes
+3433 [Tab Key] A comparative study of current Clinical Natural Language Processing systems on handling abbreviations in discharge summaries
+3077 [Tab Key] Clinical Named Entity Recognition Using Deep Learning Models
+3470 [Tab Key] Detecting abbreviations in discharge summaries using machine learning methods
+2779 [Tab Key] A deep-learning based system for accurate extraction of blood pressure data in clinical narratives
+3469 [Tab Key] Extracting and integrating data from entire electronic health records for detecting colorectal cancer cases
+3494 [Tab Key] Mining Biomedical Literature for Terms related to Epidemiologic Exposures
+3566 [Tab Key] Extracting subject demographic information from abstracts of randomized clinical trial reports
+3378 [Tab Key] Automated tools for phenotype extraction from medical records
+3074 [Tab Key] Can Staff Distinguish Falls: Experimental Hypothesis Verification Using Japanese Incident Reports and Natural Language Processing
+3575 [Tab Key] System architecture for temporal information extraction, representation and reasoning in clinical narrative reports
+3468 [Tab Key] Using Medical Text Extraction, Reasoning and Mapping System (MTERMS) to process medication information in outpatient clinical notes
+3406 [Tab Key] Automatic information extraction for computerized clinical guideline
+3449 [Tab Key] Automatic extracting of patient-related attributes: disease, age, gender and race
+3654 [Tab Key] Comprehensive Lipidomic Automation Workflow using Large Language Models
+3612 [Tab Key] A Deep Learning Pipeline for Epilepsy Genomic Analysis Using GPT-2 XL and NVIDIA H100
+3714 [Tab Key] [Analysis of the Characteristics of Infantile Small World Neural Network Node Properties Correlated with the Influencing Factors]

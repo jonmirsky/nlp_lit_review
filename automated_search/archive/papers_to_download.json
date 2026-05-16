@@ -1,0 +1,4186 @@
+[
+  {
+    "label_id": "1773",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/38885475",
+    "title": "Extracting Systemic Anticancer Therapy and Response Information From Clinical Notes Following the RECIST Definition",
+    "pmid": "38885475",
+    "pmc_id": "12032536",
+    "doi": "10.1200/CCI.23.00166"
+  },
+  {
+    "label_id": "581",
+    "url": null,
+    "title": "Integration of Unstructured Data into a Clinical Data Warehouse for Kidney Transplant Screening - Challenges & Solutions.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200165"
+  },
+  {
+    "label_id": "2344",
+    "url": null,
+    "title": "Hospital Readmission Prediction via Keyword Extraction and Sentiment Analysis on Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI220732"
+  },
+  {
+    "label_id": "1682",
+    "url": null,
+    "title": "AI-Driven Diagnostic Assistance in Medical Inquiry: Reinforcement Learning Algorithm Development and Validation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/54616"
+  },
+  {
+    "label_id": "1044",
+    "url": "https://ieeexplore.ieee.org/document/11119420/",
+    "title": "Uncertainty-Aware Medical Diagnostic Phrase Identification and Grounding.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/TPAMI.2025.3596878"
+  },
+  {
+    "label_id": "714",
+    "url": "https://link.springer.com/article/10.1007/s00431-025-06602-x",
+    "title": "New chapter in pediatric medicine: technological evolution, application, and evaluation system of large language models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00431-025-06602-x"
+  },
+  {
+    "label_id": "458",
+    "url": null,
+    "title": "Clinical Application of Large Language Models in Generating Pathologic Images.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI-24-00267"
+  },
+  {
+    "label_id": "940",
+    "url": "https://link.springer.com/article/10.1007/s13755-025-00372-4",
+    "title": "Integrating clinical anxiety scales with pre-trained language models for anxiety recognition on social media.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s13755-025-00372-4"
+  },
+  {
+    "label_id": "1398",
+    "url": "https://esskajournals.onlinelibrary.wiley.com/doi/10.1002/ksa.12639",
+    "title": "High identification and positive-negative discrimination but limited detailed grading accuracy of ChatGPT-4o in knee osteoarthritis radiographs.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1002/ksa.12639"
+  },
+  {
+    "label_id": "1034",
+    "url": null,
+    "title": "EvidenceOutcomes: A Dataset of Clinical Trial Publications with Clinically Meaningful Outcomes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250935"
+  },
+  {
+    "label_id": "2678",
+    "url": "https://aapm.onlinelibrary.wiley.com/doi/10.1002/mp.14664",
+    "title": "Technical Note: An embedding-based medical note de-identification approach with sparse annotation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1002/mp.14664"
+  },
+  {
+    "label_id": "1203",
+    "url": null,
+    "title": "Enhancing the Accuracy of Human Phenotype Ontology Identification: Comparative Evaluation of Multimodal Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/73233"
+  },
+  {
+    "label_id": "220",
+    "url": "https://iopscience.iop.org/article/10.1088/1361-6560/ad1995",
+    "title": "Intensive vision-guided network for radiology report generation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1088/1361-6560/ad1995"
+  },
+  {
+    "label_id": "3065",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/ceo.13340",
+    "title": "Using natural language processing for identification of herpes zoster ophthalmicus cases to support population-based study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/ceo.13340"
+  },
+  {
+    "label_id": "3041",
+    "url": "https://journals.sagepub.com/doi/10.1177/1460458218796598?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Psychiatric stressor recognition from clinical notes to reveal association with suicide.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/1460458218796598"
+  },
+  {
+    "label_id": "2921",
+    "url": null,
+    "title": "MetaPred: Meta-Learning for Clinical Risk Prediction with Limited Patient Electronic Health Records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1145/3292500.3330779"
+  },
+  {
+    "label_id": "718",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/odi.70148",
+    "title": "SegORG: Report Generation of Oral Potentially Malignant Disorders Image Based on Lesion Segmentation-Enhanced LLM.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/odi.70148"
+  },
+  {
+    "label_id": "1802",
+    "url": null,
+    "title": "Ventilator-Associated Pneumonia Prediction Models Based on AI: Scoping Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/57026"
+  },
+  {
+    "label_id": "1032",
+    "url": null,
+    "title": "Leveraging Retrieval Augmented Generation-Driven Large Language Models to Extract Dementia Agitation Symptoms and Triggers from Free-Text Nursing Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250950"
+  },
+  {
+    "label_id": "1293",
+    "url": "https://journals.sagepub.com/doi/10.1177/00033197251326394",
+    "title": "Risk Prediction Models for Contrast-associated Acute Kidney Injury After Percutaneous Coronary Intervention: A Systematic Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/00033197251326394"
+  },
+  {
+    "label_id": "184",
+    "url": null,
+    "title": "Using Natural Language Processing (GPT-4) for Computed Tomography Image Analysis of Cerebral Hemorrhages in Radiology: Retrospective Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/58741"
+  },
+  {
+    "label_id": "1570",
+    "url": null,
+    "title": "Examining the Role of Large Language Models in Orthopedics: Systematic Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/59607"
+  },
+  {
+    "label_id": "2595",
+    "url": null,
+    "title": "Harnessing the electronic health record to advance integrated care.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1037/fsh0000584"
+  },
+  {
+    "label_id": "2613",
+    "url": null,
+    "title": "Natural Language Processing to Identify Cancer Treatments With Electronic Medical Records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.20.00173"
+  },
+  {
+    "label_id": "193",
+    "url": null,
+    "title": "Efficient Clinical Information Extraction from Breast Radiology Reports in French.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240776"
+  },
+  {
+    "label_id": "701",
+    "url": "https://ieeexplore.ieee.org/document/11251836/",
+    "title": "LLM-Powered Automated Infection Detection in Cirrhosis: Achieving Expert-Level Accuracy from Clinical Documents.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/EMBC58623.2025.11251836"
+  },
+  {
+    "label_id": "3236",
+    "url": "https://jamanetwork.com/journals/jamaoncology/article-abstract/2517402",
+    "title": "Natural Language Processing in Oncology: A Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1001/jamaoncol.2016.0213"
+  },
+  {
+    "label_id": "295",
+    "url": "https://link.springer.com/article/10.1007/s00256-021-03879-5",
+    "title": "AI MSK clinical applications: orthopedic implants.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00256-021-03879-5"
+  },
+  {
+    "label_id": "1761",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/jmp.12722",
+    "title": "An exploratory deep learning approach to investigate tuberculosis pathogenesis in nonhuman primate model: Combining automated radiological analysis with clinical  and biomarkers data.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/jmp.12722"
+  },
+  {
+    "label_id": "1389",
+    "url": null,
+    "title": "Large Language Model-Based Critical Care Big Data Deployment and Extraction: Descriptive Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/63216"
+  },
+  {
+    "label_id": "136",
+    "url": null,
+    "title": "Enhancing Physician-Patient Communication in Oncology Using GPT-4 Through Simplified Radiology Reports: Multicenter Quantitative Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/63786"
+  },
+  {
+    "label_id": "261",
+    "url": null,
+    "title": "Identification of Patients With Metastatic Prostate Cancer With Natural Language Processing and Machine Learning.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.21.00071"
+  },
+  {
+    "label_id": "556",
+    "url": null,
+    "title": "Context-Based Identification of Muscle Invasion Status in Patients With Bladder Cancer Using Natural Language Processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.21.00097"
+  },
+  {
+    "label_id": "1360",
+    "url": null,
+    "title": "Large Language Model-Driven Knowledge Graph Construction in Sepsis Care Using Multicenter Clinical Databases: Development and Usability Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/65537"
+  },
+  {
+    "label_id": "1331",
+    "url": null,
+    "title": "AI in SPECT Imaging: Opportunities and Challenges.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1053/j.semnuclmed.2025.03.005"
+  },
+  {
+    "label_id": "700",
+    "url": "https://ieeexplore.ieee.org/document/11252715/",
+    "title": "Decoupled Representation Learning for Difference Medical Report Generation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/EMBC58623.2025.11252715"
+  },
+  {
+    "label_id": "36",
+    "url": null,
+    "title": "Relation Detection to Identify Stroke Assertions from Clinical Notes Using Natural Language Processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231039"
+  },
+  {
+    "label_id": "156",
+    "url": null,
+    "title": "Large Language Model Approach for Zero-Shot Information Extraction and Clustering of Japanese Radiology Reports: Algorithm Development and Validation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/57275"
+  },
+  {
+    "label_id": "1026",
+    "url": null,
+    "title": "Comparing the Accuracy of Deidentification in Japanese Text Using Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251144"
+  },
+  {
+    "label_id": "713",
+    "url": null,
+    "title": "SmokeBERT: A Bidirectional Encoder Representations From Transformers-Based Model for Quantitative Smoking History Extraction From Clinical Narratives to Improve  Lung Cancer Screening.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI-25-00223"
+  },
+  {
+    "label_id": "2157",
+    "url": null,
+    "title": "[An antibacterial peptides recognition method based on BERT and Text-CNN].",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.13345/j.cjb.220878"
+  },
+  {
+    "label_id": "1686",
+    "url": null,
+    "title": "Accelerating Clinical Text Annotation in Underrepresented Languages: A Case Study on Text De-Identification.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240546"
+  },
+  {
+    "label_id": "335",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0039-1694992",
+    "title": "Introducing Information Extraction to Radiology Information Systems to Improve the Efficiency on Reading Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1055/s-0039-1694992"
+  },
+  {
+    "label_id": "3110",
+    "url": "https://journals.sagepub.com/doi/10.1177/1460458217754243?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "A computerized algorithm to capture patient's past preeclampsia and eclampsia history from prenatal clinical notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/1460458217754243"
+  },
+  {
+    "label_id": "2697",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/17538157.2020.1828890",
+    "title": "An automated algorithm using free-text clinical notes to improve identification of transgender people.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/17538157.2020.1828890"
+  },
+  {
+    "label_id": "1307",
+    "url": "https://link.springer.com/article/10.1007/s11547-025-01994-0",
+    "title": "Enhancing hepatocellular carcinoma diagnosis in non-high-risk patients: a customized ChatGPT model integrating contrast-enhanced ultrasound.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s11547-025-01994-0"
+  },
+  {
+    "label_id": "1175",
+    "url": null,
+    "title": "Knowledge Graph-Enhanced Deep Learning Model (H-SYSTEM) for Hypertensive Intracerebral Hemorrhage: Model Development and Validation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/66055"
+  },
+  {
+    "label_id": "1441",
+    "url": null,
+    "title": "Perceptions in 3.6 Million Web-Based Posts of Online Communities on the Use of Cancer Immunotherapy: Data Mining Using BERTopic.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/60948"
+  },
+  {
+    "label_id": "1576",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/liv.16112",
+    "title": "Exploring the potential of large language models in identifying metabolic dysfunction-associated steatotic liver disease: A comparative study of  non-invasive tests and artificial intelligence-generated responses.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/liv.16112"
+  },
+  {
+    "label_id": "1861",
+    "url": null,
+    "title": "[Subverting the Future of Teaching: Artificial Intelligence Innovation in Nursing Education].",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.6224/JN.202404_71(2).04"
+  },
+  {
+    "label_id": "1031",
+    "url": null,
+    "title": "Large Language Model Empowered Privacy-Protected Framework for PHI Annotation in Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250965"
+  },
+  {
+    "label_id": "1041",
+    "url": null,
+    "title": "Large Language Models for Detection of Genetic Variants in Biomedical Literature.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250836"
+  },
+  {
+    "label_id": "161",
+    "url": null,
+    "title": "Leveraging Artificial Intelligence as a Safety Net for Incidentally Identified Lung Nodules at a Tertiary Center.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/XCS.0000000000001275"
+  },
+  {
+    "label_id": "835",
+    "url": null,
+    "title": "Predicting Postpartum Hemorrhage Using Clinical Features Extracted With Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/og9.0000000000000128"
+  },
+  {
+    "label_id": "1933",
+    "url": null,
+    "title": "Rule-Based Natural Language Processing Pipeline to Detect Medication-Related Named Entities: Insights for Transfer Learning.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231032"
+  },
+  {
+    "label_id": "3072",
+    "url": "https://accpjournals.onlinelibrary.wiley.com/doi/10.1002/phar.2151",
+    "title": "Natural Language Processing and Its Implications for the Future of Medication Safety: A Narrative Review of Recent Advances and Challenges.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1002/phar.2151"
+  },
+  {
+    "label_id": "1270",
+    "url": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2833228",
+    "title": "Physician- and Large Language Model-Generated Hospital Discharge Summaries.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1001/jamainternmed.2025.0821"
+  },
+  {
+    "label_id": "2103",
+    "url": "https://link.springer.com/article/10.1007/s40259-023-00611-8",
+    "title": "Staying Ahead of the Game: How SARS-CoV-2 has Accelerated the Application of Machine Learning in Pandemic Management.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s40259-023-00611-8"
+  },
+  {
+    "label_id": "1663",
+    "url": null,
+    "title": "A Case Demonstration of the Open Health Natural Language Processing Toolkit From the National COVID-19 Cohort Collaborative and the Researching COVID to Enhance  Recovery Programs for a Natural Language Processing System for COVID-19 or  Postacute Sequelae of SARS CoV-2 Infection: Algorithm Development and Validation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/49997"
+  },
+  {
+    "label_id": "1030",
+    "url": null,
+    "title": "Structured LLM Augmentation for Clinical Information Extraction.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250984"
+  },
+  {
+    "label_id": "1592",
+    "url": null,
+    "title": "Using Artificial Intelligence to Support Informed Decision-Making on BRAF Mutation Testing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/PO.23.00685"
+  },
+  {
+    "label_id": "1137",
+    "url": null,
+    "title": "Enhancing Diagnostic Precision: Utilising a Large Language Model to Extract U Scores from Thyroid Sonography Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250672"
+  },
+  {
+    "label_id": "1176",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/09638237.2025.2512313",
+    "title": "The language of paranoia: linguistic analysis of SMI speech with considerations of race and sex.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/09638237.2025.2512313"
+  },
+  {
+    "label_id": "1856",
+    "url": null,
+    "title": "An Entity Extraction Pipeline for Medical Text Records Using Large Language Models: Analytical Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/54580"
+  },
+  {
+    "label_id": "1098",
+    "url": null,
+    "title": "Trends of Authors' Conflicts of Interest in Clinical Trials Published in the Journal of Clinical Oncology: A Large Language Model-Assisted Longitudinal Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/OP-25-00293"
+  },
+  {
+    "label_id": "2821",
+    "url": null,
+    "title": "Systematic Evaluation of Research Progress on Natural Language Processing in Medicine Over the Past 20 Years: Bibliometric Study on PubMed.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/16816"
+  },
+  {
+    "label_id": "2030",
+    "url": "https://link.springer.com/article/10.1007/s10029-023-02900-1",
+    "title": "AI's deep dive into complex pediatric inguinal hernia issues: a challenge to traditional guidelines?",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10029-023-02900-1"
+  },
+  {
+    "label_id": "1503",
+    "url": null,
+    "title": "Application of Large Language Models in Medical Training Evaluation-Using ChatGPT as a Standardized Patient: Multimetric Assessment.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/59435"
+  },
+  {
+    "label_id": "1531",
+    "url": null,
+    "title": "Combining Topic Modeling, Sentiment Analysis, and Corpus Linguistics to Analyze Unstructured Web-Based Patient Experience Data: Case Study of Modafinil  Experiences.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/54321"
+  },
+  {
+    "label_id": "1502",
+    "url": null,
+    "title": "The Transformative Potential of Large Language Models in Mining Electronic Health Records Data: Content Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/58457"
+  },
+  {
+    "label_id": "1039",
+    "url": null,
+    "title": "Extracting Pharmaceutical Safety Information from Nursing Records: Utilizing ChatGPT for Data Categorization.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250860"
+  },
+  {
+    "label_id": "3291",
+    "url": "https://aapm.onlinelibrary.wiley.com/doi/10.1118/1.4923170",
+    "title": "Selecting registration schemes in case of interstitial lung disease follow-up in CT.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1118/1.4923170"
+  },
+  {
+    "label_id": "2365",
+    "url": null,
+    "title": "Using Deep Learning to Improve Phenotyping from Clinical Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI220079"
+  },
+  {
+    "label_id": "2762",
+    "url": null,
+    "title": "On the Construction of Multilingual Corpora for Clinical Text Mining.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200180"
+  },
+  {
+    "label_id": "123",
+    "url": null,
+    "title": "A Deep Learning-Enabled Workflow to Estimate Real-World Progression-Free Survival in Patients With Metastatic Breast Cancer: Study Using Deidentified Electronic  Health Records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/64697"
+  },
+  {
+    "label_id": "3158",
+    "url": "https://link.springer.com/chapter/10.1007/978-3-319-48472-3_43",
+    "title": "An Ontology-Enabled Natural Language Processing Pipeline for Provenance Metadata Extraction from Biomedical Text (Short Paper).",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/978-3-319-48472-3_43"
+  },
+  {
+    "label_id": "2366",
+    "url": null,
+    "title": "Extending PICO with Observation Normalization for Evidence Computing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI220076"
+  },
+  {
+    "label_id": "1457",
+    "url": null,
+    "title": "Using Large Language Models to Detect and Understand Drug Discontinuation Events in Web-Based Forums: Development and Validation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/54601"
+  },
+  {
+    "label_id": "1821",
+    "url": null,
+    "title": "Generating Actionable Insights from Patient Medical Records and Structured Clinical Knowledge.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240015"
+  },
+  {
+    "label_id": "1772",
+    "url": null,
+    "title": "Identification of hepatic steatosis among persons with and without HIV using natural language processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/HC9.0000000000000468"
+  },
+  {
+    "label_id": "67",
+    "url": "https://ieeexplore.ieee.org/document/11268329/",
+    "title": "Extractive Radiology Reporting with Memory-based Cross-modal Representations.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/TMI.2025.3636868"
+  },
+  {
+    "label_id": "2550",
+    "url": null,
+    "title": "Transformer-Based Named Entity Recognition for Parsing Clinical Trial Eligibility Criteria.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1145/3459930.3469560"
+  },
+  {
+    "label_id": "96",
+    "url": "https://link.springer.com/article/10.1007/s10278-025-01577-5",
+    "title": "Intelligent Head and Neck CTA Report Quality Detection with Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10278-025-01577-5"
+  },
+  {
+    "label_id": "74",
+    "url": null,
+    "title": "RadOncRAG: A Novel Retrieval-Augmented Generation Framework Improves Large Language Model Benchmark Performance in Radiation Oncology.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI-25-00220"
+  },
+  {
+    "label_id": "702",
+    "url": "https://ieeexplore.ieee.org/document/11253093/",
+    "title": "Enhancing Depression Detection with Chain-of-Thought Prompting: From Emotion to Reasoning Using Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/EMBC58623.2025.11253093"
+  },
+  {
+    "label_id": "1101",
+    "url": null,
+    "title": "Performance of Natural Language Processing versus International Classification of Diseases Codes in Building Registries for Patients With Fall Injury:  Retrospective Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/66973"
+  },
+  {
+    "label_id": "1146",
+    "url": null,
+    "title": "Open-Source Hybrid Large Language Model Integrated System for Extraction of Breast Cancer Treatment Pathway From Free-Text Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI-25-00002"
+  },
+  {
+    "label_id": "2901",
+    "url": null,
+    "title": "An Exploratory Study on Pseudo-Data Generation in Prescription and Adverse Drug Reaction Extraction.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI190249"
+  },
+  {
+    "label_id": "1544",
+    "url": null,
+    "title": "Chinese Clinical Named Entity Recognition With Segmentation Synonym Sentence Synthesis Mechanism: Algorithm Development and Validation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/60334"
+  },
+  {
+    "label_id": "1685",
+    "url": null,
+    "title": "Exploring Offline Large Language Models for Clinical Information Extraction: A Study of Renal Histopathological Reports of Lupus Nephritis Patients.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240557"
+  },
+  {
+    "label_id": "2327",
+    "url": "https://journals.sagepub.com/doi/10.3233/JAD-220422?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Stakeholder Insights in Alzheimer's Disease: Natural Language Processing of Social Media Conversations.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/JAD-220422"
+  },
+  {
+    "label_id": "1406",
+    "url": "https://ieeexplore.ieee.org/document/10782599/",
+    "title": "LLM-based kidney disease diagnostic framework for Pathologists.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/EMBC53108.2024.10782599"
+  },
+  {
+    "label_id": "279",
+    "url": null,
+    "title": "The h-ANN Model: Comprehensive Colonoscopy Concept Compilation Using Combined Contextual Embeddings.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.5220/0010903300003123"
+  },
+  {
+    "label_id": "2403",
+    "url": null,
+    "title": "DeIDNER Model: A Neural Network Named Entity Recognition Model for Use in the De-identification of Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.5220/0010884500003123"
+  },
+  {
+    "label_id": "1378",
+    "url": null,
+    "title": "Using Synthetic Health Care Data to Leverage Large Language Models for Named Entity Recognition: Development and Validation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/66279"
+  },
+  {
+    "label_id": "1629",
+    "url": null,
+    "title": "Disambiguating Clinical Abbreviations by One-to-All Classification: Algorithm Development and Validation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/56955"
+  },
+  {
+    "label_id": "1319",
+    "url": null,
+    "title": "Identification of Patients With Congestive Heart Failure From the Electronic Health Records of Two Hospitals: Retrospective Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/64113"
+  },
+  {
+    "label_id": "322",
+    "url": null,
+    "title": "End-to-End Approach for Structuring Radiology Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200151"
+  },
+  {
+    "label_id": "104",
+    "url": null,
+    "title": "A Hybrid Natural Language Processing Platform for Multi-Site RWD Studies.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251035"
+  },
+  {
+    "label_id": "119",
+    "url": null,
+    "title": "Large Language Models in Medical Diagnostics: Scoping Review With Bibliometric Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/72062"
+  },
+  {
+    "label_id": "459",
+    "url": "https://journals.sagepub.com/doi/10.1177/03009858251347529?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Natural language processing in veterinary pathology: A review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/03009858251347529"
+  },
+  {
+    "label_id": "1353",
+    "url": null,
+    "title": "Artificial Intelligence-Enabled Clinical Trials in Inflammatory Bowel Disease: Automating and Enhancing Disease Assessment and Study Management.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1053/j.gastro.2025.02.039"
+  },
+  {
+    "label_id": "1355",
+    "url": "https://academic.oup.com/jalm/article-abstract/10/4/793/8100305?redirectedFrom=fulltext",
+    "title": "MedPromptExtract (Medical Data Extraction Tool): Anonymization and High-Fidelity Automated Data Extraction Using Natural Language Processing and Prompt  Engineering.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/jalm/jfaf034"
+  },
+  {
+    "label_id": "1888",
+    "url": "https://jme.bmj.com/content/51/2/126.long",
+    "title": "Leveraging artificial intelligence to detect ethical concerns in medical research: a case study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1136/jme-2023-109767"
+  },
+  {
+    "label_id": "1459",
+    "url": null,
+    "title": "Exploring the Social Media Discussion of Breast Cancer Treatment Choices: Quantitative Natural Language Processing Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/52886"
+  },
+  {
+    "label_id": "15",
+    "url": null,
+    "title": "Stroke Diagnosis and Prediction Tool Using ChatGLM: Development and Validation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/67010"
+  },
+  {
+    "label_id": "86",
+    "url": "https://link.springer.com/article/10.1007/s00234-025-03810-y",
+    "title": "Retrospective detection of missed intra-cranial aneurysms on computed tomography angiography using a commercial deep learning algorithm.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00234-025-03810-y"
+  },
+  {
+    "label_id": "774",
+    "url": null,
+    "title": "Harnessing Natural Language Processing to Identify Documentation of Serious Illness Communication for Patients with Decompensated Cirrhosis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.14309/ajg.0000000000003830"
+  },
+  {
+    "label_id": "3582",
+    "url": null,
+    "title": "Study of effect of drug lexicons on medication extraction from electronic medical records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1142/9789812702456_0029"
+  },
+  {
+    "label_id": "254",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/17474124.2023.2166928",
+    "title": "Evaluating the potential of artificial intelligence in ulcerative colitis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/17474124.2023.2166928"
+  },
+  {
+    "label_id": "425",
+    "url": null,
+    "title": "Image content extraction: application to MR images of the brain.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1148/radiographics.21.2.g01mr18535"
+  },
+  {
+    "label_id": "675",
+    "url": null,
+    "title": "A Machine Learning Approach for Identifying People With Neuroinfectious Diseases in Electronic Health Records: Algorithm Development and Validation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/63157"
+  },
+  {
+    "label_id": "1546",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/a-2491-3872",
+    "title": "Extracting International Classification of Diseases Codes from Clinical Documentation Using Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1055/a-2491-3872"
+  },
+  {
+    "label_id": "1927",
+    "url": null,
+    "title": "A Symptom-Based Natural Language Processing Surveillance Pipeline for Post-COVID-19 Patients.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231087"
+  },
+  {
+    "label_id": "2137",
+    "url": null,
+    "title": "Surgical classification using natural language processing of informed consent forms in spine surgery.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3171/2023.3.FOCUS2371"
+  },
+  {
+    "label_id": "776",
+    "url": "https://academic.oup.com/asj/advance-article-abstract/doi/10.1093/asj/sjaf238/8322864?redirectedFrom=fulltext",
+    "title": "A Systematic Review of Applications, Challenges, and Future Trajectories of Artificial Intelligence in Cosmetic Surgery.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/asj/sjaf238"
+  },
+  {
+    "label_id": "3232",
+    "url": null,
+    "title": "Identification of Inpatient Falls Using Automated Review of Text-Based Medical Records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/PTS.0000000000000275"
+  },
+  {
+    "label_id": "1110",
+    "url": null,
+    "title": "Toward Cross-Hospital Deployment of Natural Language Processing Systems: Model Development and Validation of Fine-Tuned Large Language Models for Disease Name  Recognition in Japanese.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/76773"
+  },
+  {
+    "label_id": "1935",
+    "url": null,
+    "title": "Towards Structuring Clinical Texts: Joint Entity and Relation Extraction from Japanese Case Report Corpus.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231027"
+  },
+  {
+    "label_id": "1144",
+    "url": "https://www.worldscientific.com/doi/10.1142/S0192415X25500375?rfr_dat=cr_pub++0pubmed&rfr_id=ori%3Arid%3Acrossref.org&url_ver=Z39.88-2003",
+    "title": "Application of Large Language Models in Traditional Chinese Medicine: A\u00a0State-of-the-Art Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1142/S0192415X25500375"
+  },
+  {
+    "label_id": "1021",
+    "url": null,
+    "title": "Mining Social Determinants of Health for Heart Failure Patient 30-Day Readmission via Large Language Model.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251272"
+  },
+  {
+    "label_id": "2361",
+    "url": null,
+    "title": "NLP-Assisted Pipeline for COVID-19 Core Outcome Set Identification Using ClinicalTrials.gov.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI220152"
+  },
+  {
+    "label_id": "1932",
+    "url": null,
+    "title": "NLP-Assisted Differential Diagnosis of Chronic Obstructive Pulmonary Disease Exacerbation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231033"
+  },
+  {
+    "label_id": "2474",
+    "url": "https://ieeexplore.ieee.org/document/9630611/",
+    "title": "Comparison of ACM and CLAMP for Entity Extraction in Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/EMBC46164.2021.9630611"
+  },
+  {
+    "label_id": "2758",
+    "url": "https://boneandjoint.org.uk:443/Article/10.1302/0301-620X.102B7.BJJ-2019-1574.R1",
+    "title": "Data for registry and quality review can be retrospectively collected using natural language processing from unstructured charts of arthroplasty patients.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1302/0301-620X.102B7.BJJ-2019-1574.R1"
+  },
+  {
+    "label_id": "942",
+    "url": null,
+    "title": "Can Large Language Models Guide Aortic Stenosis Management? A Comparative Analysis of ChatGPT and Gemini AI.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.5543/tkda.2025.54968"
+  },
+  {
+    "label_id": "331",
+    "url": null,
+    "title": "Automating Clinical Chart Review: An Open-Source Natural Language Processing Pipeline Developed on Free-Text Radiology Reports From Patients With  Glioblastoma.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.19.00060"
+  },
+  {
+    "label_id": "1433",
+    "url": null,
+    "title": "Using Structured Codes and Free-Text Notes to Measure Information Complementarity in Electronic Health Records: Feasibility and Validation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/66910"
+  },
+  {
+    "label_id": "764",
+    "url": "https://link.springer.com/article/10.1007/s11274-025-04662-7",
+    "title": "Next-generation antifungal peptide discovery: the synergy of artificial intelligence and omics technologies.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s11274-025-04662-7"
+  },
+  {
+    "label_id": "1042",
+    "url": null,
+    "title": "TanaGPT: How Can I Help You? A Pilot Testing of a Genai Assistant in a Healthcare Workflow.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250813"
+  },
+  {
+    "label_id": "1375",
+    "url": null,
+    "title": "Exploring Biases of Large Language Models in the Field of Mental Health: Comparative Questionnaire Study of the Effect of Gender and Sexual Orientation in  Anorexia Nervosa and Bulimia Nervosa Case Vignettes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/57986"
+  },
+  {
+    "label_id": "1023",
+    "url": null,
+    "title": "Enhancing Privacy in Clinical Texts: A New Approach to De-Identification of Brazilian Clinical Narratives.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251246"
+  },
+  {
+    "label_id": "1482",
+    "url": null,
+    "title": "Natural Language Processing and Social Determinants of Health in Mental Health Research: AI-Assisted Scoping Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/67192"
+  },
+  {
+    "label_id": "2251",
+    "url": "https://journals.sagepub.com/doi/10.1177/02692163221141969?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "The use of natural language processing in palliative care research: A scoping review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/02692163221141969"
+  },
+  {
+    "label_id": "101",
+    "url": null,
+    "title": "Automating the Referral of Bone Metastases Patients With and Without the Use of Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1227/neu.0000000000003683"
+  },
+  {
+    "label_id": "3025",
+    "url": null,
+    "title": "Leveraging Natural Language Processing: Toward Computer-Assisted Scoring of Patient Notes in the USMLE Step 2 Clinical Skills Exam.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/ACM.0000000000002558"
+  },
+  {
+    "label_id": "117",
+    "url": null,
+    "title": "Applications, Challenges, and Future Perspectives of Artificial Intelligence in Psychopharmacology, Psychological Disorders and Physiological Psychology: A  Comprehensive Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.4103/jpbs.jpbs_1765_24"
+  },
+  {
+    "label_id": "1721",
+    "url": null,
+    "title": "Comparative Evaluation of LLMs in Clinical Oncology.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1056/aioa2300151"
+  },
+  {
+    "label_id": "1240",
+    "url": "https://www.tandfonline.com/doi/10.1080/0142159X.2025.2504106?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Using large language models (LLMs) to apply analytic rubrics to score post-encounter notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/0142159X.2025.2504106"
+  },
+  {
+    "label_id": "2207",
+    "url": null,
+    "title": "Unstructured Data Are Superior to Structured Data for Eliciting Quantitative Smoking History From the Electronic Health Record.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.22.00155"
+  },
+  {
+    "label_id": "2704",
+    "url": "https://link.springer.com/article/10.1007/s43441-020-00236-x",
+    "title": "Text Classification for Clinical Trial Operations: Evaluation and Comparison of Natural Language Processing Techniques.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s43441-020-00236-x"
+  },
+  {
+    "label_id": "505",
+    "url": null,
+    "title": "Applications of Artificial Intelligence in Prostate Cancer Care: A Path to Enhanced Efficiency and Outcomes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/EDBK_438516"
+  },
+  {
+    "label_id": "1934",
+    "url": null,
+    "title": "Automatic Extraction of Skin and Soft Tissue Infection Status from Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231031"
+  },
+  {
+    "label_id": "1537",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/jebm.12658",
+    "title": "Large Language Models in Traditional Chinese Medicine: A Scoping Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/jebm.12658"
+  },
+  {
+    "label_id": "1321",
+    "url": null,
+    "title": "Improving Phenotyping of Patients With Immune-Mediated Inflammatory Diseases Through Automated Processing of Discharge Summaries: Multicenter Cohort Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/68704"
+  },
+  {
+    "label_id": "905",
+    "url": null,
+    "title": "Improving the Reporting Quality of Studies on Information Extraction From Clinical Texts: Protocol for the Development of a Consensus-Based Reporting  Guideline.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/76776"
+  },
+  {
+    "label_id": "134",
+    "url": "https://boris-portal.unibe.ch/entities/publication/d5596aa0-6ec3-4acd-8977-c1938c31fd1e",
+    "title": "Enhancing Bidirectional Encoder Representations From Transformers (BERT) With Frame Semantics to Extract Clinically Relevant Information From German  Mammography Reports: Algorithm Development and Validation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/68427"
+  },
+  {
+    "label_id": "194",
+    "url": null,
+    "title": "Towards a Reporting Guideline for Studies on Information Extraction from Clinical Texts.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240744"
+  },
+  {
+    "label_id": "1692",
+    "url": null,
+    "title": "Leveraging Rule-Based NLP to Translate Textual Reports as Structured Inputs Automatically Processed by a Clinical Decision Support System.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240794"
+  },
+  {
+    "label_id": "2275",
+    "url": "https://journals.sagepub.com/doi/10.1177/14604582221134406?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Identification of colorectal cancer using structured and free text clinical data.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/14604582221134406"
+  },
+  {
+    "label_id": "1323",
+    "url": null,
+    "title": "Evaluation of the Performance of a Large Language Model to Extract Signs and Symptoms from Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250051"
+  },
+  {
+    "label_id": "1136",
+    "url": null,
+    "title": "Leveraging Large Language Models for the Extraction of General and Domain-Specific Signs and Symptoms.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250695"
+  },
+  {
+    "label_id": "796",
+    "url": null,
+    "title": "Natural language processing-based algorithmic decision support system in identifying psychological conflicts using thematic apperception test.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.4103/ipj.ipj_470_24"
+  },
+  {
+    "label_id": "2117",
+    "url": "https://link.springer.com/article/10.1007/s11042-023-15539-y",
+    "title": "Optimizing healthcare system by amalgamation of text processing and deep learning: a systematic review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s11042-023-15539-y"
+  },
+  {
+    "label_id": "1045",
+    "url": "https://link.springer.com/article/10.1007/s10459-025-10462-3",
+    "title": "Can AI grade like a professor? comparing artificial intelligence and faculty scoring of medical student short-answer clinical reasoning exams.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10459-025-10462-3"
+  },
+  {
+    "label_id": "870",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/1742-6723.70148",
+    "title": "The Role of Artificial Intelligence in Enabling Medical Research.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/1742-6723.70148"
+  },
+  {
+    "label_id": "1229",
+    "url": "https://academic.oup.com/jamia/article-abstract/32/8/1350/8145558?redirectedFrom=fulltext",
+    "title": "Linguistic markers for identifying post-traumatic stress disorder and associated symptoms: a systematic literature review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/jamia/ocaf075"
+  },
+  {
+    "label_id": "2768",
+    "url": null,
+    "title": "Clinical History Segment Extraction from Chronic Fatigue Syndrome Assessments to Model Disease Trajectories.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200130"
+  },
+  {
+    "label_id": "3306",
+    "url": "https://agsjournals.onlinelibrary.wiley.com/doi/10.1111/jgs.13491",
+    "title": "Postdischarge Communication Between Home Health Nurses and Physicians: Measurement, Quality, and Outcomes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/jgs.13491"
+  },
+  {
+    "label_id": "1901",
+    "url": null,
+    "title": "Artificial intelligence compared with human-derived patient educational materials on cirrhosis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/HC9.0000000000000367"
+  },
+  {
+    "label_id": "378",
+    "url": null,
+    "title": "Natural Language Processing in Radiology: A Systematic Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1148/radiol.16142770"
+  },
+  {
+    "label_id": "2764",
+    "url": null,
+    "title": "Leveraging PubMed to Create a Specialty-Based Sense Inventory for Spanish Acronym Resolution.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200169"
+  },
+  {
+    "label_id": "1666",
+    "url": null,
+    "title": "Zero-Shot LLMs for Named Entity Recognition: Targeting Cardiac Function Indicators in German Clinical Texts.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240861"
+  },
+  {
+    "label_id": "2822",
+    "url": null,
+    "title": "Clinical Annotation Research Kit (CLARK): Computable Phenotyping Using Machine Learning.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/16042"
+  },
+  {
+    "label_id": "1235",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/a-2616-9858",
+    "title": "Extracting Social Determinants of Health from Dental Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1055/a-2616-9858"
+  },
+  {
+    "label_id": "135",
+    "url": "https://www.eurekaselect.com/article/147831",
+    "title": "Transforming Medical Imaging: The Role of Artificial Intelligence Integration in PACS for Enhanced Diagnostic Accuracy and Workflow Efficiency.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2174/0115734056370620250403030638"
+  },
+  {
+    "label_id": "1603",
+    "url": null,
+    "title": "Tracking the Spread of Pollen on Social Media Using Pollen-Related Messages From Twitter: Retrospective Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/58309"
+  },
+  {
+    "label_id": "147",
+    "url": "https://ieeexplore.ieee.org/document/10757391/",
+    "title": "RespBERT: A Multi-Site Validation of a Natural Language Processing Algorithm, of Radiology Notes to Identify Acute Respiratory Distress Syndrome (ARDS).",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/JBHI.2024.3502575"
+  },
+  {
+    "label_id": "2688",
+    "url": "https://www.eurekaselect.com/article/111992",
+    "title": "Review and Analysis of Massively Registered Clinical Trials of COVID-19 using the Text Mining Approach.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2174/1574887115666201202110919"
+  },
+  {
+    "label_id": "2231",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0042-1760248",
+    "title": "Automatic Identification of Self-Reported COVID-19 Vaccine Information from Vaccine Adverse Events Reporting System.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1055/s-0042-1760248"
+  },
+  {
+    "label_id": "1296",
+    "url": null,
+    "title": "Artificial intelligence in sleep medicine: assessing the diagnostic precision of ChatGPT-4.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.5664/jcsm.11732"
+  },
+  {
+    "label_id": "451",
+    "url": null,
+    "title": "Zero-Shot Clinical Data Extraction from Pathology Reports Using Llama 3.1.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251230"
+  },
+  {
+    "label_id": "499",
+    "url": null,
+    "title": "Enhancing Clinical Data Extraction from Pathology Reports: A Comparative Analysis of Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240523"
+  },
+  {
+    "label_id": "438",
+    "url": null,
+    "title": "Large Language Models for Translational Cancer Informatics.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI-25-00108"
+  },
+  {
+    "label_id": "1571",
+    "url": "https://link.springer.com/protocol/10.1007/978-1-0716-4200-9_14",
+    "title": "A Computational Protocol for the Knowledge-Based Assessment and Capture of Pathologies.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/978-1-0716-4200-9_14"
+  },
+  {
+    "label_id": "638",
+    "url": null,
+    "title": "Application of a rules-based natural language parser to critical value reporting in anatomic pathology.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/PAS.0b013e318245c9a4"
+  },
+  {
+    "label_id": "1196",
+    "url": "https://academic.oup.com/fampra/article-abstract/42/4/cmaf035/8158582?redirectedFrom=fulltext",
+    "title": "Performance of large language models on family medicine licensing exams.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/fampra/cmaf035"
+  },
+  {
+    "label_id": "921",
+    "url": null,
+    "title": "AI-Based Algorithm to Detect Heart and Lung Disease From Acute Chest Computed Tomography Scans: Protocol for an Algorithm Development and Validation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/77030"
+  },
+  {
+    "label_id": "2224",
+    "url": null,
+    "title": "Digital ECMT Cancer Trial Matching Tool: an Open Source Research Application to Support Oncologists in the Identification of Precision Medicine Clinical Trials.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.22.00137"
+  },
+  {
+    "label_id": "2761",
+    "url": null,
+    "title": "An \"in silico\" Bench to Bedside Approach to Investigating Sepsis Biomarkers.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200359"
+  },
+  {
+    "label_id": "160",
+    "url": null,
+    "title": "Privacy-ensuring Open-weights Large Language Models Are Competitive with Closed-weights GPT-4o in Extracting Chest Radiography Findings from Free-Text  Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1148/radiol.240895"
+  },
+  {
+    "label_id": "206",
+    "url": "https://link.springer.com/article/10.1007/s00117-024-01327-8",
+    "title": "[Large language models from OpenAI, Google, Meta, X and Co. : The role of \"closed\" and \"open\" models in radiology].",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00117-024-01327-8"
+  },
+  {
+    "label_id": "974",
+    "url": null,
+    "title": "An Extraction Tool for Venous Thromboembolism Symptom Identification in Primary Care Notes to Facilitate Electronic Clinical Quality Measure Reporting: Algorithm  Development and Validation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/63720"
+  },
+  {
+    "label_id": "729",
+    "url": null,
+    "title": "Turning Patients' Open-Ended Narratives of Chronic Pain Into Quantitative Measures: Natural Language Processing Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/80269"
+  },
+  {
+    "label_id": "188",
+    "url": null,
+    "title": "Automated System to Capture Patient Symptoms From Multitype Japanese Clinical Texts: Retrospective Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/58977"
+  },
+  {
+    "label_id": "1022",
+    "url": null,
+    "title": "Developing and Assessing the Technical Term Extraction Tools for Teaching Clinical Trial Protocols.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251266"
+  },
+  {
+    "label_id": "1542",
+    "url": null,
+    "title": "Use of Online Large Language Model Chatbots in Cornea Clinics.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/ICO.0000000000003747"
+  },
+  {
+    "label_id": "1660",
+    "url": "https://www.ingentaconnect.com/content/wk/icu/2024/00000035/00000006/art00006",
+    "title": "Artificial intelligence in myopia in children: current trends and future directions.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/ICU.0000000000001086"
+  },
+  {
+    "label_id": "472",
+    "url": null,
+    "title": "Enhancing Malignancy Detection and Tumor Classification in Pathology Reports: A Comparative Evaluation of Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250200"
+  },
+  {
+    "label_id": "2735",
+    "url": null,
+    "title": "Natural Language Processing for Rapid Response to Emergent Diseases: Case Study of Calcium Channel Blockers and Hypertension in the COVID-19 Pandemic.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/20773"
+  },
+  {
+    "label_id": "783",
+    "url": null,
+    "title": "Artificial intelligence in kidney disease and dialysis: from data mining to clinical impact.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/MNH.0000000000001132"
+  },
+  {
+    "label_id": "1158",
+    "url": null,
+    "title": "Artificial intelligence in symptom management and clinical decision support for palliative care.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.12968/ijpn.2025.0041"
+  },
+  {
+    "label_id": "2301",
+    "url": null,
+    "title": "Natural Language Processing Approaches for Automated Multilevel and Multiclass Classification of Breast Lesions on Free-Text Cytopathology Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.22.00036"
+  },
+  {
+    "label_id": "1690",
+    "url": null,
+    "title": "Visualizing Mental Health Insights: A Pipeline from Social Media to Chernoff Faces.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240820"
+  },
+  {
+    "label_id": "841",
+    "url": "https://ieeexplore.ieee.org/document/11205285/",
+    "title": "Integrating LLMs and Knowledge Graphs for Medical AI: Advances, Challenges, and Future Directions.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/JBHI.2025.3622058"
+  },
+  {
+    "label_id": "500",
+    "url": null,
+    "title": "Development and Validation of a Natural Language Processing Algorithm for Extracting Clinical and Pathological Features of Breast Cancer From Pathology  Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.24.00034"
+  },
+  {
+    "label_id": "1694",
+    "url": null,
+    "title": "Improving the Quality of Unstructured Cancer Data Using Large Language Models: A German Oncological Case Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240507"
+  },
+  {
+    "label_id": "3592",
+    "url": "https://nyaspubs.onlinelibrary.wiley.com/doi/abs/10.1111/j.1749-6632.2002.tb04902.x?sid=nlm%3Apubmed",
+    "title": "Structured reporting in neuroradiology.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/j.1749-6632.2002.tb04902.x"
+  },
+  {
+    "label_id": "864",
+    "url": "https://ieeexplore.ieee.org/document/11196983/",
+    "title": "ICD-10 Neoplasm Location using Text Classification Models in Spanish Electronic Health Records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/JBHI.2025.3618985"
+  },
+  {
+    "label_id": "780",
+    "url": "https://connectsci.au/ah/article-abstract/49/6/AH24344/262306/Navigating-medication-safety-with-electronic?redirectedFrom=fulltext",
+    "title": "Navigating medication safety with electronic medical records: insights from a dual-phase implementation in paediatric, neonatal and maternity care.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1071/AH24344"
+  },
+  {
+    "label_id": "898",
+    "url": "https://www.tandfonline.com/doi/10.1080/17512433.2025.2568090?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "A systematic mapping review on the capability of large language models in drug-drug interaction analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/17512433.2025.2568090"
+  },
+  {
+    "label_id": "1929",
+    "url": null,
+    "title": "Influence of Context in Transformer-Based Medication Relation Extraction.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231049"
+  },
+  {
+    "label_id": "128",
+    "url": "https://link.springer.com/article/10.1007/s10278-025-01523-5",
+    "title": "Cross-Institutional Evaluation of Large Language Models for Radiology Diagnosis Extraction: A Prompt-Engineering Perspective.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10278-025-01523-5"
+  },
+  {
+    "label_id": "2770",
+    "url": null,
+    "title": "Automatic Extraction of Risk Factors for Dialysis Patients from Clinical Notes Using Natural Language Processing Techniques.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200121"
+  },
+  {
+    "label_id": "1926",
+    "url": null,
+    "title": "High Accuracy Open-Source Clinical Data De-Identification: The CliniDeID Solution.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231199"
+  },
+  {
+    "label_id": "1579",
+    "url": "https://journals.sagepub.com/doi/10.1177/29767342241288112",
+    "title": "One Third of Alcohol Use Disorder Diagnoses are Missed by ICD Coding.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/29767342241288112"
+  },
+  {
+    "label_id": "661",
+    "url": null,
+    "title": "Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/37324"
+  },
+  {
+    "label_id": "865",
+    "url": "https://www.nature.com/articles/s41433-025-04013-8",
+    "title": "Comparative analysis of generic vision-language models in detecting and diagnosing inherited retinal diseases using fundus photographs.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1038/s41433-025-04013-8"
+  },
+  {
+    "label_id": "1000",
+    "url": "https://academic.oup.com/jamia/article-abstract/32/11/1685/8236314?redirectedFrom=fulltext",
+    "title": "Examining housing insecurity and transportation barriers in pediatric hospital readmissions: insights from structured and unstructured data.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/jamia/ocaf135"
+  },
+  {
+    "label_id": "1058",
+    "url": null,
+    "title": "Large Language Model Symptom Identification From Clinical Text: Multicenter Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/72984"
+  },
+  {
+    "label_id": "492",
+    "url": "https://aplm.kglmeridian.com/view/journals/arpa/149/2/article-p130.xml",
+    "title": "Evaluating Use of Generative Artificial Intelligence in Clinical Pathology Practice: Opportunities and the Way Forward.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.5858/arpa.2024-0208-RA"
+  },
+  {
+    "label_id": "709",
+    "url": null,
+    "title": "Enabling Just-in-Time Clinical Oncology Analysis With Large Language Models: Feasibility and Validation Study Using Unstructured Synthetic Data.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/78332"
+  },
+  {
+    "label_id": "1097",
+    "url": null,
+    "title": "Multicriteria Optimization of Language Models for Heart Failure With Preserved Ejection Fraction Symptom Detection in Spanish Electronic Health Records:  Comparative Modeling Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/76433"
+  },
+  {
+    "label_id": "1391",
+    "url": null,
+    "title": "Assessing Total Hip Arthroplasty Outcomes and Generating an Orthopedic Research Outcome Database via a Natural Language Processing Pipeline: Development and  Validation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/64705"
+  },
+  {
+    "label_id": "972",
+    "url": "https://journals.sagepub.com/doi/10.1177/11206721251367562",
+    "title": "Assessing accuracy, readability & reliability of AI-generated patient leaflets on Descemet membrane endothelial keratoplasty.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/11206721251367562"
+  },
+  {
+    "label_id": "981",
+    "url": null,
+    "title": "Social Media Insights Into Disease Burden in Patients and Caregivers of Myelodysplastic Syndrome: Subcohort Analysis of High-Risk Patients.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/65460"
+  },
+  {
+    "label_id": "595",
+    "url": null,
+    "title": "Enhancing Case Capture, Quality, and Completeness of Primary Melanoma Pathology Records via Natural Language Processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.19.00006"
+  },
+  {
+    "label_id": "1522",
+    "url": null,
+    "title": "Evaluating Artificial Intelligence-Driven Responses to Acute Liver Failure Queries: A Comparative Analysis Across Accuracy, Clarity, and Relevance.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.14309/ajg.0000000000003255"
+  },
+  {
+    "label_id": "139",
+    "url": null,
+    "title": "Extracting Pulmonary Embolism Diagnoses From Radiology Impressions Using GPT-4o: Large Language Model Evaluation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/67706"
+  },
+  {
+    "label_id": "2304",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0042-1749358",
+    "title": "Automated Identification of Clinical Procedures in Free-Text Electronic Clinical Records with a Low-Code Named Entity Recognition Workflow.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1055/s-0042-1749358"
+  },
+  {
+    "label_id": "1029",
+    "url": null,
+    "title": "From Text to Knowledge: An End-To-End Extraction Pipeline for Clinical Information.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251004"
+  },
+  {
+    "label_id": "1680",
+    "url": null,
+    "title": "Toward an Explainable Large Language Model for the Automatic Identification of the Drug-Induced Liver Injury Literature.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1021/acs.chemrestox.4c00134"
+  },
+  {
+    "label_id": "1152",
+    "url": null,
+    "title": "AI in Medical Questionnaires: Scoping Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/72398"
+  },
+  {
+    "label_id": "2515",
+    "url": "https://ieeexplore.ieee.org/document/9560078/",
+    "title": "A Computational Framework to Analyze the Associations Between Symptoms and Cancer Patient Attributes Post Chemotherapy Using EHR Data.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/JBHI.2021.3117238"
+  },
+  {
+    "label_id": "948",
+    "url": null,
+    "title": "Enhancing Oncology-Specific Question Answering With Large Language Models Through Fine-Tuned Embeddings With Synthetic Data.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI-25-00011"
+  },
+  {
+    "label_id": "614",
+    "url": "https://jamanetwork.com/journals/jamadermatology/fullarticle/2660013",
+    "title": "Population-Based Analysis of Histologically Confirmed Melanocytic Proliferations Using Natural Language Processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1001/jamadermatol.2017.4060"
+  },
+  {
+    "label_id": "106",
+    "url": "https://link.springer.com/article/10.1007/s00261-025-05127-z",
+    "title": "Natural language processing and LLMs in liver imaging: a practical review of clinical applications.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00261-025-05127-z"
+  },
+  {
+    "label_id": "165",
+    "url": "https://link.springer.com/article/10.1007/s11604-024-01721-1",
+    "title": "Automated MRI pituitary structured reporting from free-text using a fine-tuned Llama model: a feasibility study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s11604-024-01721-1"
+  },
+  {
+    "label_id": "703",
+    "url": "https://ieeexplore.ieee.org/document/11253291/",
+    "title": "A Natural Language Processing Model Based on Anamnesis Reports to Predict Acute Myocardial Infarction Risk in Emergency Chest Pain Patients.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/EMBC58623.2025.11253291"
+  },
+  {
+    "label_id": "3455",
+    "url": null,
+    "title": "Building the informatics infrastructure for comparative effectiveness research (CER): a review of the literature.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/MLR.0b013e318259becd"
+  },
+  {
+    "label_id": "688",
+    "url": "https://link.springer.com/article/10.1007/s10916-020-1542-8",
+    "title": "Comparing Different Methods for Named Entity Recognition in Portuguese Neurology Text.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10916-020-1542-8"
+  },
+  {
+    "label_id": "1667",
+    "url": null,
+    "title": "De-Identifying GRASCCO - A Pilot Study for the De-Identification of the German Medical Text Project (GeMTeX) Corpus.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240853"
+  },
+  {
+    "label_id": "953",
+    "url": null,
+    "title": "GeMTeX's De-Identification in Action: Lessons Learned & Devil's Details.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251406"
+  },
+  {
+    "label_id": "1374",
+    "url": null,
+    "title": "Identifying opioid relapse during COVID-19 using natural language processing of nationwide Veterans Health Administration electronic medical record data.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1037/abn0000984"
+  },
+  {
+    "label_id": "1007",
+    "url": null,
+    "title": "Assessing the Role of Large Language Models Between ChatGPT and DeepSeek in Asthma Education for Bilingual Individuals: Comparative Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/65365"
+  },
+  {
+    "label_id": "962",
+    "url": null,
+    "title": "Development and Validation of a Large Language Model-Based System for Medical History-Taking Training: Prospective Multicase Study on Evaluation Stability,  Human-AI Consistency, and Transparency.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/73419"
+  },
+  {
+    "label_id": "1607",
+    "url": null,
+    "title": "Evaluating Medical Entity Recognition in Health Care: Entity Model Quantitative Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/59782"
+  },
+  {
+    "label_id": "817",
+    "url": "https://link.springer.com/article/10.1007/s10916-025-02286-w",
+    "title": "Artificial Intelligence in Ambulatory Surgery: Current Applications, Challenges, and Future Directions.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10916-025-02286-w"
+  },
+  {
+    "label_id": "2427",
+    "url": null,
+    "title": "[Automatic labeling and extraction of terms in natural language processing in acupuncture clinical literature].",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.13703/j.0255-2930.20211107-k0002"
+  },
+  {
+    "label_id": "2364",
+    "url": null,
+    "title": "Evaluation of Criteria2Query: Towards Augmented Intelligence for Cohort Identification.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI220082"
+  },
+  {
+    "label_id": "2927",
+    "url": null,
+    "title": "Projection Word Embedding Model With Hybrid Sampling Training for Classifying ICD-10-CM Codes: Longitudinal Observational Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/14499"
+  },
+  {
+    "label_id": "878",
+    "url": null,
+    "title": "Benchmarking Large Language Models for Italian Medical Text Classification: Are Generative Models the Best Choice?",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251486"
+  },
+  {
+    "label_id": "1684",
+    "url": null,
+    "title": "A Comprehensive Natural Language Processing Pipeline for the Chronic Lupus Disease.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240559"
+  },
+  {
+    "label_id": "834",
+    "url": "https://link.springer.com/article/10.1007/s41999-025-01334-5",
+    "title": "Evaluating how different versions of ChatGPT align with expert opinions on geriatric script concordance tests.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s41999-025-01334-5"
+  },
+  {
+    "label_id": "2696",
+    "url": null,
+    "title": "[Analysis of clinicopathologic characteristics of gastric cancer patients undergoing gastrectomy based on a single-center gastric cancer database with  above 10 000 cases].",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3760/cma.j.cn.441530-20200117-00031"
+  },
+  {
+    "label_id": "2897",
+    "url": null,
+    "title": "Named Entity Recognition in Chinese Electronic Medical Records Based on the Model of Bidirectional Long Short-Term Memory with a Conditional Random Field Layer.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI190516"
+  },
+  {
+    "label_id": "1602",
+    "url": "https://ieeexplore.ieee.org/document/10723298/",
+    "title": "Benchmarking Large Language Models in Evidence-Based Medicine.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/JBHI.2024.3483816"
+  },
+  {
+    "label_id": "3012",
+    "url": null,
+    "title": "Deep Learning for Natural Language Processing in Urology: State-of-the-Art Automated Extraction of Detailed Pathologic Prostate Cancer Data From Narratively  Written Electronic Health Records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.18.00080"
+  },
+  {
+    "label_id": "88",
+    "url": "https://link.springer.com/article/10.1007/s10916-025-02248-2",
+    "title": "Automated Resectability Classification of Pancreatic Cancer CT Reports with Privacy-Preserving Open-Weight Large Language Models: A Multicenter Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10916-025-02248-2"
+  },
+  {
+    "label_id": "70",
+    "url": null,
+    "title": "Leveraging Artificial Intelligence to Transform Thoracic Radiology for Lung Nodules and Lung Cancer: Applications, Challenges, and Future Directions.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/RTI.0000000000000866"
+  },
+  {
+    "label_id": "730",
+    "url": null,
+    "title": "Performance of large language models in interventional cardiology: the ILLUMINATE blinded model-comparison study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.25270/jic/25.00104"
+  },
+  {
+    "label_id": "1703",
+    "url": null,
+    "title": "Harnessing the Power of Machine Learning and Electronic Health Records to Support Child Abuse and Neglect Identification in Emergency Department Settings.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240740"
+  },
+  {
+    "label_id": "2335",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/imj.15839",
+    "title": "Professionalism and clinical short answer question marking with machine learning.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/imj.15839"
+  },
+  {
+    "label_id": "1696",
+    "url": null,
+    "title": "Semantic Mapping of Named-Entities in openEHR Templates and Ad-hoc Generation of Compositions.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240371"
+  },
+  {
+    "label_id": "1348",
+    "url": null,
+    "title": "Large Language Models' Ability to Assess Main Concepts in Story Retelling: A Proof-of-Concept Comparison of Human Versus Machine Ratings.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1044/2025_AJSLP-24-00400"
+  },
+  {
+    "label_id": "1350",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/02687038.2024.2351029",
+    "title": "Reliability of the Brief Assessment of Transactional Success in Communication in Aphasia.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/02687038.2024.2351029"
+  },
+  {
+    "label_id": "2058",
+    "url": null,
+    "title": "Evaluating ChatGPT Performance on the Orthopaedic In-Training Examination.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2106/JBJS.OA.23.00056"
+  },
+  {
+    "label_id": "611",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.3414/ME17-01-0039",
+    "title": "Identifying Associations between Somatic Mutations and Clinicopathologic Findings in Lung Cancer Pathology Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3414/ME17-01-0039"
+  },
+  {
+    "label_id": "2148",
+    "url": null,
+    "title": "Data-Driven Identification of Clinical Real-World Expressions Linked to ICD.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI230279"
+  },
+  {
+    "label_id": "1636",
+    "url": null,
+    "title": "Processing of Short-Form Content in Clinical Narratives: Systematic Scoping Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/57852"
+  },
+  {
+    "label_id": "2024",
+    "url": null,
+    "title": "Clinical Acronym Disambiguation via ChatGPT and BING.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI230743"
+  },
+  {
+    "label_id": "2831",
+    "url": "https://ieeexplore.ieee.org/document/9313224/",
+    "title": "Deep Learning Identification of Asthma Inhaler Techniques in Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/bibm49941.2020.9313224"
+  },
+  {
+    "label_id": "474",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/a-2590-6456",
+    "title": "Automated Information Extraction from Unstructured Hematopathology Reports to Support Response Assessment in Myeloproliferative Neoplasms.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1055/a-2590-6456"
+  },
+  {
+    "label_id": "2903",
+    "url": null,
+    "title": "Annotating German Clinical Documents for De-Identification.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI190212"
+  },
+  {
+    "label_id": "310",
+    "url": "https://link.springer.com/article/10.1007/s11657-020-00859-5",
+    "title": "Natural language processing of radiology reports for the identification of patients with fracture.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s11657-020-00859-5"
+  },
+  {
+    "label_id": "2904",
+    "url": null,
+    "title": "A Study of Medical Problem Extraction for Better Disease Management.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI190210"
+  },
+  {
+    "label_id": "1591",
+    "url": null,
+    "title": "Multifaceted Natural Language Processing Task-Based Evaluation of Bidirectional Encoder Representations From Transformers Models for Bilingual (Korean and  English) Clinical Notes: Algorithm Development and Validation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/52897"
+  },
+  {
+    "label_id": "2277",
+    "url": null,
+    "title": "Getting More Out of Large Databases and EHRs with Natural Language Processing and Artificial Intelligence: The Future Is Here.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2106/JBJS.22.00567"
+  },
+  {
+    "label_id": "1827",
+    "url": null,
+    "title": "Using ChatGPT-4 to Create Structured Medical Notes From Audio Recordings of Physician-Patient Encounters: Comparative Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/54419"
+  },
+  {
+    "label_id": "1237",
+    "url": null,
+    "title": "Use of Large Language Models in Clinical Cancer Research.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI-25-00027"
+  },
+  {
+    "label_id": "517",
+    "url": "https://link.springer.com/article/10.1007/s12282-023-01534-6",
+    "title": "Association of metastatic pattern in breast cancer with tumor and patient-specific factors: a nationwide autopsy study using artificial  intelligence.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s12282-023-01534-6"
+  },
+  {
+    "label_id": "1598",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/08164622.2024.2419524",
+    "title": "Evaluating the reliability of the responses of large language models to keratoconus-related questions.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/08164622.2024.2419524"
+  },
+  {
+    "label_id": "690",
+    "url": null,
+    "title": "Natural Language Processing-Enabled and Conventional Data Capture Methods for Input to Electronic Health Records: A Comparative Usability Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/medinform.5544"
+  },
+  {
+    "label_id": "788",
+    "url": null,
+    "title": "Large Language Model Versus Manual Review for Clinical Data Curation in Breast Cancer: Retrospective Comparative Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/73605"
+  },
+  {
+    "label_id": "2405",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/a-1817-7208",
+    "title": "Automated Identification of Immunocompromised Status in Critically Ill Children.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1055/a-1817-7208"
+  },
+  {
+    "label_id": "122",
+    "url": "https://link.springer.com/article/10.1007/s10278-025-01530-6",
+    "title": "High-Performance Prompting for LLM Extraction of Compression Fracture Findings from Radiology Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10278-025-01530-6"
+  },
+  {
+    "label_id": "956",
+    "url": null,
+    "title": "Artificial Intelligence in Triaging Patient Questions: An Evaluation of a Large Language Model for Distal Radius Fractures.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.5435/JAAOS-D-25-00456"
+  },
+  {
+    "label_id": "2654",
+    "url": "https://journals.sagepub.com/doi/10.1177/1460458221989392?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Building a specialized lexicon for breast cancer clinical trial subject eligibility analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/1460458221989392"
+  },
+  {
+    "label_id": "1430",
+    "url": null,
+    "title": "Identifying Metabolic Dysfunction-Associated Steatotic Liver Disease Using Natural Language Processing in a US National Cohort.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.14309/ajg.0000000000003321"
+  },
+  {
+    "label_id": "867",
+    "url": null,
+    "title": "Large Language Models in Randomized Controlled Trials Design: Observational Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/67469"
+  },
+  {
+    "label_id": "12",
+    "url": null,
+    "title": "Deep Learning Applications in Imaging of Acute Ischemic Stroke: A Systematic Review and Narrative Summary.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1148/radiol.240775"
+  },
+  {
+    "label_id": "1687",
+    "url": null,
+    "title": "Classifiers of Data Sharing Statements in Clinical Trial Records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240541"
+  },
+  {
+    "label_id": "793",
+    "url": "https://www.eurekaselect.com/article/151558",
+    "title": "Towards Pharmaceutical Industry 5.0: Impact of Artificial Intelligence in Drug Discovery and Development.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2174/0113892010396035250710120501"
+  },
+  {
+    "label_id": "960",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/13854046.2025.2552289",
+    "title": "Feasibility of AI-powered assessment scoring: Can large language models replace human raters?",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/13854046.2025.2552289"
+  },
+  {
+    "label_id": "827",
+    "url": "http://www.jle.com/fr/revues/abc/e-docs/impacts_et_implications_des_outils_conversationnels_dintelligence_artificielle_en_hematologie_evaluation_critique_des_performances_et_perception_des_patients_354453/article.phtml",
+    "title": "[Impacts and implications of conversational artificial intelligence tools in hematology: a critical evaluation of performance and patient perception].",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1684/abc.2025.1999"
+  },
+  {
+    "label_id": "144",
+    "url": null,
+    "title": "Open-Weight Language Models and Retrieval-Augmented Generation for Automated Structured Data Extraction from Diagnostic Reports: Assessment of Approaches and  Parameters.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1148/ryai.240551"
+  },
+  {
+    "label_id": "1028",
+    "url": null,
+    "title": "Large Language Models Can be Good Medical Annotators: A Case Study of Drug Change Detection in Japanese EHRs.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251017"
+  },
+  {
+    "label_id": "1671",
+    "url": "https://www.ingentaconnect.com/content/wk/scs/2025/00000036/00000003/art00049",
+    "title": "Evaluating the Efficacy of Large Language Models in CPT Coding for Craniofacial Surgery: A Comparative Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/SCS.0000000000010575"
+  },
+  {
+    "label_id": "1315",
+    "url": null,
+    "title": "Bridging the Coding Gap: Assessing Large Language Models for Accurate Modifier Assignment in Craniofacial Operative Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/SCS.0000000000011390"
+  },
+  {
+    "label_id": "691",
+    "url": null,
+    "title": "Rapid Clinical Evidence Explorer: A Generative Pre-Trained Transformer-Powered Tool for Automated Oncology Evidence Extraction.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI-25-00233"
+  },
+  {
+    "label_id": "87",
+    "url": "https://journals.sagepub.com/doi/10.1177/08465371251374557",
+    "title": "Japanese Radiology 2025 Updates.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/08465371251374557"
+  },
+  {
+    "label_id": "1011",
+    "url": null,
+    "title": "Using a Diverse Test Suite to Assess Large Language Models on Fast Health Care Interoperability Resources Knowledge: Comparative Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/73540"
+  },
+  {
+    "label_id": "1755",
+    "url": "https://link.springer.com/article/10.1007/s11883-024-01222-6",
+    "title": "Social Phenotyping for Cardiovascular Risk Stratification in Electronic Health Registries.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s11883-024-01222-6"
+  },
+  {
+    "label_id": "587",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/tbj.13718",
+    "title": "Natural language processing to facilitate breast cancer research and management.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/tbj.13718"
+  },
+  {
+    "label_id": "140",
+    "url": null,
+    "title": "Large Language Models in Summarizing Radiology Report Impressions for Lung Cancer in Chinese: Evaluation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/65547"
+  },
+  {
+    "label_id": "947",
+    "url": null,
+    "title": "Extracting Clinical Guideline Information Using Two Large Language Models: Evaluation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/73486"
+  },
+  {
+    "label_id": "3726",
+    "url": "https://ieeexplore.ieee.org/document/4352509/",
+    "title": "Constructing human brain-function association models from fMRI literature.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/IEMBS.2007.4352509"
+  },
+  {
+    "label_id": "1410",
+    "url": "https://ieeexplore.ieee.org/document/10842360/",
+    "title": "Decision Tree Extraction for Clinical Decision Support System With If-Else Pseudocode and PlanSelect Strategy.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/JBHI.2025.3529682"
+  },
+  {
+    "label_id": "1887",
+    "url": "https://link.springer.com/article/10.1007/s10916-024-02049-z",
+    "title": "Leveraging Large Language Models for Clinical Abbreviation Disambiguation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10916-024-02049-z"
+  },
+  {
+    "label_id": "935",
+    "url": null,
+    "title": "Extracting Symptoms of Complex Conditions From Online Discourse (Subreddit to Symptomatology): Lexicon-Based Approach.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/70940"
+  },
+  {
+    "label_id": "1403",
+    "url": "https://ieeexplore.ieee.org/document/10781648/",
+    "title": "Extraction of patients subpopulations with psychiatric symptoms using a transformer architecture.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/EMBC53108.2024.10781648"
+  },
+  {
+    "label_id": "565",
+    "url": null,
+    "title": "Customizable Natural Language Processing Biomarker Extraction Tool.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.21.00017"
+  },
+  {
+    "label_id": "802",
+    "url": null,
+    "title": "Narrative Review on Explainable Artificial Intelligence for Multimodal Risk Stratification in Coronary Artery Disease.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/CRD.0000000000001071"
+  },
+  {
+    "label_id": "289",
+    "url": "https://link.springer.com/article/10.1007/s00117-021-00920-5",
+    "title": "[Structured reporting and artificial intelligence].",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00117-021-00920-5"
+  },
+  {
+    "label_id": "2360",
+    "url": null,
+    "title": "A Natural Language Processing Tool Offering Data Extraction for COVID-19 Related Information (DECOVRI).",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI220268"
+  },
+  {
+    "label_id": "1796",
+    "url": null,
+    "title": "An Extensible Evaluation Framework Applied to Clinical Text Deidentification Natural Language Processing Tools: Multisystem and Multicorpus Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/55676"
+  },
+  {
+    "label_id": "3094",
+    "url": "https://journals.sagepub.com/doi/10.3233/THC-171127?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Tobacco use status from clinical notes using Natural Language Processing and rule based algorithm.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/THC-171127"
+  },
+  {
+    "label_id": "840",
+    "url": null,
+    "title": "Clinical Information Extraction From Notes of Veterans With Lymphoid Malignancies: Natural Language Processing Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/63908"
+  },
+  {
+    "label_id": "2918",
+    "url": null,
+    "title": "Assessing the Availability of Data on Social and Behavioral Determinants in Structured and Unstructured Electronic Health Records: A Retrospective Analysis  of a Multilevel Health Care System.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/13802"
+  },
+  {
+    "label_id": "2905",
+    "url": null,
+    "title": "Building an Experimental German User Interface Terminology Linked to SNOMED CT.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI190202"
+  },
+  {
+    "label_id": "523",
+    "url": null,
+    "title": "Successful Development of a Natural Language Processing Algorithm for Pancreatic Neoplasms and Associated Histologic Features.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/MPA.0000000000002242"
+  },
+  {
+    "label_id": "683",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/a-2233-2736",
+    "title": "Use of Natural Language Processing to Identify Sexual and Reproductive Health Information in Clinical Text.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1055/a-2233-2736"
+  },
+  {
+    "label_id": "1380",
+    "url": null,
+    "title": "Prompt Framework for Extracting Scale-Related Knowledge Entities from Chinese Medical Literature: Development and Evaluation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/67033"
+  },
+  {
+    "label_id": "112",
+    "url": null,
+    "title": "An Institutional Large Language Model for Musculoskeletal MRI Improves Protocol Adherence and Accuracy.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2106/JBJS.24.01429"
+  },
+  {
+    "label_id": "3198",
+    "url": "https://academic.oup.com/painmedicine/article-abstract/18/10/1952/2666011?redirectedFrom=fulltext",
+    "title": "Enhancing Risk Assessment in Patients Receiving Chronic Opioid Analgesic Therapy Using Natural Language Processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/pm/pnw283"
+  },
+  {
+    "label_id": "473",
+    "url": null,
+    "title": "Development of a Synthetic Oncology Pathology Dataset for Large Language Model Evaluation in Medical Text Classification.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250191"
+  },
+  {
+    "label_id": "949",
+    "url": "https://academic.oup.com/schizophreniabulletin/advance-article-abstract/doi/10.1093/schbul/sbaf125/8248295?redirectedFrom=fulltext",
+    "title": "Interpretable LLM-Based Detection of Loose Associations Using Synthetic Speech Data in Early Psychosis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/schbul/sbaf125"
+  },
+  {
+    "label_id": "13",
+    "url": "https://ieeexplore.ieee.org/document/10938093/",
+    "title": "MBBo-RPSLD: Training a Multimodal BlenderBot for Rehabilitation in Post-Stroke Language Disorder.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/JBHI.2025.3554331"
+  },
+  {
+    "label_id": "463",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/ans.70186",
+    "title": "The Growing Role of Artificial Intelligence in Surgical Education: ChatGPT Undertakes the Australian Generic Surgical Sciences Examination.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/ans.70186"
+  },
+  {
+    "label_id": "267",
+    "url": "https://link.springer.com/article/10.1007/s00234-022-03029-1",
+    "title": "Rule-based natural language processing for automation of stroke data extraction: a validation study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00234-022-03029-1"
+  },
+  {
+    "label_id": "2739",
+    "url": "https://link.springer.com/article/10.1007/s00347-020-01177-4",
+    "title": "[Extraction of features from clinical routine data using text mining].",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00347-020-01177-4"
+  },
+  {
+    "label_id": "1693",
+    "url": null,
+    "title": "Integrated Perspectives on Clinical Decision Support: A Comparative Analysis of Knowledge Management Approaches.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240785"
+  },
+  {
+    "label_id": "885",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1111/edt.70022",
+    "title": "The Performance of Artificial Intelligence in Providing Real-Time Aid in Emergency Dental Trauma: A Clinical Validation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/edt.70022"
+  },
+  {
+    "label_id": "3212",
+    "url": "https://www.ingentaconnect.com/content/wk/mcar/2017/00000055/00000003/art00010",
+    "title": "A Novel Model for Predicting Rehospitalization Risk Incorporating Physical Function, Cognitive Status, and Psychosocial Support Using Natural Language  Processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/MLR.0000000000000651"
+  },
+  {
+    "label_id": "3098",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1002/ajmg.c.31599",
+    "title": "The future is now: Technology's impact on the practice of genetic counseling.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1002/ajmg.c.31599"
+  },
+  {
+    "label_id": "1908",
+    "url": "https://academic.oup.com/bjd/article-abstract/190/6/789/7603706?redirectedFrom=fulltext",
+    "title": "Ethical considerations for artificial intelligence in\u00a0dermatology: a scoping review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/bjd/ljae040"
+  },
+  {
+    "label_id": "1392",
+    "url": "https://journals.sagepub.com/doi/10.1177/00031348251323719?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Using Large Language Models in the Diagnosis of Acute Cholecystitis: Assessing Accuracy and Guidelines Compliance.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/00031348251323719"
+  },
+  {
+    "label_id": "1517",
+    "url": "https://link.springer.com/article/10.1007/s10741-024-10472-0",
+    "title": "Clinical and research applications of natural language processing for heart failure.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10741-024-10472-0"
+  },
+  {
+    "label_id": "1842",
+    "url": null,
+    "title": "Impact of Translation on Biomedical Information Extraction: Experiment on Real-Life Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/49607"
+  },
+  {
+    "label_id": "954",
+    "url": null,
+    "title": "Catnip for MedCAT: Optimizing the Input for Automated SNOMED CT Mapping of Clinical Variables.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251390"
+  },
+  {
+    "label_id": "494",
+    "url": "https://jcp.bmj.com/content/78/2/135.long",
+    "title": "Extraction and classification of structured data from unstructured hepatobiliary pathology reports using large language models: a feasibility study compared with  rules-based natural language processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1136/jcp-2024-209669"
+  },
+  {
+    "label_id": "3414",
+    "url": null,
+    "title": "Automated quality measurement in Department of the Veterans Affairs discharge instructions for patients with congestive heart failure.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/j.1945-1474.2011.195.x"
+  },
+  {
+    "label_id": "6",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/27697061.2025.2571878",
+    "title": "GPT-4o in Nutrition for Inpatients Undergoing Post-Stroke Rehabilitation: Identifying Dietary Errors, Exploring Expert-AI Rationale Differences, and  Structuring AI-Expert Collaboration.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/27697061.2025.2571878"
+  },
+  {
+    "label_id": "1017",
+    "url": null,
+    "title": "Health Care Professionals' Experiences and Opinions About Generative AI and Ambient Scribes in Clinical Documentation: Protocol for a Scoping Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/73602"
+  },
+  {
+    "label_id": "1412",
+    "url": "https://www.ingentaconnect.com/content/wk/mou/2025/00000035/00000003/art00002",
+    "title": "Generative artificial intelligence in oncology.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/MOU.0000000000001272"
+  },
+  {
+    "label_id": "1033",
+    "url": null,
+    "title": "The Best of All Worlds: A Hybrid Approach to Cohort Identification with Rules, Small and Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250948"
+  },
+  {
+    "label_id": "2490",
+    "url": null,
+    "title": "Extraction of Temporal Structures for Clinical Events in Unlabeled Free-Text Electronic Health Records in Russian.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI210811"
+  },
+  {
+    "label_id": "2763",
+    "url": null,
+    "title": "Negation Detection for Clinical Text Mining in Russian.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200179"
+  },
+  {
+    "label_id": "1342",
+    "url": null,
+    "title": "Optimizing Chart Review Efficiency in Pressure Injury Evaluation Using ChatGPT.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/SAP.0000000000004275"
+  },
+  {
+    "label_id": "3601",
+    "url": null,
+    "title": "Natural language processing and its future in medicine.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/00001888-199908000-00012"
+  },
+  {
+    "label_id": "2521",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0041-1736311",
+    "title": "Using Machine Learning to Capture Quality Metrics from Natural Language: A Case Study of Diabetic Eye Exams.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1055/s-0041-1736311"
+  },
+  {
+    "label_id": "2480",
+    "url": null,
+    "title": "Realizing the Power of Text Mining and Natural Language Processing for Analyzing Patient Safety Event Narratives: The Challenges and Path Forward.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/PTS.0000000000000837"
+  },
+  {
+    "label_id": "132",
+    "url": null,
+    "title": "The Evolution of Radiology Image Annotation in the Era of Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1148/ryai.240631"
+  },
+  {
+    "label_id": "3200",
+    "url": null,
+    "title": "Algorithmic Classification of Five Characteristic Types of Paraphasias.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1044/2016_AJSLP-15-0147"
+  },
+  {
+    "label_id": "3355",
+    "url": "https://www.tandfonline.com/doi/full/10.3109/03091902.2014.913080",
+    "title": "De-identification of unstructured paper-based health records for privacy-preserving secondary use.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3109/03091902.2014.913080"
+  },
+  {
+    "label_id": "2391",
+    "url": "https://ieeexplore.ieee.org/document/9763337/",
+    "title": "PhenoBERT: A Combined Deep Learning Method for Automated Recognition of Human Phenotype Ontology.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/TCBB.2022.3170301"
+  },
+  {
+    "label_id": "1038",
+    "url": null,
+    "title": "Integrating Large Language Models and Machine Learning for Enhanced Catatonia Phenotyping: A Study on Clinical Data from Electronic Health Records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250915"
+  },
+  {
+    "label_id": "1037",
+    "url": null,
+    "title": "An Ensemble Approach Integrating Retrieval-Augmented Large Language Models and Boosting Algorithms for Enhanced Catatonia Phenotyping.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250920"
+  },
+  {
+    "label_id": "1002",
+    "url": null,
+    "title": "The Use of Natural Language Processing to Interpret Unstructured Patient Feedback on Health Services: Scoping Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/72853"
+  },
+  {
+    "label_id": "76",
+    "url": "https://link.springer.com/article/10.1007/s41666-025-00210-y",
+    "title": "Instruction-Tuned Large Language Models for Clinical Data Extraction: Creating an Aortic Measurement Database from CT Radiology Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s41666-025-00210-y"
+  },
+  {
+    "label_id": "3466",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.3414/ME11-01-0048",
+    "title": "A database de-identification framework to enable direct queries on medical data for secondary use.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3414/ME11-01-0048"
+  },
+  {
+    "label_id": "1166",
+    "url": null,
+    "title": "An Open-architecture AI Model for CPT Coding in Breast Surgery: Development, Validation, and Prospective Testing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/SLA.0000000000006793"
+  },
+  {
+    "label_id": "2447",
+    "url": "https://www.eurekaselect.com/article/120801",
+    "title": "Collaborative Mining of Whole Genome Sequences for Intelligent HIV-1 Sub-Strain(s) Discovery.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2174/1570162X20666220210142209"
+  },
+  {
+    "label_id": "1630",
+    "url": null,
+    "title": "Clinical Decision Support and Natural Language Processing in Medicine: Systematic Literature Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/55315"
+  },
+  {
+    "label_id": "2500",
+    "url": null,
+    "title": "Automatic Extraction and Decryption of Abbreviations from Domain-Specific Texts.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI210615"
+  },
+  {
+    "label_id": "3000",
+    "url": null,
+    "title": "Machine Learning, Natural Language Processing, and the Electronic Health Record: Innovations in Mental Health Services Research.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1176/appi.ps.201800401"
+  },
+  {
+    "label_id": "2906",
+    "url": null,
+    "title": "Learning Portuguese Clinical Word Embeddings: A Multi-Specialty and Multi-Institutional Corpus of Clinical Narratives Supporting a Downstream  Biomedical Task.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI190196"
+  },
+  {
+    "label_id": "643",
+    "url": "https://aplm.kglmeridian.com/view/journals/arpa/134/2/article-p244.xml",
+    "title": "Patient misidentification in laboratory medicine: a qualitative analysis of 227 root cause analysis reports in the Veterans Health Administration.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.5858/134.2.244"
+  },
+  {
+    "label_id": "786",
+    "url": "https://link.springer.com/article/10.1007/s11596-025-00128-x",
+    "title": "Artificial Intelligence for Spleen-Stomach Disorders in Traditional Chinese Medicine: Integrating Knowledge Graphs with Intelligent Diagnosis and Treatment.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s11596-025-00128-x"
+  },
+  {
+    "label_id": "1263",
+    "url": null,
+    "title": "Comparing Artificial Intelligence-Generated and Clinician-Created Personalized Self-Management Guidance for Patients With Knee Osteoarthritis: Blinded  Observational Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/67830"
+  },
+  {
+    "label_id": "1330",
+    "url": "https://academic.oup.com/jamia/article-abstract/32/6/1015/8107422?redirectedFrom=fulltext",
+    "title": "Evaluating the effectiveness of biomedical fine-tuning for large language models on clinical tasks.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/jamia/ocaf045"
+  },
+  {
+    "label_id": "413",
+    "url": null,
+    "title": "Informatics in radiology: RADTF: a semantic search-enabled, natural language processor-generated radiology teaching file.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1148/rg.307105083"
+  },
+  {
+    "label_id": "1025",
+    "url": null,
+    "title": "Applying LLMs for Analysis of AI/ML Medical Device Approvals.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251220"
+  },
+  {
+    "label_id": "3261",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.3414/ME14-02-0018",
+    "title": "Scaling-up NLP Pipelines to Process Large Corpora of Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3414/ME14-02-0018"
+  },
+  {
+    "label_id": "1701",
+    "url": null,
+    "title": "PICO to PICOS: Weak Supervision to Extend Datasets with New Labels.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240775"
+  },
+  {
+    "label_id": "2569",
+    "url": "https://www.tandfonline.com/doi/10.1080/10255842.2021.1955359?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Prognostic elements extraction from documents to detect prognostic stage.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/10255842.2021.1955359"
+  },
+  {
+    "label_id": "2570",
+    "url": "https://link.springer.com/article/10.1007/s11517-021-02399-7",
+    "title": "Information extraction for prognostic stage prediction from breast cancer medical records using NLP and ML.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s11517-021-02399-7"
+  },
+  {
+    "label_id": "1806",
+    "url": null,
+    "title": "Potential of Large Language Models in Health Care: Delphi Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/52399"
+  },
+  {
+    "label_id": "2460",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0041-1740493",
+    "title": "Ambiguous and Incomplete: Natural Language Processing Reveals Problematic Reporting Styles in Thyroid Ultrasound Reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1055/s-0041-1740493"
+  },
+  {
+    "label_id": "430",
+    "url": "https://link.springer.com/article/10.1007/s00428-025-04337-6",
+    "title": "Large language model-based approach for low-cost, rapid and accurate automated extraction of predictive biomarker testing results from Dutch pathology reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00428-025-04337-6"
+  },
+  {
+    "label_id": "2908",
+    "url": null,
+    "title": "Clinical Text Mining on FHIR.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI190188"
+  },
+  {
+    "label_id": "2757",
+    "url": null,
+    "title": "Semiautomated Approach for Muscle Weakness Detection in Clinical Texts.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200492"
+  },
+  {
+    "label_id": "2924",
+    "url": null,
+    "title": "An Information Extraction Algorithm for Detecting Adverse Events in Neurosurgery Using Documents Written in a Natural Rich-in-Morphology Language.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI190051"
+  },
+  {
+    "label_id": "3518",
+    "url": null,
+    "title": "Clinical data mining and research in the allergy office.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/ACI.0b013e328337bce6"
+  },
+  {
+    "label_id": "934",
+    "url": null,
+    "title": "Performance of Natural Language Processing for Information Extraction From Electronic Health Records Within Cancer: Systematic Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/68707"
+  },
+  {
+    "label_id": "489",
+    "url": null,
+    "title": "Enhancing Thyroid Pathology With Artificial Intelligence: Automated Data Extraction From Electronic Health Reports Using RUBY.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.23.00263"
+  },
+  {
+    "label_id": "1338",
+    "url": null,
+    "title": "Identifying Patient-Reported Outcome Measure Documentation in Veterans Health Administration Chiropractic Clinic Notes: Natural Language Processing Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/66466"
+  },
+  {
+    "label_id": "1253",
+    "url": "https://karger.com/aha/article/148/5/516/926837/AI-Applications-in-Transfusion-Medicine",
+    "title": "AI Applications in Transfusion Medicine: Opportunities, Challenges, and Future Directions.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1159/000546303"
+  },
+  {
+    "label_id": "3367",
+    "url": "https://academic.oup.com/aje/article-abstract/179/6/759/109726?redirectedFrom=fulltext",
+    "title": "Invited commentary: Observational research in the age of the electronic health record.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/aje/kwt443"
+  },
+  {
+    "label_id": "1373",
+    "url": "https://academic.oup.com/jamia/article-abstract/32/5/885/8088353?redirectedFrom=fulltext",
+    "title": "Robust privacy amidst innovation with large language models through a critical assessment of the risks.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1093/jamia/ocaf037"
+  },
+  {
+    "label_id": "3336",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.3414/ME13-01-0133",
+    "title": "Secure Secondary Use of Clinical Data with Cloud-based NLP Services. Towards a Highly Scalable Research Infrastructure.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3414/ME13-01-0133"
+  },
+  {
+    "label_id": "111",
+    "url": null,
+    "title": "Data Extraction and Curation from Radiology Reports for Pancreatic Cyst Surveillance Using Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/XCS.0000000000001478"
+  },
+  {
+    "label_id": "2452",
+    "url": null,
+    "title": "Clinical Notes De-Identification: Scoping Recent Benchmarks for n2c2 Datasets.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI210917"
+  },
+  {
+    "label_id": "596",
+    "url": null,
+    "title": "Ontology-Driven Real World Evidence Extraction from Clinical Narratives.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI190474"
+  },
+  {
+    "label_id": "2362",
+    "url": null,
+    "title": "Representation and Normalization of Complex Interventions for Evidence Computing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI220146"
+  },
+  {
+    "label_id": "92",
+    "url": null,
+    "title": "Leveraging GPT-4o for Automated Extraction and Categorization of CAD-RADS Features From Free-Text Coronary CT Angiography Reports: Diagnostic Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/70967"
+  },
+  {
+    "label_id": "1699",
+    "url": null,
+    "title": "An Integrated Pipeline for Phenotypic Characterization, Clustering and Visualization of Patient Cohorts in a Rare Disease-Oriented Clinical Data  Warehouse.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240777"
+  },
+  {
+    "label_id": "2147",
+    "url": null,
+    "title": "Improving Patient Similarity Using Different Modalities of Phenotypes Extracted from Clinical Narratives.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI230342"
+  },
+  {
+    "label_id": "2988",
+    "url": null,
+    "title": "Extraction of Geriatric Syndromes From Electronic Health Record Clinical Notes: Assessment of Statistical Natural Language Processing Methods.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/13039"
+  },
+  {
+    "label_id": "1035",
+    "url": null,
+    "title": "Clinical Trial Eligibility Criteria Decomposition and Parsing with Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250928"
+  },
+  {
+    "label_id": "1357",
+    "url": null,
+    "title": "Large Language Model Applications for Health Information Extraction in Oncology: Scoping Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/65984"
+  },
+  {
+    "label_id": "1867",
+    "url": "https://www.liebertpub.com/doi/10.1089/tmj.2023.0715?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Applying Object Detection and Large Language Model to Establish a Smart Telemedicine Diagnosis System with Chatbot: A Case Study of Pressure Injuries  Diagnosis System.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1089/tmj.2023.0715"
+  },
+  {
+    "label_id": "361",
+    "url": null,
+    "title": "Deep Learning: A Primer for Radiologists.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1148/rg.2017170077"
+  },
+  {
+    "label_id": "1938",
+    "url": null,
+    "title": "A Linguistic Analysis Examining the Impact of COVID-19 on Pneumonia Diagnosis and Disease Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231236"
+  },
+  {
+    "label_id": "1405",
+    "url": "https://ieeexplore.ieee.org/document/10782341/",
+    "title": "Fast Rule-based NER in SpaCy for Chest Radiography Reports with CheXpert's 14 Categories().",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/EMBC53108.2024.10782341"
+  },
+  {
+    "label_id": "1936",
+    "url": null,
+    "title": "A De-Identification Model for Korean Clinical Notes: Using Deep Learning Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231242"
+  },
+  {
+    "label_id": "374",
+    "url": "https://www.ingentaconnect.com/content/wk/jcga/2016/00000050/00000010/art00015;jsessionid=50j58plm09w87.x-ic-live-03",
+    "title": "Defining a Patient Population With Cirrhosis: An Automated Algorithm With Natural Language Processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/MCG.0000000000000583"
+  },
+  {
+    "label_id": "1040",
+    "url": null,
+    "title": "Development of a Digital Case-Based Knowledge Base to Support Rapid Learning in Precision Oncology.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250842"
+  },
+  {
+    "label_id": "1351",
+    "url": "https://www.liebertpub.com/doi/10.1089/sur.2024.266?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed",
+    "title": "Development and Evaluation of Machine Learning Models for the Identification of Surgical Site Infection in Electronic Health Records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1089/sur.2024.266"
+  },
+  {
+    "label_id": "1241",
+    "url": null,
+    "title": "Automating Performance Status Annotation in Oncology Using Llama-3.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250483"
+  },
+  {
+    "label_id": "1520",
+    "url": null,
+    "title": "An Automatic and End-to-End System for Rare Disease Knowledge Graph Construction Based on Ontology-Enhanced Large Language Models: Development Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/60665"
+  },
+  {
+    "label_id": "1697",
+    "url": null,
+    "title": "CLARA-MeD Tool - A System to Help Patients Understand Clinical Trial Announcements and Consent Forms in Spanish.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240354"
+  },
+  {
+    "label_id": "619",
+    "url": "https://jcp.bmj.com/content/69/11/949",
+    "title": "Natural language processing in pathology: a scoping review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1136/jclinpath-2016-203872"
+  },
+  {
+    "label_id": "1276",
+    "url": "https://www.tandfonline.com/doi/10.1080/0142159X.2025.2497891?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "The answer may vary: large language model response patterns challenge their use in test item analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/0142159X.2025.2497891"
+  },
+  {
+    "label_id": "662",
+    "url": "https://link.springer.com/chapter/10.1007/978-3-030-85292-4_32",
+    "title": "Natural Language Processing Applications in the Clinical Neurosciences: A Machine Learning Augmented Systematic Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/978-3-030-85292-4_32"
+  },
+  {
+    "label_id": "456",
+    "url": null,
+    "title": "Artificial intelligence applications in the screening and classification of glioblastoma.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.23736/S0390-5616.25.06502-6"
+  },
+  {
+    "label_id": "3312",
+    "url": "https://www.cambridge.org/core/journals/infection-control-and-hospital-epidemiology/article/abs/natural-language-processing-for-realtime-catheterassociated-urinary-tract-infection-surveillance-results-of-a-pilot-implementation-trial/C0DDF0415A474DF7AF374A7E7351EBC4",
+    "title": "Natural Language Processing for Real-Time Catheter-Associated Urinary Tract Infection Surveillance: Results of a Pilot Implementation Trial.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1017/ice.2015.122"
+  },
+  {
+    "label_id": "2299",
+    "url": "https://www.tandfonline.com/doi/10.1080/09540261.2022.2076583?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Ensuring equitable, inclusive and meaningful gender identity- and sexual orientation-related data collection in the healthcare sector: insights from a  critical, pragmatic systematic review of the literature.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/09540261.2022.2076583"
+  },
+  {
+    "label_id": "217",
+    "url": null,
+    "title": "An NLP Framework for the Extraction of Concept Measurements from Radiology and Pathology Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI231237"
+  },
+  {
+    "label_id": "1625",
+    "url": "https://link.springer.com/article/10.1007/s11096-024-01803-0",
+    "title": "Sentiment analysis in medication adherence: using ruled-based and artificial intelligence-driven algorithms to understand patient medication experiences.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s11096-024-01803-0"
+  },
+  {
+    "label_id": "2767",
+    "url": null,
+    "title": "Emerging Concepts and Applied Machine Learning Research in Patients with Drug-Induced Repolarization Disorders.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200150"
+  },
+  {
+    "label_id": "1740",
+    "url": null,
+    "title": "Unveiling Fall Risk Factors: Nurse-Driven Corpus Development for Natural Language Processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240172"
+  },
+  {
+    "label_id": "1451",
+    "url": null,
+    "title": "Leveraging Large Language Models to Generate Clinical Histories for Oncologic Imaging Requisitions.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1148/radiol.242134"
+  },
+  {
+    "label_id": "854",
+    "url": null,
+    "title": "Robust Cancer Crowdfunding Predictions: Leveraging Large Language Models and Machine Learning for Success Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/73448"
+  },
+  {
+    "label_id": "1839",
+    "url": "https://www.liebertpub.com/doi/10.1089/end.2023.0690?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Application of Natural Language Processing in Electronic Health Record Data Extraction for Navigating Prostate Cancer Care: A Narrative Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1089/end.2023.0690"
+  },
+  {
+    "label_id": "2694",
+    "url": null,
+    "title": "Exploring the Social Drivers of Health During a Pandemic: Leveraging Knowledge Graphs and Population Trends in COVID-19.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI200684"
+  },
+  {
+    "label_id": "1399",
+    "url": null,
+    "title": "Retrieval Augmented Therapy Suggestion for Molecular Tumor Boards: Algorithmic Development and Validation Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/64364"
+  },
+  {
+    "label_id": "967",
+    "url": null,
+    "title": "Token Probabilities to Mitigate Large Language Models Overconfidence in Answering Medical Questions: Quantitative Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/64348"
+  },
+  {
+    "label_id": "821",
+    "url": null,
+    "title": "Large Language Models in Population Oncology: A Contemporary Review on the Use of Large Language Models to Support Data Collection, Aggregation, and Analysis in  Cancer Care and Research.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI-25-00112"
+  },
+  {
+    "label_id": "1695",
+    "url": null,
+    "title": "Unsupervised Extraction of Body-Text from Clinical PDF Documents.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240382"
+  },
+  {
+    "label_id": "1611",
+    "url": "https://jamanetwork.com/journals/jama/fullarticle/2825147",
+    "title": "Testing and Evaluation of Health Care Applications of Large Language Models: A Systematic Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1001/jama.2024.21700"
+  },
+  {
+    "label_id": "2827",
+    "url": null,
+    "title": "Artificial Intelligence Tool for Optimizing Eligibility Screening for Clinical Trials in a Large Community Cancer Center.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.19.00079"
+  },
+  {
+    "label_id": "3416",
+    "url": null,
+    "title": "Challenges in using electronic health record data for CER: experience of 4 learning organizations and solutions applied.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/MLR.0b013e31829b1d48"
+  },
+  {
+    "label_id": "2377",
+    "url": null,
+    "title": "Impact Analysis of De-Identification in Clinical Notes Classification.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI220368"
+  },
+  {
+    "label_id": "855",
+    "url": "https://link.springer.com/article/10.1007/s00345-025-05990-x",
+    "title": "From digital assistants to clinical partners: revolutionizing pediatric urology through large language model-powered decision support and patient education.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00345-025-05990-x"
+  },
+  {
+    "label_id": "327",
+    "url": "https://link.springer.com/article/10.1007/s00234-020-02420-0",
+    "title": "Comparison of deep learning models for natural language processing-based classification of non-English head CT reports.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s00234-020-02420-0"
+  },
+  {
+    "label_id": "334",
+    "url": null,
+    "title": "Natural Language Processing Approaches to Detect the Timeline of Metastatic Recurrence of Breast Cancer.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.19.00034"
+  },
+  {
+    "label_id": "3050",
+    "url": "https://onlinelibrary.wiley.com/doi/10.1002/pds.4645",
+    "title": "Evaluating automated approaches to anaphylaxis case classification using unstructured data from the FDA Sentinel System.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1002/pds.4645"
+  },
+  {
+    "label_id": "3553",
+    "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1945-1474.2008.tb01151.x?sid=nlm%3Apubmed",
+    "title": "Evaluating healthcare quality using natural language processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1111/j.1945-1474.2008.tb01151.x"
+  },
+  {
+    "label_id": "1108",
+    "url": null,
+    "title": "Language Models for Multilabel Document Classification of Surgical Concepts in Exploratory Laparotomy Operative Notes: Algorithm Development Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/71176"
+  },
+  {
+    "label_id": "3260",
+    "url": "https://link.springer.com/chapter/10.1007/978-3-319-26832-3_55",
+    "title": "Predicting Treatment Relations with Semantic Patterns over Biomedical Knowledge Graphs.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/978-3-319-26832-3_55"
+  },
+  {
+    "label_id": "1138",
+    "url": null,
+    "title": "Utilizing Open-Source Large Language Models to Extract Genitourinary Symptoms from Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250664"
+  },
+  {
+    "label_id": "1036",
+    "url": null,
+    "title": "Performance of Open-Source Large Language Models to Extract Symptoms from Clinical Notes.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250923"
+  },
+  {
+    "label_id": "3266",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.3414/ME14-01-0066",
+    "title": "Can Natural Language Processing Improve the Efficiency of Vaccine Adverse Event Report Review?",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3414/ME14-01-0066"
+  },
+  {
+    "label_id": "1524",
+    "url": "https://publications.aap.org/hospitalpediatrics/article-abstract/15/1/e1/200210/Natural-Language-Processing-to-Identify-Infants?redirectedFrom=fulltext",
+    "title": "Natural Language Processing to Identify Infants Aged 90 Days and Younger With Fevers Prior to Presentation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1542/hpeds.2024-008051"
+  },
+  {
+    "label_id": "3267",
+    "url": "https://www.thieme-connect.com/products/ejournals/abstract/10.3414/ME15-01-0038",
+    "title": "Understanding the Relationship between Social Cognition and Word Difficulty. A Language Based Analysis of Individuals with Autism Spectrum Disorder.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3414/ME15-01-0038"
+  },
+  {
+    "label_id": "2149",
+    "url": null,
+    "title": "Ontology-Based Semantic Annotation of French Psychiatric Clinical Documents.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI230268"
+  },
+  {
+    "label_id": "1691",
+    "url": null,
+    "title": "Coordination and Referral Platforms for Children Aged 7 and Under with Suspected Neurodevelopmental Outcome: What Data for Research on Care and Developmental  Trajectories?",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240816"
+  },
+  {
+    "label_id": "1689",
+    "url": null,
+    "title": "Performance of a NLP Tool for Text Classification from Orthopaedic Operative Reports, Using Data from the Large Network of Clinical Data Warehouses of the  West of France: The HACRO-HUGORTHO Project.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI240822"
+  },
+  {
+    "label_id": "1814",
+    "url": "https://journals.sagepub.com/doi/10.3233/JHD-231520?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "What Huntington's Disease Patients Say About Their Illness: An Online Direct-to-Participant Pilot Study.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/JHD-231520"
+  },
+  {
+    "label_id": "1832",
+    "url": "https://www.ingentaconnect.com/content/wk/jos/2024/00000032/00000010/art00003;jsessionid=a71l2eso66sar.x-ic-live-01",
+    "title": "Applications of Natural Language Processing for Automated Clinical Data Analysis in Orthopaedics.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.5435/JAAOS-D-23-00839"
+  },
+  {
+    "label_id": "1204",
+    "url": "https://journals.sagepub.com/doi/10.1177/13872877251346890?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed",
+    "title": "Large language models for Alzheimer's disease drug discovery.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1177/13872877251346890"
+  },
+  {
+    "label_id": "791",
+    "url": null,
+    "title": "Generative Models and Sentence Transformers for the Recognition and Normalization of Continuous and Discontinuous Phenotype Mentions: Model Development and  Evaluation.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/68558"
+  },
+  {
+    "label_id": "2909",
+    "url": null,
+    "title": "Automatic Methods to Extract Prescription Status Quality Measures from Unstructured Health Records.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI190174"
+  },
+  {
+    "label_id": "291",
+    "url": null,
+    "title": "Ascertainment of Veterans With Metastatic Prostate Cancer in Electronic Health Records: Demonstrating the Case for Natural Language Processing.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1200/CCI.21.00030"
+  },
+  {
+    "label_id": "146",
+    "url": "https://link.springer.com/article/10.1007/s10278-025-01454-1",
+    "title": "Appropriateness of Thyroid Nodule Cancer Risk Assessment and Management Recommendations Provided by Large Language Models.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10278-025-01454-1"
+  },
+  {
+    "label_id": "1672",
+    "url": "https://link.springer.com/article/10.1007/s10916-024-02090-y",
+    "title": "A Novel Evaluation Framework for Medical LLMs: Combining Fuzzy Logic and MCDM for Medical Relation and Clinical Concept Extraction.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1007/s10916-024-02090-y"
+  },
+  {
+    "label_id": "985",
+    "url": "https://www.tandfonline.com/doi/full/10.1080/17425255.2025.2551724",
+    "title": "Language models for drug-drug interactions: current applications, pitfalls, and future directions.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1080/17425255.2025.2551724"
+  },
+  {
+    "label_id": "1059",
+    "url": null,
+    "title": "Technological Solutions to Improve Inpatient Handover in the Era of Artificial Intelligence: Scoping Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/70358"
+  },
+  {
+    "label_id": "3184",
+    "url": "https://ieeexplore.ieee.org/document/7880658/",
+    "title": "A Natural Language Processing Framework for Assessing Hospital Readmissions for Patients With COPD.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1109/JBHI.2017.2684121"
+  },
+  {
+    "label_id": "877",
+    "url": null,
+    "title": "From Guidelines to Code: Formalizing STOPP/START Criteria Using LLMs and RAG for Clinical Decision Support.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI251492"
+  },
+  {
+    "label_id": "750",
+    "url": null,
+    "title": "Extending the Observational Medical Outcomes Partnership (OMOP) Common Data Model for Critical Care Medicine: A Framework for Standardizing Complex ICU Data Using  the Society of Critical Care Medicine's Critical Care Data Dictionary (C2D2).",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/CCM.0000000000006969"
+  },
+  {
+    "label_id": "799",
+    "url": null,
+    "title": "Medical Feature Extraction From Clinical Examination Notes: Development and Evaluation of a Two-Phase Large Language Model Framework.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/78432"
+  },
+  {
+    "label_id": "142",
+    "url": null,
+    "title": "Automated Radiology Report Labeling in Chest X-Ray Pathologies: Development and Evaluation of a Large Language Model Framework.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.2196/68618"
+  },
+  {
+    "label_id": "1135",
+    "url": null,
+    "title": "Generative-AI-Based Approaches for Information Extraction from Clinical Notes: A Scoping Review.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.3233/SHTI250700"
+  },
+  {
+    "label_id": "692",
+    "url": null,
+    "title": "Artificial Intelligence-Based Predictive Modeling for Early Detection of Sepsis in Hospitalized Patients: A Systematic Review and Meta-Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1097/CCE.0000000000001360"
+  },
+  {
+    "label_id": "31",
+    "url": null,
+    "title": "Data Extraction from Free-Text Reports on Mechanical Thrombectomy in Acute Ischemic Stroke Using ChatGPT: A Retrospective Analysis.",
+    "pmid": null,
+    "pmc_id": null,
+    "doi": "10.1148/radiol.232741"
+  },
+  {
+    "label_id": "3335",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/25488240",
+    "title": "Unsupervised information extraction from italian clinical records",
+    "pmid": "25488240",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3506",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/20841784",
+    "title": "Extraction of adverse drug effects from clinical records",
+    "pmid": "20841784",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3126",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29295100",
+    "title": "MedEx/J: A One-Scan Simple and Fast NLP Tool for Japanese Clinical Texts",
+    "pmid": "29295100",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3586",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/15360857",
+    "title": "A comparison of semantic categories of the ISO reference terminology models for nursing and the MedLEE natural language processing system",
+    "pmid": "15360857",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3407",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/23920625",
+    "title": "Engineering natural language processing solutions for structured information from clinical text: extracting sentinel events from palliative care consult letters",
+    "pmid": "23920625",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3235",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/27139387",
+    "title": "Extraction of UMLS(R) Concepts Using Apache cTAKES for German Language",
+    "pmid": "27139387",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3178",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/28423796",
+    "title": "Personalized Guideline-Based Treatment Recommendations Using Natural Language Processing Techniques",
+    "pmid": "28423796",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3654",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/38562448",
+    "title": "Comprehensive Lipidomic Automation Workflow using Large Language Models",
+    "pmid": "38562448",
+    "pmc_id": "10983999",
+    "doi": null
+  },
+  {
+    "label_id": "401",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/23823416",
+    "title": "Annotation for information extraction from mammography reports",
+    "pmid": "23823416",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "416",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/18693990",
+    "title": "Coding free text radiology reports using the Cancer Text Information Extraction System (caTIES)",
+    "pmid": "18693990",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3543",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/18999076",
+    "title": "Enhancing clinical problem lists through data mining and natural language processing",
+    "pmid": "18999076",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3585",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/15360914",
+    "title": "Extracting phenotypic information from the literature via natural language processing",
+    "pmid": "15360914",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3125",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29295113",
+    "title": "Translational Morphosyntax: Distribution of Negation in Clinical Records and Biomedical Journal Articles",
+    "pmid": "29295113",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "2411",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/35322976",
+    "title": "Automated Extraction of Pain Symptoms: A Natural Language Approach using Electronic Health Records",
+    "pmid": "35322976",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3504",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/20841824",
+    "title": "Extracting medication information from French clinical texts",
+    "pmid": "20841824",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3344",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/25160249",
+    "title": "Sublanguage analysis of medical weblogs",
+    "pmid": "25160249",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3061",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29968609",
+    "title": "Structuring Clinical Decision Support Rules for Drug Safety Using Natural Language Processing",
+    "pmid": "29968609",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3124",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29295114",
+    "title": "Extracting Sexual Trauma Mentions from Electronic Medical Notes Using Natural Language Processing",
+    "pmid": "29295114",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3123",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29295115",
+    "title": "General Symptom Extraction from VA Electronic Medical Notes",
+    "pmid": "29295115",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3607",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/8591149",
+    "title": "Associating semantic grammars with the SNOMED: processing medical language and representing clinical facts into a language-independent frame",
+    "pmid": "8591149",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3547",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/18998791",
+    "title": "NLP-based identification of pneumonia cases from free-text radiological reports",
+    "pmid": "18998791",
+    "pmc_id": "2656026",
+    "doi": null
+  },
+  {
+    "label_id": "3500",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/21335731",
+    "title": "Application of language processing techniques to capture the use of nursing clinical terms from narrative statements: report of a pilot study",
+    "pmid": "21335731",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "1082",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/40709305",
+    "title": "Improving Drug Identification in Overdose Death Surveillance using Large Language Models",
+    "pmid": "40709305",
+    "pmc_id": "12288657",
+    "doi": null
+  },
+  {
+    "label_id": "3358",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/24743071",
+    "title": "Comparison of clinical practice guidelines from a knowledge modelling perspective: a case study with the management of hypertension",
+    "pmid": "24743071",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3596",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/12162151",
+    "title": "A humanist's legacy in medical informatics: visions and accomplishments of Professor Jean-Raoul Scherrer",
+    "pmid": "12162151",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3399",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/23974563",
+    "title": "Knowledge representation and management: towards an integration of a semantic web in daily health practice",
+    "pmid": "23974563",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "644",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/18999130",
+    "title": "Natural language processing to identify adverse drug events",
+    "pmid": "18999130",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3087",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29677916",
+    "title": "3000PA-Towards a National Reference Corpus of German Clinical Language",
+    "pmid": "29677916",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3180",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/28423786",
+    "title": "Prevalence Estimation of Protected Health Information in Swedish Clinical Text",
+    "pmid": "28423786",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3117",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29295440",
+    "title": "A New Essential Functions Installed DWH in Hospital Information System: Process Mining Techniques and Natural Language Processing",
+    "pmid": "29295440",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3408",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/23920541",
+    "title": "Improving heart failure information extraction by domain adaptation",
+    "pmid": "23920541",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3309",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/26063251",
+    "title": "Semantic retrieval and navigation in clinical document collections",
+    "pmid": "26063251",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3168",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/28508775",
+    "title": "Semantic Technologies for Re-Use of Clinical Routine Data",
+    "pmid": "28508775",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "108",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/40735099",
+    "title": "LEAVS: An LLM-based Labeler for Abdominal CT Supervision",
+    "pmid": "40735099",
+    "pmc_id": "12306798",
+    "doi": null
+  },
+  {
+    "label_id": "3612",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/41256893",
+    "title": "A Deep Learning Pipeline for Epilepsy Genomic Analysis Using GPT-2 XL and NVIDIA H100",
+    "pmid": "41256893",
+    "pmc_id": "12622206",
+    "doi": null
+  },
+  {
+    "label_id": "3085",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29726450",
+    "title": "Towards Phenotyping of Clinical Trial Eligibility Criteria",
+    "pmid": "29726450",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3119",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29295232",
+    "title": "A Semi-Automatic Framework to Identify Abnormal States in EHR Narratives",
+    "pmid": "29295232",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3400",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/23974543",
+    "title": "State of the art in clinical informatics: evidence and examples",
+    "pmid": "23974543",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3579",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/16160360",
+    "title": "Evaluation of Medical Problem Extraction from Electronic Clinical Documents Using MetaMap Transfer (MMTx)",
+    "pmid": "16160360",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3343",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/25160293",
+    "title": "Can physicians recognize their own patients in de-identified notes?",
+    "pmid": "25160293",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3379",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/24303260",
+    "title": "How much does automatic text de-identification impact clinical problems, tests, and treatments?",
+    "pmid": "24303260",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "385",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/26262327",
+    "title": "Identification of Incidental Pulmonary Nodules in Free-text Radiology Reports: An Initial Investigation",
+    "pmid": "26262327",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3569",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/17567225",
+    "title": "Electronic medical records for clinical research: application to the identification of heart failure",
+    "pmid": "17567225",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3405",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/23920985",
+    "title": "Building a common pipeline for rule-based document classification",
+    "pmid": "23920985",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3181",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/28423782",
+    "title": "Developing a Manually Annotated Corpus of Clinical Letters for Breast Cancer Patients on Routine Follow-Up",
+    "pmid": "28423782",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3714",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29714947",
+    "title": "[Analysis of the Characteristics of Infantile Small World Neural Network Node Properties Correlated with the Influencing Factors]",
+    "pmid": "29714947",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3554",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/18660880",
+    "title": "Decision support, knowledge representation and management: structuring knowledge for better access. Findings from the Yearbook 2008 Section on Decision Support, Knowledge Representation and Management",
+    "pmid": "18660880",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3448",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/22890353",
+    "title": "Knowledge Representation and Management: Towards Patient Health Self-management",
+    "pmid": "22890353",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "641",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/20938573",
+    "title": "Knowledge representation and management: transforming textual information into useful knowledge",
+    "pmid": "20938573",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3179",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/28423792",
+    "title": "Acronym Disambiguation in Spanish Electronic Health Narratives Using Machine Learning Techniques",
+    "pmid": "28423792",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3257",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29595920",
+    "title": "Linkage of Indiana State Cancer Registry and Indiana Network for Patient Care Data",
+    "pmid": "29595920",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3177",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/28423797",
+    "title": "HTP-NLP: A New NLP System for High Throughput Phenotyping",
+    "pmid": "28423797",
+    "pmc_id": "7767581",
+    "doi": null
+  },
+  {
+    "label_id": "3404",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/23920995",
+    "title": "A rule-based method for continuity of care identification in discharge summaries",
+    "pmid": "23920995",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3584",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/15361041",
+    "title": "Potential impact of advanced clinical information technology on healthcare in 2015",
+    "pmid": "15361041",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3231",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/27332377",
+    "title": "Mining Clinicians' Electronic Documentation to Identify Heart Failure Patients with Ineffective Self-Management: A Pilot Text-Mining Study",
+    "pmid": "27332377",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3545",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/18998924",
+    "title": "Second i2b2 workshop on natural language processing challenges for clinical records",
+    "pmid": "18998924",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3546",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/18998814",
+    "title": "Using natural language processing for identification of pneumonia cases from clinical records of patients with serologically proven influenza",
+    "pmid": "18998814",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3005",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/30741241",
+    "title": "Cancer Phenotype Development: A Literature Review",
+    "pmid": "30741241",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3122",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29295169",
+    "title": "Mining Adverse Events of Dietary Supplements from Product Labels by Topic Modeling",
+    "pmid": "29295169",
+    "pmc_id": "5760183",
+    "doi": null
+  },
+  {
+    "label_id": "3121",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29295171",
+    "title": "Uncovering Hidden Topics in Hong Kong Clinical Research Through Hospital Authority Convention Publications",
+    "pmid": "29295171",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3566",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/17911777",
+    "title": "Extracting subject demographic information from abstracts of randomized clinical trial reports",
+    "pmid": "17911777",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "441",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/41047767",
+    "title": "[A Three\u2012Tiered AI Framework Toward Precision Oncology-Structuring, Reclassification, and Integration]",
+    "pmid": "41047767",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3378",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/24303281",
+    "title": "Automated tools for phenotype extraction from medical records",
+    "pmid": "24303281",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3074",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/29857420",
+    "title": "Can Staff Distinguish Falls: Experimental Hypothesis Verification Using Japanese Incident Reports and Natural Language Processing",
+    "pmid": "29857420",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3406",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/23920797",
+    "title": "Automatic information extraction for computerized clinical guideline",
+    "pmid": "23920797",
+    "pmc_id": null,
+    "doi": null
+  },
+  {
+    "label_id": "3449",
+    "url": "https://www.ncbi.nlm.nih.gov/pubmed/22874259",
+    "title": "Automatic extracting of patient-related attributes: disease, age, gender and race",
+    "pmid": "22874259",
+    "pmc_id": null,
+    "doi": null
+  }
+]
