@@ -1,0 +1,35 @@
+# Root Python dependencies for the nlp_lit_review repo.
+# Install from the repo root with:
+#   python3 -m pip install -r requirements.txt
+#
+# Notes:
+# - rclone and Chrome/Chromium are external system tools, not pip packages.
+# - The visualizer frontend dependencies are managed separately by
+#   visualizer_nlp_lit_review/package.json.
+
+# Automated literature-search pipeline
+biopython>=1.83
+certifi>=2024.0.0
+requests>=2.31.0
+
+# Visualizer web app
+Flask==3.0.0
+flask-cors==4.0.0
+gunicorn>=21.2.0
+pyinstaller>=6.0.0
+
+# Browser/PDF download automation
+selenium>=4.0.0
+webdriver-manager>=4.0.0
+
+# Archived and utility scripts
+keyboard>=0.13.5
+pandas>=2.0.0
+pdfplumber>=0.10.0
+pmc-downloader>=0.1.0
+pyautogui>=0.9.54
+pypdf>=3.0.0
+rapidfuzz>=3.0.0
+
+# Tests
+pytest>=8.0.0
