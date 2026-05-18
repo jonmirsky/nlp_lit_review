@@ -151,12 +151,12 @@ def _confirm(label: str, default: bool = True) -> bool:
     return value in {"y", "yes", "1", "true"}
 
 
-def _choose(label: str, choices: list[str], default_index: int = 0) -> int:
+def _choose(label: str, choices: list[str], default_index: int = 0, *, prompt: str | None = None) -> int:
     for idx, choice in enumerate(choices, start=1):
         marker = " (default)" if idx - 1 == default_index else ""
         print(f"{idx}. {choice} {marker}".rstrip())
     while True:
-        value = input(f"{label} [{default_index + 1}]: ").strip().lower()
+        value = input(prompt if prompt is not None else f"{label}: ").strip().lower()
         if not value:
             return default_index
         if value in {"q", "quit"}:
@@ -206,27 +206,27 @@ def _print_gui_snapshot() -> None:
         "Press Enter at prompts to keep the shown default.",
     )
     print("Search settings")
-    print(f"  1. Catalog entry:       {state['catalog']}")
-    print(f"  2. Database:            {state['database']}")
+    print(f"  A. Catalog entry:       {state['catalog']}")
+    print(f"  B. Database:            {state['database']}")
     print()
     print("Query")
-    print(f"  3. Base query:          {_shorten(state['base_query']) if state['base_query'] else '(custom query required)'}")
-    print(f"  4. Additional terms:    {state['additional_terms'] or '(blank)'}")
+    print(f"  C. Base query:          {_shorten(state['base_query']) if state['base_query'] else '(custom query required)'}")
+    print(f"  D. Additional terms:    {state['additional_terms'] or '(blank)'}")
     print("                          ANDed with base as: (base) AND (extra)")
-    print(f"  5. Label / node text:   {state['label'] or '(custom label required)'}")
+    print(f"  E. Label / node text:   {state['label'] or '(custom label required)'}")
     print("                          Exact string stamped into RN field and used as a branch node.")
-    print(f"  6. Slug:                {state['slug'] or '(custom slug required)'}")
+    print(f"  F. Slug:                {state['slug'] or '(custom slug required)'}")
     print("                          Used for run folder name.")
     print()
     print("Environment")
-    print(f"  7. NCBI_EMAIL:          {state['ncbi_email'] or '(blank)'}")
-    print(f"  8. LIT_REVIEW_PDF_REMOTE: {state['pdf_remote']}")
-    print(f"  9. NCBI_API_KEY:        {state['ncbi_api_key'] or '(blank, optional)'}")
-    print(f" 10. Insecure SSL:        {state['insecure_ssl']}")
+    print(f"  G. NCBI_EMAIL:          {state['ncbi_email'] or '(blank)'}")
+    print(f"  H. LIT_REVIEW_PDF_REMOTE: {state['pdf_remote']}")
+    print(f"  I. NCBI_API_KEY:        {state['ncbi_api_key'] or '(blank, optional)'}")
+    print(f"  J. Insecure SSL:        {state['insecure_ssl']}")
     print()
     print("Jon's List")
-    print(f" 11. Paper index:         {state['paper_index']}")
-    print(f" 12. Output file:         {state['jons_list']}")
+    print(f"  K. Paper index:         {state['paper_index']}")
+    print(f"  L. Output file:         {state['jons_list']}")
     print()
 
 
@@ -267,23 +267,23 @@ def _build_env() -> dict[str, str]:
         "Environment",
         "These match the GUI Environment panel. Press Enter to accept each default.",
     )
-    email = _prompt("7. NCBI_EMAIL", os.environ.get("NCBI_EMAIL", ""))
+    email = _prompt("G. NCBI_EMAIL", os.environ.get("NCBI_EMAIL", ""))
     if email:
         env["NCBI_EMAIL"] = email
 
     print("LIT_REVIEW_PDF_REMOTE points the pipeline at the canonical PDF store.")
-    pdf_remote = _prompt("8. LIT_REVIEW_PDF_REMOTE", os.environ.get("LIT_REVIEW_PDF_REMOTE", DEFAULT_PDF_REMOTE))
+    pdf_remote = _prompt("H. LIT_REVIEW_PDF_REMOTE", os.environ.get("LIT_REVIEW_PDF_REMOTE", DEFAULT_PDF_REMOTE))
     if pdf_remote:
         env["LIT_REVIEW_PDF_REMOTE"] = pdf_remote
 
     print("NCBI_API_KEY is optional but improves NCBI E-utilities rate limits when set.")
-    api_key = _prompt("9. NCBI_API_KEY optional", os.environ.get("NCBI_API_KEY", ""))
+    api_key = _prompt("I. NCBI_API_KEY optional", os.environ.get("NCBI_API_KEY", ""))
     if api_key:
         env["NCBI_API_KEY"] = api_key
 
     print("Insecure SSL for NCBI is only for networks that intercept TLS certificates.")
     insecure_default = os.environ.get("LIT_REVIEW_ENTREZ_INSECURE_SSL", "").strip().lower() in {"1", "true", "yes"}
-    if _confirm("10. Insecure SSL for NCBI", insecure_default):
+    if _confirm("J. Insecure SSL for NCBI", insecure_default):
         env["LIT_REVIEW_ENTREZ_INSECURE_SSL"] = "1"
     else:
         env.pop("LIT_REVIEW_ENTREZ_INSECURE_SSL", None)
@@ -343,11 +343,11 @@ def search_and_pull(*, dry_run: bool = False) -> None:
     catalog = _load_catalog()
     _section(
         "Search Settings",
-        "Choose a catalog entry from visualizer_nlp_lit_review/config.py, or choose Custom.\n"
-        "The default is the same first catalog entry the GUI selects on startup.",
+        "Choose a saved catalog entry or choose Custom.\n"
+        "Press Enter to use the default catalog entry.",
     )
     choices = [f"{entry['name']} - {entry['label']}" for entry in catalog] + ["Custom PubMed query"]
-    idx = _choose("1. Catalog entry / query source", choices, 0 if catalog else len(choices) - 1)
+    idx = _choose("A. Catalog entry / query source", choices, 0 if catalog else len(choices) - 1)
     if idx < 0:
         return
 
@@ -359,8 +359,8 @@ def search_and_pull(*, dry_run: bool = False) -> None:
             "Label is the exact string stamped into the RN field and becomes a branch node in the visualizer.\n"
             "Slug is used for the run folder name.",
         )
-        base_q = _prompt("3. Base PubMed query", required=True)
-        source_db = _prompt("2. Database", "pubmed")
+        base_q = _prompt("C. Base PubMed query", required=True)
+        source_db = _prompt("B. Database", "pubmed")
         label_default = ""
         slug_default = ""
     else:
@@ -372,14 +372,14 @@ def search_and_pull(*, dry_run: bool = False) -> None:
         print(f"\nBase query default:\n{base_q}\n")
 
     print("Additional terms are ANDed with the base query as: (base) AND (extra).")
-    extra = _prompt("4. Additional terms, ANDed with base", "")
+    extra = _prompt("D. Additional terms, ANDed with base", "")
     final_q = f"({base_q}) AND ({extra})" if extra else base_q
     label_auto = f"{label_default} AND {extra}" if label_default and extra else label_default
     print("Label -> visualizer node. Exact string stamped into RN field -> becomes a branch node.")
-    label = _prompt("5. Label / node text", label_auto, required=True)
+    label = _prompt("E. Label / node text", label_auto, required=True)
     print("Slug is used for run folder name.")
-    slug = _prompt("6. Slug", slug_default or _query_name_from_label(label).lower(), required=True)
-    source_db = _prompt("2. Database", source_db or "pubmed")
+    slug = _prompt("F. Slug", slug_default or _query_name_from_label(label).lower(), required=True)
+    source_db = _prompt("B. Database", source_db or "pubmed")
 
     if is_custom:
         _register_custom_query_node(query=final_q, slug=slug, label=label, source_db=source_db)
@@ -576,8 +576,8 @@ def main() -> int:
 
     while True:
         _print_gui_snapshot()
-        print("Actions")
-        idx = _choose("Action", [name for name, _func in actions], 0)
+        print("Actions - Pick a number")
+        idx = _choose("Action", [name for name, _func in actions], 0, prompt="> ")
         if idx < 0 or actions[idx][1] is None:
             return 0
         try:
