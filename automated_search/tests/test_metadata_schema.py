@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tests that lock the metadata.json contract (Schema v1).
+Tests that lock the metadata.json contract (Schema v2).
 
 Inputs:
 - None (tests build metadata dicts in-memory).
@@ -21,11 +21,14 @@ HELPERS = Path(__file__).resolve().parents[1] / "scripts" / "helpers"
 if str(HELPERS) not in sys.path:
     sys.path.insert(0, str(HELPERS))
 
-from search_run import _empty_metadata, _validate_metadata  # type: ignore[import-not-found]
+from search_run import _empty_metadata, _validate_metadata, query_hash_for_text  # type: ignore[import-not-found]
 
 
 def _good_meta() -> dict:
     m = _empty_metadata("2026_05_14_120000__test_slug")
+    m["slug"] = "test_slug"
+    m["base_query"] = "example"
+    m["query_hash"] = query_hash_for_text("example")
     m["search_query"] = "example"
     m["search_term_label"] = "(example)"
     return m
@@ -47,6 +50,15 @@ def test_with_optional_fields_populated():
     m["merged_from"] = ["2026_05_14_120000__test_slug"]
     m["error_summary"] = {"paywall_detected": 10, "timeout": 5}
     m["notes"] = "smoke ok"
+    m["incremental_refresh"] = True
+    m["refresh_anchor_run_id"] = "2026_05_13_120000__test_slug"
+    m["refresh_anchor_started_at"] = "2026-05-13T12:00:00Z"
+    m["pubmed_datetype"] = "edat"
+    m["pubmed_mindate"] = "2026/05/13"
+    m["candidate_count_before_skip"] = 120
+    m["known_success_skip_count"] = 10
+    m["known_failure_skip_count"] = 10
+    m["candidate_count_after_skip"] = 100
     _validate_metadata(m)
 
 

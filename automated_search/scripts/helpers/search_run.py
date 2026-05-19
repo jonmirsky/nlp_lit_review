@@ -29,6 +29,7 @@ Naming convention:
 from __future__ import annotations
 
 import datetime as _dt
+import hashlib
 import json
 import os
 import re
@@ -39,7 +40,7 @@ from pathlib import Path
 from typing import Any, Dict, Literal, Optional
 
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 GENERATOR_PATH = "automated_search/scripts/auto_search_wrapper.py"
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -58,6 +59,7 @@ class SearchRun:
     root: Path
     run_id: str
     metadata_path: Path
+    input_all_ris: Path
     input_ris: Path
     found_dir: Path
     found_ris: Path
@@ -76,6 +78,7 @@ class SearchRun:
             root=root,
             run_id=root.name,
             metadata_path=root / "metadata.json",
+            input_all_ris=root / "input_all.ris",
             input_ris=root / "input.ris",
             found_dir=root / "found",
             found_ris=root / "found" / "found.ris",
@@ -160,6 +163,9 @@ _REQUIRED_METADATA_KEYS = {
     "_generated_by",
     "schema_version",
     "run_id",
+    "slug",
+    "base_query",
+    "query_hash",
     "collision_suffix",
     "search_query",
     "search_term_label",
@@ -167,7 +173,16 @@ _REQUIRED_METADATA_KEYS = {
     "query_source",
     "started_at",
     "finished_at",
+    "incremental_refresh",
+    "refresh_anchor_run_id",
+    "refresh_anchor_started_at",
+    "pubmed_datetype",
+    "pubmed_mindate",
     "input_count",
+    "candidate_count_before_skip",
+    "known_success_skip_count",
+    "known_failure_skip_count",
+    "candidate_count_after_skip",
     "download_success",
     "download_fail",
     "download_skipped_existing",
@@ -186,7 +201,7 @@ _ISO_UTC_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
 
 
 def _validate_metadata(meta: Dict[str, Any]) -> None:
-    """Schema v1 validator. Locks the contract documented in automated_search/SCHEMA.md.
+    """Schema v2 validator. Locks the contract documented in automated_search/SCHEMA.md.
 
     Raises ValueError with a concrete field name on violation.
     """
@@ -199,7 +214,7 @@ def _validate_metadata(meta: Dict[str, Any]) -> None:
 
     extra = meta.keys() - _REQUIRED_METADATA_KEYS
     if extra:
-        raise ValueError(f"metadata.json contains unknown keys (schema v1): {sorted(extra)}")
+        raise ValueError(f"metadata.json contains unknown keys (schema v2): {sorted(extra)}")
 
     if meta["_generated_by"] != GENERATOR_PATH:
         raise ValueError(f"_generated_by must be {GENERATOR_PATH!r}; got {meta['_generated_by']!r}")
@@ -212,9 +227,15 @@ def _validate_metadata(meta: Dict[str, Any]) -> None:
         if not isinstance(meta["collision_suffix"], int) or meta["collision_suffix"] < 2:
             raise ValueError(f"collision_suffix must be null or int>=2; got {meta['collision_suffix']!r}")
 
-    for k in ("search_query", "search_term_label", "pdf_store_root", "pipeline_version"):
+    for k in ("slug", "base_query", "query_hash", "search_query", "search_term_label", "pdf_store_root", "pipeline_version"):
         if not isinstance(meta[k], str):
             raise ValueError(f"{k} must be a string; got {type(meta[k]).__name__}")
+    if meta["slug"].strip() == "":
+        raise ValueError("slug must be non-empty")
+    if meta["base_query"].strip() == "":
+        raise ValueError("base_query must be non-empty")
+    if not re.fullmatch(r"[a-f0-9]{16}", meta["query_hash"]):
+        raise ValueError(f"query_hash must be 16 lowercase hex chars; got {meta['query_hash']!r}")
     if meta["search_query"].strip() == "":
         raise ValueError("search_query must be non-empty")
     if meta["search_term_label"].strip() == "":
@@ -227,7 +248,13 @@ def _validate_metadata(meta: Dict[str, Any]) -> None:
     if meta["query_source"] not in _VALID_QUERY_SOURCE:
         raise ValueError(f"query_source must be one of {sorted(_VALID_QUERY_SOURCE)}; got {meta['query_source']!r}")
 
-    for ts_key in ("started_at", "finished_at", "r2_synced_at"):
+    if not isinstance(meta["incremental_refresh"], bool):
+        raise ValueError("incremental_refresh must be a bool")
+    for opt_str in ("refresh_anchor_run_id", "refresh_anchor_started_at", "pubmed_datetype", "pubmed_mindate"):
+        if meta[opt_str] is not None and not isinstance(meta[opt_str], str):
+            raise ValueError(f"{opt_str} must be null or string; got {type(meta[opt_str]).__name__}")
+
+    for ts_key in ("started_at", "finished_at", "refresh_anchor_started_at", "r2_synced_at"):
         val = meta[ts_key]
         if val is None:
             continue
@@ -237,7 +264,16 @@ def _validate_metadata(meta: Dict[str, Any]) -> None:
                 f"got {val!r}"
             )
 
-    for k in ("input_count", "download_success", "download_fail", "download_skipped_existing"):
+    for k in (
+        "input_count",
+        "candidate_count_before_skip",
+        "known_success_skip_count",
+        "known_failure_skip_count",
+        "candidate_count_after_skip",
+        "download_success",
+        "download_fail",
+        "download_skipped_existing",
+    ):
         if not isinstance(meta[k], int) or meta[k] < 0:
             raise ValueError(f"{k} must be a non-negative int; got {meta[k]!r}")
 
@@ -289,6 +325,13 @@ def save_metadata(run: SearchRun, **updates: Any) -> Dict[str, Any]:
         meta = _empty_metadata(run.run_id)
 
     meta.update(updates)
+    if not meta.get("slug") and "__" in run.run_id:
+        meta["slug"] = run.run_id.split("__", 1)[1].removesuffix("-2")
+        meta["slug"] = re.sub(r"-\d+$", "", meta["slug"])
+    if not meta.get("base_query") and meta.get("search_query"):
+        meta["base_query"] = normalize_query_text(str(meta["search_query"]))
+    if not meta.get("query_hash") and meta.get("base_query"):
+        meta["query_hash"] = query_hash_for_text(str(meta["base_query"]))
     _validate_metadata(meta)
     _atomic_write_json(run.metadata_path, meta)
     return meta
@@ -299,6 +342,9 @@ def _empty_metadata(run_id: str) -> Dict[str, Any]:
         "_generated_by": GENERATOR_PATH,
         "schema_version": SCHEMA_VERSION,
         "run_id": run_id,
+        "slug": "",
+        "base_query": "",
+        "query_hash": "",
         "collision_suffix": None,
         "search_query": "",
         "search_term_label": "",
@@ -306,7 +352,16 @@ def _empty_metadata(run_id: str) -> Dict[str, Any]:
         "query_source": "entrez",
         "started_at": utc_iso_now(),
         "finished_at": None,
+        "incremental_refresh": False,
+        "refresh_anchor_run_id": None,
+        "refresh_anchor_started_at": None,
+        "pubmed_datetype": None,
+        "pubmed_mindate": None,
         "input_count": 0,
+        "candidate_count_before_skip": 0,
+        "known_success_skip_count": 0,
+        "known_failure_skip_count": 0,
+        "candidate_count_after_skip": 0,
         "download_success": 0,
         "download_fail": 0,
         "download_skipped_existing": 0,
@@ -348,6 +403,7 @@ def append_progress(
     record_number: Optional[str],
     identifier_used: Optional[str],
     outcome: Literal["success", "fail", "skipped_existing"],
+    paper_key: Optional[str] = None,
     error_reason: Optional[str] = None,
     elapsed_ms: Optional[int] = None,
 ) -> None:
@@ -355,6 +411,7 @@ def append_progress(
     line = {
         "record_number": record_number,
         "identifier_used": identifier_used,
+        "paper_key": paper_key,
         "outcome": outcome,
         "error_reason": error_reason,
         "attempted_at": utc_iso_now(),
@@ -426,6 +483,8 @@ def fetch_pubmed_via_entrez(
     email: Optional[str] = None,
     api_key: Optional[str] = None,
     retmax: int = 10_000,
+    datetype: Optional[str] = None,
+    mindate: Optional[str] = None,
 ) -> int:
     """Fetch a PubMed query as RIS, written to `out_path`. Returns reference count.
 
@@ -465,7 +524,12 @@ def fetch_pubmed_via_entrez(
     apply_entrez_ssl_settings()
 
     try:
-        handle = Entrez.esearch(db="pubmed", term=query, retmax=retmax)
+        search_kwargs: Dict[str, Any] = {"db": "pubmed", "term": query, "retmax": retmax}
+        if datetype:
+            search_kwargs["datetype"] = datetype
+        if mindate:
+            search_kwargs["mindate"] = mindate
+        handle = Entrez.esearch(**search_kwargs)
     except Exception as exc:
         err_text = str(exc).lower()
         if "certificate" in err_text or "ssl" in err_text:
@@ -565,6 +629,167 @@ def _medline_records_to_ris(records: list, *, query: str) -> str:
 
 
 # --------------------------------------------------------------------------- #
+# Query identity, schema-v2 run discovery, anchors, and global skip filtering
+# --------------------------------------------------------------------------- #
+
+def normalize_query_text(query: str) -> str:
+    return re.sub(r"\s+", " ", query.strip())
+
+
+def query_hash_for_text(query: str) -> str:
+    normalized = normalize_query_text(query)
+    return hashlib.sha1(normalized.encode("utf-8")).hexdigest()[:16]
+
+
+def is_schema_v2_metadata(meta: Dict[str, Any]) -> bool:
+    return meta.get("schema_version") == SCHEMA_VERSION
+
+
+def is_completed_schema_v2_run(run: SearchRun, meta: Optional[Dict[str, Any]] = None) -> bool:
+    meta = meta if meta is not None else read_metadata(run)
+    merged_from = meta.get("merged_from") or []
+    return is_schema_v2_metadata(meta) and bool(meta.get("finished_at")) and run.run_id in merged_from
+
+
+def iter_schema_v2_runs(searches_dir: Path = SEARCHES_DIR) -> list[tuple[SearchRun, Dict[str, Any]]]:
+    if not searches_dir.exists():
+        return []
+    out: list[tuple[SearchRun, Dict[str, Any]]] = []
+    for child in searches_dir.iterdir():
+        if not child.is_dir() or not (child / "metadata.json").is_file():
+            continue
+        run = SearchRun.for_root(child)
+        try:
+            meta = read_metadata(run)
+        except (OSError, json.JSONDecodeError):
+            continue
+        if is_schema_v2_metadata(meta):
+            out.append((run, meta))
+    return out
+
+
+def find_completed_anchor(
+    *,
+    slug: str,
+    query_hash: str,
+    searches_dir: Path = SEARCHES_DIR,
+) -> Optional[tuple[SearchRun, Dict[str, Any]]]:
+    slug_n = normalize_slug(slug)
+    matches = [
+        (run, meta)
+        for run, meta in iter_schema_v2_runs(searches_dir)
+        if meta.get("slug") == slug_n
+        and meta.get("query_hash") == query_hash
+        and is_completed_schema_v2_run(run, meta)
+    ]
+    if not matches:
+        return None
+    return max(matches, key=lambda item: item[1].get("started_at") or item[0].run_id)
+
+
+def edat_mindate_from_started_at(started_at: str) -> str:
+    dt = _dt.datetime.fromisoformat(started_at.replace("Z", "+00:00"))
+    return dt.strftime("%Y/%m/%d")
+
+
+def _split_ris_entries(text: str) -> tuple[str, list[str]]:
+    parts = re.split(r"(?m)^ER\s+-\s*$", text)
+    entries: list[str] = []
+    header = parts[0] if parts and "TY  -" not in parts[0] else ""
+    for part in parts:
+        if "TY  -" not in part:
+            continue
+        entry = part.strip()
+        if entry:
+            entries.append(entry + "\nER  -\n")
+    return header, entries
+
+
+def _reference_from_ris_entry(entry: str) -> Dict[str, object]:
+    ref: Dict[str, object] = {}
+    title_lines: list[str] = []
+    for raw in entry.splitlines():
+        line = raw.rstrip()
+        if line.startswith("AN  - "):
+            ref["pmid"] = line[6:].strip()
+        elif line.startswith("DO  - "):
+            ref["doi"] = line[6:].strip()
+        elif line.startswith("TI  - "):
+            title_lines.append(line[6:].strip())
+        elif title_lines and not re.match(r"^[A-Z0-9]{2}\s+-\s+", line):
+            title_lines.append(line.strip())
+    if title_lines:
+        ref["title"] = " ".join(x for x in title_lines if x)
+    return ref
+
+
+def _paper_key_for_entry(entry: str) -> Optional[str]:
+    from ensure_pdf_store import cas_key_for_reference  # type: ignore[import-not-found]
+
+    return cas_key_for_reference(_reference_from_ris_entry(entry))
+
+
+def count_ris_references(path: Path) -> int:
+    return _count_ris_references(path)
+
+
+def filter_ris_by_known_papers(
+    input_all_ris: Path,
+    filtered_ris: Path,
+    *,
+    known_success_keys: set[str],
+    known_failure_keys: set[str],
+) -> Dict[str, int]:
+    text = input_all_ris.read_text(encoding="utf-8") if input_all_ris.exists() else ""
+    header, entries = _split_ris_entries(text)
+    kept: list[str] = []
+    success_skips = 0
+    failure_skips = 0
+    for entry in entries:
+        key = _paper_key_for_entry(entry)
+        if key and key in known_success_keys:
+            success_skips += 1
+            continue
+        if key and key in known_failure_keys:
+            failure_skips += 1
+            continue
+        kept.append(entry)
+
+    filtered_ris.parent.mkdir(parents=True, exist_ok=True)
+    prefix = header.strip()
+    body = "\n".join(e.rstrip() for e in kept)
+    if prefix and body:
+        filtered_ris.write_text(prefix + "\n\n" + body + "\n", encoding="utf-8")
+    elif body:
+        filtered_ris.write_text(body + "\n", encoding="utf-8")
+    else:
+        filtered_ris.write_text(prefix + ("\n" if prefix else ""), encoding="utf-8")
+
+    return {
+        "candidate_count_before_skip": len(entries),
+        "known_success_skip_count": success_skips,
+        "known_failure_skip_count": failure_skips,
+        "candidate_count_after_skip": len(kept),
+    }
+
+
+def build_known_paper_skip_sets(searches_dir: Path = SEARCHES_DIR) -> tuple[set[str], set[str]]:
+    successes: set[str] = set()
+    failures: set[str] = set()
+    for run, _meta in iter_schema_v2_runs(searches_dir):
+        for entry in read_progress(run):
+            key = entry.get("paper_key")
+            if not key:
+                continue
+            outcome = entry.get("outcome")
+            if outcome in {"success", "skipped_existing"}:
+                successes.add(str(key))
+            elif outcome == "fail":
+                failures.add(str(key))
+    return successes, failures
+
+
+# --------------------------------------------------------------------------- #
 # Bootstrap: create a run folder, populate input.ris, write initial metadata.
 # --------------------------------------------------------------------------- #
 
@@ -581,6 +806,11 @@ def bootstrap_search_run(
     dry_run: bool = False,
     entrez_email: Optional[str] = None,
     entrez_api_key: Optional[str] = None,
+    incremental_refresh: bool = False,
+    refresh_anchor_run_id: Optional[str] = None,
+    refresh_anchor_started_at: Optional[str] = None,
+    pubmed_datetype: Optional[str] = None,
+    pubmed_mindate: Optional[str] = None,
 ) -> SearchRun:
     """Create a `<ts>__<slug>/` folder, populate input.ris, write initial metadata.
 
@@ -597,6 +827,8 @@ def bootstrap_search_run(
         SearchRun pointing at the new folder.
     """
     slug_n = normalize_slug(slug)
+    base_query = normalize_query_text(search_query)
+    query_hash = query_hash_for_text(base_query)
     if not search_query.strip():
         raise ValueError("search_query must be non-empty")
     if not search_term_label.strip():
@@ -616,35 +848,67 @@ def bootstrap_search_run(
     save_metadata(
         run,
         run_id=run.run_id,
+        slug=slug_n,
+        base_query=base_query,
+        query_hash=query_hash,
         collision_suffix=collision_suffix,
-        search_query=search_query,
+        search_query=base_query,
         search_term_label=search_term_label,
         source_db=source_db,
         query_source=query_source,
         started_at=utc_iso_now(),
+        incremental_refresh=incremental_refresh,
+        refresh_anchor_run_id=refresh_anchor_run_id,
+        refresh_anchor_started_at=refresh_anchor_started_at,
+        pubmed_datetype=pubmed_datetype,
+        pubmed_mindate=pubmed_mindate,
     )
 
     if dry_run:
+        run.input_all_ris.touch(exist_ok=True)
         run.input_ris.touch(exist_ok=True)
         return run
 
     input_count = 0
     if query_source == "entrez":
-        input_count = fetch_pubmed_via_entrez(
-            search_query,
-            run.input_ris,
+        fetch_pubmed_via_entrez(
+            base_query,
+            run.input_all_ris,
             email=entrez_email,
             api_key=entrez_api_key,
+            datetype=pubmed_datetype,
+            mindate=pubmed_mindate,
         )
+        success_keys, failure_keys = build_known_paper_skip_sets(searches_dir)
+        skip_counts = filter_ris_by_known_papers(
+            run.input_all_ris,
+            run.input_ris,
+            known_success_keys=success_keys,
+            known_failure_keys=failure_keys,
+        )
+        input_count = skip_counts["candidate_count_after_skip"]
+        save_metadata(run, **skip_counts)
     elif query_source == "manual_export":
         assert input_ris is not None
+        shutil.copy2(input_ris, run.input_all_ris)
         shutil.copy2(input_ris, run.input_ris)
         input_count = _count_ris_references(run.input_ris)
+        save_metadata(
+            run,
+            candidate_count_before_skip=input_count,
+            candidate_count_after_skip=input_count,
+        )
     elif query_source == "byo_found_ris":
         assert found_ris is not None
+        run.input_all_ris.touch(exist_ok=True)
         run.input_ris.touch(exist_ok=True)
         shutil.copy2(found_ris, run.found_ris)
         input_count = _count_ris_references(run.found_ris)
+        save_metadata(
+            run,
+            candidate_count_before_skip=input_count,
+            candidate_count_after_skip=input_count,
+        )
     else:
         raise ValueError(f"Unknown query_source: {query_source!r}")
 

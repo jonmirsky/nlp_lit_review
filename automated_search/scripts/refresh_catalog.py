@@ -135,6 +135,37 @@ def _stream_command(cmd: list[str], cwd: Path) -> int:
     return proc.wait()
 
 
+def _build_wrapper_command(
+    *,
+    wrapper: Path,
+    query: str,
+    slug: str,
+    label: str,
+    source_db: str,
+    full_search: bool = False,
+    incremental_refresh: bool = True,
+    check_only: bool = False,
+) -> list[str]:
+    cmd = [
+        sys.executable,
+        "-u",
+        str(wrapper),
+        "--query",
+        query,
+        "--slug",
+        slug,
+        "--label",
+        label,
+        "--source-db",
+        source_db,
+    ]
+    if incremental_refresh and not full_search:
+        cmd.append("--incremental-refresh")
+    if check_only:
+        cmd.append("--check-only")
+    return cmd
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=(
@@ -151,6 +182,22 @@ def main(argv: list[str] | None = None) -> int:
         "--dry-run",
         action="store_true",
         help="Print wrapper commands only; do not run the pipeline.",
+    )
+    parser.add_argument(
+        "--full-search",
+        action="store_true",
+        help="Run each saved query as a full PubMed search instead of EDAT incremental refresh.",
+    )
+    parser.add_argument(
+        "--incremental-refresh",
+        action="store_true",
+        default=True,
+        help="Run each saved query as an EDAT incremental refresh when an anchor exists (default).",
+    )
+    parser.add_argument(
+        "--check-only",
+        action="store_true",
+        help="Print incremental candidate/skip counts for each entry; do not create run folders or launch Selenium.",
     )
     args = parser.parse_args(argv)
 
@@ -173,19 +220,16 @@ def main(argv: list[str] | None = None) -> int:
 
     failures: list[str] = []
     for query_name, query, slug, label, source_db in entries:
-        cmd = [
-            sys.executable,
-            "-u",
-            str(wrapper),
-            "--query",
-            query,
-            "--slug",
-            slug,
-            "--label",
-            label,
-            "--source-db",
-            source_db,
-        ]
+        cmd = _build_wrapper_command(
+            wrapper=wrapper,
+            query=query,
+            slug=slug,
+            label=label,
+            source_db=source_db,
+            full_search=args.full_search,
+            incremental_refresh=args.incremental_refresh,
+            check_only=args.check_only,
+        )
         print("=" * 70, flush=True)
         print(f"Catalog entry: {query_name} (slug={slug})", flush=True)
         print("=" * 70, flush=True)
@@ -197,6 +241,10 @@ def main(argv: list[str] | None = None) -> int:
                 f"--label {_shellish_repr(label)} "
                 f"--source-db {_shellish_repr(source_db)}"
             )
+            if args.incremental_refresh and not args.full_search:
+                shown += " --incremental-refresh"
+            if args.check_only:
+                shown += " --check-only"
             print(f"DRY-RUN: {shown}", flush=True)
             continue
         rc = _stream_command(cmd, cwd=root)

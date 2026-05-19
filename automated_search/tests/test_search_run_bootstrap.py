@@ -39,6 +39,7 @@ from search_run import (  # type: ignore[import-not-found]
     allocate_run_dir,
     append_progress,
     bootstrap_search_run,
+    query_hash_for_text,
     normalize_slug,
     read_metadata,
     read_progress,
@@ -95,6 +96,9 @@ def test_allocate_run_dir_auto_suffix(tmp_path):
 
 def test_empty_metadata_passes_validator():
     meta = _empty_metadata("2026_05_14_120000__test_slug")
+    meta["slug"] = "test_slug"
+    meta["base_query"] = "anything"
+    meta["query_hash"] = query_hash_for_text("anything")
     meta["search_query"] = "anything"
     meta["search_term_label"] = "(test)"
     _validate_metadata(meta)
@@ -119,6 +123,9 @@ def test_validator_rejects_bad_run_id():
 
 def test_validator_rejects_bad_enum():
     meta = _empty_metadata("2026_05_14_120000__test_slug")
+    meta["slug"] = "test_slug"
+    meta["base_query"] = "x"
+    meta["query_hash"] = query_hash_for_text("x")
     meta["search_query"] = "x"
     meta["search_term_label"] = "(x)"
     meta["source_db"] = "google_scholar"
@@ -167,6 +174,7 @@ def test_progress_appender(tmp_path):
 
 def test_bootstrap_manual_export_end_to_end(tmp_path, monkeypatch):
     searches_dir = tmp_path / "searches"
+    monkeypatch.delenv("LIT_REVIEW_PDF_REMOTE", raising=False)
     monkeypatch.setenv("LIT_REVIEW_PDF_STORE", str(tmp_path / "pdf_store"))
     (tmp_path / "pdf_store").mkdir()
 
@@ -184,12 +192,19 @@ def test_bootstrap_manual_export_end_to_end(tmp_path, monkeypatch):
     assert run.root.parent == searches_dir
     assert run.run_id.endswith("__smoke_test_1")
     assert run.input_ris.exists()
+    assert run.input_all_ris.exists()
     assert run.found_dir.exists()
     assert run.missing_dir.exists()
     assert run.pdfs_dir.exists()
 
     meta = read_metadata(run)
     assert meta["input_count"] == 5
+    assert meta["schema_version"] == SCHEMA_VERSION
+    assert meta["slug"] == "smoke_test_1"
+    assert meta["base_query"] == "example query"
+    assert meta["query_hash"] == query_hash_for_text("example query")
+    assert meta["candidate_count_before_skip"] == 5
+    assert meta["candidate_count_after_skip"] == 5
     assert meta["search_term_label"] == "(smoke)"
     assert meta["query_source"] == "manual_export"
     assert meta["source_db"] == "manual"

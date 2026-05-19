@@ -17,7 +17,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from search_run import SEARCHES_DIR, SearchRun, read_metadata
+from search_run import SEARCHES_DIR, SearchRun, is_schema_v2_metadata, read_metadata
 
 
 @dataclass(frozen=True)
@@ -28,13 +28,19 @@ class ResumeDecision:
 
 
 def find_latest_run(searches_dir: Path = SEARCHES_DIR) -> SearchRun | None:
-    """Return the newest run folder that has metadata.json, or None."""
+    """Return the newest schema-v2 run folder that has metadata.json, or None."""
     if not searches_dir.exists():
         return None
     candidates = []
     for child in searches_dir.iterdir():
         if child.is_dir() and (child / "metadata.json").is_file():
-            candidates.append(child)
+            run = SearchRun.for_root(child)
+            try:
+                meta = read_metadata(run)
+            except Exception:
+                continue
+            if is_schema_v2_metadata(meta):
+                candidates.append(child)
     if not candidates:
         return None
     return SearchRun.for_root(max(candidates, key=lambda p: p.name))
@@ -75,7 +81,7 @@ def latest_resume_decision(searches_dir: Path = SEARCHES_DIR) -> ResumeDecision:
     """
     run = find_latest_run(searches_dir)
     if run is None:
-        return ResumeDecision(None, False, f"No run folders with metadata found under {searches_dir}")
+        return ResumeDecision(None, False, f"No schema-v2 run folders with metadata found under {searches_dir}")
 
     meta = read_metadata(run)
     if is_run_complete(run, meta):

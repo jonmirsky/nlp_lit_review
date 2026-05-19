@@ -61,6 +61,7 @@ from __future__ import annotations
 import argparse
 import os
 import sys
+import tempfile
 from pathlib import Path
 from typing import Optional
 
@@ -75,6 +76,13 @@ from merge_ris_to_master import merge_ris_to_master  # type: ignore[import-not-f
 from search_run import (  # type: ignore[import-not-found]
     SearchRun,
     bootstrap_search_run,
+    build_known_paper_skip_sets,
+    edat_mindate_from_started_at,
+    fetch_pubmed_via_entrez,
+    filter_ris_by_known_papers,
+    find_completed_anchor,
+    normalize_query_text,
+    query_hash_for_text,
     read_metadata,
     save_metadata,
     utc_iso_now,
@@ -96,6 +104,10 @@ def _build_arg_parser() -> argparse.ArgumentParser:
                    help="Source database tag for metadata.json (default: pubmed).")
     p.add_argument("--dry-run", action="store_true",
                    help="Create the run folder + metadata then exit before any network call.")
+    p.add_argument("--incremental-refresh", action="store_true",
+                   help="Use PubMed EDAT since the latest completed matching schema-v2 anchor, or create a full baseline if none exists.")
+    p.add_argument("--check-only", action="store_true",
+                   help="Call Entrez and compute known-paper skip counts; do not create a run folder or launch Selenium.")
     p.add_argument("--resume", type=Path,
                    help="Resume a prior run folder. Skips already-attempted records (see SCHEMA.md).")
     p.add_argument("--resume-latest", action="store_true",
@@ -103,6 +115,51 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--legacy", action="store_true",
                    help="Use the old interactive workflow (removed in Phase 7).")
     return p
+
+
+def _incremental_params(slug: str, base_query: str) -> tuple[bool, Optional[str], Optional[str], Optional[str], Optional[str]]:
+    qh = query_hash_for_text(base_query)
+    anchor = find_completed_anchor(slug=slug, query_hash=qh)
+    if anchor is None:
+        print("No completed matching schema-v2 anchor found; creating a full baseline run.")
+        return False, None, None, None, None
+    anchor_run, anchor_meta = anchor
+    anchor_started_at = anchor_meta["started_at"]
+    mindate = edat_mindate_from_started_at(anchor_started_at)
+    print(
+        f"Using incremental PubMed EDAT refresh from anchor {anchor_run.run_id} "
+        f"(mindate={mindate})."
+    )
+    return True, anchor_run.run_id, anchor_started_at, "edat", mindate
+
+
+def _check_only(*, query: str, slug: str, incremental_refresh: bool) -> int:
+    base_query = normalize_query_text(query)
+    inc, anchor_run_id, _anchor_started_at, datetype, mindate = (
+        _incremental_params(slug, base_query) if incremental_refresh else (False, None, None, None, None)
+    )
+    with tempfile.TemporaryDirectory(prefix="lit_review_check_") as td:
+        input_all = Path(td) / "input_all.ris"
+        input_filtered = Path(td) / "input.ris"
+        fetch_pubmed_via_entrez(base_query, input_all, datetype=datetype, mindate=mindate)
+        success_keys, failure_keys = build_known_paper_skip_sets()
+        counts = filter_ris_by_known_papers(
+            input_all,
+            input_filtered,
+            known_success_keys=success_keys,
+            known_failure_keys=failure_keys,
+        )
+    mode = "incremental" if inc else "full"
+    if incremental_refresh and not anchor_run_id:
+        mode = "full baseline"
+    print(
+        "CHECK-ONLY: "
+        f"mode={mode}, before_skip={counts['candidate_count_before_skip']}, "
+        f"known_success_skips={counts['known_success_skip_count']}, "
+        f"known_failure_skips={counts['known_failure_skip_count']}, "
+        f"after_skip={counts['candidate_count_after_skip']}"
+    )
+    return 0
 
 
 def _interactive_legacy_main() -> None:
@@ -280,16 +337,41 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     query_source = _resolve_query_source(args)
     query_for_metadata = args.query or (str(args.input_ris) if args.input_ris else str(args.found_ris))
+    base_query = normalize_query_text(query_for_metadata)
+
+    if args.check_only:
+        if query_source != "entrez":
+            raise SystemExit("ERROR: --check-only requires --query (Entrez mode).")
+        return _check_only(query=base_query, slug=args.slug, incremental_refresh=args.incremental_refresh)
+
+    incremental_refresh = False
+    anchor_run_id = None
+    anchor_started_at = None
+    pubmed_datetype = None
+    pubmed_mindate = None
+    if args.incremental_refresh and query_source == "entrez":
+        (
+            incremental_refresh,
+            anchor_run_id,
+            anchor_started_at,
+            pubmed_datetype,
+            pubmed_mindate,
+        ) = _incremental_params(args.slug, base_query)
 
     run = bootstrap_search_run(
         slug=args.slug,
-        search_query=query_for_metadata,
+        search_query=base_query,
         search_term_label=args.label,
         source_db=args.source_db,
         query_source=query_source,
         input_ris=args.input_ris,
         found_ris=args.found_ris,
         dry_run=args.dry_run,
+        incremental_refresh=incremental_refresh,
+        refresh_anchor_run_id=anchor_run_id,
+        refresh_anchor_started_at=anchor_started_at,
+        pubmed_datetype=pubmed_datetype,
+        pubmed_mindate=pubmed_mindate,
     )
     print(f"Bootstrapped run: {run.root}")
 

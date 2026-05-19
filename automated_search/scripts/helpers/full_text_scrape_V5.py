@@ -4105,6 +4105,7 @@ def _run_full_text_scrape_with_run(run: "SearchRun", *, resume: bool) -> Optiona
                         record_number=record_number,
                         identifier_used=identifier_used,
                         outcome="skipped_existing",
+                        paper_key=cas_key,
                     )
                     continue
 
@@ -4119,6 +4120,7 @@ def _run_full_text_scrape_with_run(run: "SearchRun", *, resume: bool) -> Optiona
                         record_number=record_number,
                         identifier_used=identifier_used,
                         outcome="skipped_existing",
+                        paper_key=cas_key,
                     )
                     skipped_existing += 1
                     continue
@@ -4256,6 +4258,7 @@ def _run_full_text_scrape_with_run(run: "SearchRun", *, resume: bool) -> Optiona
                         record_number=record_number,
                         identifier_used=identifier_used,
                         outcome="success",
+                        paper_key=cas_key,
                         elapsed_ms=elapsed_ms,
                     )
                     if file_after:
@@ -4271,6 +4274,7 @@ def _run_full_text_scrape_with_run(run: "SearchRun", *, resume: bool) -> Optiona
                         record_number=record_number,
                         identifier_used=identifier_used,
                         outcome="fail",
+                        paper_key=cas_key,
                         error_reason=error_reason,
                         elapsed_ms=elapsed_ms,
                     )
