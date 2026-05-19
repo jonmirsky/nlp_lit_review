@@ -177,6 +177,10 @@ def _gui_default_state() -> dict[str, str]:
     catalog = _load_catalog()
     entry = catalog[0] if catalog else None
     master_ris = _find_newest_master_ris()
+    chrome_headless_default = os.environ.get("LIT_REVIEW_CHROME_HEADLESS", "").strip().lower()
+    chrome_headless = chrome_headless_default in {"1", "true", "yes", "y", "on"} or (
+        not chrome_headless_default and not os.environ.get("DISPLAY")
+    )
     return {
         "catalog": entry["name"] if entry else "Custom",
         "database": "pubmed",
@@ -192,6 +196,8 @@ def _gui_default_state() -> dict[str, str]:
             if os.environ.get("LIT_REVIEW_ENTREZ_INSECURE_SSL", "").strip().lower() in {"1", "true", "yes"}
             else "disabled"
         ),
+        "chrome_headless": "enabled" if chrome_headless else "disabled",
+        "chrome_binary": os.environ.get("LIT_REVIEW_CHROME_BINARY", ""),
         "jons_list": str(JONS_LIST_PATH),
         "paper_index": master_ris.name if master_ris else "No pubmed*.txt master RIS found",
     }
@@ -223,10 +229,12 @@ def _print_gui_snapshot() -> None:
     print(f"  H. LIT_REVIEW_PDF_REMOTE: {state['pdf_remote']}")
     print(f"  I. NCBI_API_KEY:        {state['ncbi_api_key'] or '(blank, optional)'}")
     print(f"  J. Insecure SSL:        {state['insecure_ssl']}")
+    print(f"  K. Chrome headless:     {state['chrome_headless']}")
+    print(f"  L. Chrome binary path:  {state['chrome_binary'] or '(auto-detect)'}")
     print()
     print("Jon's List")
-    print(f"  K. Paper index:         {state['paper_index']}")
-    print(f"  L. Output file:         {state['jons_list']}")
+    print(f"  M. Paper index:         {state['paper_index']}")
+    print(f"  N. Output file:         {state['jons_list']}")
     print()
 
 
@@ -265,7 +273,7 @@ def _build_env() -> dict[str, str]:
 
     _section(
         "Environment",
-        "These match the GUI Environment panel. Press Enter to accept each default.",
+        "Runtime settings for the pipeline. Press Enter to accept each default.",
     )
     email = _prompt("G. NCBI_EMAIL", os.environ.get("NCBI_EMAIL", ""))
     if email:
@@ -287,6 +295,23 @@ def _build_env() -> dict[str, str]:
         env["LIT_REVIEW_ENTREZ_INSECURE_SSL"] = "1"
     else:
         env.pop("LIT_REVIEW_ENTREZ_INSECURE_SSL", None)
+
+    headless_default_raw = os.environ.get("LIT_REVIEW_CHROME_HEADLESS", "").strip().lower()
+    headless_default = headless_default_raw in {"1", "true", "yes", "y", "on"} or (
+        not headless_default_raw and not os.environ.get("DISPLAY")
+    )
+    print("Chrome headless should usually be enabled on SSH servers with no display.")
+    if _confirm("K. Chrome headless", headless_default):
+        env["LIT_REVIEW_CHROME_HEADLESS"] = "1"
+    else:
+        env.pop("LIT_REVIEW_CHROME_HEADLESS", None)
+
+    print("Chrome binary path is optional when google-chrome/chromium is already on PATH.")
+    chrome_binary = _prompt("L. Chrome binary path", os.environ.get("LIT_REVIEW_CHROME_BINARY", ""))
+    if chrome_binary:
+        env["LIT_REVIEW_CHROME_BINARY"] = chrome_binary
+    else:
+        env.pop("LIT_REVIEW_CHROME_BINARY", None)
 
     return env
 

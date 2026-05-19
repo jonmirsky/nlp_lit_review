@@ -41,6 +41,7 @@ import os
 import json
 import logging
 import datetime
+import shutil
 import requests
 import xml.etree.ElementTree as ET
 import base64
@@ -586,12 +587,64 @@ def wait_for_download(directory: Path, initial_files: Set[str], expected_filenam
     return None
 
 
+def _truthy_env(name: str) -> bool:
+    return os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+def _resolve_configured_chrome_binary(configured: str) -> str:
+    chrome_binary_path = Path(os.path.expandvars(os.path.expanduser(configured))).resolve()
+    if not chrome_binary_path.is_file():
+        raise RuntimeError(f"LIT_REVIEW_CHROME_BINARY is not a file: {chrome_binary_path}")
+    if not os.access(chrome_binary_path, os.X_OK):
+        raise RuntimeError(f"LIT_REVIEW_CHROME_BINARY is not executable: {chrome_binary_path}")
+    return str(chrome_binary_path)
+
+
+def _resolve_chrome_binary() -> Optional[str]:
+    configured = os.environ.get("LIT_REVIEW_CHROME_BINARY", "").strip()
+    if configured:
+        if any(sep in configured for sep in ("/", os.sep)) or configured.startswith("~"):
+            return _resolve_configured_chrome_binary(configured)
+        found = shutil.which(configured)
+        if found:
+            return found
+        raise RuntimeError(
+            f"LIT_REVIEW_CHROME_BINARY was set but could not be found on PATH: {configured}"
+        )
+
+    for candidate in (
+        "google-chrome",
+        "google-chrome-stable",
+        "chromium",
+        "chromium-browser",
+        "chrome",
+    ):
+        found = shutil.which(candidate)
+        if found:
+            return found
+    return None
+
+
 def setup_driver(headless: bool = False, download_dir: str = None) -> webdriver.Chrome:
     """Set up Chrome driver with download preferences."""
     chrome_options = Options()
+
+    chrome_binary = _resolve_chrome_binary()
+    if not chrome_binary:
+        raise RuntimeError(
+            "Chrome/Chromium browser binary not found. Install Chrome or Chromium on this "
+            "server, or set LIT_REVIEW_CHROME_BINARY to the browser path. Examples: "
+            "`sudo apt-get install chromium-browser` or install Google Chrome and export "
+            "`LIT_REVIEW_CHROME_BINARY=/usr/bin/google-chrome`."
+        )
+    chrome_options.binary_location = chrome_binary
+    print(f"Using Chrome binary: {chrome_binary}")
+
+    if _truthy_env("LIT_REVIEW_CHROME_HEADLESS"):
+        headless = True
     
     if headless:
-        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--headless=new')
     
     # Set download preferences
     # Default to automated_search/found_papers/downloaded_papers if not specified
@@ -616,6 +669,10 @@ def setup_driver(headless: bool = False, download_dir: str = None) -> webdriver.
     chrome_options.add_experimental_option("prefs", prefs)
     
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--window-size=1920,1080')
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
     chrome_options.add_experimental_option('useAutomationExtension', False)
     
