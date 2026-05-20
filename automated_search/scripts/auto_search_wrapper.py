@@ -114,7 +114,29 @@ def _build_arg_parser() -> argparse.ArgumentParser:
                    help="Resume the most recent run only if it is incomplete; no-op when latest is complete.")
     p.add_argument("--legacy", action="store_true",
                    help="Use the old interactive workflow (removed in Phase 7).")
+    p.add_argument("--fast-baseline", action="store_true",
+                   help="Cap per-paper wall-clock time, disable captcha waits, and skip deep publisher "
+                        "Selenium fallbacks. Deferred papers written to missing/slow_retry_candidates.ris. "
+                        "Sets LIT_REVIEW_FAST_BASELINE=1.")
+    p.add_argument("--max-paper-seconds", type=int, default=None, metavar="N",
+                   help="Per-paper wall-clock budget in seconds. Default 30 in fast mode, unlimited otherwise.")
+    p.add_argument("--captcha-timeout", type=int, default=None, metavar="N",
+                   help="Max seconds to wait for captcha completion. 0 disables (default in fast mode).")
+    p.add_argument("--skip-deep-publisher-fallbacks", action="store_true",
+                   help="Skip DOI Selenium and metadata-search Selenium routes; record as deferred_deep_publisher.")
     return p
+
+
+def _apply_fast_baseline_env(args: argparse.Namespace) -> None:
+    """Translate --fast-baseline and related CLI flags into env vars for the scraper."""
+    if args.fast_baseline:
+        os.environ.setdefault("LIT_REVIEW_FAST_BASELINE", "1")
+    if args.max_paper_seconds is not None:
+        os.environ["LIT_REVIEW_MAX_PAPER_SECONDS"] = str(args.max_paper_seconds)
+    if args.captcha_timeout is not None:
+        os.environ["LIT_REVIEW_CAPTCHA_TIMEOUT"] = str(args.captcha_timeout)
+    if args.skip_deep_publisher_fallbacks:
+        os.environ.setdefault("LIT_REVIEW_SKIP_DEEP_PUBLISHER", "1")
 
 
 def _incremental_params(slug: str, base_query: str) -> tuple[bool, Optional[str], Optional[str], Optional[str], Optional[str]]:
@@ -301,6 +323,7 @@ def _run_post_scrape_chain(run: SearchRun) -> None:
 
 def main(argv: Optional[list[str]] = None) -> int:
     args = _build_arg_parser().parse_args(argv)
+    _apply_fast_baseline_env(args)
 
     if args.legacy:
         _interactive_legacy_main()

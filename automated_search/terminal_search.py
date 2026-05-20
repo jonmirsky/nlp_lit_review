@@ -487,10 +487,7 @@ def _search_papers_for_jons_list(papers: list[Any], query: str) -> list[Any]:
     for paper in papers:
         haystack = " ".join([
             _normalize_lookup_text(getattr(paper, "title", "")),
-            _normalize_lookup_text(getattr(paper, "abstract", "")),
-            _normalize_lookup_text(getattr(paper, "doi", "")),
             _normalize_lookup_text(" ".join(getattr(paper, "authors", []) or [])),
-            _normalize_lookup_text(str(getattr(paper, "year", "") or "")),
         ])
         if all(term in haystack for term in terms):
             matches.append(paper)

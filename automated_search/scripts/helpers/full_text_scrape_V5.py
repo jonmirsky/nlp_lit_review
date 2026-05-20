@@ -106,6 +106,67 @@ ERROR_NO_IDENTIFIER = 'no_identifier'
 ERROR_PUBLISHER_ERROR = 'publisher_error'
 ERROR_NOT_FOUND = 'not_found'
 ERROR_UNKNOWN = 'unknown'
+# Fast-baseline deferred outcomes
+ERROR_FAST_TIMEOUT = 'fast_timeout'
+ERROR_DEFERRED_DEEP_PUBLISHER = 'deferred_deep_publisher'
+
+_FAST_DEFER_REASONS = frozenset({ERROR_FAST_TIMEOUT, ERROR_DEFERRED_DEEP_PUBLISHER})
+
+
+def _fast_baseline_enabled() -> bool:
+    """True when LIT_REVIEW_FAST_BASELINE env var is set to a truthy value."""
+    return _truthy_env("LIT_REVIEW_FAST_BASELINE")
+
+
+def _max_paper_seconds() -> float:
+    """Per-paper wall-clock budget in seconds.
+
+    If LIT_REVIEW_MAX_PAPER_SECONDS is set, that value is used.
+    Otherwise defaults to 30 when fast baseline is enabled, infinity otherwise.
+    """
+    raw = os.environ.get("LIT_REVIEW_MAX_PAPER_SECONDS", "").strip()
+    if raw:
+        try:
+            return float(raw)
+        except ValueError:
+            pass
+    return 30.0 if _fast_baseline_enabled() else float("inf")
+
+
+def _captcha_timeout_seconds() -> int:
+    """Max seconds to spend waiting for captcha completion.
+
+    If LIT_REVIEW_CAPTCHA_TIMEOUT is set, that value is used.
+    Otherwise defaults to 0 (disabled) when fast baseline is enabled, 180 otherwise.
+    """
+    raw = os.environ.get("LIT_REVIEW_CAPTCHA_TIMEOUT", "").strip()
+    if raw:
+        try:
+            return max(0, int(raw))
+        except ValueError:
+            pass
+    return 0 if _fast_baseline_enabled() else 180
+
+
+def _skip_deep_publisher() -> bool:
+    """True when deep/slow publisher Selenium routes should be skipped.
+
+    If LIT_REVIEW_SKIP_DEEP_PUBLISHER is explicitly set, that governs.
+    Otherwise defaults to True when fast baseline is enabled.
+    """
+    raw = os.environ.get("LIT_REVIEW_SKIP_DEEP_PUBLISHER", "").strip()
+    if raw:
+        return _truthy_value(raw)
+    return _fast_baseline_enabled()
+
+
+def _page_load_timeout_seconds() -> int:
+    """Selenium page-load / script timeout in seconds.
+
+    Defaults to 20 when fast baseline is enabled, 60 otherwise.
+    """
+    return 20 if _fast_baseline_enabled() else 60
+
 
 # Elsevier API configuration
 ELSEVIER_API_KEY = '34d0457d9a5b3bbfa3547a4297cf3954'
@@ -769,6 +830,14 @@ def setup_driver(headless: bool = False, download_dir: str = None) -> webdriver.
         raise
 
     driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+    # Cap page-load and script timeouts so a single hung page can't block for Chrome's
+    # default 300s.  In fast mode this is 20s; in normal mode 60s.
+    try:
+        tl = _page_load_timeout_seconds()
+        driver.set_page_load_timeout(tl)
+        driver.set_script_timeout(tl)
+    except Exception:
+        pass
     return driver
 
 
@@ -1240,6 +1309,12 @@ def wait_for_captcha_completion(driver: webdriver.Chrome, timeout: int = 180) ->
     Returns:
         True if captcha completed or not present, False if timeout
     """
+    # In fast mode with captcha timeout of 0, skip waiting entirely.
+    effective_timeout = min(timeout, _captcha_timeout_seconds())
+    if effective_timeout <= 0:
+        print("  [Captcha wait disabled in fast mode - skipping] ", end='', flush=True)
+        return False
+    timeout = effective_timeout
     print("  [Waiting for captcha completion - please complete captcha manually...] ", end='', flush=True)
     start_time = time.time()
     initial_url = driver.current_url
@@ -4040,6 +4115,7 @@ def _run_full_text_scrape_with_run(run: "SearchRun", *, resume: bool) -> Optiona
         downloaded_files: Dict[str, str] = {}
         successful: List[Dict] = []
         failed: List[Dict] = []
+        deferred_for_retry: List[Dict] = []
         error_reasons: Dict[str, str] = {}
         skipped_existing = 0
 
@@ -4145,12 +4221,14 @@ def _run_full_text_scrape_with_run(run: "SearchRun", *, resume: bool) -> Optiona
 
                 print(f"[{i}/{len(references)}] {record_number} {title[:20]} ", end="")
                 attempt_start = datetime.datetime.now()
+                paper_budget_start = time.monotonic()
                 download_attempted = False
                 error_reason: Optional[str] = None
                 found_pmid_from_doi = None
 
                 file_before = get_most_recent_downloads_file(downloads_dir)
 
+                # -- Route 1: Elsevier API (fast HTTP; no budget check needed) ----
                 if is_elsevier and (doi or pii):
                     error_reason = download_via_elsevier_api(doi, output_path, ELSEVIER_API_KEY, pii)
                     if error_reason is None and output_path.exists() and output_path.stat().st_size > 1024:
@@ -4159,45 +4237,82 @@ def _run_full_text_scrape_with_run(run: "SearchRun", *, resume: bool) -> Optiona
                     else:
                         download_attempted = False
 
+                # Lazy Chrome setup — only if a Selenium route will be attempted.
                 if not download_attempted and driver is None:
                     print("\nSetting up Chrome browser...")
                     driver = setup_driver(headless=False, download_dir=str(output_dir))
 
+                # -- Route 2: Direct URL Selenium --------------------------------
                 if not download_attempted and url:
-                    error_reason = download_via_url_selenium(driver, url, output_path, use_library, doi)
-                    if error_reason == ERROR_NOT_FOUND:
-                        download_attempted = False
+                    if _max_paper_seconds() < float("inf") and time.monotonic() - paper_budget_start >= _max_paper_seconds():
+                        error_reason = ERROR_FAST_TIMEOUT
+                        download_attempted = True
                     else:
+                        error_reason = download_via_url_selenium(driver, url, output_path, use_library, doi)
+                        if error_reason == ERROR_NOT_FOUND:
+                            download_attempted = False
+                        else:
+                            download_attempted = True
+
+                # -- Route 3: DOI Selenium (slow; skipped in fast/skip-deep mode) -
+                if not download_attempted and doi:
+                    if _skip_deep_publisher():
+                        error_reason = ERROR_DEFERRED_DEEP_PUBLISHER
+                        download_attempted = True
+                    elif _max_paper_seconds() < float("inf") and time.monotonic() - paper_budget_start >= _max_paper_seconds():
+                        error_reason = ERROR_FAST_TIMEOUT
+                        download_attempted = True
+                    else:
+                        result = download_via_doi_selenium(driver, doi, output_path, use_library)
+                        download_attempted = True
+                        if result and result.isdigit():
+                            found_pmid_from_doi = result
+                            error_reason = download_via_pubmed_selenium(
+                                driver, found_pmid_from_doi, output_path, use_library, doi=doi
+                            )
+                        elif result and result.startswith("ERROR_"):
+                            error_reason = result
+                        else:
+                            error_reason = result
+
+                # -- Route 4: PMC Selenium (direct /pdf/ URL; kept in fast mode) --
+                if not download_attempted and pmc_id:
+                    if _max_paper_seconds() < float("inf") and time.monotonic() - paper_budget_start >= _max_paper_seconds():
+                        error_reason = ERROR_FAST_TIMEOUT
+                        download_attempted = True
+                    else:
+                        error_reason = download_via_pmc_selenium(driver, pmc_id, output_path)
                         download_attempted = True
 
-                if not download_attempted and doi:
-                    result = download_via_doi_selenium(driver, doi, output_path, use_library)
-                    download_attempted = True
-                    if result and result.isdigit():
-                        found_pmid_from_doi = result
-                        error_reason = download_via_pubmed_selenium(
-                            driver, found_pmid_from_doi, output_path, use_library, doi=doi
-                        )
-                    elif result and result.startswith("ERROR_"):
-                        error_reason = result
-                    else:
-                        error_reason = result
-
-                if not download_attempted and pmc_id:
-                    error_reason = download_via_pmc_selenium(driver, pmc_id, output_path)
-                    download_attempted = True
-
+                # -- Route 5: PubMed Selenium ------------------------------------
                 if not download_attempted and pmid:
-                    error_reason = download_via_pubmed_selenium(driver, pmid, output_path, use_library, doi=doi)
-                    download_attempted = True
+                    if _max_paper_seconds() < float("inf") and time.monotonic() - paper_budget_start >= _max_paper_seconds():
+                        error_reason = ERROR_FAST_TIMEOUT
+                        download_attempted = True
+                    else:
+                        error_reason = download_via_pubmed_selenium(driver, pmid, output_path, use_library, doi=doi)
+                        download_attempted = True
 
+                # -- Route 6: Metadata/web search (slow; skipped in fast/skip-deep mode) --
                 if not download_attempted:
-                    error_reason = search_by_metadata_selenium(driver, ref, output_path, use_library)
-                    download_attempted = True
+                    if _skip_deep_publisher():
+                        error_reason = ERROR_DEFERRED_DEEP_PUBLISHER
+                        download_attempted = True
+                    elif _max_paper_seconds() < float("inf") and time.monotonic() - paper_budget_start >= _max_paper_seconds():
+                        error_reason = ERROR_FAST_TIMEOUT
+                        download_attempted = True
+                    else:
+                        error_reason = search_by_metadata_selenium(driver, ref, output_path, use_library)
+                        download_attempted = True
 
+                # -- Route 7: arXiv (HTTP only; cheap; always attempted if time left) --
                 if not download_attempted:
-                    error_reason = download_via_arxiv(ref, output_path)
-                    download_attempted = True
+                    if _max_paper_seconds() < float("inf") and time.monotonic() - paper_budget_start >= _max_paper_seconds():
+                        error_reason = ERROR_FAST_TIMEOUT
+                        download_attempted = True
+                    else:
+                        error_reason = download_via_arxiv(ref, output_path)
+                        download_attempted = True
 
                 time.sleep(2)
                 file_after = get_most_recent_downloads_file(downloads_dir)
@@ -4269,6 +4384,8 @@ def _run_full_text_scrape_with_run(run: "SearchRun", *, resume: bool) -> Optiona
                     error_reasons[record_number] = error_reason
                     print(f"✗ FAILED ({error_reason})")
                     failed.append(ref)
+                    if error_reason in _FAST_DEFER_REASONS:
+                        deferred_for_retry.append(ref)
                     append_progress(
                         run,
                         record_number=record_number,
@@ -4310,6 +4427,25 @@ def _run_full_text_scrape_with_run(run: "SearchRun", *, resume: bool) -> Optiona
             print(f"\nMissing RIS written: {run.missing_ris}")
         else:
             run.missing_ris.write_text("", encoding="utf-8")
+
+        # Write slow_retry_candidates.ris for papers deferred by fast-baseline mode.
+        # These had error_reason fast_timeout or deferred_deep_publisher and may succeed
+        # on a subsequent slow targeted retry run.
+        slow_retry_ris = run.missing_dir / "slow_retry_candidates.ris"
+        if deferred_for_retry:
+            with open(slow_retry_ris, "w", encoding="utf-8") as f:
+                f.write("; Papers deferred by fast-baseline mode — retry with slower routes\n")
+                f.write(f"; generated by automated_search/scripts/helpers/full_text_scrape_V5.py\n\n")
+                for ref in deferred_for_retry:
+                    f.write(ref["ris_text"])
+                    f.write("\n")
+            print(f"Slow-retry RIS written ({len(deferred_for_retry)} papers): {slow_retry_ris}")
+        else:
+            slow_retry_ris.write_text(
+                "; No papers deferred by fast-baseline mode\n"
+                "; generated by automated_search/scripts/helpers/full_text_scrape_V5.py\n",
+                encoding="utf-8",
+            )
 
         print(f"\nGenerating found.ris with attachments...")
         ris_content = generate_ris_with_attachments(references, downloaded_files)
