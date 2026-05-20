@@ -279,19 +279,16 @@ def _build_env() -> dict[str, str]:
     if email:
         env["NCBI_EMAIL"] = email
 
-    print("LIT_REVIEW_PDF_REMOTE points the pipeline at the canonical PDF store.")
-    pdf_remote = _prompt("H. LIT_REVIEW_PDF_REMOTE", os.environ.get("LIT_REVIEW_PDF_REMOTE", DEFAULT_PDF_REMOTE))
-    if pdf_remote:
-        env["LIT_REVIEW_PDF_REMOTE"] = pdf_remote
+    env["LIT_REVIEW_PDF_REMOTE"] = os.environ.get("LIT_REVIEW_PDF_REMOTE") or DEFAULT_PDF_REMOTE
 
     print("NCBI_API_KEY is optional but improves NCBI E-utilities rate limits when set.")
-    api_key = _prompt("I. NCBI_API_KEY optional", os.environ.get("NCBI_API_KEY", ""))
+    api_key = _prompt("H. NCBI_API_KEY optional", os.environ.get("NCBI_API_KEY", ""))
     if api_key:
         env["NCBI_API_KEY"] = api_key
 
     print("Insecure SSL for NCBI is only for networks that intercept TLS certificates.")
     insecure_default = os.environ.get("LIT_REVIEW_ENTREZ_INSECURE_SSL", "").strip().lower() in {"1", "true", "yes"}
-    if _confirm("J. Insecure SSL for NCBI", insecure_default):
+    if _confirm("I. Insecure SSL for NCBI", insecure_default):
         env["LIT_REVIEW_ENTREZ_INSECURE_SSL"] = "1"
     else:
         env.pop("LIT_REVIEW_ENTREZ_INSECURE_SSL", None)
@@ -301,13 +298,13 @@ def _build_env() -> dict[str, str]:
         not headless_default_raw and not os.environ.get("DISPLAY")
     )
     print("Chrome headless should usually be enabled on SSH servers with no display.")
-    if _confirm("K. Chrome headless", headless_default):
+    if _confirm("J. Chrome headless", headless_default):
         env["LIT_REVIEW_CHROME_HEADLESS"] = "1"
     else:
         env.pop("LIT_REVIEW_CHROME_HEADLESS", None)
 
     print("Chrome binary path is optional when google-chrome/chromium is already on PATH.")
-    chrome_binary = _prompt("L. Chrome binary path", os.environ.get("LIT_REVIEW_CHROME_BINARY", ""))
+    chrome_binary = _prompt("K. Chrome binary path", os.environ.get("LIT_REVIEW_CHROME_BINARY", ""))
     if chrome_binary:
         env["LIT_REVIEW_CHROME_BINARY"] = chrome_binary
     else:

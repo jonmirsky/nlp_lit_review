@@ -7,7 +7,7 @@ Inputs:
   search query, slug, RN label, source database, optional input RIS or found RIS,
   dry-run flag.
 - NCBI_EMAIL / NCBI_API_KEY environment variables (Entrez fetch path).
-- LIT_REVIEW_PDF_STORE environment variable (recorded in metadata.json).
+- LIT_REVIEW_PDF_REMOTE environment variable (recorded in metadata.json; defaults to gdrive:nlp_lit_review_1_papers/pdfs).
 
 Outputs (per run, under automated_search/searches/<run_id>/):
 - metadata.json          (atomic-write; schema described in automated_search/SCHEMA.md)
@@ -365,10 +365,7 @@ def _empty_metadata(run_id: str) -> Dict[str, Any]:
         "download_success": 0,
         "download_fail": 0,
         "download_skipped_existing": 0,
-        "pdf_store_root": (
-            os.environ.get("LIT_REVIEW_PDF_REMOTE")
-            or os.environ.get("LIT_REVIEW_PDF_STORE", "")
-        ),
+        "pdf_store_root": os.environ.get("LIT_REVIEW_PDF_REMOTE", "gdrive:nlp_lit_review_1_papers/pdfs"),
         "pipeline_version": _detect_pipeline_version(),
         "merged_from": [],
         "error_summary": {},

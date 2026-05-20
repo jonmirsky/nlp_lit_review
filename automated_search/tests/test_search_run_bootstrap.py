@@ -175,8 +175,6 @@ def test_progress_appender(tmp_path):
 def test_bootstrap_manual_export_end_to_end(tmp_path, monkeypatch):
     searches_dir = tmp_path / "searches"
     monkeypatch.delenv("LIT_REVIEW_PDF_REMOTE", raising=False)
-    monkeypatch.setenv("LIT_REVIEW_PDF_STORE", str(tmp_path / "pdf_store"))
-    (tmp_path / "pdf_store").mkdir()
 
     run = bootstrap_search_run(
         slug="Smoke Test 1",
@@ -208,7 +206,7 @@ def test_bootstrap_manual_export_end_to_end(tmp_path, monkeypatch):
     assert meta["search_term_label"] == "(smoke)"
     assert meta["query_source"] == "manual_export"
     assert meta["source_db"] == "manual"
-    assert meta["pdf_store_root"] == str(tmp_path / "pdf_store")
+    assert meta["pdf_store_root"] == "gdrive:nlp_lit_review_1_papers/pdfs"
 
 
 def test_bootstrap_dry_run(tmp_path):

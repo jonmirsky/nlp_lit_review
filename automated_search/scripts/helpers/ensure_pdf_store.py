@@ -43,6 +43,10 @@ PDF_REMOTE_ENV_VAR = "LIT_REVIEW_PDF_REMOTE"
 PDFS_SUBDIR = "pdfs"
 R2_PUBLIC_URL_BASE = "https://pub-d9c17dcc87a846d9ba3abbbbc811018d.r2.dev"
 
+# Default rclone remote path used when LIT_REVIEW_PDF_REMOTE is not explicitly set.
+# The pipeline is designed for GPU-side rclone-copy mode; this is the canonical store.
+DEFAULT_PDF_REMOTE = "gdrive:nlp_lit_review_1_papers/pdfs"
+
 
 class PdfStoreUnavailable(RuntimeError):
     """Raised when the configured PDF store path is missing or unwritable."""
@@ -288,16 +292,14 @@ def resolve_pdf_remote(remote_path: Optional[str] = None) -> PdfRemote:
 
 
 def resolve_pdf_backend() -> Union[PdfStore, PdfRemote]:
-    """Return the active PDF backend.
+    """Return the active PDF backend (always rclone-copy mode).
 
-    Checks ``$LIT_REVIEW_PDF_REMOTE`` first (rclone-copy mode, no FUSE
-    required). Falls back to ``$LIT_REVIEW_PDF_STORE`` (local-mount mode).
-    Raises ``PdfStoreUnavailable`` if neither is set or reachable.
+    Uses ``$LIT_REVIEW_PDF_REMOTE`` when set; otherwise falls back to
+    ``DEFAULT_PDF_REMOTE`` (``gdrive:nlp_lit_review_1_papers/pdfs``).
+    No FUSE mount or ``$LIT_REVIEW_PDF_STORE`` is required.
     """
-    remote = os.environ.get(PDF_REMOTE_ENV_VAR)
-    if remote:
-        return resolve_pdf_remote(remote)
-    return resolve_pdf_store()
+    remote = os.environ.get(PDF_REMOTE_ENV_VAR) or DEFAULT_PDF_REMOTE
+    return resolve_pdf_remote(remote)
 
 
 def build_remote_index(remote_path: str) -> Dict[str, str]:
