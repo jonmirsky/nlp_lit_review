@@ -126,7 +126,7 @@ def resolve_source(*, remote_source: bool) -> str:
     return str(src)
 
 
-def run_rclone_sync(
+def run_rclone_copy(
     *,
     source: str,
     destination: str,
@@ -134,9 +134,16 @@ def run_rclone_sync(
     progress: bool = True,
     extra_args: Optional[list[str]] = None,
 ) -> int:
-    """Invoke `rclone sync` in the foreground. Returns rclone's exit code."""
+    """Invoke non-destructive `rclone copy` in the foreground.
+
+    The visualizer bucket also contains legacy flattened EndNote assets named
+    `NLP_v4_*` / `zotero_v3_*`.  The automated pipeline's CAS store is flat
+    (`pmid_*.pdf`, `doi_*.pdf`, `title_*.pdf`).  Using `rclone sync` at the
+    bucket root can delete those legacy assets, so this script only copies new
+    or changed files into R2.
+    """
     _check_rclone()
-    cmd: list[str] = ["rclone", "sync", source, destination]
+    cmd: list[str] = ["rclone", "copy", source, destination]
     if progress:
         cmd.append("--progress")
     if dry_run:
@@ -145,6 +152,24 @@ def run_rclone_sync(
         cmd.extend(extra_args)
     print(f"\n$ {' '.join(cmd)}\n", flush=True)
     return subprocess.run(cmd, check=False).returncode
+
+
+def run_rclone_sync(
+    *,
+    source: str,
+    destination: str,
+    dry_run: bool = False,
+    progress: bool = True,
+    extra_args: Optional[list[str]] = None,
+) -> int:
+    """Backward-compatible alias for the now non-destructive copy operation."""
+    return run_rclone_copy(
+        source=source,
+        destination=destination,
+        dry_run=dry_run,
+        progress=progress,
+        extra_args=extra_args,
+    )
 
 
 def sync_run_to_r2(
@@ -171,7 +196,7 @@ def sync_run_to_r2(
 def _cli() -> int:
     p = argparse.ArgumentParser(
         prog="sync_pdfs_to_r2",
-        description="Sync PDFs from $LIT_REVIEW_PDF_STORE to Cloudflare R2 via rclone.",
+        description="Copy PDFs from the configured PDF store to Cloudflare R2 via rclone.",
     )
     p.add_argument("--run", type=Path, help="Optional run folder; updates metadata.r2_synced_at on success.")
     p.add_argument("--remote-source", action="store_true",

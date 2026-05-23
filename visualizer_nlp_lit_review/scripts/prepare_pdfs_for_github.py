@@ -138,11 +138,22 @@ def main():
     """Main entry point."""
     visualizer_dir = Path(__file__).resolve().parents[1]
 
-    # Configure source folders
-    # After consolidation, all PDFs are in NLP_v4.Data (aligns with R2 prefix naming)
-    # Now located in OneDrive
+    onedrive_root = Path(
+        "/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine"
+    )
+
+    # Configure source folders.  OneDrive has moved this project between root
+    # folders over time, so keep the legacy path and the current shared-folder
+    # path here; flatten_pdfs skips paths that do not exist.
     sources = [
-        ("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/Endnote/NLP_v4.Data", "NLP_v4"),
+        (
+            str(onedrive_root / "badjatia-hu-onedrive" / "NLP" / "lit_review" / "Endnote" / "NLP_v4.Data"),
+            "NLP_v4",
+        ),
+        (
+            str(onedrive_root / "NLP_lit_review" / "Endnote" / "NLP_v4.Data"),
+            "NLP_v4",
+        ),
     ]
     
     # Output directory (in the project folder)
@@ -162,7 +173,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 
 
