@@ -245,20 +245,21 @@ function FlowChartInner({ data }) {
           onConnect={onConnect}
           nodeTypes={nodeTypes}
           edgeTypes={edgeTypes}
-          nodesDraggable={false}
+          nodesDraggable={true}
           defaultViewport={{ 
             x: -contentBounds.offsetX + 50, 
             y: -contentBounds.offsetY + 50, 
             zoom: 1 
           }}
           attributionPosition="bottom-left"
-          zoomOnScroll={false}
+          zoomOnScroll={true}
+          zoomOnPinch={true}
           zoomOnDoubleClick={false}
           panOnDrag={false}
           panOnScroll={false}
           preventScrolling={false}
-          minZoom={1}
-          maxZoom={1}
+          minZoom={0.5}
+          maxZoom={1.5}
         >
           <Background />
         </ReactFlow>
@@ -276,7 +277,6 @@ function FlowChart({ data }) {
 }
 
 export default FlowChart;
-
 
 
 

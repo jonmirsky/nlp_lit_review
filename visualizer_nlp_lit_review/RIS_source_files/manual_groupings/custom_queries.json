@@ -1,11 +1,3 @@
 {
-  "queries": [
-    {
-      "name": "head_rad_nlp",
-      "query": "((\"large language model\"[Title/Abstract]) OR (\"large language models\"[Title/Abstract]) OR (LLM[Title/Abstract]) OR (LLMs[Title/Abstract]) OR (ChatGPT[Title/Abstract]) OR (GPT[Title/Abstract]) OR (\"GPT-4\"[Title/Abstract]) OR (\"generative AI\"[Title/Abstract]) OR (\"generative artificial intelligence\"[Title/Abstract]) ) AND ( (\"radiology report\"[Title/Abstract]) OR (\"radiology reports\"[Title/Abstract]) OR (\"imaging report\"[Title/Abstract]) OR (\"imaging reports\"[Title/Abstract]) OR (\"free text\"[Title/Abstract]) OR (\"free-text\"[Title/Abstract]) OR (\"unstructured text\"[Title/Abstract]) OR (\"clinical text\"[Title/Abstract]) OR (\"report findings\"[Title/Abstract]) ) AND ( (extract*[Title/Abstract]) OR (classif*[Title/Abstract]) OR (structur*[Title/Abstract]) OR (label*[Title/Abstract]) OR (detect*[Title/Abstract]) OR (identif*[Title/Abstract]) OR (\"information extraction\"[Title/Abstract]) OR (\"text mining\"[Title/Abstract]) OR (\"natural language processing\"[Title/Abstract]) OR (NLP[Title/Abstract]) OR (summar*[Title/Abstract]) OR (synthes*[Title/Abstract]) OR (quantif*[Title/Abstract]) OR (scor*[Title/Abstract]) ) AND ( (brain[Title/Abstract]) OR (cranial[Title/Abstract]) OR (intracranial[Title/Abstract]) OR (neuroimaging[Title/Abstract]) OR (\"head CT\"[Title/Abstract]) OR (\"head computed tomography\"[Title/Abstract]) OR (\"brain CT\"[Title/Abstract]) OR (\"cranial CT\"[Title/Abstract]) OR (\"computed tomography\"[Title/Abstract]) OR (CT[Title/Abstract]) OR (\"brain MRI\"[Title/Abstract]))",
-      "slug": "head_rad_nlp",
-      "label": "Head-Rad NLP",
-      "source_db": "pubmed"
-    }
-  ]
+  "queries": []
 }

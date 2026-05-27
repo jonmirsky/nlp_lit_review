@@ -13,6 +13,8 @@ from config import (
     find_newest_jons_list_file,
 )
 
+QUERY_SELF_BRANCH = "__query_self__"
+
 
 class OverlapCalculator:
     """Calculates paper organization and builds visualization hierarchy"""
@@ -79,7 +81,16 @@ class OverlapCalculator:
         """Return paper RN terms that belong under this query node."""
         terms = paper.branch_terms or []
         if query_info.get("label_filter"):
-            return [term for term in terms if self._label_matches_query_filter(term, query_info)]
+            out: List[str] = []
+            label_filter = (query_info.get("label_filter") or "").strip().lower()
+            for term in terms:
+                if not self._label_matches_query_filter(term, query_info):
+                    continue
+                if term.strip().lower() == label_filter:
+                    out.append(QUERY_SELF_BRANCH)
+                else:
+                    out.append(term)
+            return out
         return [term for term in terms if not self._claimed_by_other_query(term, query_name)]
         
     def load_papers_from_queries(self) -> Dict[str, str]:
@@ -159,10 +170,10 @@ class OverlapCalculator:
         return query_databases
     
     def _normalize_text(self, text: str) -> str:
-        """Normalize text for comparison (lowercase, strip whitespace)"""
+        """Normalize text for comparison (lowercase, collapsed whitespace)."""
         if not text:
             return ""
-        return text.lower().strip()
+        return " ".join(str(text).lower().split())
     
     def _match_paper(self, most_cited_paper: Paper) -> Optional[Paper]:
         """
@@ -176,15 +187,19 @@ class OverlapCalculator:
         """
         most_cited_title = self._normalize_text(most_cited_paper.title)
         most_cited_doi = self._normalize_text(most_cited_paper.doi)
+        most_cited_id = self._normalize_text(str(most_cited_paper.id or ""))
         
         for existing_paper in self.all_papers:
             existing_title = self._normalize_text(existing_paper.title)
             existing_doi = self._normalize_text(existing_paper.doi)
+            existing_id = self._normalize_text(str(existing_paper.id or ""))
             
-            # Match by title OR DOI
-            if most_cited_title and existing_title and most_cited_title == existing_title:
+            # Match by stable identifier first, then DOI, then title.
+            if most_cited_id and existing_id and most_cited_id == existing_id:
                 return existing_paper
             if most_cited_doi and existing_doi and most_cited_doi == existing_doi:
+                return existing_paper
+            if most_cited_title and existing_title and most_cited_title == existing_title:
                 return existing_paper
         
         return None
@@ -519,6 +534,7 @@ class OverlapCalculator:
                     
                     query_info = self.queries.get(query_name, {})
                     query_string = query_info.get('query', query_name)
+                    query_self_papers = self.papers_by_query_and_branch.get(query_name, {}).get(QUERY_SELF_BRANCH, [])
                     
                     nodes.append({
                         "id": query_node_id,
@@ -527,7 +543,9 @@ class OverlapCalculator:
                         "data": {
                             "label": query_name,
                             "query": query_string,
-                            "query_name": query_name
+                            "query_name": query_name,
+                            "papers": [p.to_dict() for p in query_self_papers],
+                            "paper_count": len(query_self_papers),
                         }
                     })
                     
@@ -541,7 +559,11 @@ class OverlapCalculator:
                     
                     # Process branch terms for this query
                     # Filter out "uncategorized" - it will be handled separately at database level
-                    branch_terms_filtered = {k: v for k, v in branch_terms.items() if k != "uncategorized"}
+                    branch_terms_filtered = {
+                        k: v
+                        for k, v in branch_terms.items()
+                        if k not in ("uncategorized", QUERY_SELF_BRANCH)
+                    }
                     branch_terms_list = sorted(branch_terms_filtered.items(), key=lambda x: x[0].lower())
                     if branch_terms_list:
                         # First pass: calculate total height with edge-to-edge spacing
@@ -847,6 +869,5 @@ class OverlapCalculator:
             print(f"Error in get_visualization_data: {str(e)}")
             traceback.print_exc()
             raise
-
 
 
