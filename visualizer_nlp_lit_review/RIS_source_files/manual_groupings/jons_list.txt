@@ -18,3 +18,24 @@
 ; TI  - Some paper title that appears in the master RIS
 ; DO  - 10.xxxx/example
 ; ER  -
+
+TY  - JOUR
+TI  - Large Language Model Approach for Zero-Shot Information Extraction and Clustering of Japanese Radiology Reports: Algorithm Development and Validation
+DO  - 10.2196/57275
+PY  - 2025
+ID  - 3546
+ER  -
+
+TY  - JOUR
+TI  - Few-Shot and Zero-Shot Biomedical Named Entity Recognition: A Procedure for Enhancing BioBERT with Prompt-Based Learning and Large Language Models.
+DO  - 10.3791/69390
+PY  - 2026
+ID  - paper_207
+ER  -
+
+TY  - JOUR
+TI  - CHiLL: Zero-shot Custom Interpretable Feature Extraction from Clinical Notes with Large Language Models.
+DO  - 10.18653/v1/2023.findings-emnlp.568
+PY  - 2023
+ID  - paper_2582
+ER  -
