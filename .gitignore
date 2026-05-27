@@ -48,6 +48,9 @@ archive/found_papers/downloaded_papers/
 visualizer_nlp_lit_review/pdfs_for_github/
 **/pdfs_for_github/
 
+# Generated audit reports (reproducible; not source-controlled)
+visualizer_nlp_lit_review/audit_reports/
+
 # Local RIS backups; commit real pubmed_*.txt files deliberately.
 visualizer_nlp_lit_review/RIS_source_files/*.bak
 visualizer_nlp_lit_review/RIS_source_files/*.bak[0-9]*

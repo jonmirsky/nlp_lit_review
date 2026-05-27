@@ -18,6 +18,7 @@ class Paper:
         self.abstract = ""
         self.authors = []
         self.doi = ""
+        self.pmid = ""  # From AN/PMID/PM field
         self.unique_search_terms = []  # From N1 field, comma-separated
         self.branch_terms = []  # From RN field, comma-separated (e.g., "radiology, neuroscience")
         self.pdf_path = ""  # From L1 field
@@ -38,6 +39,7 @@ class Paper:
             "abstract": self.abstract,
             "authors": self.authors,
             "doi": self.doi,
+            "pmid": self.pmid,
             "unique_search_terms": self.unique_search_terms,
             "branch_terms": self.branch_terms,
             "pdf_path": self.pdf_path,
@@ -143,6 +145,8 @@ class RISParser:
             paper.authors.append(value)
         elif field_tag == 'DO':
             paper.doi = value
+        elif field_tag in ('AN', 'PMID', 'PM'):
+            paper.pmid = value
         elif field_tag == 'N1':
             # Extract unique search terms (comma-separated)
             # Remove any non-search-term content
@@ -185,7 +189,6 @@ class RISParser:
                     paper.id = int(value)
                 except ValueError:
                     paper.id = value
-
 
 
 

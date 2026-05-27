@@ -3,7 +3,6 @@ PDF path resolver for Literature Review Visualizer
 Resolves internal-pdf:// paths to actual file system paths
 """
 
-import os
 import re
 from pathlib import Path
 from typing import Optional, Dict, List
@@ -18,7 +17,6 @@ class PDFResolver:
             endnote_data_paths = ENDNOTE_DATA_PATHS
         self.endnote_data_paths = [Path(p) for p in endnote_data_paths]
         self._cache: Dict[str, Optional[str]] = {}
-        self._filename_cache: Dict[str, Optional[str]] = {}
         
     def resolve(self, internal_path: str) -> Optional[str]:
         """
@@ -40,8 +38,10 @@ class PDFResolver:
         # Parse internal-pdf:// format
         match = re.match(r'internal-pdf://(\d+)/(.+)', internal_path)
         if not match:
-            # Not in expected format, try to find by filename
-            return self._find_by_filename(internal_path)
+            candidate = Path(internal_path).expanduser()
+            resolved = str(candidate.absolute()) if candidate.exists() and candidate.is_file() else None
+            self._cache[internal_path] = resolved
+            return resolved
         
         pdf_id = match.group(1)
         filename = match.group(2)
@@ -54,17 +54,9 @@ class PDFResolver:
             # Strategy 1: Look by ID and filename
             possible_paths = [
                 endnote_path / pdf_id / filename,
+                endnote_path / "PDF" / pdf_id / filename,
                 endnote_path / f"{pdf_id}.pdf",
-                endnote_path / filename,
             ]
-            
-            # Also check subdirectories
-            for item in endnote_path.iterdir():
-                if item.is_dir():
-                    possible_paths.extend([
-                        item / filename,
-                        item / f"{pdf_id}.pdf",
-                    ])
             
             # Try each possible path
             for path in possible_paths:
@@ -73,39 +65,8 @@ class PDFResolver:
                     self._cache[internal_path] = resolved
                     return resolved
         
-        # Strategy 2: Search by filename in all data folders
-        resolved = self._find_by_filename(filename)
-        if resolved:
-            self._cache[internal_path] = resolved
-            return resolved
-        
         # Not found
         self._cache[internal_path] = None
-        return None
-    
-    def _find_by_filename(self, filename: str) -> Optional[str]:
-        """Search for PDF by filename in all Endnote data folders"""
-        if filename in self._filename_cache:
-            return self._filename_cache[filename]
-        
-        # Clean filename for comparison
-        clean_filename = filename.lower().strip()
-        
-        # Search recursively in all Endnote data paths
-        for endnote_path in self.endnote_data_paths:
-            if not endnote_path.exists():
-                continue
-                
-            for root, dirs, files in os.walk(endnote_path):
-                for file in files:
-                    if file.lower().endswith('.pdf'):
-                        # Check if filename matches (case-insensitive, partial match)
-                        if clean_filename in file.lower() or file.lower() in clean_filename:
-                            resolved = str(Path(root) / file)
-                            self._filename_cache[filename] = resolved
-                            return resolved
-        
-        self._filename_cache[filename] = None
         return None
     
     def is_pdf_available(self, internal_path: str) -> bool:
@@ -173,9 +134,6 @@ class PDFResolver:
         urls = [get_r2_pdf_url(prefix, folder_id, filename) for prefix in prefixes]
         print(f"[PDF RESOLVER] Generated URLs: {urls}")
         return urls
-
-
-
 
 
 

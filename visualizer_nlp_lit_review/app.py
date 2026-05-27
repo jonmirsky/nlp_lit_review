@@ -16,6 +16,7 @@ from ris_parser import RISParser
 from pdf_resolver import PDFResolver
 from overlap_calculator import OverlapCalculator
 from config import COMMON_SEARCH_TERMS, get_queries_with_ris_files, R2_BUCKET_NAME, RIS_SOURCE_FOLDER, MANUAL_GROUPINGS_FOLDER
+from pdf_overrides import apply_pdf_overrides
 from pathlib import Path
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -67,6 +68,10 @@ def load_data():
         calculator = OverlapCalculator(resolved_queries)
         query_databases = calculator.load_papers_from_queries()
         print(f"[TIMING] Load papers from queries: {time.time() - start:.2f}s")
+
+        changed_pdf_links = apply_pdf_overrides(calculator.all_papers)
+        if changed_pdf_links:
+            print(f"[PDF WARNING] Applied {changed_pdf_links} PDF override/suppression rule(s)")
         
         # Get all papers from calculator
         _papers_cache = calculator.all_papers
@@ -491,8 +496,6 @@ if __name__ == '__main__':
     # Disable debug mode in production (set FLASK_DEBUG=false in production)
     debug_mode = os.getenv('FLASK_DEBUG', 'False').lower() == 'true'
     app.run(debug=debug_mode, host='0.0.0.0', port=port)
-
-
 
 
 

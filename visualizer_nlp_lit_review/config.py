@@ -108,12 +108,16 @@ def get_all_endnote_data_paths():
     base_path = get_base_path()
     paths = []
     
-    # Development paths (absolute) - now in OneDrive
+    # Development paths (absolute) - badjatia-hu-onedrive layout
+    _OD = "/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine"
     dev_paths = [
-        Path("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/Endnote/from_zotero_v3.Data/PDF"),
-        Path("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/Endnote/from_zotero_v3.Data"),
-        Path("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/Endnote/NLP_v4.Data"),
-        Path("/Users/jon/Library/CloudStorage/OneDrive-UniversityofMarylandSchoolofMedicine/NLP_lit_review/Endnote/search_term_results"),
+        Path(f"{_OD}/badjatia-hu-onedrive/NLP/lit_review/Endnote/NLP_v4.Data/PDF"),
+        Path(f"{_OD}/badjatia-hu-onedrive/NLP/lit_review/Endnote/NLP_v4.Data"),
+        # legacy paths kept as fallback in case older layout exists
+        Path(f"{_OD}/NLP_lit_review/Endnote/from_zotero_v3.Data/PDF"),
+        Path(f"{_OD}/NLP_lit_review/Endnote/from_zotero_v3.Data"),
+        Path(f"{_OD}/NLP_lit_review/Endnote/NLP_v4.Data"),
+        Path(f"{_OD}/NLP_lit_review/Endnote/search_term_results"),
     ]
     
     # Bundled app paths (relative)

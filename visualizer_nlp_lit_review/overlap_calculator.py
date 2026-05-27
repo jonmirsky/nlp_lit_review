@@ -12,6 +12,7 @@ from config import (
     find_newest_most_relevant_file,
     find_newest_jons_list_file,
 )
+from pdf_overrides import canonical_paper_key, normalize_doi, normalize_title
 
 QUERY_SELF_BRANCH = "__query_self__"
 
@@ -146,7 +147,7 @@ class OverlapCalculator:
             query_info = self.queries.get(query_name, {})
             # Organize papers by branch term (using canonical terms)
             for paper in papers:
-                paper_key = paper.doi or paper.id or paper.title
+                paper_key = canonical_paper_key(paper)
                 if paper_key and paper_key not in seen_all_paper_keys:
                     seen_all_paper_keys.add(paper_key)
                     self.all_papers.append(paper)
@@ -187,19 +188,19 @@ class OverlapCalculator:
         """
         most_cited_title = self._normalize_text(most_cited_paper.title)
         most_cited_doi = self._normalize_text(most_cited_paper.doi)
-        most_cited_id = self._normalize_text(str(most_cited_paper.id or ""))
+        most_cited_pmid = self._normalize_text(str(getattr(most_cited_paper, "pmid", "") or ""))
         
         for existing_paper in self.all_papers:
             existing_title = self._normalize_text(existing_paper.title)
             existing_doi = self._normalize_text(existing_paper.doi)
-            existing_id = self._normalize_text(str(existing_paper.id or ""))
+            existing_pmid = self._normalize_text(str(getattr(existing_paper, "pmid", "") or ""))
             
-            # Match by stable identifier first, then DOI, then title.
-            if most_cited_id and existing_id and most_cited_id == existing_id:
+            # Match by canonical paper identity: PMID/AN, then DOI, then title.
+            if most_cited_pmid and existing_pmid and most_cited_pmid == existing_pmid:
                 return existing_paper
-            if most_cited_doi and existing_doi and most_cited_doi == existing_doi:
+            if most_cited_doi and existing_doi and normalize_doi(most_cited_doi) == normalize_doi(existing_doi):
                 return existing_paper
-            if most_cited_title and existing_title and most_cited_title == existing_title:
+            if most_cited_title and existing_title and normalize_title(most_cited_title) == normalize_title(existing_title):
                 return existing_paper
         
         return None
@@ -869,5 +870,4 @@ class OverlapCalculator:
             print(f"Error in get_visualization_data: {str(e)}")
             traceback.print_exc()
             raise
-
 
