@@ -12,7 +12,9 @@ Outputs:
 - Path constants and query configuration consumed by the visualizer and helper scripts.
 """
 
+import datetime
 import os
+import re
 import sys
 import json
 from pathlib import Path
@@ -238,8 +240,44 @@ def find_newest_ris_file_by_prefix(prefix: str) -> str:
     if not matching_files:
         return None
     
-    # Return the most recently modified file
-    newest_file = max(matching_files, key=lambda f: f.stat().st_mtime)
+    def filename_datetime(file: Path):
+        match = re.search(
+            r"_(\d{1,2})_(\d{1,2})_(\d{2,4})_(\d{3,4})(am|pm)",
+            file.stem,
+            re.IGNORECASE,
+        )
+        if not match:
+            return None
+
+        month, day, year, time_digits, meridiem = match.groups()
+        year = int(year)
+        if year < 100:
+            year += 2000
+
+        time_digits = time_digits.zfill(4)
+        hour = int(time_digits[:-2])
+        minute = int(time_digits[-2:])
+        meridiem = meridiem.lower()
+        if meridiem == "pm" and hour != 12:
+            hour += 12
+        elif meridiem == "am" and hour == 12:
+            hour = 0
+
+        try:
+            return datetime.datetime(year, int(month), int(day), hour, minute)
+        except ValueError:
+            return None
+
+    def newest_key(file: Path):
+        parsed_dt = filename_datetime(file)
+        if parsed_dt is not None:
+            return (1, parsed_dt.timestamp(), file.name)
+        return (0, file.stat().st_mtime, file.name)
+
+    # Prefer the timestamp embedded in exported RIS filenames. Git deploys do
+    # not preserve meaningful mtimes, so mtime-only selection can choose an
+    # older RIS and silently drop newer Jon's List matches.
+    newest_file = max(matching_files, key=newest_key)
     return str(newest_file.absolute())
 
 # Dictionary mapping query names to their query strings and RIS file prefixes
